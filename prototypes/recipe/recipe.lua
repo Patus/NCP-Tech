@@ -2,12 +2,12 @@ data:extend(
 {
   {
     type = "recipe",
-    name = "Quarried-stone",
+    name = "Quarried stone",
     enabled = "true",
     ingredients =
     {
       {"stone", 1}
     },
-    result = "Quarried-stone",
+    result = "Quarried stone",
   }
   })
