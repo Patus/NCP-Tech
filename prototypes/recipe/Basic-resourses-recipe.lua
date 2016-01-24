@@ -60,5 +60,76 @@ data:extend(
     },
     result = "Sand",
   },
+  {
+    type = "recipe",
+    name = "Clay_dry",
+    enabled = "true",
+    ingredients =
+    {
+      {"Silt", 1}
+    },
+    result = "Clay_dry",
+  },
+  {
+    type = "recipe",
+    name = "Clay_wet",
+    enabled = "true",
+    ingredients =
+    {
+      {"Clay_dry", 1}
+    },
+    result = "Clay_wet",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_boule",
+    enabled = "true",
+    ingredients =
+    {
+      {"Silicon_dioxide", 1}
+    },
+    result = "Silicon_boule",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_dioxide",
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz", 1}
+    },
+    result = "Silicon_dioxide",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_wafer",
+    enabled = "true",
+    ingredients =
+    {
+      {"Silicon_boule", 1}
+    },
+    result = "Silicon_wafer",
+  },
+  {
+    type = "recipe",
+    name = "Silt",
+    enabled = "true",
+    ingredients =
+    {
+      {"Sand", 1}
+    },
+    result = "Silt",
+  },
+  {
+    type = "recipe",
+    name = "brick2",
+    enabled = "true",
+    ingredients =
+    {
+      {"Clay_wet", 1}
+    },
+    result = "stone-brick",
+  },
+  
   
   })
