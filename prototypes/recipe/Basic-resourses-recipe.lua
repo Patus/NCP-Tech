@@ -12,13 +12,13 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Crushed_stone",
+    name = "Stone_crushed",
     enabled = "true",
     ingredients =
     {
       {"Quarried_stone", 1}
     },
-    result = "Crushed_stone",
+    result = "Stone_crushed",
   },
   {
     type = "recipe",
@@ -26,7 +26,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Crushed_stone", 1}
+      {"Stone_crushed", 1}
     },
     result = "Quartz",
   },
@@ -36,7 +36,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Crushed_stone", 1}
+      {"Stone_crushed", 1}
     },
     result = "Gravel",
   },
@@ -46,7 +46,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Crushed_stone", 1}
+      {"Stone_crushed", 1}
     },
     result = "Sand",
   },
