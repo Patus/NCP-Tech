@@ -2,7 +2,7 @@ data:extend(
 {
   {
     type = "recipe-category",
-    name = "Grinder"
+    name = "Crusher"
   },
   {
     type = "recipe-category",
@@ -22,7 +22,7 @@ data:extend(
   },
   {
     type = "recipe-category",
-    name = "Chemical_bath"
+    name = "Pump"
   },
   {
     type = "recipe-category",
@@ -60,6 +60,61 @@ data:extend(
     type = "recipe-category",
     name = "Dry_distillation"
   },
-  
+  {
+    type = "recipe-category",
+    name = "Compressor"
+  },
+  {
+    type = "recipe-category",
+    name = "Electric_arc_furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "Vacuum_oxygen_decarburization"
+  },
+  {
+    type = "recipe-category",
+    name = "Grinding_mill"
+  },
+  {
+    type = "recipe-category",
+    name = "cryogenic_distillation_plant"
+  },
+  {
+    type = "recipe-category",
+    name = "cotton_farm"
+  },
+  {
+    type = "recipe-category",
+    name = "Alloy_furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "Lithium_extractor"
+  },
+  {
+    type = "recipe-category",
+    name = "Electronics_assembly_machine"
+  },
+  {
+    type = "recipe-category",
+    name = "Anode_furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "Flash_furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "TSL_furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "Extruder"
+  },
+  {
+    type = "recipe-category",
+    name = "Milling_machine"
+  },
   
 })
