@@ -1,3 +1,5 @@
 require("prototypes.items.Basic-resourses")
 require("prototypes.items.item-groups")
 require("prototypes.recipe.Basic-resourses-recipe")
+require("prototypes.ores.bauxite")
+require("prototypes.autoplace-controls")
