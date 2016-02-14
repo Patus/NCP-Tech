@@ -115,7 +115,7 @@ data:extend(
   {
     type = "resource",
     name = "Scheelite",
-    icon = "__NCP-Tech__/graphics/icons/Scheelite.png",
+    icon = "__NCP-Tech__/graphics/icons/Scheelite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -171,7 +171,7 @@ data:extend(
   {
     type = "resource",
     name = "Bauxite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Sphalerite.png",
+    icon = "__NCP-Tech__/graphics/icons/Sphalerite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -227,7 +227,7 @@ data:extend(
   {
     type = "resource",
     name = "Chalcopyrite",
-    icon = "__NCP-Tech__/graphics/icons/Chalcopyrite.png",
+    icon = "__NCP-Tech__/graphics/icons/Chalcopyrite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -283,7 +283,7 @@ data:extend(
   {
     type = "resource",
     name = "Uraninite",
-    icon = "__NCP-Tech__/graphics/icons/Uraninite.png",
+    icon = "__NCP-Tech__/graphics/icons/Uraninite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -395,7 +395,7 @@ data:extend(
   {
     type = "resource",
     name = "Fluorite",
-    icon = "__NCP-Tech__/graphics/icons/Fluorite.png",
+    icon = "__NCP-Tech__/graphics/icons/Fluorite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -451,7 +451,7 @@ data:extend(
   {
     type = "resource",
     name = "Cassiterite",
-    icon = "__NCP-Tech__/graphics/icons/Cassiterite.png",
+    icon = "__NCP-Tech__/graphics/icons/Cassiterite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -507,7 +507,7 @@ data:extend(
   {
     type = "resource",
     name = "Galena",
-    icon = "__NCP-Tech__/graphics/icons/Galena.png",
+    icon = "__NCP-Tech__/graphics/icons/Galena_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -563,7 +563,7 @@ data:extend(
   {
     type = "resource",
     name = "Rutile",
-    icon = "__NCP-Tech__/graphics/icons/Rutile.png",
+    icon = "__NCP-Tech__/graphics/icons/Rutile_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -619,7 +619,7 @@ data:extend(
   {
     type = "resource",
     name = "Gold",
-    icon = "__NCP-Tech__/graphics/icons/Gold.png",
+    icon = "__NCP-Tech__/graphics/icons/Gold_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
