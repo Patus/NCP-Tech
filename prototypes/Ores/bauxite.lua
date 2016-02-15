@@ -170,7 +170,7 @@ data:extend(
   },
   {
     type = "resource",
-    name = "Bauxite_ore",
+    name = "Sphalerite",
     icon = "__NCP-Tech__/graphics/icons/Sphalerite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
@@ -675,7 +675,7 @@ data:extend(
   {
     type = "resource",
     name = "Magnetite",
-    icon = "__NCP-Tech__/graphics/icons/Magnetite.png",
+    icon = "__NCP-Tech__/graphics/icons/Magnetite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
