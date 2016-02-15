@@ -67,7 +67,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Native_copper"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -123,7 +123,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Scheelite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -179,7 +179,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Sphalerite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -235,7 +235,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Chalcopyrite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -291,7 +291,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Uraninite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -347,7 +347,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Quartz"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -403,7 +403,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Fluorite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -459,7 +459,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Cassiterite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -515,7 +515,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Galena_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -571,7 +571,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Rutile_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -627,7 +627,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Gold_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -683,7 +683,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Bauxite_ore"
+      result = "Magnetite_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
