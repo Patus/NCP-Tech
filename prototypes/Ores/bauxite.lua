@@ -516,6 +516,11 @@ data:extend(
       mining_particle = "copper-ore-particle",
       mining_time = 2,
       result = "Galena_ore"
+      results = 
+      {
+         {type="item", name="Galena_ore", amount=1},
+         {type="item", name="Gold_ore", amount=1},
+      },
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
