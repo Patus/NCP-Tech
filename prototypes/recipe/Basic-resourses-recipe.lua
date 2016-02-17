@@ -239,4 +239,134 @@ data:extend(
     },
   },
   
+  
+  
+  
+  {
+    type = "recipe",
+    name = "Rutile_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Rutile_ore", 1},
+    },
+    result = "Rutile_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_oxide",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Rutile_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Titanium_oxide", amount=1},
+      {type="item", name="Zircon", amount=1},
+      {type="item", name="Stone_crushed", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Titanium",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Titanium_oxide", 1},
+      {"Calcium_chloride", 1}
+    },
+    results = 
+    {
+      {type="item", name="Titanium", amount=1},
+      {type="item", name="Calcium_oxide", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Zirconium_ingot",
+    category = "Chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Zircon", 1},
+      {type="fluid", name="Chlorine", amount=1}
+    },
+    result = "Zirconium_ingot",
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   })
