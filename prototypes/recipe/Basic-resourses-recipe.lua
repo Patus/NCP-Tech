@@ -308,8 +308,173 @@ data:extend(
   
   
   
+  {
+    type = "recipe",
+    name = "Gold_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Gold_ore", 1},
+    },
+    result = "Gold_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Gold_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Gold_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Gold_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Dore_bar",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Gold_concentrate", 1},
+    },
+    result = "Dore_bar",
+  },
+  {
+    type = "recipe",
+    name = "Chloroauric_acid",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Dore_bar", 1},
+      {type="fluid", name="Hydrochloric_acid", amount=1},
+    },
+    result = "Chloroauric_acid",
+  },
+  {
+    type = "recipe",
+    name = "Gold_ingot",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Dore_bar", 1},
+      {"Chloroauric_acid", 1},
+    },
+    result = "Gold_ingot",
+  },
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    type = "recipe",
+    name = "Coal_distillation",
+    category = "Distillation",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"coal", 1},
+    },
+    results = 
+    {
+      {type="item", name="Coal_coke", amount=1},
+      {type="item", name="Coal_tar", amount=1},
+      {type="fluid", name="Coal_gas", amount=1},
+      {type="fluid", name="Ammonia", amount=1},
+      {type="fluid", name="Benzene", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Coal_gas_cracking",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Coal_gas", amount=10},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrogen", amount=5},
+      {type="fluid", name="Petroleum_gas", amount=4},
+      {type="fluid", name="carbon_monoxide", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Carbon_dust",
+    category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Coal_coke", 1},
+    },
+    result = "Carbon_dust",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_carbide",
+    category = "Chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Carbon_dust", 1},
+      {"Silicon_dioxide", 1},
+    },
+    result = "Silicon_carbide",
+  },
+  {
+    type = "recipe",
+    name = "Bitumi",
+    category = "Distillation",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Coal_tar", 1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ethylbenzene", amount=1},
+      {type="fluid", name="Bitumi", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Asphalt_concrete",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Gravel", 1},
+      {type="fluid", name="Bitumi", amount=1},
+    },
+    result = "Asphalt_concrete",
+  },
   
   
   
