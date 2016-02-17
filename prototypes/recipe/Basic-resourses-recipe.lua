@@ -171,6 +171,72 @@ data:extend(
     },
     result = "Silicon_wafer",
   },
-  
+
+
+
+
+
+  {
+    type = "recipe",
+    name = "Galena_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Galena_ore", 1},
+    },
+    result = "Galena_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Lead_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Galena_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Lead_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Lead_bullion",
+    category = "Flash_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_concentrate", 1},
+    },
+    results = 
+    {
+      {type="item", name="Lead_bullion", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Sulfur_dioxide", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Lead_billet",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_bullion", 1},
+    },
+    results = 
+    {
+      {type="item", name="Lead_billet", amount=1},
+      {type="item", name="Silver_ingot", amount=1},
+    },
+  },
   
   })
