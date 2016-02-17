@@ -6,131 +6,171 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"stone", 1}
+      {"stone", 1},
     },
     result = "Quarried_stone",
   },
   {
     type = "recipe",
     name = "Stone_crushed",
+    category = "Crusher",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Quarried_stone", 1}
+      {"Quarried_stone", 1},
     },
     result = "Stone_crushed",
   },
   {
     type = "recipe",
     name = "Quartz",
+    category = "Crusher",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Stone_crushed", 1}
+      {"Quartz_rock", 2},
     },
-    result = "Quartz",
+    results = 
+    {
+      {type="item", name="Quartz", amount=1},
+      {type="item", name="Quarried_stone", amount=1}
+    },
   },
   {
     type = "recipe",
-    name = "Gravel",
+    name = "Gravel_Sand",
+    category = "Shifter",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Stone_crushed", 1}
+      {"Stone_crushed", 3},
     },
-    result = "Gravel",
+    results = 
+    {
+      {type="item", name="Gravel", amount=2},
+      {type="item", name="Sand", amount=1}
+    },
   },
   {
     type = "recipe",
-    name = "Sand1",
+    name = "Sand_Silt",
+    category = "Grinding_mill",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Stone_crushed", 1}
+      {"Gravel", 3},
     },
-    result = "Sand",
+    results = 
+    {
+      {type="item", name="Sand", amount=2},
+      {type="item", name="Silt", amount=1}
+    },
   },
   {
     type = "recipe",
-    name = "Sand2",
+    name = "Silt_ClayDry",
+    category = "Grinding_mill",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Gravel", 1}
+      {"Sand", 3},
     },
-    result = "Sand",
+    results = 
+    {
+      {type="item", name="Silt", amount=2},
+      {type="item", name="Clay_dry", amount=1}
+    },
   },
   {
     type = "recipe",
     name = "Clay_dry",
+    category = "Grinding_mill",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Silt", 1}
+      {"Silt", 1},
     },
     result = "Clay_dry",
   },
   {
     type = "recipe",
     name = "Clay_wet",
+    category = "Mixer",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Clay_dry", 1}
+      {"Clay_dry", 1},
+      {type="fluid", name="Water", amount=1},
     },
     result = "Clay_wet",
   },
   {
     type = "recipe",
-    name = "Silicon_boule",
+    name = "Brick",
+    category = "Frunace",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Silicon_dioxide", 1}
+      {"Clay_wet", 1},
     },
-    result = "Silicon_boule",
+    result = "Brick",
   },
   {
     type = "recipe",
     name = "Silicon_dioxide",
+    category = "Grinding_mill",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Quartz", 1}
+      {"Quartz", 1},
     },
     result = "Silicon_dioxide",
   },
   {
     type = "recipe",
-    name = "Silicon_wafer",
+    name = "Glass",
+    category = "Furnace",
+    energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Silicon_boule", 1}
+      {"Silicon_dioxide", 1},
+    },
+    result = "Glass",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_boule",
+    category = "Silicon_crucible",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Silicon_dioxide", 1},
+    },
+    result = "Silicon_boule",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_wafer",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Silicon_boule", 1},
     },
     result = "Silicon_wafer",
   },
-  {
-    type = "recipe",
-    name = "Silt",
-    enabled = "true",
-    ingredients =
-    {
-      {"Sand", 1}
-    },
-    result = "Silt",
-  },
-  {
-    type = "recipe",
-    name = "brick2",
-    enabled = "true",
-    ingredients =
-    {
-      {"Clay_wet", 1}
-    },
-    result = "stone-brick",
-  },
-  
   
   
   })
