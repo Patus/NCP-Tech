@@ -326,6 +326,15 @@ data:extend({
   },
   {
     type= "item",
+    name= "Copper_native",
+    icon = "__NCP-Tech__/graphics/icons/Copper_native.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
     name= "Copper_plate",
     icon = "__NCP-Tech__/graphics/icons/Copper_plate.png",
     flags= { "goes-to-main-inventory" },
