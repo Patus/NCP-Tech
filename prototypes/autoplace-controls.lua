@@ -8,7 +8,7 @@ data:extend(
   },
   {
     type = "autoplace-control",
-    name = "Native_copper",
+    name = "Copper_native",
     richness = true,
     order = "b-a"
   },

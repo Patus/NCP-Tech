@@ -35,7 +35,7 @@ data:extend(
     results = 
     {
       {type="item", name="Quartz", amount=1},
-      {type="item", name="Quarried_stone", amount=1}
+      {type="item", name="Quarried_stone", amount=1},
     },
   },
   {
