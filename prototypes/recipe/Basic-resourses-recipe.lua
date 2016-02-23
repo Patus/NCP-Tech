@@ -311,19 +311,31 @@ data:extend(
   {
     type = "recipe",
     name = "Calcium_sulfate",
-    category = "Ore_washing",
+    category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
       {"Fluorite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Sulfuric_acid", amount=1}
     },
     results = 
     {
       {type="item", name="Calcium_sulfate", amount=1},
       {type="fluid", name="Hydrogen_fluoride", amount=1}
     },
+  },
+  {
+    type = "recipe",
+    name = "Plaster",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Calcium_sulfate", 1},
+    },
+    result = "Plaster",
   },
 
 --Cassiterite
