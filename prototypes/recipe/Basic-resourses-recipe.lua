@@ -1,5 +1,7 @@
 data:extend(
 {
+  
+  --stone
   {
     type = "recipe",
     name = "Quarried_stone",
@@ -123,6 +125,37 @@ data:extend(
     },
     result = "Brick",
   },
+
+  --Quartz
+  {
+    type = "recipe",
+    name = "Quartz_crushed_rock",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz_rock", 1},
+    },
+    result = "Quartz_crushed_rock",
+  },
+  {
+    type = "recipe",
+    name = "Lead_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz_crushed_rock", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Quartz", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
   {
     type = "recipe",
     name = "Silicon_dioxide",
@@ -134,6 +167,17 @@ data:extend(
       {"Quartz", 1},
     },
     result = "Silicon_dioxide",
+  },
+  {
+    type = "recipe",
+    name = "Quartz_seed",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz", 1},
+    },
+    result = "Quartz_seed",
   },
   {
     type = "recipe",
@@ -156,6 +200,7 @@ data:extend(
     ingredients =
     {
       {"Silicon_dioxide", 1},
+      {"Quartz_seed", 1},
     },
     result = "Silicon_boule",
   },
@@ -172,10 +217,118 @@ data:extend(
     result = "Silicon_wafer",
   },
 
+--Bauxite
+  {
+    type = "recipe",
+    name = "Bauxite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_ore", 1},
+    },
+    result = "Bauxite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Bauxite_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Bauxite_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Alumina",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_concentrate", 1},
+      {"Sodium_hydroxide", 1},
+    },
+    results = 
+    {
+      {type="item", name="Bauxite_tailings", amount=1},
+      {type="item", name="Alumina", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Aluminium_billet",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Alumina", 1},
+      {"Calcium_fluoride", 1},
+    },
+    result = "Aluminium_billet",
+  },
 
+--Fluorite
+  {
+    type = "recipe",
+    name = "Fluorite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Fluorite_ore", 1},
+    },
+    result = "Fluorite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Calcium_fluoride",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Fluorite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Calcium_fluoride", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Calcium_sulfate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Fluorite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Calcium_sulfate", amount=1},
+      {type="fluid", name="Hydrogen_fluoride", amount=1}
+    },
+  },
 
+--Cassiterite
 
-
+--Galena
   {
     type = "recipe",
     name = "Galena_ore",
