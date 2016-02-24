@@ -346,7 +346,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Hydrogen_fluoride", amount=1},
-      {type="fluid", name="water", amount=1},
+      {type="fluid", name="Water", amount=1},
     },
     results = 
     {
@@ -644,7 +644,7 @@ data:extend(
     {
       {type="fluid", name="Hydrogen", amount=5},
       {type="fluid", name="Petroleum_gas", amount=4},
-      {type="fluid", name="carbon_monoxide", amount=1},
+      {type="fluid", name="Carbon_monoxide", amount=1},
     },
   },
   {
