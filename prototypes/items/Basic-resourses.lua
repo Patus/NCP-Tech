@@ -1127,8 +1127,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Uraninite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Uraninite_ore.png",
+    name= "Uranite_ore",
+    icon = "__NCP-Tech__/graphics/icons/Uranite_ore.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",

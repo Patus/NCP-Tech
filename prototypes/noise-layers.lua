@@ -10,7 +10,7 @@ data:extend(
   },
   {
     type = "noise-layer",
-    name = "Copper_native"
+    name = "Native_copper"
   },
   {
     type = "noise-layer",

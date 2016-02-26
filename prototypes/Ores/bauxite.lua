@@ -107,8 +107,8 @@ data:extend(
   },
   {
     type = "resource",
-    name = "Copper_native",
-    icon = "__NCP-Tech__/graphics/icons/Copper_native.png",
+    name = "Native_copper",
+    icon = "__NCP-Tech__/graphics/icons/Native_copper.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -116,13 +116,13 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Copper_native"
+      result = "Native_copper"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
     autoplace =
     {
-      control = "Copper_native",
+      control = "Native_copper",
       sharpness = 1,
       richness_multiplier = 13000,
       richness_base = 350,
@@ -138,7 +138,7 @@ data:extend(
           influence = 0.65,
           
           noise_octaves_difference = -1.9,
-		  noise_layer = "Copper_native",
+		  noise_layer = "Native_copper",
           noise_persistence = 0.3,
           starting_area_weight_optimal = 0,
           starting_area_weight_range = 0,
@@ -151,7 +151,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Copper_native.png",
+        filename = "__NCP-Tech__/graphics/entity/bauxite/Native_copper.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -569,6 +569,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
+      result = "Galena_ore"
       results = 
       {
          {type="item", name="Galena_ore", amount=1},
