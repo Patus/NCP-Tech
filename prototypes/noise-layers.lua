@@ -2,10 +2,6 @@ data:extend(
 {
   {
     type = "noise-layer",
-    name = "Stone"
-  },
-  {
-    type = "noise-layer",
     name = "Bauxite_ore"
   },
   {

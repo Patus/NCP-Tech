@@ -686,15 +686,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Nitre_ore",
-    icon = "__NCP-Tech__/graphics/icons/Nitre_ore.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Pentlandite_crushed_ore",
     icon = "__NCP-Tech__/graphics/icons/Pentlandite_crushed_ore.png",
     flags= { "goes-to-main-inventory" },

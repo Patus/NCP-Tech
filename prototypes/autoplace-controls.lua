@@ -2,12 +2,6 @@ data:extend(
 {
   {
     type = "autoplace-control",
-    name = "Stone",
-    richness = true,
-    order = "b-a"
-  },
-  {
-    type = "autoplace-control",
     name = "Bauxite_ore",
     richness = true,
     order = "b-a"
