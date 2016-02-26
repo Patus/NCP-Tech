@@ -719,7 +719,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Pig_iron", amount=1},
+      {type="item", name="Pig_iron_early", amount=1},
       {type="item", name="Slag", amount=1},
     },
   },
@@ -731,7 +731,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Pig_iron", 2},
+      {"Pig_iron_early", 2},
       {"Charcoal", 1},
     },
     result = "Wrought_iron_billet",
@@ -769,6 +769,36 @@ data:extend(
       {type="item", name="Magnetite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1},
     },
+  },
+  {
+    type = "recipe",
+    name = "Pig_iron",
+    category = "Blast_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Magnetite_concentrate", 1},
+      {"Coal_coke", 1},
+    },
+    results = 
+    {
+      {type="item", name="Pig_iron", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Carbon_monoxide", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Iron_billet",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Pig_iron", 1},
+    },
+    result = "Iron_billet",
   },
   
   
@@ -822,8 +852,256 @@ data:extend(
 
 --Oil
 
+  {
+    type = "recipe",
+    name = "Oil_refinery",
+    category = "Refinery",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Crude_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Petroleum_gas", amount=1},
+      {type="fluid", name="Light_oil", amount=1},
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Ethylene",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Benzene", amount=1},
+      {type="fluid", name="Petroleum_gas", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ethylene", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Dichloroethane",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Chlorine", amount=1},
+      {type="fluid", name="Ethylene", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Dichloroethane", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Dichloroethane",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Dichloroethane", amount=1},
+      {type="fluid", name="Ferric_chloride_solution", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="item", name="Plastic_pellets", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Petroleum_gas",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Petroleum_gas", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Butadiene",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Butadiene", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Rubber",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Styrene", amount=1},
+      {type="fluid", name="Butadiene", amount=1},
+    },
+      result = "Rubber",
+  },
+  {
+    type = "recipe",
+    name = "Diesel",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Diesel", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Diesel_Fuel",
+    category = "Pump",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Diesel", amount=1},
+      {type="item", name="Canister", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Diesel_Fuel", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Glycerol",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Glycerol", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Resin",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Glycerol", amount=1},
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
+    },
+      result = "Resin",
+  },
+  {
+    type = "recipe",
+    name = "Light_oil",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Light_oil", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Bitumi",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Bitumi", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Lubricant",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Lubricant", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Petroleum_jelly",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+    result = "Petroleum_jelly",
+  },
 
 --Air
+
+
+{
+    type = "recipe",
+    name = "Nitrogen_Oxygen",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Air", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Nitrogen", amount=1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+  },
 
 --Natural Water
   {
