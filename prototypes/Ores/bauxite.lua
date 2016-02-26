@@ -1,3 +1,52 @@
+data.raw.resource["stone"].autoplace = (
+  {
+    control = "stone",
+    sharpness = 1,
+    richness_multiplier = 15000,
+    richness_base = 350,
+    size_control_multiplier = 0.06,
+    peaks =
+    {
+      {
+        influence = 0.2,
+      },
+      {
+        influence = 0.65,
+        noise_layer = "stone",
+        noise_octaves_difference = -2.4,
+        noise_persistence = 0.35,
+        starting_area_weight_optimal = 0,
+        starting_area_weight_range = 0,
+        starting_area_weight_max_range = 2,
+      },
+      {
+        influence = 0.65,
+        noise_layer = "stone",
+		noise_octaves_difference = -1.9,
+        noise_persistence = 0.3,
+        starting_area_weight_optimal = 1,
+        starting_area_weight_range = 0,
+        starting_area_weight_max_range = 2,
+      },
+	
+    }
+  }
+)
+data.raw.resource["stone"].minable = (
+	{
+      hardness = 0.9,
+      mining_particle = "copper-ore-particle",
+      mining_time = 2,
+	  results = 
+      {
+         {type="item", name="Quarried_stone", amount=1},
+         {type="item", name="Nitre_ore", amount=1},
+      },
+    }
+)
+
+data.raw.resource["copper-ore"]= (nil)
+
 data:extend(
 {
   {
@@ -235,7 +284,12 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Chalcopyrite_ore"
+	  results = 
+      {
+         {type="item", name="Chalcopyrite_ore", amount=1},
+         {type="item", name="Sulfur", amount=1},
+		 {type="item", name="Pentlandite_ore", amount=1},
+      },
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -518,7 +572,8 @@ data:extend(
       results = 
       {
          {type="item", name="Galena_ore", amount=1},
-         {type="item", name="Gold_ore", amount=1},
+         {type="item", name="Sphalerite_ore", amount=1},
+		 {type="item", name="Sulfur", amount=1},
       },
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
@@ -687,7 +742,11 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Magnetite_ore"
+	  results = 
+      {
+         {type="item", name="Magnetite_ore", amount=1},
+         {type="item", name="Chromite_ore", amount=1},
+      },
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
