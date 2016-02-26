@@ -731,6 +731,15 @@ data:extend({
   },
   {
     type= "item",
+    name= "Pig_iron_early",
+    icon = "__NCP-Tech__/graphics/icons/Pig_iron.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
     name= "Plaster",
     icon = "__NCP-Tech__/graphics/icons/Plaster.png",
     flags= { "goes-to-main-inventory" },

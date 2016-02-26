@@ -1,5 +1,7 @@
 data:extend(
 {
+  
+  --stone
   {
     type = "recipe",
     name = "Quarried_stone",
@@ -123,6 +125,37 @@ data:extend(
     },
     result = "Brick",
   },
+
+  --Quartz
+  {
+    type = "recipe",
+    name = "Quartz_crushed_rock",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz_rock", 1},
+    },
+    result = "Quartz_crushed_rock",
+  },
+  {
+    type = "recipe",
+    name = "Lead_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz_crushed_rock", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Quartz", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
   {
     type = "recipe",
     name = "Silicon_dioxide",
@@ -134,6 +167,17 @@ data:extend(
       {"Quartz", 1},
     },
     result = "Silicon_dioxide",
+  },
+  {
+    type = "recipe",
+    name = "Quartz_seed",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quartz", 1},
+    },
+    result = "Quartz_seed",
   },
   {
     type = "recipe",
@@ -156,6 +200,7 @@ data:extend(
     ingredients =
     {
       {"Silicon_dioxide", 1},
+      {"Quartz_seed", 1},
     },
     result = "Silicon_boule",
   },
@@ -172,10 +217,191 @@ data:extend(
     result = "Silicon_wafer",
   },
 
+--Bauxite
+  {
+    type = "recipe",
+    name = "Bauxite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_ore", 1},
+    },
+    result = "Bauxite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Bauxite_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Bauxite_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Alumina",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_concentrate", 1},
+      {"Sodium_hydroxide", 1},
+    },
+    results = 
+    {
+      {type="item", name="Bauxite_tailings", amount=1},
+      {type="item", name="Alumina", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Aluminium_billet",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Alumina", 1},
+      {"Calcium_fluoride", 1},
+    },
+    result = "Aluminium_billet",
+  },
+
+--Fluorite
+  {
+    type = "recipe",
+    name = "Fluorite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Fluorite_ore", 1},
+    },
+    result = "Fluorite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Calcium_fluoride",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Fluorite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Calcium_fluoride", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Calcium_sulfate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Fluorite_crushed_ore", 2},
+      {type="fluid", name="Sulfuric_acid", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Calcium_sulfate", amount=1},
+      {type="fluid", name="Hydrogen_fluoride", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Plaster",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Calcium_sulfate", 1},
+    },
+    result = "Plaster",
+  },
+  {
+    type = "recipe",
+    name = "Hydrofluoric_acid",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Hydrogen_fluoride", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrofluoric_acid", amount=1},
+    },
+  },
+
+--Cassiterite
+
+
+  {
+    type = "recipe",
+    name = "Cassiterite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Cassiterite_ore", 1},
+    },
+    result = "Cassiterite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Tin_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Cassiterite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Tin_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+  },
+  {
+    type = "recipe",
+    name = "Tin_billet",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Tin_concentrate", 1},
+    },
+    result = "Tin_billet",
+  },
 
 
 
-
+--Galena
   {
     type = "recipe",
     name = "Galena_ore",
@@ -241,7 +467,7 @@ data:extend(
   
   
   
-  
+  --rutile
   {
     type = "recipe",
     name = "Rutile_crushed_ore",
@@ -306,7 +532,7 @@ data:extend(
   
   
   
-  
+  --Gold
   
   {
     type = "recipe",
@@ -380,7 +606,7 @@ data:extend(
   
   
   
-  
+  --Coal
   
   
   
@@ -418,7 +644,7 @@ data:extend(
     {
       {type="fluid", name="Hydrogen", amount=5},
       {type="fluid", name="Petroleum_gas", amount=4},
-      {type="fluid", name="carbon_monoxide", amount=1},
+      {type="fluid", name="Carbon_monoxide", amount=1},
     },
   },
   {
@@ -478,23 +704,520 @@ data:extend(
   
   
   
+  --Magnetite
+  --early
+  
+  {
+    type = "recipe",
+    name = "Pig_iron_early",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Magnetite_ore", 3},
+    },
+    results = 
+    {
+      {type="item", name="Pig_iron_early", amount=1},
+      {type="item", name="Slag", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Wrought_iron_billet_early",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Pig_iron_early", 2},
+      {"Charcoal", 1},
+    },
+    result = "Wrought_iron_billet",
+  },
+  
+  ------------------------------------
   
   
   
+  {
+    type = "recipe",
+    name = "Magnetite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Magnetite_ore", 1},
+    },
+    result = "Magnetite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Magnetite_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Magnetite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Magnetite_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Pig_iron",
+    category = "Blast_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Magnetite_concentrate", 1},
+      {"Coal_coke", 1},
+    },
+    results = 
+    {
+      {type="item", name="Pig_iron", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Carbon_monoxide", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Iron_billet",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Pig_iron", 1},
+    },
+    result = "Iron_billet",
+  },
   
   
   
+  --Cromite
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  {
+    type = "recipe",
+    name = "Chromite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Chromite_ore", 1},
+    },
+    result = "Chromite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Chromite_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Chromite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Chromite_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1},
+    },
+  },  
+  {
+    type = "recipe",
+    name = "Ferrochrome",
+    category = "Electric_arc_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Chromite_concentrate", 1},
+      {"Coal_coke", 1},
+    },
+    result = "Chromite_crushed_ore",
+  },
+
+
+
+--Oil
+
+  {
+    type = "recipe",
+    name = "Oil_refinery",
+    category = "Refinery",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Crude_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Petroleum_gas", amount=1},
+      {type="fluid", name="Light_oil", amount=1},
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Ethylene",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Benzene", amount=1},
+      {type="fluid", name="Petroleum_gas", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ethylene", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Dichloroethane",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Chlorine", amount=1},
+      {type="fluid", name="Ethylene", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Dichloroethane", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Dichloroethane",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Dichloroethane", amount=1},
+      {type="fluid", name="Ferric_chloride_solution", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="item", name="Plastic_pellets", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Petroleum_gas",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Petroleum_gas", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Butadiene",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Butadiene", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Rubber",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Styrene", amount=1},
+      {type="fluid", name="Butadiene", amount=1},
+    },
+      result = "Rubber",
+  },
+  {
+    type = "recipe",
+    name = "Diesel",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Diesel", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Diesel_Fuel",
+    category = "Pump",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Diesel", amount=1},
+      {type="item", name="Canister", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Diesel_Fuel", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Glycerol",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Light_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Glycerol", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Resin",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Glycerol", amount=1},
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
+    },
+      result = "Resin",
+  },
+  {
+    type = "recipe",
+    name = "Light_oil",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Light_oil", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Bitumi",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Bitumi", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Lubricant",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Lubricant", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Petroleum_jelly",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Heavy_oil", amount=1},
+    },
+    result = "Petroleum_jelly",
+  },
+
+--Air
+
+
+{
+    type = "recipe",
+    name = "Nitrogen_Oxygen",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Air", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Nitrogen", amount=1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+  },
+
+--Natural Water
+  {
+    type = "recipe",
+    name = "Water",
+    category = "Distillation",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water_dirty", amount=3},
+    },
+    results = 
+    {
+      {type="fluid", name="Water", amount=1},
+      {type="item", name="Salt", amount=1},
+    },
+  },  
+  {
+    type = "recipe",
+    name = "Water",
+    category = "Distillation",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water_dirty", amount=3},
+    },
+    results = 
+    {
+      {type="fluid", name="Water", amount=2},
+      {type="item", name="Salt", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Water_electrolyzer",
+    category = "Electrolyzer",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Oxygen", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Chlorine",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water", amount=1},
+      {"Salt", 1},
+    },
+    results = 
+    {
+      {type="fluid", name="Chlorine", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+      {type="item", name="Sodium_hydroxide", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Hydrogen_chlorine",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Chlorine", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Hydrochloric_acid",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrochloric_acid", amount=1},
+    },
+  },
+  {
+    type = "recipe",
+    name = "Ferric_chloride_solution",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Hydrochloric_acid", amount=1},
+      {"Magnetite_concentrate", 1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ferric_chloride_solution", amount=1},
+    },
+  },
   
   
   
