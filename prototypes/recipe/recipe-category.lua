@@ -116,5 +116,17 @@ data:extend(
     type = "recipe-category",
     name = "Milling_machine"
   },
+  {
+    type = "recipe-category",
+    name = "Furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "Assembling_machine"
+  },
+  {
+    type = "recipe-category",
+    name = "Refinery"
+  },
   
 })

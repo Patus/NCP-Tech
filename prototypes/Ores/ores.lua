@@ -398,7 +398,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Quartz"
+      result = "Quartz_rock"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},

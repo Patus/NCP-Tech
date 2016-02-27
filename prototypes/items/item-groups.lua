@@ -13,6 +13,12 @@ data:extend(
     group = "Resources",
     order = "a",
   },
+  {
+    type = "item-subgroup",
+    name = "NCP_fluids",
+    group = "Resources",
+    order = "a"
+  },
   
   
 }
