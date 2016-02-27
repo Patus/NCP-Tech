@@ -8,73 +8,73 @@ data:extend(
   },
   {
     type = "autoplace-control",
-    name = "Copper_native",
+    name = "Copper_native_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Scheelite",
+    name = "Scheelite_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Sphalerite",
+    name = "Sphalerite_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Chalcopyrite",
+    name = "Chalcopyrite_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Uraninite",
+    name = "Uraninite_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Quartz",
+    name = "Quartz_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Fluorite",
+    name = "Fluorite_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Cassiterite",
+    name = "Cassiterite_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Galena",
+    name = "Galena_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Rutile",
+    name = "Rutile_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Gold",
+    name = "Gold_ore",
     richness = true,
     order = "b-a"
   },
   {
     type = "autoplace-control",
-    name = "Magnetite",
+    name = "Magnetite_ore",
     richness = true,
     order = "b-a"
   },

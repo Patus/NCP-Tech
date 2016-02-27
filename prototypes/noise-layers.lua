@@ -6,51 +6,51 @@ data:extend(
   },
   {
     type = "noise-layer",
-    name = "Copper_native"
+    name = "Copper_native_ore"
   },
   {
     type = "noise-layer",
-    name = "Scheelite"
+    name = "Scheelite_ore"
   },
   {
     type = "noise-layer",
-    name = "Sphalerite"
+    name = "Sphalerite_ore"
   },
   {
     type = "noise-layer",
-    name = "Chalcopyrite"
+    name = "Chalcopyrite_ore"
   },
   {
     type = "noise-layer",
-    name = "Uraninite"
+    name = "Uraninite_ore"
   },
   {
     type = "noise-layer",
-    name = "Quartz"
+    name = "Quartz_ore"
   },
   {
     type = "noise-layer",
-    name = "Fluorite"
+    name = "Fluorite_ore"
   },
   {
     type = "noise-layer",
-    name = "Cassiterite"
+    name = "Cassiterite_ore"
   },
   {
     type = "noise-layer",
-    name = "Galena"
+    name = "Galena_ore"
   },
   {
     type = "noise-layer",
-    name = "Rutile"
+    name = "Rutile_ore"
   },
   {
     type = "noise-layer",
-    name = "Gold"
+    name = "Gold_ore"
   },
   {
     type = "noise-layer",
-    name = "Magnetite"
+    name = "Magnetite_ore"
   },
   
 }
