@@ -1,3 +1,7 @@
+data.raw["resource"]["iron-ore"] = nil
+data.raw["resource"]["copper-ore"] = nil
+
+
 data.raw.resource["stone"].autoplace = (
   {
     control = "stone",
@@ -101,7 +105,7 @@ data:extend(
   {
     type = "resource",
     name = "Copper_native_ore",
-    icon = "__NCP-Tech__/graphics/icons/Copper_native.png",
+    icon = "__NCP-Tech__/graphics/icons/Copper_native_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -109,7 +113,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      result = "Copper_native"
+      result = "Copper_native_ore"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
