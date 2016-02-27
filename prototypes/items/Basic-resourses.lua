@@ -371,8 +371,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Diesel_Fuel",
-    icon = "__NCP-Tech__/graphics/icons/Diesel_Fuel.png",
+    name= "Diesel_canister",
+    icon = "__NCP-Tech__/graphics/icons/Diesel_canister.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1321,6 +1321,18 @@ data:extend({
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
+    stack_size= 50,
+  },
+  
+  --Machiness
+  {
+    type= "item",
+    name= "Crusher",
+    icon = "__NCP-Tech__/graphics/icons/Zirconium_tube.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+	place_result = "Crusher",
     stack_size= 50,
   },
   

@@ -1036,7 +1036,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Diesel_Fuel",
+    name = "Diesel_canister",
     category = "Pump",
     energy_required = 2,
     enabled = "true",
@@ -1047,7 +1047,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Diesel_Fuel", amount=1},
+      {type="item", name="Diesel_canister", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "NCP_fluids",
@@ -1298,8 +1298,18 @@ data:extend(
 	subgroup = "NCP_fluids",
   },
   
-  
-  
+  --Machines
+  {
+    type = "recipe",
+    name = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Crusher",
+  },
   
   
   
