@@ -283,7 +283,7 @@ data:extend(
       mining_time = 2,
       results = 
       {
-         {type="item", name="Galena_ore", amount=1},
+         {type="item", name="Chalcopyrite_ore", amount=1},
          {type="item", name="Pentlandite_ore", amount=1},
 		 {type="item", name="Sulfur", amount=1},
       },
