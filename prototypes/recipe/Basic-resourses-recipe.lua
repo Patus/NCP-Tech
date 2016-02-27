@@ -1302,13 +1302,24 @@ data:extend(
   {
     type = "recipe",
     name = "Crusher",
-    energy_required = 2,
+    energy_required = 0.2,
     enabled = "true",
     ingredients =
     {
       {"Quarried_stone", 1},
     },
     result = "Crusher",
+  },
+  {
+    type = "recipe",
+    name = "Ore_washing",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Ore_washing",
   },
   
   

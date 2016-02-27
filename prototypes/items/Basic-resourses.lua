@@ -1328,11 +1328,21 @@ data:extend({
   {
     type= "item",
     name= "Crusher",
-    icon = "__NCP-Tech__/graphics/icons/Zirconium_tube.png",
+    icon = "__NCP-Tech__/graphics/icons/Crusher.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
 	place_result = "Crusher",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Ore_washing",
+    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+	place_result = "Ore_washing",
     stack_size= 50,
   },
   
