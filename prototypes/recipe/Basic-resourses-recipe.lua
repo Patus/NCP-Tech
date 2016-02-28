@@ -66,7 +66,7 @@ data:extend(
       {type="item", name="Sand", amount=2},
       {type="item", name="Silt", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Sand.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -84,7 +84,7 @@ data:extend(
       {type="item", name="Silt", amount=2},
       {type="item", name="Clay_dry", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Silt.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -151,10 +151,10 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Quartz", amount=1},
+      {type="item", name="Lead_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Lead_concentrate.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -247,7 +247,7 @@ data:extend(
       {type="item", name="Bauxite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Bauxite_concentrate.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -266,7 +266,7 @@ data:extend(
       {type="item", name="Bauxite_tailings", amount=1},
       {type="item", name="Alumina", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Alumina.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -312,7 +312,7 @@ data:extend(
       {type="item", name="Calcium_fluoride", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Calcium_fluoride.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -331,7 +331,7 @@ data:extend(
       {type="item", name="Calcium_sulfate", amount=1},
       {type="fluid", name="Hydrogen_fluoride", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Calcium_sulfate.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -361,7 +361,7 @@ data:extend(
     {
       {type="fluid", name="Hydrofluoric_acid", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Hydrofluoric_acid.png",
 	subgroup = "NCP_fluids",
   },
 
@@ -396,7 +396,7 @@ data:extend(
       {type="item", name="Tin_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Tin_concentrate.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -443,7 +443,7 @@ data:extend(
       {type="item", name="Lead_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Lead_concentrate.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -462,7 +462,7 @@ data:extend(
       {type="item", name="Slag", amount=1},
       {type="fluid", name="Sulfur_dioxide", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Lead_bullion.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -480,7 +480,7 @@ data:extend(
       {type="item", name="Lead_billet", amount=1},
       {type="item", name="Silver_ingot", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Lead_billet.png",
 	subgroup = "NCP_fluids",
   },
   
@@ -516,7 +516,7 @@ data:extend(
       {type="item", name="Zircon", amount=1},
       {type="item", name="Stone_crushed", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Titanium_oxide.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -535,7 +535,7 @@ data:extend(
       {type="item", name="Titanium", amount=1},
       {type="item", name="Calcium_oxide", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Titanium.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -585,7 +585,7 @@ data:extend(
       {type="item", name="Gold_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
 	subgroup = "NCP_fluids",
 	
   },
@@ -655,7 +655,7 @@ data:extend(
       {type="fluid", name="Ammonia", amount=1},
       {type="fluid", name="Benzene", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Coal_coke.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -674,7 +674,7 @@ data:extend(
       {type="fluid", name="Petroleum_gas", amount=4},
       {type="fluid", name="Carbon_monoxide", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Coal_gas.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -717,7 +717,7 @@ data:extend(
       {type="fluid", name="Ethylbenzene", amount=1},
       {type="fluid", name="Bitumi", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Bitumi.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -754,7 +754,7 @@ data:extend(
       {type="item", name="Pig_iron_early", amount=1},
       {type="item", name="Slag", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Pig_iron.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -803,7 +803,7 @@ data:extend(
       {type="item", name="Magnetite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Magnetite_concentrate.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -823,7 +823,7 @@ data:extend(
       {type="item", name="Slag", amount=1},
       {type="fluid", name="Carbon_monoxide", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Pig_iron.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -871,7 +871,7 @@ data:extend(
       {type="item", name="Chromite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Chromite_concentrate.png",
 	subgroup = "NCP_fluids",
   },  
   {
@@ -908,7 +908,7 @@ data:extend(
       {type="fluid", name="Light_oil", amount=1},
       {type="fluid", name="Heavy_oil", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Crude_oil.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -927,7 +927,7 @@ data:extend(
     {
       {type="fluid", name="Ethylene", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Ethylene.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -945,7 +945,7 @@ data:extend(
     {
       {type="fluid", name="Dichloroethane", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Dichloroethane.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -964,7 +964,7 @@ data:extend(
       {type="fluid", name="Hydrogen_chlorine", amount=1},
       {type="item", name="Plastic_pellets", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Plastic_pellets.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -982,7 +982,7 @@ data:extend(
     {
       {type="fluid", name="Petroleum_gas", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Petroleum_gas.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1001,7 +1001,7 @@ data:extend(
       {type="fluid", name="Butadiene", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Butadiene.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1031,7 +1031,7 @@ data:extend(
     {
       {type="fluid", name="Diesel", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Diesel.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1049,7 +1049,7 @@ data:extend(
     {
       {type="item", name="Diesel_canister", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Diesel_canister.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1066,7 +1066,7 @@ data:extend(
     {
       {type="fluid", name="Glycerol", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Glycerol.png",
   },
   {
     type = "recipe",
@@ -1096,7 +1096,7 @@ data:extend(
     {
       {type="fluid", name="Light_oil", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Light_oil.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1113,7 +1113,7 @@ data:extend(
     {
       {type="fluid", name="Bitumi", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Bitumi.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1130,7 +1130,7 @@ data:extend(
     {
       {type="fluid", name="Lubricant", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Lubricant.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1164,7 +1164,7 @@ data:extend(
       {type="fluid", name="Nitrogen", amount=1},
       {type="fluid", name="Oxygen", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Air.png",
 	subgroup = "NCP_fluids",
   },
 
@@ -1184,7 +1184,7 @@ data:extend(
       {type="fluid", name="Water", amount=35},
       {type="item", name="Salt", amount=5},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Water.png",
 	subgroup = "NCP_fluids",
   },  
   {
@@ -1202,7 +1202,7 @@ data:extend(
       {type="fluid", name="Water", amount=2},
       {type="item", name="Salt", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/icons/Salt.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1220,7 +1220,7 @@ data:extend(
       {type="fluid", name="Oxygen", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Water.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1240,7 +1240,7 @@ data:extend(
       {type="fluid", name="Hydrogen", amount=1},
       {type="item", name="Sodium_hydroxide", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Chlorine.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1258,7 +1258,7 @@ data:extend(
     {
       {type="fluid", name="Hydrogen_chlorine", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Hydrogen_chlorine.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1276,7 +1276,7 @@ data:extend(
     {
       {type="fluid", name="Hydrochloric_acid", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Hydrochloric_acid.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1294,7 +1294,7 @@ data:extend(
     {
       {type="fluid", name="Ferric_chloride_solution", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	icon = "__NCP-Tech__/graphics/fluids/Ferric_chloride_solution.png",
 	subgroup = "NCP_fluids",
   },
   

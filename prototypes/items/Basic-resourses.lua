@@ -1348,7 +1348,7 @@ data:extend({
   {
     type= "item",
     name= "Chemical_plant",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Chemical_plant.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1358,7 +1358,7 @@ data:extend({
   {
     type= "item",
     name= "Electrolyzer",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Electrolyzer.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1368,7 +1368,7 @@ data:extend({
   {
     type= "item",
     name= "Chemical_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Chemical_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1378,7 +1378,7 @@ data:extend({
   {
     type= "item",
     name= "Pump",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Pump.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1388,7 +1388,7 @@ data:extend({
   {
     type= "item",
     name= "Blast_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Blast_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1398,7 +1398,7 @@ data:extend({
   {
     type= "item",
     name= "Nuclear_fuel_processing_plant",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Nuclear_fuel_processing_plant.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1408,7 +1408,7 @@ data:extend({
   {
     type= "item",
     name= "Rolling_machine",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Rolling_machine.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1418,7 +1418,7 @@ data:extend({
   {
     type= "item",
     name= "Mixer",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Mixer.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1428,7 +1428,7 @@ data:extend({
   {
     type= "item",
     name= "Shifter",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Shifter.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1438,7 +1438,7 @@ data:extend({
   {
     type= "item",
     name= "Silicon_crucible",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Silicon_crucible.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1448,7 +1448,7 @@ data:extend({
   {
     type= "item",
     name= "Cracking_plant",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Cracking_plant.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1458,7 +1458,7 @@ data:extend({
   {
     type= "item",
     name= "Distillation",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Distillation.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1468,7 +1468,7 @@ data:extend({
   {
     type= "item",
     name= "Dry_distillation",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Dry_distillation.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1478,7 +1478,7 @@ data:extend({
   {
     type= "item",
     name= "Compressor",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Compressor.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1488,7 +1488,7 @@ data:extend({
   {
     type= "item",
     name= "Electric_arc_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Electric_arc_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1498,7 +1498,7 @@ data:extend({
   {
     type= "item",
     name= "Vacuum_oxygen_decarburization",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Vacuum_oxygen_decarburization.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1508,7 +1508,7 @@ data:extend({
   {
     type= "item",
     name= "Grinding_mill",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Grinding_mill.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1518,7 +1518,7 @@ data:extend({
   {
     type= "item",
     name= "cryogenic_distillation_plant",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/cryogenic_distillation_plant.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1528,7 +1528,7 @@ data:extend({
   {
     type= "item",
     name= "cotton_farm",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/cotton_farm.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1538,7 +1538,7 @@ data:extend({
   {
     type= "item",
     name= "Alloy_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Alloy_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1548,7 +1548,7 @@ data:extend({
   {
     type= "item",
     name= "Lithium_extractor",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Lithium_extractor.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1558,7 +1558,7 @@ data:extend({
   {
     type= "item",
     name= "Electronics_assembly_machine",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Electronics_assembly_machine.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1568,7 +1568,7 @@ data:extend({
   {
     type= "item",
     name= "Anode_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Anode_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1578,7 +1578,7 @@ data:extend({
   {
     type= "item",
     name= "Flash_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Flash_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1588,7 +1588,7 @@ data:extend({
   {
     type= "item",
     name= "TSL_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/TSL_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1598,7 +1598,7 @@ data:extend({
   {
     type= "item",
     name= "Extruder",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Extruder.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1608,7 +1608,7 @@ data:extend({
   {
     type= "item",
     name= "Milling_machine",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Milling_machine.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1618,7 +1618,7 @@ data:extend({
   {
     type= "item",
     name= "Furnace",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1628,7 +1628,7 @@ data:extend({
   {
     type= "item",
     name= "Assembling_machine",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Assembling_machine.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1638,7 +1638,7 @@ data:extend({
   {
     type= "item",
     name= "Refinery",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/icons/Refinery.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
