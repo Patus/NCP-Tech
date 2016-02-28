@@ -1324,6 +1324,94 @@ data:extend({
     stack_size= 50,
   },
   
+  
+  ----------------------------
+  
+  {
+    type= "item",
+    name= "Lead_solder_ingot",
+    icon = "__NCP-Tech__/graphics/icons/Lead_solder_ingot.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Lead_solder",
+    icon = "__NCP-Tech__/graphics/icons/Lead_solder.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Lead_free_solder_ingot",
+    icon = "__NCP-Tech__/graphics/icons/Lead_free_solder_ingot.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Lead_free_solder",
+    icon = "__NCP-Tech__/graphics/icons/Lead_free_solder.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Solder_paste",
+    icon = "__NCP-Tech__/graphics/icons/Solder_paste.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   --Machiness
   {
     type= "item",

@@ -885,7 +885,7 @@ data:extend(
       {"Chromite_concentrate", 1},
       {"Coal_coke", 1},
     },
-    result = "Chromite_crushed_ore",
+    result = "Ferrochrome",
   },
 
 
@@ -1148,8 +1148,24 @@ data:extend(
 
 --Air
 
-
-{
+	{
+    type = "recipe",
+    name = "Air",
+    category = "Compressor",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      
+    },
+    results = 
+    {
+      {type="fluid", name="Air", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Air.png",
+	subgroup = "NCP_fluids",
+  },
+	{
     type = "recipe",
     name = "Nitrogen_Oxygen",
     category = "Chemical_plant",
@@ -1187,24 +1203,6 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluids/Water.png",
 	subgroup = "NCP_fluids",
   },  
-  {
-    type = "recipe",
-    name = "Water",
-    category = "Distillation",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {type="fluid", name="Water_dirty", amount=3},
-    },
-    results = 
-    {
-      {type="fluid", name="Water", amount=2},
-      {type="item", name="Salt", amount=1},
-    },
-	icon = "__NCP-Tech__/graphics/icons/Salt.png",
-	subgroup = "NCP_fluids",
-  },
   {
     type = "recipe",
     name = "Water_electrolyzer",
@@ -1297,6 +1295,329 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluids/Ferric_chloride_solution.png",
 	subgroup = "NCP_fluids",
   },
+  
+--Hot spring
+  {
+    type = "recipe",
+    name = "Lithium_chloride",
+    category = "Lithium_extractor",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Lithium_chloride",
+  },
+  {
+    type = "recipe",
+    name = "Lithium",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lithium_chloride", 1},
+    },
+    result = "Lithium",
+  },
+  {
+    type = "recipe",
+    name = "Lithium_cobalt_oxide",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Cobalt_oxide", 1},
+	  {"Lithium", 1},
+    },
+    result = "Lithium_cobalt_oxide",
+  },
+  {
+    type = "recipe",
+    name = "Lithium_perchlorate",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lithium_chloride", 1},
+	  {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Lithium_perchlorate", amount=1},
+	  {type="fluid", name="Hydrogen", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lithium_perchlorate.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Li-ion_battery",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lithium_cobalt_oxide", 1},
+	  {"Lithium_perchlorate", 1},
+	  {"Silicon_carbide", 1},
+	  {"Battery_casing", 1},
+    },
+    result = "Li-ion_battery",
+  },
+  
+  
+  --Item Recipes
+  
+  {
+    type = "recipe",
+    name = "Battery_casing",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Plastic_pellets", 1},
+    },
+    result = "Battery_casing",
+  },
+  {
+    type = "recipe",
+    name = "Battery",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Plastic_pellets", 1},
+	  {"Lead_plate", 1},
+	  {type="fluid", name="Sulfuric_acid", amount=1},
+    },
+    result = "Battery",
+  },
+  
+  ---------------------------------
+  
+  {
+    type = "recipe",
+    name = "Silver_nitrate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lithium_chloride", 1},
+	  {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Silver_nitrate", amount=1},
+	  {type="fluid", name="Nitrogen_dioxide", amount=1},
+	  {type="fluid", name="Water", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silver_nitrate.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Silver_nitrate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Nitrogen_dioxide", amount=1},
+    },
+    results = 
+    {
+	  {type="fluid", name="Nitric_acid", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Nitric_acid.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Silver_oxide",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Silver_nitrate", amount=1},
+	  {type="item", name="Sodium_hydroxide", amount=1},
+    },
+    results = 
+    {
+	  {type="item", name="Silver_oxide", amount=1},
+	  {type="fluid", name="Water", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silver_oxide.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Silver-oxide_battery",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Zinc_plate", 1},
+	  {"Sodium_hydroxide", 1},
+	  {"Silver_oxide", 1},
+	  {"Battery_casing", 1},
+    },
+    result = "Silver-oxide_battery",
+  },
+  
+  ---------------------
+  
+  
+  
+  
+  {
+    type = "recipe",
+    name = "Brass_billet",
+    category = "Alloy_furnace",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {"Copper_billet", 7},
+	  {"Zinc_matte", 3},
+    },
+    results = 
+    {
+	  {type="item", name="Brass_billet", amount=10},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Brass_billet.png",
+	subgroup = "NCP_fluids",
+  },
+  
+  ------------------------
+  
+  {
+    type = "recipe",
+    name = "Lead_solder_ingot",
+    category = "Alloy_furnace",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {"Tin_billet", 6},
+	  {"Lead_billet", 4},
+    },
+    results = 
+    {
+	  {type="item", name="Lead_solder_ingot", amount=10},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lead_solder_ingot.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Lead_solder",
+    category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_solder_ingot", 1},
+    },
+    result = "Lead_solder",
+  },
+  {
+    type = "recipe",
+    name = "Lead_free_solder_ingot",
+    category = "Alloy_furnace",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {"Tin_billet", 1},
+	  {"Copper_billet", 1},
+	  {"Silver_ingot", 1},
+    },
+    results = 
+    {
+	  {type="item", name="Lead_free_solder_ingot", amount=3},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lead_free_solder_ingot.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Lead_free_solder",
+    category = "Assembling_machine",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_free_solder_ingot", 1},
+    },
+    results = 
+    {
+	  {type="item", name="Lead_free_solder", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lead_free_solder.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Solder_paste",
+    category = "Assembling_machine",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_free_solder_ingot", 1},
+	  {"Resin", 1},
+    },
+    results = 
+    {
+	  {type="item", name="Solder_paste", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Solder_paste.png",
+	subgroup = "NCP_fluids",
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   --Machines
   {
