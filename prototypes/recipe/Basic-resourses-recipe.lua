@@ -1177,12 +1177,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water_dirty", amount=3},
+      {type="fluid", name="Water_dirty", amount=40},
     },
     results = 
     {
-      {type="fluid", name="Water", amount=1},
-      {type="item", name="Salt", amount=1},
+      {type="fluid", name="Water", amount=35},
+      {type="item", name="Salt", amount=5},
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "NCP_fluids",
@@ -1321,7 +1321,364 @@ data:extend(
     },
     result = "Ore_washing",
   },
+  {
+    type = "recipe",
+    name = "Chemical_plant",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Chemical_plant",
+  },
+  {
+    type = "recipe",
+    name = "Electrolyzer",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Electrolyzer",
+  },
+  {
+    type = "recipe",
+    name = "Chemical_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Chemical_furnace",
+  },
+  {
+    type = "recipe",
+    name = "Pump",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Pump",
+  },
+  {
+    type = "recipe",
+    name = "Blast_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Blast_furnace",
+  },
+  {
+    type = "recipe",
+    name = "Nuclear_fuel_processing_plant",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Nuclear_fuel_processing_plant",
+  },
+  {
+    type = "recipe",
+    name = "Rolling_machine",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Rolling_machine",
+  },
+  {
+    type = "recipe",
+    name = "Mixer",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Mixer",
+  },
+  {
+    type = "recipe",
+    name = "Shifter",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Shifter",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_crucible",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Silicon_crucible",
+  },
+  {
+    type = "recipe",
+    name = "Cracking_plant",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Cracking_plant",
+  },
+  {
+    type = "recipe",
+    name = "Distillation",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Distillation",
+  },
+  {
+    type = "recipe",
+    name = "Dry_distillation",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Dry_distillation",
+  },
+  {
+    type = "recipe",
+    name = "Compressor",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Compressor",
+  },
+  {
+    type = "recipe",
+    name = "Electric_arc_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Electric_arc_furnace",
+  },
+  {
+    type = "recipe",
+    name = "Vacuum_oxygen_decarburization",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Vacuum_oxygen_decarburization",
+  },
+  {
+    type = "recipe",
+    name = "Grinding_mill",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Grinding_mill",
+  },
+  {
+    type = "recipe",
+    name = "cryogenic_distillation_plant",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "cryogenic_distillation_plant",
+  },
+  {
+    type = "recipe",
+    name = "cotton_farm",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "cotton_farm",
+  },
+  {
+    type = "recipe",
+    name = "Alloy_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Alloy_furnace",
+  },
+  {
+    type = "recipe",
+    name = "Lithium_extractor",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Lithium_extractor",
+  },
+  {
+    type = "recipe",
+    name = "Electronics_assembly_machine",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Electronics_assembly_machine",
+  },
+  {
+    type = "recipe",
+    name = "Anode_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Anode_furnace",
+  },
+  {
+    type = "recipe",
+    name = "Flash_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Flash_furnace",
+  },
+  {
+    type = "recipe",
+    name = "TSL_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "TSL_furnace",
+  },
+  {
+    type = "recipe",
+    name = "Extruder",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Extruder",
+  },
+  {
+    type = "recipe",
+    name = "Milling_machine",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Milling_machine",
+  },
+  {
+    type = "recipe",
+    name = "Furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Furnace",
+  },
+  {
+    type = "recipe",
+    name = "Assembling_machine",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Assembling_machine",
+  },
+  {
+    type = "recipe",
+    name = "Refinery",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Refinery",
+  },
   
+  
+  
+  
+  --------------------------------
+  
+  {
+    type = "recipe",
+    name = "irontest",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Iron_billet", 1},
+    },
+    result = "iron-plate",
+  },
+  {
+    type = "recipe",
+    name = "coppertest",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "copper-plate",
+  },
   
   
   
