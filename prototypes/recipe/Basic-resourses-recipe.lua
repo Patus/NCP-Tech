@@ -1974,6 +1974,156 @@ data:extend(
   },
   
   
+  --tree
+  
+  
+  
+  
+  
+  --uraninite
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  --chalcopyrite
+  
+  
+  
+  
+  --pentlandite
+  
+  
+  
+  
+  
+  
+  
+  --sphalerite
+  
+  
+  
+  
+  
+  
+  --scheelite
+  {
+    type = "recipe",
+    name = "Scheelite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Scheelite_ore", 1},
+    },
+    result = "Scheelite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Sodium_tugstate_solution",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Scheelite_crushed_ore", 2},
+	  {"Sodium_hydroxide", 1},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="fluid", name="Sodium_tugstate_solution", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+	icon = "__NCP-Tech__/graphics/icons/Sodium_tugstate_solution.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Ammonium_Paratungstate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Sodium_tugstate_solution", amount=1},
+      {type="fluid", name="Ammonia", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ammonium_Paratungstate", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Ammonium_Paratungstate.png",
+	subgroup = "NCP_fluids",
+  },  
+  {
+    type = "recipe",
+    name = "Tungsten_oxide",
+    category = "Chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Ammonium_Paratungstate", 1},
+	  {type="fluid", name="Nitrogen", amount=1},
+    },
+    result = "Tungsten_oxide",
+  },
+  {
+    type = "recipe",
+    name = "Tungsten_powder",
+    category = "Chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Tungsten_oxide", 1},
+	  {type="fluid", name="Hydrogen", amount=1},
+    },
+    result = "Tungsten_powder",
+  },
+  {
+    type = "recipe",
+    name = "Tungsten_carbide",
+    category = "Blast_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Tungsten_powder", 1},
+	  {"Carbon_dust", 1},
+    },
+    result = "Tungsten_carbide",
+  },
+  
+  
+  
+  
+  
+  --native copper
+  {
+    type = "recipe",
+    name = "Refinery",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Copper_native_ore", 4},
+    },
+    result = "Copper_billet",
+  },
+  
+  
+  
   
   
   --------------------------------
