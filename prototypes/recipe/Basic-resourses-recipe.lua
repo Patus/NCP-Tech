@@ -2043,7 +2043,7 @@ data:extend(
       {type="fluid", name="Sodium_tugstate_solution", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Sodium_tugstate_solution.png",
+	icon = "__NCP-Tech__/graphics/fluids/Sodium_tugstate_solution.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -2059,7 +2059,7 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="Ammonium_Paratungstate", amount=1},
+      {type="item", name="Ammonium_Paratungstate", amount=1},
       
     },
 	icon = "__NCP-Tech__/graphics/icons/Ammonium_Paratungstate.png",
