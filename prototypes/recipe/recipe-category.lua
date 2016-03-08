@@ -70,6 +70,10 @@ data:extend(
   },
   {
     type = "recipe-category",
+    name = "Electric_flash_furnace"
+  },
+  {
+    type = "recipe-category",
     name = "Vacuum_oxygen_decarburization"
   },
   {
