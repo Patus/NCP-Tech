@@ -1733,8 +1733,50 @@ data:extend({
 	place_result = "Refinery",
     stack_size= 50,
   },
-  
-  
-  
+  {
+    type= "item",
+    name= "Wood_raw",
+    icon = "__NCP-Tech__/graphics/icons/Wood_raw.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Uraninite_crushed_ore",
+    icon = "__NCP-Tech__/graphics/icons/Uraninite_crushed_ore.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Nickel_billet",
+    icon = "__NCP-Tech__/graphics/icons/Nickel_billet.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Sphalerite_crushed_ore",
+    icon = "__NCP-Tech__/graphics/icons/Sphalerite_crushed_ore.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Zinc_billet",
+    icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
   
   })
