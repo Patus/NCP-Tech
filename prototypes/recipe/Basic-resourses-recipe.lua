@@ -1,6 +1,36 @@
 data:extend(
 {
   
+  
+  
+  
+  
+  
+  --Nitre
+  {
+    type = "recipe",
+    name = "Saltpeter",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Nitre_ore", 1},
+    },
+    result = "Saltpeter",
+  },
+  {
+    type = "recipe",
+    name = "Fertilizer",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Saltpeter", 1},
+    },
+    result = "Fertilizer",
+  },
+  
   --stone
   
   {
@@ -1975,16 +2005,249 @@ data:extend(
   
   
   --tree
-  
+  {
+    type = "recipe",
+    name = "Wood",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Wood_raw", 1},
+    },
+    result = "Wood",
+  },
+  {
+    type = "recipe",
+    name = "Wooden_board",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Wood", 1},
+    },
+    result = "Wooden_board",
+  },
+  {
+    type = "recipe",
+    name = "Charcoal_1",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Wood_raw", 2},
+    },
+    result = "Charcoal",
+  },
+  {
+    type = "recipe",
+    name = "Charcoal_2",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Wood", 2},
+    },
+    result = "Charcoal",
+  },
+  {
+    type = "recipe",
+    name = "Gunpowder",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Charcoal", 1},
+      {"Sulfur", 1},
+      {"Saltpeter", 1},
+    },
+    result = "Gunpowder",
+  },
   
   
   
   
   --uraninite
   
-  
-  
-  
+  {
+    type = "recipe",
+    name = "Uraninite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uraninite_ore", 1},
+    },
+    result = "Uraninite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Uraninite_concentrate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uraninite_crushed_ore", 2},
+      {type="fluid", name="Ferric_chloride_solution", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Uraninite_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+	icon = "__NCP-Tech__/graphics/icons/Uraninite_concentrate.png",
+	subgroup = "NCP_fluids",
+  }, 
+  {
+    type = "recipe",
+    name = "Yellow_cake",
+    category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uraninite_concentrate", 1},
+    },
+    results = 
+    {
+      {type="item", name="Yellow_cake", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Yellow_cake.png",
+	subgroup = "NCP_fluids",
+  }, 
+  {
+    type = "recipe",
+    name = "Uranyl_nitrate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Yellow_cake", 1},
+      {type="fluid", name="Nitric_acid", amount=1}
+    },
+    results = 
+    {
+      {type="fluid", name="Uranyl_nitrate", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Uranyl_nitrate.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "ADU",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Ammonia", amount=1},
+      {type="fluid", name="Uranyl_nitrate", amount=1}
+    },
+    results = 
+    {
+      {type="fluid", name="ADU", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/ADU.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_tetrafluoride",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="ADU", amount=1},
+      {type="fluid", name="Hydrofluoric_acid", amount=1},
+      {type="fluid", name="Hydrogen", amount=1}
+    },
+    results = 
+    {
+      {type="fluid", name="Uranium_tetrafluoride", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Uranium_tetrafluoride.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_hexafluoride",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Uranium_tetrafluoride", amount=1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Uranium_hexafluoride", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Uranium_hexafluoride.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_oxide_powder",
+    category = "Nuclear_fuel_processing_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Uranium_hexafluoride", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+      {type="fluid", name="Ammonia", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Uranium_oxide_powder_235", amount=1},
+      {type="item", name="Uranium_oxide_powder_238", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Uranium_oxide_powder_235.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_235_pellet",
+    category = "Compressor",
+    energy_required = 15,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uranium_oxide_powder_235", 25},
+    },
+    result = "Uranium_235_pellet",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_238_pellet",
+    category = "Compressor",
+    energy_required = 15,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uranium_oxide_powder_238", 25},
+    },
+    result = "Uranium_238_pellet",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_235_rod",
+    category = "Compressor",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uranium_235_pellet", 10},
+    },
+    result = "Uranium_235_rod",
+  },
   
   
   
@@ -1994,21 +2257,279 @@ data:extend(
   
   
   --chalcopyrite
-  
+   {
+    type = "recipe",
+    name = "Chalcopyrite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Chalcopyrite_ore", 1},
+    },
+    result = "Chalcopyrite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Copper_consentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Chalcopyrite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Copper_consentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+	icon = "__NCP-Tech__/graphics/icons/Copper_consentrate.png",
+	subgroup = "NCP_fluids",
+  }, 
+  {
+    type = "recipe",
+    name = "Copper_blister",
+    category = "Flash_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Copper_consentrate", 1},
+    },
+    results = 
+    {
+      {type="item", name="Copper_blister", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Copper_blister.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Copper_blister_high",
+    category = "Electric_flash_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Copper_consentrate", 1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Copper_blister", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Copper_blister.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Copper_anode",
+    category = "Anode_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Copper_blister", 1},
+      {type="fluid", name="Petroleum_gas", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Copper_anode", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Copper_anode.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Copper_billet_2",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Copper_anode", 1},
+      {type="fluid", name="Sulfuric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Copper_billet", amount=1},
+      {type="fluid", name="Anode_slime", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Copper_billet.png",
+	subgroup = "NCP_fluids",
+  },
   
   
   
   --pentlandite
-  
-  
+  {
+    type = "recipe",
+    name = "Pentlandite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Pentlandite_ore", 1},
+    },
+    result = "Pentlandite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Nickel_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Pentlandite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Nickel_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+	icon = "__NCP-Tech__/graphics/icons/Nickel_concentrate.png",
+	subgroup = "NCP_fluids",
+  }, 
+  {
+    type = "recipe",
+    name = "Nickel_dust",
+    category = "Flash_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Nickel_concentrate", 1},
+    },
+    results = 
+    {
+      {type="item", name="Nickel_dust", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Nickel_dust.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Nickel_cathode",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Nickel_dust", 1},
+      {type="fluid", name="Sulfuric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Nickel_cathode", amount=1},
+      {type="item", name="Cobalt_oxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Nickel_cathode.png",
+	subgroup = "NCP_fluids",
+  },
+   {
+    type = "recipe",
+    name = "Nickel_billet",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Zinc_matte", 1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Nickel_billet", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Nickel_billet.png",
+	subgroup = "NCP_fluids",
+  }, 
   
   
   
   
   
   --sphalerite
-  
-  
+  {
+    type = "recipe",
+    name = "Sphalerite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Sphalerite_ore", 1},
+    },
+    result = "Sphalerite_crushed_ore",
+  },
+  {
+    type = "recipe",
+    name = "Zinc_concentrate",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Sphalerite_crushed_ore", 2},
+      {type="fluid", name="Water", amount=1}
+    },
+    results = 
+    {
+      {type="item", name="Zinc_concentrate", amount=1},
+      {type="item", name="Stone_crushed", amount=1}
+    },
+	icon = "__NCP-Tech__/graphics/icons/Zinc_concentrate.png",
+	subgroup = "NCP_fluids",
+  }, 
+  {
+    type = "recipe",
+    name = "Zinc_matte",
+    category = "Flash_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Zinc_concentrate", 1},
+    },
+    results = 
+    {
+      {type="item", name="Zinc_matte", amount=1},
+      {type="item", name="Slag", amount=1},
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Zinc_matte.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Zinc_billet",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Zinc_matte", 1},
+      {type="fluid", name="Sulfuric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Zinc_billet", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
+	subgroup = "NCP_fluids",
+  }, 
   
   
   
