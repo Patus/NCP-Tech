@@ -11,13 +11,13 @@ data:extend(
     type = "item-subgroup",
     name = "ores",
     group = "Resources",
-    order = "a",
+    order = "mmmm",
   },
   {
     type = "item-subgroup",
     name = "NCP_fluids",
     group = "Resources",
-    order = "a"
+    order = "d"
   },
   {
     type = "item-subgroup",
@@ -29,8 +29,15 @@ data:extend(
     type = "item-subgroup",
     name = "Raw_ores",
     group = "Resources",
-    order = "a"
+    order = "b"
   },
+  {
+    type = "item-subgroup",
+    name = "Crushed",
+    group = "Resources",
+    order = "b"
+  },
+
   
   
 }
