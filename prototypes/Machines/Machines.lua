@@ -10,7 +10,7 @@ data.raw["offshore-pump"]["offshore-pump"].fluid = "Water_dirty"
 data:extend(
 {
 {
-    type = "assembling-machine",
+    type = "furnace",
     name = "Crusher",
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
