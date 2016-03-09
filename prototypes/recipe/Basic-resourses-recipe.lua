@@ -61,7 +61,7 @@ data:extend(
       {type="item", name="Quarried_stone", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Quartz.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -79,7 +79,7 @@ data:extend(
       {type="item", name="Sand", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -97,7 +97,7 @@ data:extend(
       {type="item", name="Silt", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Sand.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -115,7 +115,7 @@ data:extend(
       {type="item", name="Clay_dry", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Silt.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -185,7 +185,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -278,7 +278,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Bauxite_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -297,7 +297,7 @@ data:extend(
       {type="item", name="Alumina", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Alumina.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -343,7 +343,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Calcium_fluoride.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -362,7 +362,7 @@ data:extend(
       {type="fluid", name="Hydrogen_fluoride", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Calcium_sulfate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -427,7 +427,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Tin_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -474,7 +474,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -493,7 +493,7 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_bullion.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -511,7 +511,7 @@ data:extend(
       {type="item", name="Silver_ingot", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_billet.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   
   
@@ -547,7 +547,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Titanium_oxide.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -566,7 +566,7 @@ data:extend(
       {type="item", name="Calcium_oxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Titanium.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -616,7 +616,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
 	
   },
   {
@@ -686,7 +686,7 @@ data:extend(
       {type="fluid", name="Benzene", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Coal_coke.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -785,7 +785,7 @@ data:extend(
       {type="item", name="Slag", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Pig_iron.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -834,7 +834,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Magnetite_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -854,7 +854,7 @@ data:extend(
       {type="fluid", name="Carbon_monoxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Pig_iron.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -902,7 +902,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Chromite_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },  
   {
     type = "recipe",
@@ -995,7 +995,7 @@ data:extend(
       {type="item", name="Plastic_pellets", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Plastic_pellets.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1080,7 +1080,7 @@ data:extend(
       {type="item", name="Diesel_canister", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Diesel_canister.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1381,7 +1381,7 @@ data:extend(
 	  {type="fluid", name="Hydrogen", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lithium_perchlorate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1449,7 +1449,7 @@ data:extend(
 	  {type="fluid", name="Water", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Silver_nitrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1486,7 +1486,7 @@ data:extend(
 	  {type="fluid", name="Water", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Silver_oxide.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1526,7 +1526,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Brass_billet.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   
   ------------------------
@@ -1548,7 +1548,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_solder_ingot.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1580,7 +1580,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_free_solder_ingot.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1598,7 +1598,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_free_solder.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1617,7 +1617,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Solder_paste.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   
   
@@ -2110,7 +2110,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Uraninite_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   {
     type = "recipe",
@@ -2127,7 +2127,7 @@ data:extend(
       {type="item", name="Yellow_cake", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Yellow_cake.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   {
     type = "recipe",
@@ -2221,7 +2221,7 @@ data:extend(
       {type="item", name="Uranium_oxide_powder_238", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Uranium_oxide_powder_235.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -2297,7 +2297,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Copper_consentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   {
     type = "recipe",
@@ -2316,7 +2316,7 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Copper_blister.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -2336,7 +2336,7 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Copper_blister.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -2355,7 +2355,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Copper_anode.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -2374,7 +2374,7 @@ data:extend(
       {type="fluid", name="Anode_slime", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Copper_billet.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   
   
@@ -2409,7 +2409,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Nickel_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   {
     type = "recipe",
@@ -2428,7 +2428,7 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Nickel_dust.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -2447,7 +2447,7 @@ data:extend(
       {type="item", name="Cobalt_oxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Nickel_cathode.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
    {
     type = "recipe",
@@ -2465,7 +2465,7 @@ data:extend(
       {type="item", name="Nickel_billet", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Nickel_billet.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   
   
@@ -2502,7 +2502,7 @@ data:extend(
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_concentrate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   {
     type = "recipe",
@@ -2521,7 +2521,7 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_matte.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -2539,7 +2539,7 @@ data:extend(
       {type="item", name="Zinc_billet", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   }, 
   
   
@@ -2595,7 +2595,7 @@ data:extend(
       
     },
 	icon = "__NCP-Tech__/graphics/icons/Ammonium_Paratungstate.png",
-	subgroup = "NCP_fluids",
+	subgroup = "Recourses",
   },  
   {
     type = "recipe",
