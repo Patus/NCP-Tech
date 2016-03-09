@@ -18,6 +18,9 @@ data:extend(
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
+	result_inventory_size = 1,
+	source_inventory_size = 1,
+	
     resistances =
     {
       {

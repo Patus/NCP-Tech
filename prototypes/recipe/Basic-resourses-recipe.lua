@@ -2742,7 +2742,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Fertilizer", amount=1},
+      {type="item", name="Fertilizer", amount=1},
       {type="fluid", name="Water", amount=1},
     },
     results = 
