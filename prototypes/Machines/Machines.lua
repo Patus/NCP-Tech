@@ -1484,6 +1484,7 @@ data:extend(
     icon = "__base__/graphics/icons/assembling-machine-2.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Compressor"},
+    ingredient_count = 2,
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
