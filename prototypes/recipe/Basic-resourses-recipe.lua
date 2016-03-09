@@ -1674,6 +1674,17 @@ data:extend(
   },
   {
     type = "recipe",
+    name = "Electric_flash_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Electric_flash_furnace",
+  },
+  {
+    type = "recipe",
     name = "Chemical_plant",
     energy_required = 0.2,
     enabled = "true",
