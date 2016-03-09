@@ -1735,6 +1735,33 @@ data:extend({
   },
   {
     type= "item",
+    name= "Electric_flash_furnace",
+    icon = "__NCP-Tech__/graphics/icons/Electric_flash_furnace.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+	place_result = "Electric_flash_furnace",
+    stack_size= 50,
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  --------------------------------------------
+  {
+    type= "item",
     name= "Wood_raw",
     icon = "__NCP-Tech__/graphics/icons/Wood_raw.png",
     flags= { "goes-to-main-inventory" },
