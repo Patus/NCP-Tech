@@ -37,6 +37,12 @@ data:extend(
     group = "Resources",
     order = "b"
   },
+  {
+    type = "item-subgroup",
+    name = "Recourses",
+    group = "Resources",
+    order = "b"
+  },
 
   
   
