@@ -2656,6 +2656,154 @@ data:extend(
   
   
   
+  -----------------------------------------------
+  
+  {
+    type = "recipe",
+    name = "Ammonia",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Hydrogen", amount=1},
+      {type="fluid", name="Nitrogen", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ammonia", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Ammonia.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Nitric_acid",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Ammonia", amount=1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Nitric_acid", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Nitric_acid.png",
+	subgroup = "NCP_fluids",
+  },  
+  {
+    type = "recipe",
+    name = "Sulfur_dioxide",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Sulfur", amount=1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Sulfur_dioxide.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Sulfuric_acid",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Sulfuric_acid", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Sulfuric_acid.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Cotton",
+    category = "cotton_farm",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Fertilizer", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Cotton", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Cotton.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Guncotton",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Nitric_acid", amount=1},
+      {type="fluid", name="Sulfuric_acid", amount=1},
+      {type="item", name="Cotton", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Guncotton", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Guncotton.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Cordite",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Petroleum_jelly", amount=1},
+      {type="fluid", name="Nitroglycerin", amount=1},
+      {type="item", name="Guncotton", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Cordite", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Cordite.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   --------------------------------
@@ -2678,7 +2826,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Quarried_stone", 1},
+      {"Copper_billet", 1},
     },
     result = "copper-plate",
   },
@@ -2686,35 +2834,7 @@ data:extend(
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
   
   })
