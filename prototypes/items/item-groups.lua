@@ -19,6 +19,18 @@ data:extend(
     group = "Resources",
     order = "a"
   },
+  {
+    type = "item-subgroup",
+    name = "Machines",
+    group = "Resources",
+    order = "a"
+  },
+  {
+    type = "item-subgroup",
+    name = "Raw_ores",
+    group = "Resources",
+    order = "a"
+  },
   
   
 }
