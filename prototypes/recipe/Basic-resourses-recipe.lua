@@ -2644,7 +2644,8 @@ data:extend(
   --native copper
   {
     type = "recipe",
-    name = "Refinery",
+    name = "Copper_billet",
+    category = "Furnace",
     energy_required = 0.2,
     enabled = "true",
     ingredients =
