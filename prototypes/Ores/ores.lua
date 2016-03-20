@@ -27,6 +27,8 @@ data.raw.resource["stone"].autoplace = (
     }
   }
 )
+
+
 data.raw.resource["stone"].minable = (
 	{
       hardness = 0.9,
@@ -37,6 +39,24 @@ data.raw.resource["stone"].minable = (
          {type="item", name="Quarried_stone", amount=1},
          {type="item", name="Nitre_ore", amount=1},
       },
+    }
+
+)
+
+data.raw.resource["crude-oil"].minable = (
+    {
+      hardness = 1,
+      mining_time = 1,
+      results =
+      {
+        {
+          type = "fluid",
+          name = "Crude_oil",
+          amount_min = 1,
+          amount_max = 1,
+          probability = 1
+        }
+      }
     }
 
 )

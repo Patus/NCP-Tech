@@ -2023,7 +2023,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Wood_raw", 1},
+      {"raw-wood", 1},
     },
     result = "Wood",
   },
@@ -2046,7 +2046,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Wood_raw", 2},
+      {"raw-wood", 2},
     },
     result = "Charcoal",
   },

@@ -812,15 +812,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Raw_wood",
-    icon = "__NCP-Tech__/graphics/icons/Raw_wood.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Resin",
     icon = "__NCP-Tech__/graphics/icons/Resin.png",
     flags= { "goes-to-main-inventory" },
