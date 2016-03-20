@@ -2832,6 +2832,53 @@ data:extend(
     result = "copper-plate",
   },
   
+  --CHEATS
+  {
+    type = "recipe",
+    name = "copper_cheat",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      
+    },
+    result = "copper-plate",
+  },
+  {
+    type = "recipe",
+    name = "iron_cheat",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      
+    },
+    result = "iron-plate",
+  },
+  {
+    type = "recipe",
+    name = "steelcheat",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      
+    },
+    result = "steel-plate",
+  },
+  {
+    type = "recipe",
+    name = "woodcheat",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      
+    },
+    result = "raw-wood",
+  },
+  
+  
   
   
   
