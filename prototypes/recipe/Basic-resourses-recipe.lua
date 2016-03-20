@@ -2866,17 +2866,7 @@ data:extend(
     },
     result = "steel-plate",
   },
-  {
-    type = "recipe",
-    name = "woodcheat",
-    energy_required = 0.1,
-    enabled = "true",
-    ingredients =
-    {
-      
-    },
-    result = "raw-wood",
-  },
+  
   
   
   
