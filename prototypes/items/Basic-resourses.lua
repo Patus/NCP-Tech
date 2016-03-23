@@ -1404,6 +1404,17 @@ data:extend({
   
   
   --Machiness
+  
+  {
+    type= "item",
+    name= "Miningdrill_1",
+    icon = "__NCP-Tech__/graphics/icons/Miningdrill_1.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "Machines",
+    order= "a-b-c",
+	place_result = "Miningdrill_1",
+    stack_size= 50,
+  },
   {
     type= "item",
     name= "Crusher",
