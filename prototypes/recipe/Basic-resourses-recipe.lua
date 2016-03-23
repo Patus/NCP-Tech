@@ -1650,6 +1650,20 @@ data:extend(
   
   
   --Machines
+
+  
+  
+  {
+    type = "recipe",
+    name = "Miningdrill_1",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Miningdrill_1",
+  },
   {
     type = "recipe",
     name = "Crusher",
