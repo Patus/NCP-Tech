@@ -1408,7 +1408,7 @@ data:extend({
   {
     type= "item",
     name= "Miningdrill_1",
-    icon = "__NCP-Tech__/graphics/icons/Miningdrill_1.png",
+    icon = "__base__/graphics/icons/basic-mining-drill.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "Machines",
     order= "a-b-c",
