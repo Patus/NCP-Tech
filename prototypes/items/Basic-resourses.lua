@@ -1404,12 +1404,13 @@ data:extend({
   
   
   --Machiness
-  
+ 
+ 
   {
     type= "item",
     name= "Miningdrill_1",
     icon = "__base__/graphics/icons/basic-mining-drill.png",
-    flags= { "goes-to-main-inventory" },
+	flags = {"goes-to-quickbar"},
     subgroup = "Machines",
     order= "a-b-c",
 	place_result = "Miningdrill_1",
@@ -1807,5 +1808,27 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
+  
+  --CHEATS
+  
+
+  
+  
+  {
+    type= "item",
+    name= "aaaaaaCheatFuel",
+    icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 500,
+	fuel_value = "800MJ",
+  },
+  
+  
+  
+  
+  
+  
   
   })

@@ -1663,7 +1663,10 @@ data:extend(
       {"Quarried_stone", 1},
     },
     result = "Miningdrill_1",
+	subgroup = "Machines",
   },
+  
+ 
   {
     type = "recipe",
     name = "Crusher",
@@ -2845,8 +2848,26 @@ data:extend(
     },
     result = "copper-plate",
   },
+  {
+    type = "recipe",
+    name = "coppertest",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "stone",
+  },
+  
+  
+  
   
   --CHEATS
+  
+  
+  
+  
   {
     type = "recipe",
     name = "copper_cheat",
@@ -2854,9 +2875,13 @@ data:extend(
     enabled = "true",
     ingredients =
     {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="copper-plate", amount=50},
       
     },
-    result = "copper-plate",
   },
   {
     type = "recipe",
@@ -2865,9 +2890,13 @@ data:extend(
     enabled = "true",
     ingredients =
     {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="iron-plate", amount=50},
       
     },
-    result = "iron-plate",
   },
   {
     type = "recipe",
@@ -2876,14 +2905,45 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      
+      {"Quarried_stone", 1},
     },
-    result = "steel-plate",
+	results = 
+    {
+      {type="item", name="steel-plate", amount=5},
+	
+    },
   },
   
-  
-  
-  
+  {
+    type = "recipe",
+    name = "CheatFuelrecipe",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="aaaaaaCheatFuel", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "steelcheat",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="Quarried_stone", amount=50},
+	
+    },
+  },
   
   
 

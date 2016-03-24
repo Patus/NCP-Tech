@@ -66,6 +66,7 @@ data.raw.resource["crude-oil"].minable = (
 
 data:extend(
 {
+ --[[
   {
     type = "resource",
     name = "Clay_ore",
@@ -122,6 +123,8 @@ data:extend(
     },
     map_color = {r=0.803, g=0.388, b=0.215}
   },
+  
+  --]]
   {
     type = "resource",
     name = "Bauxite_ore",
