@@ -48,12 +48,12 @@ data:extend(
   {
     type = "recipe",
     name = "Quartz",
-    category = "Crusher",
+    category = "Ore_washing",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Quartz_rock", 2},
+      {"Quartz_crushed_rock", 2},
     },
     results = 
     {
@@ -138,7 +138,7 @@ data:extend(
     ingredients =
     {
       {"Clay_dry", 1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_dirty", amount=1},
     },
     result = "Clay_wet",
   },
@@ -177,7 +177,7 @@ data:extend(
     ingredients =
     {
       {"Quartz_crushed_rock", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -270,7 +270,7 @@ data:extend(
     ingredients =
     {
       {"Bauxite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -335,7 +335,7 @@ data:extend(
     ingredients =
     {
       {"Fluorite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -353,7 +353,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Fluorite_crushed_ore", 2},
+      {"Calcium_fluoride", 2},
       {type="fluid", name="Sulfuric_acid", amount=1}
     },
     results = 
@@ -419,7 +419,7 @@ data:extend(
     ingredients =
     {
       {"Cassiterite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -466,7 +466,7 @@ data:extend(
     ingredients =
     {
       {"Galena_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -538,7 +538,7 @@ data:extend(
     ingredients =
     {
       {"Rutile_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -608,7 +608,7 @@ data:extend(
     ingredients =
     {
       {"Gold_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_dirty", amount=10},
     },
     results = 
     {
@@ -826,7 +826,7 @@ data:extend(
     ingredients =
     {
       {"Magnetite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_dirty", amount=10},
     },
     results = 
     {
@@ -894,7 +894,7 @@ data:extend(
     ingredients =
     {
       {"Chromite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_dirty", amount=10},
     },
     results = 
     {
@@ -1198,12 +1198,12 @@ data:extend(
 	{
     type = "recipe",
     name = "Nitrogen_Oxygen",
-    category = "Chemical_plant",
+    category = "cryogenic_distillation_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Air", amount=1},
+      --{type="fluid", name="Air", amount=1},
     },
     results = 
     {
@@ -2306,7 +2306,7 @@ data:extend(
     ingredients =
     {
       {"Chalcopyrite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -2418,7 +2418,7 @@ data:extend(
     ingredients =
     {
       {"Pentlandite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -2474,7 +2474,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Zinc_matte", 1},
+      {"Nickel_cathode", 1},
       {type="fluid", name="Hydrogen", amount=1},
     },
     results = 
@@ -2511,7 +2511,7 @@ data:extend(
     ingredients =
     {
       {"Sphalerite_crushed_ore", 2},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_dirty", amount=10}
     },
     results = 
     {
@@ -2761,7 +2761,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Fertilizer", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_dirty", amount=10},
     },
     results = 
     {
