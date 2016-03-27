@@ -26,12 +26,6 @@ data:extend(
   },
   {
     type = "autoplace-control",
-    name = "Sphalerite_ore",
-    richness = true,
-    order = "b-a"
-  },
-  {
-    type = "autoplace-control",
     name = "Chalcopyrite_ore",
     richness = true,
     order = "b-a"
@@ -81,6 +75,12 @@ data:extend(
   {
     type = "autoplace-control",
     name = "Magnetite_ore",
+    richness = true,
+    order = "b-a"
+  },
+  {
+    type = "autoplace-control",
+    name = "Brine_pool",
     richness = true,
     order = "b-a"
   },

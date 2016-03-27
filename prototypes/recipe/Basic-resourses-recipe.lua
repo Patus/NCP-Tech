@@ -27,6 +27,7 @@ data:extend(
     ingredients =
     {
       {"Saltpeter", 1},
+	  {type="fluid", name="Water", amount=4},
     },
     result = "Fertilizer",
   },
@@ -138,7 +139,7 @@ data:extend(
     ingredients =
     {
       {"Clay_dry", 1},
-      {type="fluid", name="Water_dirty", amount=1},
+      {type="fluid", name="Water_salt", amount=1},
     },
     result = "Clay_wet",
   },
@@ -177,7 +178,7 @@ data:extend(
     ingredients =
     {
       {"Quartz_crushed_rock", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -270,7 +271,7 @@ data:extend(
     ingredients =
     {
       {"Bauxite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -335,7 +336,7 @@ data:extend(
     ingredients =
     {
       {"Fluorite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -419,7 +420,7 @@ data:extend(
     ingredients =
     {
       {"Cassiterite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -466,7 +467,7 @@ data:extend(
     ingredients =
     {
       {"Galena_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -508,7 +509,7 @@ data:extend(
     results = 
     {
       {type="item", name="Lead_billet", amount=1},
-      {type="item", name="Silver_ingot", amount=1},
+      {type="item", name="Silver_ingot", amount=1, amount=1, probability = 0.02},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_billet.png",
 	subgroup = "Recourses",
@@ -538,12 +539,12 @@ data:extend(
     ingredients =
     {
       {"Rutile_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
       {type="item", name="Titanium_oxide", amount=1},
-      {type="item", name="Zircon", amount=1},
+      {type="item", name="Zircon", amount=1, amount=1, probability = 0.02},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Titanium_oxide.png",
@@ -607,12 +608,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Gold_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10},
+      {"Gold_crushed_ore", 1},
+      {type="fluid", name="Water_salt", amount=10},
     },
     results = 
     {
-      {type="item", name="Gold_concentrate", amount=1},
+      {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.01},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
@@ -826,7 +827,7 @@ data:extend(
     ingredients =
     {
       {"Magnetite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10},
+      {type="fluid", name="Water_salt", amount=10},
     },
     results = 
     {
@@ -846,6 +847,7 @@ data:extend(
     {
       {"Magnetite_concentrate", 1},
       {"Coal_coke", 1},
+	  {"Limestone_crushed", 1},
     },
     results = 
     {
@@ -894,7 +896,7 @@ data:extend(
     ingredients =
     {
       {"Chromite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10},
+      {type="fluid", name="Water_salt", amount=10},
     },
     results = 
     {
@@ -1223,7 +1225,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water_dirty", amount=40},
+      {type="fluid", name="Water_salt", amount=40},
     },
     results = 
     {
@@ -1326,18 +1328,43 @@ data:extend(
 	subgroup = "NCP_fluids",
   },
   
---Hot spring
+--brine bool
   {
     type = "recipe",
     name = "Lithium_chloride",
-    category = "Lithium_extractor",
+    category = "Distillation",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Quarried_stone", 1},
+	  {type="fluid", name="Brine", amount=1},
     },
-    result = "Lithium_chloride",
+    results = 
+    {
+      {"Salt", 1, probability = 0.05},
+	  {"Lithium_chloride", 1, probability = 0.01},
+	  {type="fluid", name="Water", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Lithium_chloride_no_water",
+    category = "Distillation",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Brine", amount=1},
+    },
+    results = 
+    {
+      {"Salt", 1, probability = 0.05},
+	  {"Lithium_chloride", 1, probability = 0.01},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1398,6 +1425,37 @@ data:extend(
     },
     result = "Li-ion_battery",
   },
+  {
+    type = "recipe",
+    name = "Magnesium_hydroxide",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Calcium_oxide", amount=1},
+	  {type="fluid", name="Water_salt", amount=10},
+	  {type="fluid", name="Brine", amount=10},
+    },
+    results = 
+    {
+      {type="item", name="Magnesium_hydroxide", amount=1, probability = 0.5},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Magnesium_hydroxide.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   --Item Recipes
@@ -2306,7 +2364,7 @@ data:extend(
     ingredients =
     {
       {"Chalcopyrite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -2418,7 +2476,7 @@ data:extend(
     ingredients =
     {
       {"Pentlandite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -2511,7 +2569,7 @@ data:extend(
     ingredients =
     {
       {"Sphalerite_crushed_ore", 2},
-      {type="fluid", name="Water_dirty", amount=10}
+      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
@@ -2761,7 +2819,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Fertilizer", amount=1},
-      {type="fluid", name="Water_dirty", amount=10},
+      {type="fluid", name="Water_salt", amount=10},
     },
     results = 
     {

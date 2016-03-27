@@ -18,10 +18,6 @@ data:extend(
   },
   {
     type = "noise-layer",
-    name = "Sphalerite_ore"
-  },
-  {
-    type = "noise-layer",
     name = "Chalcopyrite_ore"
   },
   {
@@ -55,6 +51,10 @@ data:extend(
   {
     type = "noise-layer",
     name = "Magnetite_ore"
+  },
+  {
+    type = "noise-layer",
+    name = "Brine_pool"
   },
   
 }
