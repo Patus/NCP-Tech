@@ -212,7 +212,7 @@ data:extend(
   {
     type = "recipe",
     name = "Silicon_boule",
-    category = "Silicon_crucible",
+    category = "Silicon_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -500,6 +500,57 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Lead_billet.png",
 	subgroup = "Recourses",
   },
+  {
+    type = "recipe",
+    name = "Lead_scrap",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_billet", 1},
+    },
+    results = 
+    {
+      {type="item", name="Lead_scrap", amount_min= 1,amount_max= 4},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lead_scrap.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Lead_dust",
+    category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_scrap", 1},
+    },
+    results = 
+    {
+      {type="item", name="Lead_dust", amount= 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lead_dust.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Lead_oxide",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Lead_dust", 1},
+    },
+    results = 
+    {
+      {type="item", name="Lead_oxide", amount= 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Lead_oxide.png",
+	subgroup = "Recourses",
+  },
   
   
   
@@ -696,18 +747,6 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Carbon_dust",
-    category = "Grinding_mill",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Coal_coke", 1},
-    },
-    result = "Carbon_dust",
-  },
-  {
-    type = "recipe",
     name = "Silicon_carbide",
     category = "Silicon_furnace",
     energy_required = 2,
@@ -715,7 +754,7 @@ data:extend(
     ingredients =
     {
       {"Graphite_dust", 1},
-      {"Silicon_dioxide", 1},
+      {"Silicon_dioxide", 1},S
     },
     results = 
     {
@@ -2026,7 +2065,7 @@ data:extend(
     ingredients =
     {
       {"Plastic_pellets", 1},
-	  {"Lead_plate", 1},
+	  {"Lead_plate", 5},
 	  {type="fluid", name="Sulfuric_acid", amount=1},
     },
     result = "Battery",
@@ -2949,7 +2988,7 @@ data:extend(
   {
     type = "recipe",
     name = "Copper_anode",
-    category = "Anode_furnace",
+    category = "Chemical_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -3295,7 +3334,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Tungsten_carbide",
+    name = "Tungsten_carbide_billet",
     category = "Blast_furnace",
     energy_required = 2,
     enabled = "true",
@@ -3304,7 +3343,7 @@ data:extend(
       {"Tungsten_powder", 1},
 	  {"Carbon_dust", 1},
     },
-    result = "Tungsten_carbide",
+    result = "Tungsten_carbide_billet",
   },
   
   

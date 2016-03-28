@@ -12,7 +12,7 @@ data.raw.resource["coal"].minable = (
       results = 
       {
          {type="item", name="coal", amount=1 ,probability = 1},
-         {type="item", name="Nitre_ore", amount=1, probability = 0.01},
+         {type="item", name="Diamond_uncut", amount=1, probability = 0.0001},
       },
     }
 
