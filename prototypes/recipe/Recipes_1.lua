@@ -1499,6 +1499,101 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Magnesium_oxide.png",
 	subgroup = "Recourses",
   },
+  {
+    type = "recipe",
+    name = "Magnesium",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnesium_oxide", amount=1},
+	  {type="item", name="Ferrosilicon", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Magnesium", amount=1, probability = 1},
+	  {type="item", name="Pig_iron", amount=1, probability = 1},
+	  {type="item", name="Silicon_dioxide", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Magnesium.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Ferrosilicon",
+    category = "Blast_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnetite_concentrate", amount=1},
+	  {type="item", name="Silicon_dioxide", amount=1},
+	  {type="item", name="Coal_coke", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Ferrosilicon", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Ferrosilicon.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Ferrosilicon2",
+    category = "Electric_arc_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnetite_concentrate", amount=1},
+	  {type="item", name="Silicon_dioxide", amount=1},
+	  {type="item", name="Coal_coke", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Ferrosilicon", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Ferrosilicon.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Magnesium_chloride",
+    category = "Electric_arc_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnesium_hydroxide", amount=1},
+	  {type="fluid", name="Hydrochloric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Magnesium_chloride", amount=1, probability = 1},
+	  {type="fluid", name="Water", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Magnesium_chloride.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Magnesium2",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnesium_chloride", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Magnesium", amount=1, probability = 1},
+	  {type="fluid", name="Chlorine", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Magnesium.png",
+	subgroup = "Recourses",
+  },
   
   
   
@@ -3933,7 +4028,51 @@ data:extend(
     },
   },
 
-  
+  {
+    type = "recipe",
+    name = "linja",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="express-transport-belt", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "smains",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="fast-inserter", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "nopins",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="smart-inserter", amount=50},
+	
+    },
+  },
   
   
   
