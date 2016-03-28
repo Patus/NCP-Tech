@@ -1310,8 +1310,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Zirconium_ingot",
-    icon = "__NCP-Tech__/graphics/icons/Zirconium_ingot.png",
+    name= "Zirconium_billet",
+    icon = "__NCP-Tech__/graphics/icons/Zirconium_billet.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",

@@ -608,7 +608,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Zirconium_ingot",
+    name = "Zirconium_billet",
     category = "Chemical_furnace",
     energy_required = 2,
     enabled = "true",
@@ -617,7 +617,7 @@ data:extend(
       {"Zircon", 1},
       {type="fluid", name="Chlorine", amount=1}
     },
-    result = "Zirconium_ingot",
+    result = "Zirconium_billet",
   },
   
   
@@ -1258,12 +1258,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water_salt", amount=40},
+      {type="fluid", name="Water_salt", amount=10},
     },
     results = 
     {
-      {type="fluid", name="Water", amount=35},
-      {type="item", name="Salt", amount=5},
+      {type="fluid", name="Water", amount=9},
+      {type="item", name="Salt", amount=1, probability = 0.4},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Water.png",
 	subgroup = "NCP_fluids",
@@ -2436,7 +2436,7 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-    result = "Miningdrill_1",
+    result = "Rotary_kiln",
 	subgroup = "Machines",
   },
  
@@ -2986,8 +2986,8 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Uranium_oxide_powder_235", amount=1},
-      {type="item", name="Uranium_oxide_powder_238", amount=1},
+      {type="item", name="Uranium_oxide_powder_235", amount=1, probability = 0.01},
+      {type="item", name="Uranium_oxide_powder_238", amount=1, probability = 0.99},
     },
 	icon = "__NCP-Tech__/graphics/icons/Uranium_oxide_powder_235.png",
 	subgroup = "Recourses",
