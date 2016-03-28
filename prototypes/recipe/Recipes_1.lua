@@ -1482,6 +1482,23 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Magnesium_hydroxide.png",
 	subgroup = "Recourses",
   },
+  {
+    type = "recipe",
+    name = "Magnesium_oxide",
+    category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnesium_hydroxide", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Magnesium_oxide", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Magnesium_oxide.png",
+	subgroup = "Recourses",
+  },
   
   
   
@@ -2315,7 +2332,18 @@ data:extend(
     result = "Miningdrill_1",
 	subgroup = "Machines",
   },
-  
+  {
+    type = "recipe",
+    name = "Rotary_kiln",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Miningdrill_1",
+	subgroup = "Machines",
+  },
  
   {
     type = "recipe",
@@ -2647,6 +2675,17 @@ data:extend(
       {"Quarried_stone", 1},
     },
     result = "Refinery",
+  },
+  {
+    type = "recipe",
+    name = "Electric_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Electric_furnace",
   },
   
   
@@ -3505,6 +3544,224 @@ data:extend(
   
   
   
+  --napalm
+  
+  {
+    type = "recipe",
+    name = "Ethylbenzene",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Ethylene", amount=1},
+	  {type="fluid", name="Benzene", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Ethylbenzene", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Ethylbenzene.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Styrene",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Ethylbenzene", amount=1},
+    },
+    results = 
+    {
+		{type="fluid", name="Styrene", amount=1, probability = 1},
+		{type="fluid", name="Hydrogen", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Styrene.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Styrofoam",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Styrene", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Styrofoam", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Styrofoam.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Napalm",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Styrofoam", amount=1},
+	  {type="fluid", name="Diesel", amount=1},
+    },
+    results = 
+    {
+		{type="fluid", name="Napalm", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Napalm.png",
+	subgroup = "NCP_fluids",
+  },
+  
+  
+  
+  
+  --steel
+  
+  
+  {
+    type = "recipe",
+    name = "Direct_reduced_iron",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Magnetite_concentrate", amount=1},
+	  {type="fluid", name="Hydrogen", amount=1},
+	  {type="fluid", name="Carbon_monoxide", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Direct_reduced_iron", amount=1, probability = 1},
+		{type="fluid", name="Water", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Direct_reduced_iron.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Steel_billet",
+	category = "Electric_arc_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Direct_reduced_iron", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Steel_billet", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Steel_billet.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Steel_billet_2",
+	category = "Blast_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Pig_iron", amount=1},
+	  {type="fluid", name="Oxygen", amount=100},
+    },
+    results = 
+    {
+		{type="item", name="Steel_billet", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Steel_billet.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Stainless_steel_mix_hot",
+	category = "Electric_arc_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Nickel_billet", amount=1},
+	  {type="item", name="Ferrochrome", amount=1},
+	  {type="item", name="Steel_billet", amount=1},
+    },
+    results = 
+    {
+		{type="fluid", name="Stainless_steel_mix_hot", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Stainless_steel_mix_hot.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Stainless_steel_billet",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Oxygen", amount=1},
+	  {type="fluid", name="Stainless_steel_mix_hot", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Stainless_steel_billet", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Stainless_steel_billet.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
    
  
   
@@ -3537,7 +3794,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "coppertest",
+    name = "stonetest",
     energy_required = 0.2,
     enabled = "true",
     ingredients =
@@ -3545,6 +3802,50 @@ data:extend(
       {"Quarried_stone", 1},
     },
     result = "stone",
+  },
+  {
+    type = "recipe",
+    name = "tooltest",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item",name="testTool", amount=1, probability = 0.1},
+    },
+    result = "stone",
+  },
+  {
+    type = "recipe",
+    name = "tooltest3",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="stone", amount=1, probability = 0.1},
+    },
+    result = "stone",
+  },
+  {
+    type = "recipe",
+    name = "tooltest2",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"stone", 1},
+    },
+    result = "testTool",
+  },
+  {
+    type = "tool",
+    name = "testTool",
+    icon = "__base__/graphics/icons/science-pack-1.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "science-pack",
+    order = "a[science-pack-1]",
+    stack_size = 200,
+    durability = 10,
+    
   },
   
   

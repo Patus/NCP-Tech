@@ -573,5 +573,18 @@ data:extend(
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
   },
+  {
+    type = "fluid",
+    name = "Stainless_steel_mix_hot",
+    default_temperature = 15,
+    max_temperature = 100,
+    heat_capacity = "1KJ",
+    base_color = {r=0, g=0.34, b=0.6},
+    flow_color = {r=0.7, g=0.7, b=0.7},
+    icon = "__NCP-Tech__/graphics/fluids/Stainless_steel_mix_hot.png",
+    order = "a-b-c",
+    pressure_to_speed_ratio = 0.4,
+    flow_to_energy_ratio = 0.59,
+  },
   
 })

@@ -2073,7 +2073,15 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
+  {
+    type= "item",
+    name= "Magnesium_chloride",
+    icon = "__NCP-Tech__/graphics/icons/Magnesium_chloride.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "Machines",
+    order= "a-b-c",
+    stack_size= 50,
+  },
   
   
   
