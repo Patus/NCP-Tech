@@ -84,6 +84,88 @@ data.raw.resource["crude-oil"].minable = (
 data:extend(
 {
  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  {
+    type = "resource",
+    name = "Graphite_ore",
+    icon = "__NCP-Tech__/graphics/icons/Graphite_ore.png",
+    flags = {"placeable-neutral"},
+    order="a-b-a",
+    minable =
+    {
+      hardness = 0.9,
+      mining_particle = "copper-ore-particle",
+      mining_time = 2,
+      results = 
+      {
+         {type="item", name="Graphite_ore", amount=1, probability = 1},
+         {type="item", name="Diamond_uncut", amount=1, probability = 0.001},
+      },
+    },
+    collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
+    autoplace =
+    {
+      control = "Graphite_ore",
+      sharpness = 1,
+      richness_multiplier = 13000,
+      richness_base = 350,
+      size_control_multiplier = 0.06,
+      peaks = {
+        {
+          influence = 0.2,
+          starting_area_weight_optimal = 0,
+          starting_area_weight_range = 0,
+          starting_area_weight_max_range = 2,
+        },
+        {
+          influence = 0.65,
+          
+          noise_octaves_difference = -1.9,
+		  noise_layer = "Graphite_ore",
+          noise_persistence = 0.3,
+          starting_area_weight_optimal = 0,
+          starting_area_weight_range = 0,
+          starting_area_weight_max_range = 2,
+        },
+      },
+    },
+    stage_counts = {1000, 600, 400, 200, 100, 50, 20, 1},
+    stages =
+    {
+      sheet =
+      {
+        filename = "__NCP-Tech__/graphics/entity/bauxite/Graphite.png",
+        priority = "extra-high",
+        width = 38,
+        height = 38,
+        frame_count = 4,
+        variation_count = 8
+      }
+    },
+    map_color = {r=0.803, g=0.388, b=0.215}
+  },
   {
     type = "resource",
     name = "Clay_ore",
@@ -831,7 +913,7 @@ data:extend(
   {
     type = "resource",
     name = "Brine_pool",
-    icon = "__NCP-Tech__/graphics/fluids/Brine_pool.png",
+    icon = "__NCP-Tech__/graphics/fluids/Brine.png",
     flags = {"placeable-neutral"},
     category = "basic-fluid",
     order="a-b-a",

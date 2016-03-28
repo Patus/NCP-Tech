@@ -56,6 +56,10 @@ data:extend(
     type = "noise-layer",
     name = "Brine_pool"
   },
+  {
+    type = "noise-layer",
+    name = "Graphite_ore"
+  },
   
 }
 )

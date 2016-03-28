@@ -132,5 +132,17 @@ data:extend(
     type = "recipe-category",
     name = "Refinery"
   },
+  {
+    type = "recipe-category",
+    name = "Electric_furnace"
+  },
+  {
+    type = "recipe-category",
+    name = "Rotary_kiln"
+  },
+  {
+    type = "recipe-category",
+    name = "Silicon_furnace"
+  },
   
 })

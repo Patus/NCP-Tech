@@ -84,7 +84,12 @@ data:extend(
     richness = true,
     order = "b-a"
   },
-  
+  {
+    type = "autoplace-control",
+    name = "Graphite_ore",
+    richness = true,
+    order = "b-a"
+  },
 
 }
 )

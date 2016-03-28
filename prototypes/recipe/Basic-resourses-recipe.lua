@@ -213,18 +213,6 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Glass",
-    category = "Furnace",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Silicon_dioxide", 1},
-    },
-    result = "Glass",
-  },
-  {
-    type = "recipe",
     name = "Silicon_boule",
     category = "Silicon_crucible",
     energy_required = 2,
@@ -723,15 +711,21 @@ data:extend(
   {
     type = "recipe",
     name = "Silicon_carbide",
-    category = "Chemical_furnace",
+    category = "Silicon_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Carbon_dust", 1},
+      {"Graphite_dust", 1},
       {"Silicon_dioxide", 1},
     },
-    result = "Silicon_carbide",
+    results = 
+    {
+      {type="item", name="Silicon_carbide", amount=1},
+      {type="fluid", name="Carbon_monoxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_carbide.png",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -1329,6 +1323,7 @@ data:extend(
   },
   
 --brine bool
+  --[[
   {
     type = "recipe",
     name = "Lithium_chloride",
@@ -1366,6 +1361,8 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
 	subgroup = "Recourses",
   },
+  
+  --]]
   {
     type = "recipe",
     name = "Lithium",
@@ -1442,6 +1439,557 @@ data:extend(
       {type="item", name="Magnesium_hydroxide", amount=1, probability = 0.5},
     },
 	icon = "__NCP-Tech__/graphics/icons/Magnesium_hydroxide.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  --Graphite
+  
+  {
+    type = "recipe",
+    name = "Graphite_crushed_ore",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Graphite_ore", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Graphite_crushed_ore", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Graphite_crushed_ore.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Graphite_crushed",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Graphite_crushed_ore", amount=2},
+	  {type="fluid", name="Water_salt", amount=10},
+    },
+    results = 
+    {
+      {type="item", name="Graphite_crushed", amount=1, probability = 1},
+	  {type="item", name="Stone_crushed", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Graphite_crushed.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Graphite_dust",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Graphite_crushed", amount=5},
+	  {type="fluid", name="Water", amount=10},
+    },
+    results = 
+    {
+      {type="item", name="Graphite_crushed", amount=4, probability = 1},
+	  {type="item", name="Graphite_dust", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Graphite_dust.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Graphite_electrode",
+    category = "Electric_furnace",
+    energy_required = 30,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Graphite_dust", amount=100},
+    },
+    results = 
+    {
+      {type="item", name="Graphite_electrode", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Graphite_electrode.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Graphite_crucible",
+    category = "Electric_furnace",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Graphite_dust", amount=20},
+    },
+    results = 
+    {
+      {type="item", name="Graphite_crucible", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Graphite_crucible.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Graphite_rod",
+    category = "Electric_furnace",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Graphite_dust", amount=20},
+    },
+    results = 
+    {
+      {type="item", name="Graphite_rod", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Graphite_rod.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_furnace",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Electric_furnace", amount=1},
+	  {type="item", name="Graphite_crucible", amount=1},
+	  {type="item", name="Graphite_rod", amount=2},
+    },
+    results = 
+    {
+      {type="item", name="Silicon_furnace", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_furnace.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  })
+  
+  
+  
+  
+  --Concrete
+  
+  {
+	type = "recipe",
+	name = "Cement_clinker",
+	category = "Rotary_kiln",
+	energy_required = 30,
+	enabled = "true",
+	ingredients =
+	{
+		{type="item", name="Calcium_carbonate", amount=7},
+		{type="item", name="Clay_dry", amount=3},
+	},
+	results = 
+	{
+		{type="item", name="Cement_clinker", amount=1, probability = 1},
+
+	},
+	icon = "__NCP-Tech__/graphics/icons/Cement_clinker.png",
+	subgroup = "Recourses",
+	},
+  
+  
+  
+  {
+    type = "recipe",
+    name = "Cement",
+	category = "Grinding_mill",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Calcium_sulfate", amount=1},
+	  {type="item", name="Cement_clinker", amount=9},
+    },
+    results = 
+    {
+      {type="item", name="Cement", amount=10, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Cement.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Cement_bauxite",
+	category = "Grinding_mill",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Cement", amount=7},
+	  {type="item", name="Bauxite_tailings", amount=3},
+    },
+    results = 
+    {
+      {type="item", name="Cement_bauxite", amount=10, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Cement_bauxite.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Cement_slag",
+	category = "Grinding_mill",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Cement", amount=1},
+	  {type="item", name="Slag", amount=9},
+    },
+    results = 
+    {
+      {type="item", name="Cement_slag", amount=10, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Cement_slag.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Concrete_block",
+	category = "Chemical_plant",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Cement", amount=3},
+	  {type="fluid", name="Water", amount=2},
+	  {type="item", name="Sand", amount=6},
+	  {type="item", name="Gravel", amount=12},
+    },
+    results = 
+    {
+      {type="item", name="Concrete_block", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Concrete_block.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Concrete_block_2",
+	category = "Chemical_plant",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Cement_bauxite", amount=3},
+	  {type="fluid", name="Water", amount=2},
+	  {type="item", name="Sand", amount=6},
+	  {type="item", name="Gravel", amount=12},
+    },
+    results = 
+    {
+      {type="item", name="Concrete_block", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Concrete_block.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Concrete_block_3",
+	category = "Chemical_plant",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Cement_slag", amount=3},
+	  {type="fluid", name="Water", amount=2},
+	  {type="item", name="Sand", amount=6},
+	  {type="item", name="Gravel", amount=12},
+    },
+    results = 
+    {
+      {type="item", name="Concrete_block", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Concrete_block.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  
+  
+  --fiberglass
+  
+  {
+    type = "recipe",
+    name = "Aluminosilicate_glass",
+	category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Silicon_dioxide", amount=6},
+	  {type="item", name="Magnesium_oxide", amount=1},
+	  {type="item", name="Alumina", amount=2},
+	  {type="item", name="Calcium_carbonate", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Aluminosilicate_glass", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Aluminosilicate_glass.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Fiberglass_roving",
+	category = "Extruder",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Aluminosilicate_glass", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Fiberglass_roving", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Fiberglass_roving.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Fiberglass_cloth",
+	category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Fiberglass_roving", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Fiberglass_cloth", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Fiberglass_cloth.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Fiberglass_laminate",
+	category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Fiberglass_cloth", amount=1},
+	  {type="item", name="Resin", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Fiberglass_laminate", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Fiberglass_laminate.png",
+	subgroup = "Recourses",
+  },
+  
+  
+  
+  {
+    type = "recipe",
+    name = "Oxide_glass",
+	category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Alumina", amount=9},
+	  {type="item", name="Germanium_dioxide", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Oxide_glass", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Oxide_glass.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Glass_tube",
+	category = "Extruder",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Oxide_glass", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Glass_tube", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Glass_tube.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Purified_glass_tube",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Glass_tube", amount=1},
+	  {type="fluid", name="Hydrofluoric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Purified_glass_tube", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Purified_glass_tube.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Optical_fiber",
+	category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Purified_glass_tube", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Optical_fiber", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Optical_fiber.png",
+	subgroup = "Recourses",
+  },
+  
+  
+ --[[ 
+  
+  
+  --Limestone
+  
+  {
+    type = "recipe",
+    name = "Limestone_crushed",
+	category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Quarried_limestone", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Limestone_crushed", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Limestone_crushed.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Calcium_carbonate",
+	category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Limestone_crushed", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Calcium_carbonate", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Calcium_carbonate.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Calcium_oxide",
+	category = "Rotary_kiln",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Calcium_carbonate", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Calcium_oxide", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Calcium_oxide.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Sodium_carbonate",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Calcium_carbonate", amount=1},
+	  {type="fluid", name="Water_salt", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Sodium_carbonate", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Sodium_carbonate.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Glass",
+	category = "Furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Calcium_carbonate", amount=1},
+	  {type="item", name="Sodium_carbonate", amount=2},
+	  {type="item", name="Silicon_dioxide", amount=7},
+    },
+    results = 
+    
+      {type="item", name="Glass", amount=10, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Glass.png",
 	subgroup = "Recourses",
   },
   
@@ -1570,7 +2118,7 @@ data:extend(
   {
     type = "recipe",
     name = "Brass_billet",
-    category = "Alloy_furnace",
+    category = "Furnace",
     energy_required = 10,
     enabled = "true",
     ingredients =
@@ -1592,7 +2140,7 @@ data:extend(
   {
     type = "recipe",
     name = "Lead_solder_ingot",
-    category = "Alloy_furnace",
+    category = "Furnace",
     energy_required = 10,
     enabled = "true",
     ingredients =
@@ -1623,7 +2171,7 @@ data:extend(
   {
     type = "recipe",
     name = "Lead_free_solder_ingot",
-    category = "Alloy_furnace",
+    category = "Furnace",
     energy_required = 10,
     enabled = "true",
     ingredients =
@@ -2594,6 +3142,7 @@ data:extend(
       {type="item", name="Zinc_matte", amount=1},
       {type="item", name="Slag", amount=1},
       {type="fluid", name="Sulfur_dioxide", amount=1},
+	  {type="item", name="Germanium_concentrate", amount=1, probability = 0.004},
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_matte.png",
 	subgroup = "Recourses",
@@ -2615,8 +3164,64 @@ data:extend(
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
 	subgroup = "Recourses",
-  }, 
-  
+  },
+  {
+    type = "recipe",
+    name = "Germanium_tetrachloride",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Germanium_concentrate", amount=1},
+	  {type="fluid", name="Chlorine", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Germanium_tetrachloride", amount=1, probability = 1},
+      {type="fluid", name="Oxygen", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Germanium_tetrachloride.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Germanium_dioxide",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Germanium_tetrachloride", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Germanium_dioxide", amount=1, probability = 1},
+      {type="fluid", name="Hydrogen", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Germanium_dioxide.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Germanium",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Hydrogen", amount=1},
+	  {type="item", name="Germanium_dioxide", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Germanium", amount=1, probability = 1},
+      {type="fluid", name="Water", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Germanium.png",
+	subgroup = "Recourses",
+  },
   
   
   
@@ -3008,3 +3613,4 @@ data:extend(
   
   
   })
+--]]
