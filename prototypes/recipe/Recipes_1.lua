@@ -4,8 +4,6 @@ data:extend(
   
   
   
-  
-  
   --Nitre
   {
     type = "recipe",
@@ -865,7 +863,7 @@ data:extend(
     result = "Iron_billet",
   },
   
-  
+ 
   
   --Cromite
   
@@ -914,6 +912,7 @@ data:extend(
     result = "Ferrochrome",
   },
 
+ 
 
 
 --Oil
@@ -993,6 +992,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Plastic_pellets.png",
 	subgroup = "Recourses",
   },
+
   {
     type = "recipe",
     name = "Petroleum_gas",
@@ -1321,24 +1321,25 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluids/Ferric_chloride_solution.png",
 	subgroup = "NCP_fluids",
   },
-  
+
+
 --brine bool
-  --[[
-  {
+
+	{
     type = "recipe",
     name = "Lithium_chloride",
-    category = "Distillation",
+    category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-	  {type="fluid", name="Brine", amount=1},
+      {type="fluid", name="Brine", amount=1},
     },
     results = 
     {
-      {"Salt", 1, probability = 0.05},
-	  {"Lithium_chloride", 1, probability = 0.01},
-	  {type="fluid", name="Water", amount=1},
+		{type="item", name="Salt", amount=1, probability = 0.05},
+		{type="item", name="Lithium_chloride", amount=1, probability = 0.01},
+		{type="fluid", name="Water", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
 	subgroup = "Recourses",
@@ -1355,14 +1356,15 @@ data:extend(
     },
     results = 
     {
-      {"Salt", 1, probability = 0.05},
-	  {"Lithium_chloride", 1, probability = 0.01},
+    {type="item", name="Salt", amount=1, probability = 0.05},
+	{type="item", name="Lithium_chloride", amount=1, probability = 0.01},
+
     },
 	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
 	subgroup = "Recourses",
   },
   
-  --]]
+
   {
     type = "recipe",
     name = "Lithium",
@@ -1584,11 +1586,6 @@ data:extend(
   },
   
   
-  
-  
-  
-  
-  
   --Concrete
   
   {
@@ -1609,11 +1606,8 @@ data:extend(
 	},
 	icon = "__NCP-Tech__/graphics/icons/Cement_clinker.png",
 	subgroup = "Recourses",
-	},
-  
-  
-  
-  {
+  },
+ {
     type = "recipe",
     name = "Cement",
 	category = "Grinding_mill",
@@ -1735,9 +1729,7 @@ data:extend(
   },
   
   
-  
-  
-  --fiberglass
+    --fiberglass
   
   {
     type = "recipe",
@@ -1816,7 +1808,7 @@ data:extend(
 	subgroup = "Recourses",
   },
   
-  
+
   
   {
     type = "recipe",
@@ -1894,7 +1886,11 @@ data:extend(
   },
   
   
- 
+  
+  
+  
+  
+  
   
   
   --Limestone
@@ -1935,6 +1931,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Calcium_carbonate.png",
 	subgroup = "Recourses",
   },
+  
   {
     type = "recipe",
     name = "Calcium_oxide",
@@ -1985,7 +1982,7 @@ data:extend(
 	  {type="item", name="Silicon_dioxide", amount=7},
     },
     results = 
-    
+    {
       {type="item", name="Glass", amount=10, probability = 1},
 
     },
@@ -1998,11 +1995,7 @@ data:extend(
   
   
   
-  
-  
-  
-  
-  
+    
   
   
   
@@ -2248,6 +2241,14 @@ data:extend(
   
   
   
+
+  
+
+  
+  
+  
+  
+  
   
   
   
@@ -2442,17 +2443,7 @@ data:extend(
     },
     result = "Distillation",
   },
-  {
-    type = "recipe",
-    name = "Dry_distillation",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Dry_distillation",
-  },
+ 
   {
     type = "recipe",
     name = "Compressor",
@@ -2518,28 +2509,6 @@ data:extend(
       {"Quarried_stone", 1},
     },
     result = "cotton_farm",
-  },
-  {
-    type = "recipe",
-    name = "Alloy_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Alloy_furnace",
-  },
-  {
-    type = "recipe",
-    name = "Lithium_extractor",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Lithium_extractor",
   },
   {
     type = "recipe",
@@ -2888,6 +2857,18 @@ data:extend(
   },
   
   
+   
+  
+  
+  
+  
+  
+  
+  
+   
+  
+  
+ 
   
   
   
@@ -3006,6 +2987,10 @@ data:extend(
   
   
   
+  
+  
+
+ 
   --pentlandite
   {
     type = "recipe",
@@ -3228,6 +3213,7 @@ data:extend(
   },
   
   
+   
   
   --scheelite
   {
@@ -3338,8 +3324,7 @@ data:extend(
     },
     result = "Copper_billet",
   },
-  
-  
+
   
   -----------------------------------------------
   
@@ -3481,12 +3466,8 @@ data:extend(
   
   
   
-  
-  
-  
-  
-  
-  
+   
+ 
   
   
   
@@ -3611,5 +3592,18 @@ data:extend(
 	
     },
   },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
 )

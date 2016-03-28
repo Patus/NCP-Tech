@@ -1948,16 +1948,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Alloy_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Alloy_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Alloy_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Electronics_assembly_machine",
     icon = "__NCP-Tech__/graphics/icons/Electronics_assembly_machine.png",
     flags= { "goes-to-main-inventory" },
