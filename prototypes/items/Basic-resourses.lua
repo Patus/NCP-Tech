@@ -2082,8 +2082,24 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
-  
+  {
+    type= "item",
+    name= "Wood_seed",
+    icon = "__NCP-Tech__/graphics/icons/Wood_seed.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "Machines",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Cotton_seed",
+    icon = "__NCP-Tech__/graphics/icons/Cotton_seed.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "Machines",
+    order= "a-b-c",
+    stack_size= 50,
+  },
   
   
   

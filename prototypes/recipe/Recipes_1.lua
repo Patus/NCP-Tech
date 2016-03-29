@@ -75,7 +75,9 @@ data:extend(
     results = 
     {
       {type="item", name="Gravel", amount=1},
-      {type="item", name="Sand", amount=1, probability = 0.05}
+      {type="item", name="Sand", amount=1, probability = 0.05},
+	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2},
+	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2 },
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "Recourses",
@@ -3608,40 +3610,43 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Cotton",
+    name = "Cotton_farm",
     category = "Farm",
     energy_required = 120,
     enabled = "true",
     ingredients =
     {
-      {type="item", name="Fertilizer", amount=1},
+      {type="item", name="Fertilizer", amount=4},
+	  {type="item", name="Cotton_seed", amount=9},
       {type="fluid", name="Water", amount=600},
     },
     results = 
     {
-      {type="item", name="Cotton", amount_min=1, amount_max= 15},
-      
+      {type="item", name="Cotton", amount_min=1, amount_max= 30},
+      {type="item", name="Cotton_seed", amount_min=0, amount_max= 17, probability= 0.8},
     },
 	icon = "__NCP-Tech__/graphics/icons/Cotton.png",
 	subgroup = "Recourses",
   },
   {
     type = "recipe",
-    name = "Cotton",
+    name = "Wood_farm",
     category = "Farm",
     energy_required = 120,
     enabled = "true",
     ingredients =
     {
-      {type="item", name="Fertilizer", amount=1},
+      {type="item", name="Fertilizer", amount=9},
+	  {type="item", name="Wood_seed", amount=5},
       {type="fluid", name="Water", amount=600},
     },
     results = 
     {
-      {type="item", name="raw-wood", amount_min=1, amount_max= 15},
+      {type="item", name="raw-wood", amount_min=1, amount_max= 25},
+	  {type="item", name="Wood_seed", amount_min=0, amount_max= 14, probability= 0.8},
       
     },
-	icon = "__NCP-Tech__/graphics/icons/Cotton.png",
+	icon = "__base__/graphics/icons/raw-wood.png",
 	subgroup = "Recourses",
   },
   {
