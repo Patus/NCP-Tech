@@ -2143,6 +2143,15 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
+  {
+    type= "item",
+    name= "Rare_earth",
+    icon = "__NCP-Tech__/graphics/icons/Rare_earth.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
   
   --CHEATS
   

@@ -70,12 +70,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Stone_crushed", 3},
+      {"Stone_crushed", 1},
     },
     results = 
     {
-      {type="item", name="Gravel", amount=2},
-      {type="item", name="Sand", amount=1}
+      {type="item", name="Gravel", amount=1},
+      {type="item", name="Sand", amount=1, probability = 0.05}
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "Recourses",
@@ -88,12 +88,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Gravel", 3},
+      {"Gravel", 1},
     },
     results = 
     {
-      {type="item", name="Sand", amount=2},
-      {type="item", name="Silt", amount=1}
+      {type="item", name="Sand", amount=1},
+      {type="item", name="Silt", amount=1, probability = 0.05}
     },
 	icon = "__NCP-Tech__/graphics/icons/Sand.png",
 	subgroup = "Recourses",
@@ -106,14 +106,31 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Sand", 3},
+      {"Sand", 1},
     },
     results = 
     {
-      {type="item", name="Silt", amount=2},
-      {type="item", name="Clay_dry", amount=1}
+      {type="item", name="Silt", amount=1},
+      {type="item", name="Clay_dry", amount=1, probability = 0.05}
     },
 	icon = "__NCP-Tech__/graphics/icons/Silt.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Rare_earth",
+    category = "Shifter",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Clay_dry", 1},
+    },
+    results = 
+    {
+      {type="item", name="Rare_earth", amount=1, probability = 1/10000}
+    },
+	icon = "__NCP-Tech__/graphics/icons/Rare_earth.png",
 	subgroup = "Recourses",
   },
   {
@@ -125,6 +142,18 @@ data:extend(
     ingredients =
     {
       {"Silt", 1},
+    },
+    result = "Clay_dry",
+  },
+  {
+    type = "recipe",
+    name = "Clay_dry2",
+    category = "Furnace",
+    energy_required = 0.8,
+    enabled = "true",
+    ingredients =
+    {
+      {"Clay_wet", 1},
     },
     result = "Clay_dry",
   },
@@ -581,7 +610,7 @@ data:extend(
     results = 
     {
       {type="item", name="Titanium_oxide", amount=1},
-      {type="item", name="Zircon", amount=1, amount=1, probability = 0.02},
+      {type="item", name="Zircon", amount=1, amount=1, probability = 0.01},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Titanium_oxide.png",
@@ -650,7 +679,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.01},
+      {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.005},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
