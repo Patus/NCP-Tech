@@ -1938,12 +1938,12 @@ data:extend({
   },
   {
     type= "item",
-    name= "cotton_farm",
-    icon = "__NCP-Tech__/graphics/icons/cotton_farm.png",
+    name= "Farm",
+    icon = "__NCP-Tech__/graphics/icons/Farm.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "Machines",
     order= "a-b-c",
-	place_result = "cotton_farm",
+	place_result = "Farm",
     stack_size= 50,
   },
   {

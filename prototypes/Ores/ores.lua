@@ -53,7 +53,7 @@ data.raw.resource["stone"].minable = (
       results = 
       {
          {type="item", name="Quarried_stone", amount=1 ,probability = 0.60},
-         {type="item", name="Nitre_ore", amount=1, probability = 0.01},
+         {type="item", name="Nitre_ore", amount=1, probability = 0.1},
 		 {type="item", name="Quarried_limestone", amount=1, probability = 0.60},
       },
     }

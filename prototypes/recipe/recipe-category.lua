@@ -86,7 +86,7 @@ data:extend(
   },
   {
     type = "recipe-category",
-    name = "cotton_farm"
+    name = "Farm"
   },
   {
     type = "recipe-category",

@@ -223,7 +223,7 @@ data:extend(
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-	result_inventory_size = 1,
+	result_inventory_size = 3,
 	source_inventory_size = 1,
 	
     resistances =
@@ -1256,7 +1256,7 @@ data:extend(
     allowed_effects = {"consumption", "speed", "productivity", "pollution"}
   },
   {
-    type = "assembling-machine",
+    type = "furnace",
     name = "Shifter",
     icon = "__NCP-Tech__/graphics/icons/Shifter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
@@ -1264,6 +1264,8 @@ data:extend(
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
+	result_inventory_size = 4,
+	source_inventory_size = 2,
     resistances =
     {
       {
@@ -2019,7 +2021,7 @@ data:extend(
     allowed_effects = {"consumption", "speed", "productivity", "pollution"}
   },
   {
-    type = "assembling-machine",
+    type = "furnace",
     name = "Grinding_mill",
     icon = "__NCP-Tech__/graphics/icons/Grinding_mill.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
@@ -2027,6 +2029,8 @@ data:extend(
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
+	result_inventory_size = 4,
+	source_inventory_size = 2,
     resistances =
     {
       {
@@ -2218,10 +2222,10 @@ data:extend(
   },
   {
     type = "assembling-machine",
-    name = "cotton_farm",
-    icon = "__NCP-Tech__/graphics/icons/cotton_farm.png",
+    name = "Farm",
+    icon = "__NCP-Tech__/graphics/icons/Farm.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "cotton_farm"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Farm"},
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -2299,7 +2303,7 @@ data:extend(
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
-    crafting_categories = {"cotton_farm"},
+    crafting_categories = {"Farm"},
     crafting_speed = 0.75,
     energy_source =
     {

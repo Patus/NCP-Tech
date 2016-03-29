@@ -2692,14 +2692,14 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "cotton_farm",
+    name = "Farm",
     energy_required = 0.2,
     enabled = "true",
     ingredients =
     {
       {"Quarried_stone", 1},
     },
-    result = "cotton_farm",
+    result = "Farm",
   },
   {
     type = "recipe",
@@ -3609,17 +3609,36 @@ data:extend(
   {
     type = "recipe",
     name = "Cotton",
-    category = "cotton_farm",
-    energy_required = 2,
+    category = "Farm",
+    energy_required = 120,
     enabled = "true",
     ingredients =
     {
       {type="item", name="Fertilizer", amount=1},
-      {type="fluid", name="Water_salt", amount=10},
+      {type="fluid", name="Water", amount=600},
     },
     results = 
     {
-      {type="item", name="Cotton", amount=1},
+      {type="item", name="Cotton", amount_min=1, amount_max= 15},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Cotton.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Cotton",
+    category = "Farm",
+    energy_required = 120,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Fertilizer", amount=1},
+      {type="fluid", name="Water", amount=600},
+    },
+    results = 
+    {
+      {type="item", name="raw-wood", amount_min=1, amount_max= 15},
       
     },
 	icon = "__NCP-Tech__/graphics/icons/Cotton.png",
