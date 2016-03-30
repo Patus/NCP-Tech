@@ -34,7 +34,6 @@ data:extend(
     },
     result = "Stone_crushed",
   },
-  Quartz_seed
   {
     type = "recipe",
     name = "Quartz",
@@ -48,6 +47,7 @@ data:extend(
     results = 
     {
       {type="item", name="Quartz", amount=1},
+	  {type="item", name="Quartz_seed", amount_min= 1, amount_max= 2, probability = 0.005},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Quartz.png",
@@ -55,7 +55,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Gravel_Sand",
+    name = "Gravel",
     category = "Grinding_mill",
     energy_required = 2,
     enabled = "true",
@@ -67,8 +67,6 @@ data:extend(
     {
       {type="item", name="Gravel", amount=1},
       {type="item", name="Sand", amount=1, probability = 0.05},
-	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.05},
-	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.05 },
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "Recourses",
@@ -94,7 +92,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Sand_Silt",
+    name = "Sand",
     category = "Grinding_mill",
     energy_required = 2,
     enabled = "true",
@@ -112,7 +110,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Silt_ClayDry",
+    name = "Silt",
     category = "Grinding_mill",
     energy_required = 2,
     enabled = "true",
@@ -1292,7 +1290,7 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="Water", amount=9},
+      {type="fluid", name="Water", amount=9,temperature=80},
       {type="item", name="Salt", amount=1, probability = 0.4},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Water.png",
@@ -2713,17 +2711,6 @@ data:extend(
       {"Quarried_stone", 1},
     },
     result = "Electronics_assembly_machine",
-  },
-  {
-    type = "recipe",
-    name = "Anode_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Anode_furnace",
   },
   {
     type = "recipe",

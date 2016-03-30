@@ -1949,16 +1949,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Anode_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Anode_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Anode_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Flash_furnace",
     icon = "__NCP-Tech__/graphics/icons/Flash_furnace.png",
     flags= { "goes-to-main-inventory" },
