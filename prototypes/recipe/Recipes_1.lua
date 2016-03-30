@@ -5,17 +5,7 @@ data:extend(
   
   
   --Nitre
-  {
-    type = "recipe",
-    name = "Saltpeter",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Nitre_ore", 1},
-    },
-    result = "Saltpeter",
-  },
+  
   {
     type = "recipe",
     name = "Fertilizer",
@@ -24,7 +14,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Saltpeter", 1},
+      {"Potassium_nitrate", 1},
 	  {type="fluid", name="Water", amount=4},
     },
     result = "Fertilizer",
@@ -44,6 +34,7 @@ data:extend(
     },
     result = "Stone_crushed",
   },
+  Quartz_seed
   {
     type = "recipe",
     name = "Quartz",
@@ -52,12 +43,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Quartz_crushed_rock", 2},
+      {"Quartz_crushed", 2},
     },
     results = 
     {
       {type="item", name="Quartz", amount=1},
-      {type="item", name="Quarried_stone", amount=1},
+      {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Quartz.png",
 	subgroup = "Recourses",
@@ -65,7 +56,7 @@ data:extend(
   {
     type = "recipe",
     name = "Gravel_Sand",
-    category = "Shifter",
+    category = "Grinding_mill",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -76,8 +67,27 @@ data:extend(
     {
       {type="item", name="Gravel", amount=1},
       {type="item", name="Sand", amount=1, probability = 0.05},
-	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2},
-	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2 },
+	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.05},
+	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.05 },
+    },
+	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Seeds",
+    category = "Shifter",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Clay_wet", 1},
+    },
+    results = 
+    {
+      {type="item", name="Clay_wet", amount=1, probability = 0.30},
+	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.05},
+	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.05 },
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "Recourses",
@@ -188,7 +198,7 @@ data:extend(
   --Quartz
   {
     type = "recipe",
-    name = "Quartz_crushed_rock",
+    name = "Quartz_crushed",
     category = "Crusher",
     energy_required = 2,
     enabled = "true",
@@ -196,7 +206,7 @@ data:extend(
     {
       {"Quartz_rock", 1},
     },
-    result = "Quartz_crushed_rock",
+    result = "Quartz_crushed",
   },
   {
     type = "recipe",
@@ -206,7 +216,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Quartz_crushed_rock", 2},
+      {"Quartz_crushed", 2},
       {type="fluid", name="Water_salt", amount=10}
     },
     results = 
@@ -228,17 +238,6 @@ data:extend(
       {"Quartz", 1},
     },
     result = "Silicon_dioxide",
-  },
-  {
-    type = "recipe",
-    name = "Quartz_seed",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quartz", 1},
-    },
-    result = "Quartz_seed",
   },
   {
     type = "recipe",
@@ -923,7 +922,7 @@ data:extend(
   {
     type = "recipe",
     name = "Iron_billet",
-    category = "Crusher",
+    category = "Furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -1398,18 +1397,19 @@ data:extend(
 	{
     type = "recipe",
     name = "Lithium_chloride",
-    category = "Chemical_plant",
+    category = "Distillation",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Brine", amount=1},
+      {type="fluid", name="Brine", amount=10},
     },
     results = 
     {
 		{type="item", name="Salt", amount=1, probability = 0.05},
+		{type="item", name="Potassium_nitrate", amount=1, probability = 0.03},
 		{type="item", name="Lithium_chloride", amount=1, probability = 0.01},
-		{type="fluid", name="Water", amount=1},
+		{type="fluid", name="Water", amount=6},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
 	subgroup = "Recourses",
@@ -1422,7 +1422,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-	  {type="fluid", name="Brine", amount=1},
+	  {type="fluid", name="Brine", amount=10},
     },
     results = 
     {
@@ -1533,7 +1533,7 @@ data:extend(
   {
     type = "recipe",
     name = "Magnesium",
-    category = "Furnace",
+    category = "Electric_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -1677,7 +1677,7 @@ data:extend(
   {
     type = "recipe",
     name = "Graphite_dust",
-    category = "Ore_washing",
+    category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -2303,7 +2303,7 @@ data:extend(
     ingredients =
     {
       {"Copper_billet", 7},
-	  {"Zinc_matte", 3},
+	  {"Zinc_billet", 3},
     },
     results = 
     {
@@ -2871,7 +2871,7 @@ data:extend(
     {
       {"Charcoal", 1},
       {"Sulfur", 1},
-      {"Saltpeter", 1},
+      {"Potassium_nitrate", 1},
     },
     result = "Gunpowder",
   },
@@ -3094,7 +3094,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Copper_consentrate",
+    name = "Copper_concentrate",
     category = "Ore_washing",
     energy_required = 2,
     enabled = "true",
@@ -3105,10 +3105,10 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Copper_consentrate", amount=1},
+      {type="item", name="Copper_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Copper_consentrate.png",
+	icon = "__NCP-Tech__/graphics/icons/Copper_concentrate.png",
 	subgroup = "Recourses",
   }, 
   {
@@ -3119,7 +3119,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Copper_consentrate", 1},
+      {"Copper_concentrate", 1},
     },
     results = 
     {
@@ -3138,7 +3138,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Copper_consentrate", 1},
+      {"Copper_concentrate", 1},
       {type="fluid", name="Oxygen", amount=1},
     },
     results = 

@@ -338,8 +338,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Copper_consentrate",
-    icon = "__NCP-Tech__/graphics/icons/Copper_consentrate.png",
+    name= "Copper_concentrate",
+    icon = "__NCP-Tech__/graphics/icons/Copper_concentrate.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -707,15 +707,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Nitre_ore",
-    icon = "__NCP-Tech__/graphics/icons/Nitre_ore.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Pentlandite_crushed_ore",
     icon = "__NCP-Tech__/graphics/icons/Pentlandite_crushed_ore.png",
     flags= { "goes-to-main-inventory" },
@@ -815,8 +806,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Quartz_crushed_rock",
-    icon = "__NCP-Tech__/graphics/icons/Quartz_crushed_rock.png",
+    name= "Quartz_crushed",
+    icon = "__NCP-Tech__/graphics/icons/Quartz_crushed.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "Crushed",
     order= "a-b-c",
@@ -878,8 +869,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Saltpeter",
-    icon = "__NCP-Tech__/graphics/icons/Saltpeter.png",
+    name= "Potassium_nitrate",
+    icon = "__NCP-Tech__/graphics/icons/Potassium_nitrate.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
