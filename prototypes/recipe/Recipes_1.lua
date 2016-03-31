@@ -74,7 +74,6 @@ data:extend(
   {
     type = "recipe",
     name = "Seeds",
-    category = "Shifter",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -83,9 +82,8 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Clay_wet", amount=1, probability = 0.30},
-	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.05},
-	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.05 },
+	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.005},
+	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.0005 },
     },
 	icon = "__NCP-Tech__/graphics/icons/Gravel.png",
 	subgroup = "Recourses",
@@ -121,7 +119,6 @@ data:extend(
     results = 
     {
       {type="item", name="Silt", amount=1},
-      {type="item", name="Clay_dry", amount=1, probability = 0.05}
     },
 	icon = "__NCP-Tech__/graphics/icons/Silt.png",
 	subgroup = "Recourses",
@@ -129,56 +126,20 @@ data:extend(
   {
     type = "recipe",
     name = "Rare_earth",
-    category = "Shifter",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Clay_dry", 1},
-    },
-    results = 
-    {
-      {type="item", name="Rare_earth", amount=1, probability = 1/10000}
-    },
-	icon = "__NCP-Tech__/graphics/icons/Rare_earth.png",
-	subgroup = "Recourses",
-  },
-  {
-    type = "recipe",
-    name = "Clay_dry",
-    category = "Grinding_mill",
+    category = "Ore_washing",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
       {"Silt", 1},
     },
-    result = "Clay_dry",
-  },
-  {
-    type = "recipe",
-    name = "Clay_dry2",
-    category = "Furnace",
-    energy_required = 0.8,
-    enabled = "true",
-    ingredients =
+    results = 
     {
-      {"Clay_wet", 1},
+      {type="item", name="Rare_earth", amount=1, probability = 1/10000}
+	  {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.004},
     },
-    result = "Clay_dry",
-  },
-  {
-    type = "recipe",
-    name = "Clay_wet",
-    category = "Mixer",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Clay_dry", 1},
-      {type="fluid", name="Water_salt", amount=1},
-    },
-    result = "Clay_wet",
+	icon = "__NCP-Tech__/graphics/icons/Rare_earth.png",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -655,18 +616,6 @@ data:extend(
   
   {
     type = "recipe",
-    name = "Gold_crushed_ore",
-    category = "Crusher",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Gold_ore", 1},
-    },
-    result = "Gold_crushed_ore",
-  },
-  {
-    type = "recipe",
     name = "Gold_concentrate",
     category = "Ore_washing",
     energy_required = 2,
@@ -678,7 +627,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.005},
+      {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.004},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
@@ -732,7 +681,64 @@ data:extend(
   
   
   
-  
+  {
+    type = "recipe",
+    name = "Coal_crushed_ore",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"coal", 1},
+    },
+    results = 
+    {
+      {type="item", name="Coal_crushed_ore", amount=1, amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Coal_crushed_ore.png",
+	subgroup = "Recourses",
+	
+  },
+  {
+    type = "recipe",
+    name = "Coal_ore_dust",
+    category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Coal_crushed_ore", amount=1, amount=1, probability = 1},
+      
+    },
+    results = 
+    {
+      {type="item", name="Coal_ore_dust", amount=1, amount=1, probability = 1},
+      {type="item", name="Stone_crushed", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Coal_ore_dust.png",
+	subgroup = "Recourses",
+	
+  },
+  {
+    type = "recipe",
+    name = "Coal_dust",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Coal_ore_dust", 2},
+      {type="fluid", name="Water_salt", amount=10},
+    },
+    results = 
+    {
+      {type="item", name="Coal_dust", amount=1, amount=1, probability = 1},
+      {type="item", name="Stone_crushed", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Coal_dust.png",
+	subgroup = "Recourses",
+	
+  },
   {
     type = "recipe",
     name = "Coal_distillation",
@@ -741,7 +747,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"coal", 1},
+      {"Coal_dust", 1},
     },
     results = 
     {
@@ -1777,7 +1783,7 @@ data:extend(
 	ingredients =
 	{
 		{type="item", name="Calcium_carbonate", amount=7},
-		{type="item", name="Clay_dry", amount=3},
+		{type="item", name="Silt", amount=3},
 	},
 	results = 
 	{
@@ -2592,17 +2598,6 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Shifter",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Shifter",
-  },
-  {
-    type = "recipe",
     name = "Silicon_crucible",
     energy_required = 0.2,
     enabled = "true",
@@ -3175,6 +3170,26 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/icons/Copper_billet.png",
 	subgroup = "Recourses",
   },
+  {
+    type = "recipe",
+    name = "Gold_concentrate",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Anode_slime", amount=5},
+      {type="fluid", name="Chlorine", amount=2},
+	  {type="fluid", name="Hydrochloric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Gold_concentrate", amount=1, probability =0.02},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
+	subgroup = "Recourses",
+  },
   
   
   
@@ -3341,6 +3356,7 @@ data:extend(
     results = 
     {
       {type="item", name="Zinc_billet", amount=1},
+	  {type="fluid", name="Anode_slime", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
 	subgroup = "Recourses",

@@ -1839,16 +1839,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Shifter",
-    icon = "__NCP-Tech__/graphics/icons/Shifter.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Shifter",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Silicon_crucible",
     icon = "__NCP-Tech__/graphics/icons/Silicon_crucible.png",
     flags= { "goes-to-main-inventory" },
@@ -2149,6 +2139,34 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
+  {
+    type= "item",
+    name= "Coal_crushed_ore",
+    icon = "__NCP-Tech__/graphics/icons/Coal_crushed_ore.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Coal_dust",
+    icon = "__NCP-Tech__/graphics/icons/Coal_dust.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Coal_ore_dust",
+    icon = "__NCP-Tech__/graphics/icons/Coal_ore_dust.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+
   
   --CHEATS
   
