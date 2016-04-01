@@ -713,7 +713,6 @@ data:extend(
     results = 
     {
       {type="item", name="Coal_ore_dust", amount=1, amount=1, probability = 1},
-      {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Coal_ore_dust.png",
 	subgroup = "Recourses",
