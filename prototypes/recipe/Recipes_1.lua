@@ -137,6 +137,7 @@ data:extend(
     {
       {type="item", name="Rare_earth", amount=1, probability = 1/10000},
 	  {type="item", name="Gold_concentrate", amount=1, probability = 0.004},
+	  {type="item", name="Zircon", amount=1, probability = 1/5000},
     },
 	icon = "__NCP-Tech__/graphics/icons/Rare_earth.png",
 	subgroup = "Recourses",
@@ -785,26 +786,7 @@ data:extend(
   
   --Gold
   
-  {
-    type = "recipe",
-    name = "Gold_concentrate",
-    category = "Ore_washing",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Gold_crushed_ore", 1},
-      {type="fluid", name="Water_salt", amount=10},
-    },
-    results = 
-    {
-      {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.004},
-      {type="item", name="Stone_crushed", amount=1},
-    },
-	icon = "__NCP-Tech__/graphics/icons/Gold_concentrate.png",
-	subgroup = "Recourses",
-	
-  },
+  
   {
     type = "recipe",
     name = "Dore_bar",
@@ -813,7 +795,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Gold_concentrate", 1},
+      {"Gold_concentrate", 10},
     },
     result = "Dore_bar",
   },
