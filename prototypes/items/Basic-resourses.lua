@@ -1139,8 +1139,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Uraninite_concentrate",
-    icon = "__NCP-Tech__/graphics/icons/Uraninite_concentrate.png",
+    name= "Uraninite_ore_concentrate",
+    icon = "__NCP-Tech__/graphics/icons/Uraninite_ore_concentrate.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -2248,7 +2248,24 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
+  {
+    type= "item",
+    name= "Uranium_tetrafluoride",
+    icon = "__NCP-Tech__/graphics/icons/Uranium_tetrafluoride.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Uranium_dioxide",
+    icon = "__NCP-Tech__/graphics/icons/Uranium_dioxide.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
 
   
   --CHEATS

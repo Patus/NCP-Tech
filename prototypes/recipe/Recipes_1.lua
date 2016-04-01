@@ -566,7 +566,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Rutile_crushed_ore", 2},
+      {"Rutile_crushed_ore", 1},
     },
     results = 
     {
@@ -2395,7 +2395,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Silver_nitrate",
+    name = "Nitric_acid",
     category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
@@ -2425,7 +2425,7 @@ data:extend(
     results = 
     {
 	  {type="item", name="Silver_oxide", amount=1},
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water", amount=1, probability =0.9},
     },
 	icon = "__NCP-Tech__/graphics/icons/Silver_oxide.png",
 	subgroup = "Recourses",
@@ -3041,36 +3041,38 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Uraninite_concentrate",
-    category = "Chemical_plant",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Uraninite_crushed_ore", 2},
-      {type="fluid", name="Ferric_chloride_solution", amount=1}
-    },
-    results = 
-    {
-      {type="item", name="Uraninite_concentrate", amount=1},
-      {type="item", name="Stone_crushed", amount=1}
-    },
-	icon = "__NCP-Tech__/graphics/icons/Uraninite_concentrate.png",
-	subgroup = "Recourses",
-  }, 
-  {
-    type = "recipe",
-    name = "Yellow_cake",
+    name = "Uraninite_ore_concentrate",
     category = "Grinding_mill",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Uraninite_concentrate", 1},
+      {"Uraninite_crushed_ore", 2},
+      
+    },
+    results = 
+    {
+      {type="item", name="Uraninite_ore_concentrate", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/icons/Uraninite_ore_concentrate.png",
+	subgroup = "Recourses",
+  }, 
+  {
+    type = "recipe",
+    name = "Yellow_cake",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Uraninite_ore_concentrate", 1},
+	  {type="fluid", name="Ferric_chloride_solution", amount=1}
     },
     results = 
     {
       {type="item", name="Yellow_cake", amount=1},
+	  {type="item", name="Sand", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/icons/Yellow_cake.png",
 	subgroup = "Recourses",
@@ -3113,32 +3115,49 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Uranium_tetrafluoride",
+    name = "Uranium_dioxide",
     category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
       {type="fluid", name="ADU", amount=1},
-      {type="fluid", name="Hydrofluoric_acid", amount=1},
       {type="fluid", name="Hydrogen", amount=1}
     },
     results = 
     {
-      {type="fluid", name="Uranium_tetrafluoride", amount=1},
+      {type="item", name="Uranium_dioxide", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/fluids/Uranium_tetrafluoride.png",
+	icon = "__NCP-Tech__/graphics/icons/Uranium_dioxide.png",
 	subgroup = "NCP_fluids",
   },
   {
     type = "recipe",
-    name = "Uranium_hexafluoride",
+    name = "Uranium_tetrafluoride",
     category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Uranium_tetrafluoride", amount=1},
+      {type="item", name="Uranium_dioxide", amount=1},
+      {type="fluid", name="Hydrofluoric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Uranium_tetrafluoride", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Uranium_tetrafluoride.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Uranium_hexafluoride",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Uranium_tetrafluoride", amount=1},
       {type="fluid", name="Oxygen", amount=1},
     },
     results = 
