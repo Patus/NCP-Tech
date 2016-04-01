@@ -132,6 +132,7 @@ data:extend(
     ingredients =
     {
       {"Silt", 1},
+	  {type="fluid", name="Water", amount=10},
     },
     results = 
     {
