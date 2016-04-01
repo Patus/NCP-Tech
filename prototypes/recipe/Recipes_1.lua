@@ -135,8 +135,8 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Rare_earth", amount=1, probability = 1/10000}
-	  {type="item", name="Gold_concentrate", amount=1, amount=1, probability = 0.004},
+      {type="item", name="Rare_earth", amount=1, probability = 1/10000},
+	  {type="item", name="Gold_concentrate", amount=1, probability = 0.004},
     },
 	icon = "__NCP-Tech__/graphics/icons/Rare_earth.png",
 	subgroup = "Recourses",
@@ -484,7 +484,7 @@ data:extend(
     results = 
     {
       {type="item", name="Lead_billet", amount=1},
-      {type="item", name="Silver_ingot", amount=1, amount=1, probability = 0.02},
+      {type="item", name="Silver_ingot", amount=1, probability = 0.02},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lead_billet.png",
 	subgroup = "Recourses",
@@ -558,55 +558,226 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Titanium_oxide",
-    category = "Ore_washing",
+    name = "Rutile_ore_sand",
+    category = "Grinding_mill",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
       {"Rutile_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
     },
     results = 
     {
-      {type="item", name="Titanium_oxide", amount=1},
-      {type="item", name="Zircon", amount=1, amount=1, probability = 0.01},
-      {type="item", name="Stone_crushed", amount=1},
+      {type="item", name="Rutile_ore_sand", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Titanium_oxide.png",
+	icon = "__NCP-Tech__/graphics/icons/Rutile_ore_sand.png",
 	subgroup = "Recourses",
   },
   {
     type = "recipe",
-    name = "Titanium",
+    name = "Rutile_sand",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Rutile_ore_sand", 2},
+      {type="fluid", name="Water_salt", amount=10},
+    },
+    results = 
+    {
+      {type="item", name="Rutile_sand", amount=1},
+      {type="item", name="Zircon", amount=1, amount=1, probability = 0.02},
+      {type="item", name="Sand", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Rutile_sand.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_tetrachloride",
+    category = "Electric_chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Coal_coke", amount=2},
+	  {type="item", name="Rutile_sand", amount=1},
+	  {type="fluid", name="Chlorine", amount=2},
+    },
+    results = 
+    {
+      {type="fluid", name="Titanium_tetrachloride", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Titanium_tetrachloride.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_dioxide",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Oxygen", amount=1},
+	  {type="fluid", name="Titanium_tetrachloride", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Chlorine", amount=2, probability =0.9},
+	  {type="item", name="Titanium_dioxide", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Titanium_dioxide.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_dioxide_pellet",
+    category = "Compressor",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Titanium_dioxide", amount=10},
+    },
+    results = 
+    {
+	  {type="item", name="Titanium_dioxide_pellet", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Titanium_dioxide_pellet.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_pellet",
     category = "Electrolyzer",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Titanium_oxide", 1},
-      {"Calcium_chloride", 1}
+	  {type="item", name="Titanium_dioxide_pellet", amount=1},
+	  {type="item", name="Calcium_chloride", amount=1},
     },
     results = 
     {
-      {type="item", name="Titanium", amount=1},
-      {type="item", name="Calcium_oxide", amount=1},
+	  {type="item", name="Titanium_pellet", amount=1},
+	  {type="item", name="Calcium_oxide", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Titanium.png",
+	icon = "__NCP-Tech__/graphics/icons/Titanium_pellet.png",
 	subgroup = "Recourses",
   },
   {
     type = "recipe",
-    name = "Zirconium_billet",
+    name = "Titanium_dust_dirty",
+    category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Titanium_pellet", amount=1},
+    },
+    results = 
+    {
+	  {type="item", name="Titanium_dust_dirty", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Titanium_dust_dirty.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_dust",
+    category = "Ore_washing",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Titanium_dust_dirty", amount=1},
+	  {type="fluid", name="Water", amount=10},
+    },
+    results = 
+    {
+	  {type="item", name="Titanium_dust", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Titanium_dust.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Titanium_billet",
+    category = "Electric_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Titanium_dust", amount=1},
+    },
+    results = 
+    {
+	  {type="item", name="Titanium_billet", amount=1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Titanium_billet.png",
+	subgroup = "Recourses",
+  },
+  
+  {
+    type = "recipe",
+    name = "Zirconium_tetrachloride",
     category = "Chemical_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Zircon", 1},
-      {type="fluid", name="Chlorine", amount=1}
+      {type="item", name="Zircon", amount=1},
+	  {type="item", name="Coal_coke", amount=2},
+	  {type="fluid", name="Chlorine", amount=4},
     },
-    result = "Zirconium_billet",
+    results = 
+    {
+	  {type="item", name="Zirconium_tetrachloride", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Zirconium_tetrachloride.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Zirconium_sponge",
+    category = "Electric_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Zirconium_tetrachloride", amount=1},
+	  {type="item", name="Magnesium", amount=1},
+    },
+    results = 
+    {
+	  {type="item", name="Zirconium_sponge", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Zirconium_sponge.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Zirconium_billet",
+    category = "Electric_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Zirconium_sponge", amount=8},
+    },
+    results = 
+    {
+	  {type="item", name="Zirconium_billet", amount=1},
+	  {type="item", name="Magnesium_chloride", amount=7},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Zirconium_billet.png",
+	subgroup = "Recourses",
   },
   
   
@@ -693,7 +864,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Coal_crushed_ore", amount=1, amount=1, probability = 1},
+      {type="item", name="Coal_crushed_ore", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Coal_crushed_ore.png",
 	subgroup = "Recourses",
@@ -707,12 +878,12 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="item", name="Coal_crushed_ore", amount=1, amount=1, probability = 1},
+      {type="item", name="Coal_crushed_ore", amount=1, probability = 1},
       
     },
     results = 
     {
-      {type="item", name="Coal_ore_dust", amount=1, amount=1, probability = 1},
+      {type="item", name="Coal_ore_dust", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Coal_ore_dust.png",
 	subgroup = "Recourses",
@@ -731,7 +902,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Coal_dust", amount=1, amount=1, probability = 1},
+      {type="item", name="Coal_dust", amount=1, probability = 1},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Coal_dust.png",
@@ -2149,7 +2320,7 @@ data:extend(
     results = 
     {
       {type="item", name="Sodium_carbonate", amount=1, probability = 1},
-
+	  {type="item", name="Calcium_chloride", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Sodium_carbonate.png",
 	subgroup = "Recourses",
@@ -2448,7 +2619,18 @@ data:extend(
   --Machines
 
   
-  
+  {
+    type = "recipe",
+    name = "Electric_chemical_furnace",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Electric_chemical_furnace",
+	subgroup = "Machines",
+  },
   {
     type = "recipe",
     name = "Miningdrill_1",
@@ -3261,7 +3443,7 @@ data:extend(
     results = 
     {
       {type="item", name="Nickel_cathode", amount=1},
-      {type="item", name="Cobalt_oxide", amount=1},
+      {type="item", name="Cobalt_oxide", amount=1, probability =0.04},
     },
 	icon = "__NCP-Tech__/graphics/icons/Nickel_cathode.png",
 	subgroup = "Recourses",

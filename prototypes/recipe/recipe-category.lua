@@ -144,5 +144,8 @@ data:extend(
     type = "recipe-category",
     name = "Silicon_furnace"
   },
-  
+  {
+    type = "recipe-category",
+    name = "Electric_chemical_furnace"
+  },
 })
