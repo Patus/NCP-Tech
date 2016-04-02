@@ -3130,7 +3130,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Uranium_dioxide", amount=1},
-      {type="fluid", name="Hydrofluoric_acid", amount=1},
+      {type="fluid", name="Hydrofluoric_acid", amount=4},
     },
     results = 
     {
@@ -3148,7 +3148,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Uranium_tetrafluoride", amount=1},
-      {type="fluid", name="Oxygen", amount=1},
+      {type="fluid", name="Hydrofluoric_acid", amount=2},
     },
     results = 
     {
