@@ -104,7 +104,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.40 / 2.5
     },
-    energy_usage = "5MW",
+    energy_usage = "1.6MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -206,7 +206,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.40 / 2.5
     },
-    energy_usage = "5MW",
+    energy_usage = "2MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -308,7 +308,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "300kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -391,7 +391,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "100kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -522,7 +522,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "700kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -621,7 +621,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "1.25MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -720,7 +720,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "1.1MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -819,7 +819,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "30kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -918,7 +918,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "350kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -1049,7 +1049,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "600kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -1346,7 +1346,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "4.4MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -1478,7 +1478,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "2.9MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -1609,7 +1609,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "4MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -1713,7 +1713,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "100kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -1812,7 +1812,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "1.68MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -2012,7 +2012,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "200kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -2022,10 +2022,10 @@ data:extend(
   },
   {
     type = "assembling-machine",
-    name = "cryogenic_distillation_plant",
-    icon = "__NCP-Tech__/graphics/icons/cryogenic_distillation_plant.png",
+    name = "Cryogenic_distillation_plant",
+    icon = "__NCP-Tech__/graphics/icons/Cryogenic_distillation_plant.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "cryogenic_distillation_plant"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Cryogenic_distillation_plant"},
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -2074,7 +2074,7 @@ data:extend(
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    fast_replaceable_group = "cryogenic_distillation_plant",
+    fast_replaceable_group = "Cryogenic_distillation_plant",
     animation =
     {
       filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
@@ -2103,7 +2103,7 @@ data:extend(
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
-    crafting_categories = {"cryogenic_distillation_plant"},
+    crafting_categories = {"Cryogenic_distillation_plant"},
     crafting_speed = 0.75,
     energy_source =
     {
@@ -2111,7 +2111,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "300kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -2210,7 +2210,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "100kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -2408,7 +2408,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "800kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -2610,7 +2610,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "50kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -2812,7 +2812,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "1.2MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -3042,7 +3042,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "50kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -3141,7 +3141,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "1.2MW",
     ingredient_count = 4,
     module_specification =
     {
@@ -3240,7 +3240,7 @@ data:extend(
       usage_priority = "secondary-input",
       emissions = 0.04 / 2.5
     },
-    energy_usage = "150kW",
+    energy_usage = "1.5kW",
     ingredient_count = 4,
     module_specification =
     {
@@ -3250,6 +3250,96 @@ data:extend(
   },
   
   
+  
+  {
+    type= "item",
+    name= "OP_generator",
+    icon = "__NCP-Tech__/graphics/icons/Electric_chemical_furnace.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+	place_result= "OP_generator",
+  },
+  
+  {
+    type = "generator",
+    name = "OP_generator",
+    icon = "__base__/graphics/icons/steam-engine.png",
+    flags = {"placeable-neutral","player-creation"},
+    minable = {mining_time = 1, result = "OP_generator"},
+    max_health = 300,
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+    effectivity = 100000000,
+    fluid_usage_per_tick = 0.01,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 70
+      }
+    },
+    collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
+    selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
+    fluid_box =
+    {
+      base_area = 1,
+      pipe_covers = pipecoverspictures(),
+      pipe_connections =
+      {
+        { position = {0, 3} },
+        { position = {0, -3} },
+      },
+    },
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-output"
+    },
+    horizontal_animation =
+    {
+      filename = "__base__/graphics/entity/steam-engine/steam-engine-horizontal.png",
+      width = 246,
+      height = 137,
+      frame_count = 32,
+      line_length = 8,
+      shift = {1.34, -0.06}
+    },
+    vertical_animation =
+    {
+      filename = "__base__/graphics/entity/steam-engine/steam-engine-vertical.png",
+      width = 155,
+      height = 186,
+      frame_count = 32,
+      line_length = 8,
+      shift = {0.812, 0.031}
+    },
+    smoke =
+    {
+      {
+        name = "light-smoke",
+        north_position = {0.9, 0.0},
+        east_position = {-2.0, -2.0},
+        frequency = 10 / 32,
+        starting_vertical_speed = 0.08,
+        slow_down_factor = 1,
+        starting_frame_deviation = 60
+      }
+    },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound =
+      {
+        filename = "__base__/sound/steam-engine-90bpm.ogg",
+        volume = 0.6
+      },
+      match_speed_to_activity = true,
+    },
+    min_perceived_performance = 0.25,
+    performance_to_sound_speedup = 0.5
+  },
   
   
   

@@ -1,4 +1,4 @@
-data.raw["item"]["coal"].fuel_value = "26MJ"
+data.raw["item"]["coal"].fuel_value =nil
 
 
 data:extend({
@@ -1247,8 +1247,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Yellow_cake",
-    icon = "__NCP-Tech__/graphics/icons/Yellow_cake.png",
+    name= "Yellowcake",
+    icon = "__NCP-Tech__/graphics/icons/Yellowcake.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",
@@ -1909,12 +1909,12 @@ data:extend({
   },
   {
     type= "item",
-    name= "cryogenic_distillation_plant",
-    icon = "__NCP-Tech__/graphics/icons/cryogenic_distillation_plant.png",
+    name= "Cryogenic_distillation_plant",
+    icon = "__NCP-Tech__/graphics/icons/Cryogenic_distillation_plant.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "Machines",
     order= "a-b-c",
-	place_result = "cryogenic_distillation_plant",
+	place_result = "Cryogenic_distillation_plant",
     stack_size= 50,
   },
   {
@@ -2040,7 +2040,7 @@ data:extend({
     name= "Lead_oxide",
     icon = "__NCP-Tech__/graphics/icons/Lead_oxide.png",
     flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
+    subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
   },
@@ -2049,7 +2049,7 @@ data:extend({
     name= "Magnesium_chloride",
     icon = "__NCP-Tech__/graphics/icons/Magnesium_chloride.png",
     flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
+    subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
   },
@@ -2058,7 +2058,7 @@ data:extend({
     name= "Wood_seed",
     icon = "__NCP-Tech__/graphics/icons/Wood_seed.png",
     flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
+    subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
   },
@@ -2067,7 +2067,7 @@ data:extend({
     name= "Cotton_seed",
     icon = "__NCP-Tech__/graphics/icons/Cotton_seed.png",
     flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
+    subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
   },
@@ -2261,6 +2261,15 @@ data:extend({
     type= "item",
     name= "Uranium_dioxide",
     icon = "__NCP-Tech__/graphics/icons/Uranium_dioxide.png",
+    flags= { "goes-to-main-inventory" },
+    subgroup = "ores",
+    order= "a-b-c",
+    stack_size= 50,
+  },
+  {
+    type= "item",
+    name= "Coal",
+    icon = "__NCP-Tech__/graphics/icons/Coal.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",

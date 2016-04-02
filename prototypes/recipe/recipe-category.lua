@@ -82,7 +82,7 @@ data:extend(
   },
   {
     type = "recipe-category",
-    name = "cryogenic_distillation_plant"
+    name = "Cryogenic_distillation_plant"
   },
   {
     type = "recipe-category",

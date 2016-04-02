@@ -838,12 +838,12 @@ data:extend(
   {
     type = "recipe",
     name = "Coal_crushed_ore",
-    category = "Ore_washing",
+    category = "Crusher",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"coal", 1},
+      {type="item", name="Coal", amount=1}
     },
     results = 
     {
@@ -886,7 +886,7 @@ data:extend(
     results = 
     {
       {type="item", name="Coal_dust", amount=1, probability = 1},
-      {type="item", name="Stone_crushed", amount=1},
+      {type="item", name="Sand", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Coal_dust.png",
 	subgroup = "Recourses",
@@ -1319,6 +1319,7 @@ data:extend(
       {type="fluid", name="Glycerol", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Glycerol.png",
+	subgroup = "NCP_fluids",
   },
   {
     type = "recipe",
@@ -1420,7 +1421,7 @@ data:extend(
 	{
     type = "recipe",
     name = "Nitrogen_Oxygen",
-    category = "cryogenic_distillation_plant",
+    category = "Cryogenic_distillation_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -2840,14 +2841,14 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "cryogenic_distillation_plant",
+    name = "Cryogenic_distillation_plant",
     energy_required = 0.2,
     enabled = "true",
     ingredients =
     {
       {"Quarried_stone", 1},
     },
-    result = "cryogenic_distillation_plant",
+    result = "Cryogenic_distillation_plant",
   },
   {
     type = "recipe",
@@ -3060,7 +3061,7 @@ data:extend(
   }, 
   {
     type = "recipe",
-    name = "Yellow_cake",
+    name = "Yellowcake",
     category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
@@ -3071,10 +3072,10 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Yellow_cake", amount=1},
+      {type="item", name="Yellowcake", amount=1},
 	  {type="item", name="Sand", amount=1}
     },
-	icon = "__NCP-Tech__/graphics/icons/Yellow_cake.png",
+	icon = "__NCP-Tech__/graphics/icons/Yellowcake.png",
 	subgroup = "Recourses",
   }, 
   {
@@ -3085,7 +3086,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Yellow_cake", 1},
+      {"Yellowcake", 1},
       {type="fluid", name="Nitric_acid", amount=1}
     },
     results = 
@@ -4312,11 +4313,84 @@ data:extend(
 	
     },
   },
+  {
+    type = "recipe",
+    name = "op_gen",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="OP_generator", amount=50},
+	
+    },
+  },
   
   
   
-  
-  
+  {
+    type = "recipe",
+    name = "expundbelt",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="express-transport-belt-to-ground", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "normpipe",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="pipe", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "pipeund",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="pipe-to-ground", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "medipole",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="medium-electric-pole", amount=50},
+	
+    },
+  },
   
   
   
