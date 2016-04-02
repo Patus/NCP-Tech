@@ -1841,16 +1841,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Silicon_crucible",
-    icon = "__NCP-Tech__/graphics/icons/Silicon_crucible.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Silicon_crucible",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Cracking_plant",
     icon = "__NCP-Tech__/graphics/icons/Cracking_plant.png",
     flags= { "goes-to-main-inventory" },

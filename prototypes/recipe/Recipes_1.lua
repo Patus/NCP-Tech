@@ -2763,17 +2763,6 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Silicon_crucible",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Silicon_crucible",
-  },
-  {
-    type = "recipe",
     name = "Cracking_plant",
     energy_required = 0.2,
     enabled = "true",
