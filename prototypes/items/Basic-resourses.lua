@@ -1,5 +1,5 @@
 data.raw["item"]["coal"].fuel_value =nil
-
+data.raw["item"]["raw-wood"].fuel_value =nil
 
 data:extend({
 
@@ -290,6 +290,7 @@ data:extend({
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
+	fuel_value="280MJ"
   },
   {
     type= "item",
@@ -1217,6 +1218,7 @@ data:extend({
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
+	fuel_value="180MJ"
   },
   {
     type= "item",
@@ -2156,6 +2158,7 @@ data:extend({
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
+	fuel_value="300MJ"
   },
   {
     type= "item",
