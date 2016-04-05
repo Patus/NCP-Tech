@@ -463,6 +463,7 @@ data:extend(
     ingredients =
     {
       {"Lead_concentrate", 1},
+      {type="fluid", name="Oxygen", amount=1},
     },
     results = 
     {
@@ -934,6 +935,44 @@ data:extend(
   },
   {
     type = "recipe",
+    name = "Syngas",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Coal_gas", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Syngas", amount=1},
+      {type="fluid", name="Toluene", amount=1, probability = 0.1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Syngas.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Syngas2",
+    category = "Cracking_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Petroleum_gas", amount=1},
+      {type="fluid", name="Water", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Syngas", amount=2},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Syngas.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
     name = "Silicon_carbide",
     category = "Silicon_furnace",
     energy_required = 2,
@@ -1177,6 +1216,7 @@ data:extend(
     results = 
     {
       {type="fluid", name="Ethylene", amount=1},
+      {type="fluid", name="Toluene", amount=1, probability = 0.1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Ethylene.png",
 	subgroup = "NCP_fluids",
@@ -1189,12 +1229,13 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Chlorine", amount=1},
+      {type="fluid", name="Hydrogen_chlorine", amount=1},
       {type="fluid", name="Ethylene", amount=1},
     },
     results = 
     {
       {type="fluid", name="Dichloroethane", amount=1},
+      {type="fluid", name="Water", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Dichloroethane.png",
 	subgroup = "NCP_fluids",
@@ -1208,11 +1249,10 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Dichloroethane", amount=1},
-      {type="fluid", name="Ferric_chloride_solution", amount=1},
     },
     results = 
     {
-      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="fluid", name="Hydrogen_chlorine", amount=1, probability = 0.9},
       {type="item", name="Plastic_pellets", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Plastic_pellets.png",
@@ -1306,7 +1346,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Glycerol",
+    name = "Toluene",
     category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
@@ -1316,9 +1356,9 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="Glycerol", amount=1},
+      {type="fluid", name="Toluene", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/fluids/Glycerol.png",
+	icon = "__NCP-Tech__/graphics/fluids/Toluene.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -3275,6 +3315,7 @@ data:extend(
     ingredients =
     {
       {"Copper_concentrate", 1},
+      {type="fluid", name="Oxygen", amount=1},
     },
     results = 
     {
@@ -3412,6 +3453,7 @@ data:extend(
     ingredients =
     {
       {"Nickel_concentrate", 1},
+      {type="fluid", name="Oxygen", amount=1},
     },
     results = 
     {
@@ -3505,13 +3547,14 @@ data:extend(
     ingredients =
     {
       {"Zinc_concentrate", 1},
+      {type="fluid", name="Oxygen", amount=1},
     },
     results = 
     {
       {type="item", name="Zinc_matte", amount=1},
       {type="item", name="Slag", amount=1},
       {type="fluid", name="Sulfur_dioxide", amount=1},
-	  {type="item", name="Germanium_concentrate", amount=1, probability = 0.004},
+      {type="item", name="Germanium_concentrate", amount=1, probability = 0.004},
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_matte.png",
 	subgroup = "Recourses",
@@ -3530,7 +3573,7 @@ data:extend(
     results = 
     {
       {type="item", name="Zinc_billet", amount=1},
-	  {type="fluid", name="Anode_slime", amount=1},
+      {type="fluid", name="Anode_slime", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Zinc_billet.png",
 	subgroup = "Recourses",
@@ -3953,14 +3996,15 @@ data:extend(
   {
     type = "recipe",
     name = "Direct_reduced_iron",
-	category = "Chemical_plant",
+	category = "Rotary_kiln",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {type="item", name="Magnetite_concentrate", amount=1},
-	  {type="fluid", name="Hydrogen", amount=1},
-	  {type="fluid", name="Carbon_monoxide", amount=1},
+      {type="item", name="Magnetite_concentrate", amount=2},
+      {type="item", name="Coal_coke", amount=1},
+      {type="item", name="Limestone_crushed", amount=1},
+      {type="fluid", name="Syngas", amount=2},
     },
     results = 
     {
@@ -3973,7 +4017,7 @@ data:extend(
   {
     type = "recipe",
     name = "Steel_billet",
-	category = "Electric_arc_furnace",
+    category = "Electric_arc_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
@@ -3982,7 +4026,8 @@ data:extend(
     },
     results = 
     {
-		{type="item", name="Steel_billet", amount=1, probability = 1},
+	{type="item", name="Steel_billet", amount=1, probability = 1},
+	{type="item", name="Slag", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Steel_billet.png",
 	subgroup = "Recourses",
