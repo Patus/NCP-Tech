@@ -1036,6 +1036,7 @@ data:extend(
     ingredients =
     {
       {"Magnetite_ore", 3},
+      {type="item", name="Charcoal", amount=1},
     },
     results = 
     {
@@ -1047,7 +1048,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Wrought_iron_billet_early",
+    name = "Iron_billet_early",
     category = "Furnace",
     energy_required = 2,
     enabled = "true",
@@ -1056,7 +1057,7 @@ data:extend(
       {"Pig_iron_early", 2},
       {"Charcoal", 1},
     },
-    result = "Wrought_iron_billet",
+    result = "Iron_billet",
   },
   
   ------------------------------------
