@@ -3831,6 +3831,47 @@ data:extend(
   },
   {
     type = "recipe",
+    name = "Sulfur_trioxide",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Sulfur_dioxide", amount=1},
+      {type="fluid", name="Oxygen", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Sulfur_trioxide", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Sulfur_trioxide.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Oleum",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Sulfur_trioxide", amount=1},
+      {type="fluid", name="Sulfuric_acid", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Oleum", amount=1},
+      
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Oleum.png",
+	subgroup = "NCP_fluids",
+  },
+  
+  
+  
+  {
+    type = "recipe",
     name = "Cotton_farm",
     category = "Farm",
     energy_required = 120,
@@ -4089,9 +4130,231 @@ data:extend(
 	subgroup = "Recourses",
   },
   
+  ------carbon fiber fabric
+  {
+    type = "recipe",
+    name = "Acrylonitrile",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Petroleum_gas", amount=1},
+	  {type="fluid", name="Ammonia", amount=1},
+	  {type="fluid", name="Oxygen", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Acrylonitrile", amount=1, probability = 1},
+		{type="item", name="Water", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Acrylonitrile.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Plastic_pellets2",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Acrylonitrile", amount=1},
+	  {type="fluid", name="Styrene", amount=1},
+	  {type="fluid", name="Butadiene", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Plastic_pellets", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Plastic_pellets.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Plastic_pellets2",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Acrylonitrile", amount=1},
+	  {type="fluid", name="Styrene", amount=1},
+	  {type="fluid", name="Butadiene", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Plastic_pellets", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Plastic_pellets.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "PAN_filament",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Acrylonitrile", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="PAN_filament", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/PAN_filament.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Carbon_fiber_filament",
+	category = "Electric_arc_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="PAN_filament", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Carbon_fiber_filament", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Carbon_fiber_filament.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Carbon_fiber_fabric",
+	category = "Assembling_machine",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Carbon_fiber_filament", amount=1},
+	  {type="item", name="Resin", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Carbon_fiber_fabric", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Carbon_fiber_fabric.png",
+	subgroup = "Recourses",
+  },
+  --TNT
+  
+  {
+    type = "recipe",
+    name = "MNT",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Nitric_sulfuric_acid_mixture", amount=1},
+	  {type="fluid", name="Toluene", amount=1},
+    },
+    results = 
+    {
+		{type="fluid", name="MNT", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/MNT.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "DNT",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="MNT", amount=1},
+	  {type="fluid", name="Nitric_acid", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="DNT", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/DNT.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "TNT",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="DNT", amount=1},
+	  {type="fluid", name="Nitric_acid", amount=1},
+	  {type="fluid", name="Oleum", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="TNT", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/TNT.png",
+	subgroup = "Recourses",
+  },
   
   
   
+  
+  {
+    type = "recipe",
+    name = "Seed_oil",
+	category = "Compressor",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Cotton_seed", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Seed_oil", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Seed_oil.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Seed_oil",
+	category = "Compressor",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="item", name="Wood_seed", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Seed_oil", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Seed_oil.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Glycerol",
+	category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+	  {type="fluid", name="Seed_oil", amount=1},
+	  {type="fluid", name="Water", amount=1},
+	  {type="item", name="Sodium_hydroxide", amount=1},
+    },
+    results = 
+    {
+		{type="item", name="Glycerol", amount=1, probability = 1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Glycerol.png",
+	subgroup = "NCP_fluids",
+  },
   
   
   
