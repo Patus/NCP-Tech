@@ -217,13 +217,18 @@ data:extend(
     type = "recipe",
     name = "Silicon_wafer",
     category = "Assembling_machine",
-    energy_required = 2,
+    energy_required = 60,
     enabled = "true",
     ingredients =
     {
       {"Silicon_boule", 1},
     },
-    result = "Silicon_wafer",
+    results = 
+    {
+      {type="item", name="Silicon_wafer", amount=20},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_wafer.png",
+	subgroup = "Recourses",
   },
 
 --Bauxite
@@ -346,7 +351,7 @@ data:extend(
     type = "recipe",
     name = "Plaster",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 0.8,
     enabled = "true",
     ingredients =
     {
@@ -415,7 +420,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Tin_concentrate", 1},
+      {"Tin_concentrate", 2},
     },
     result = "Tin_billet",
   },
@@ -478,7 +483,7 @@ data:extend(
     type = "recipe",
     name = "Lead_billet",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 2.4,
     enabled = "true",
     ingredients =
     {
@@ -530,7 +535,7 @@ data:extend(
     type = "recipe",
     name = "Lead_oxide",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 1.5,
     enabled = "true",
     ingredients =
     {
@@ -793,7 +798,7 @@ data:extend(
     type = "recipe",
     name = "Dore_bar",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 10,
     enabled = "true",
     ingredients =
     {
@@ -1012,14 +1017,19 @@ data:extend(
     type = "recipe",
     name = "Asphalt_concrete",
     category = "Assembling_machine",
-    energy_required = 2,
+    energy_required = 8,
     enabled = "true",
     ingredients =
     {
-      {"Gravel", 1},
+      {"Gravel", 5},
       {type="fluid", name="Bitumi", amount=1},
     },
-    result = "Asphalt_concrete",
+    results = 
+    {
+      {type="item", name="Asphalt_concrete", amount=5},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Asphalt_concrete.png",
+	subgroup = "Recourses",
   },
   
   
@@ -1031,17 +1041,17 @@ data:extend(
     type = "recipe",
     name = "Pig_iron_early",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 5,
     enabled = "true",
     ingredients =
     {
-      {"Magnetite_ore", 3},
-      {type="item", name="Charcoal", amount=1},
+      {"Magnetite_ore", 6},
+      {type="item", name="Charcoal", amount=3},
     },
     results = 
     {
       {type="item", name="Pig_iron_early", amount=1},
-      {type="item", name="Slag", amount=1},
+      {type="item", name="Slag", amount=2},
     },
 	icon = "__NCP-Tech__/graphics/icons/Pig_iron.png",
 	subgroup = "Recourses",
@@ -1050,7 +1060,7 @@ data:extend(
     type = "recipe",
     name = "Iron_billet_early",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 3,
     enabled = "true",
     ingredients =
     {
@@ -1120,7 +1130,7 @@ data:extend(
     type = "recipe",
     name = "Iron_billet",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 1.5,
     enabled = "true",
     ingredients =
     {
@@ -1758,7 +1768,7 @@ data:extend(
     type = "recipe",
     name = "Magnesium_oxide",
     category = "Furnace",
-    energy_required = 2,
+    energy_required = 6,
     enabled = "true",
     ingredients =
     {
@@ -2034,7 +2044,7 @@ data:extend(
     type = "recipe",
     name = "Cement",
 	category = "Grinding_mill",
-    energy_required = 5,
+    energy_required = 10,
     enabled = "true",
     ingredients =
     {
@@ -2053,7 +2063,7 @@ data:extend(
     type = "recipe",
     name = "Cement_bauxite",
 	category = "Grinding_mill",
-    energy_required = 5,
+    energy_required = 12,
     enabled = "true",
     ingredients =
     {
@@ -2072,7 +2082,7 @@ data:extend(
     type = "recipe",
     name = "Cement_slag",
 	category = "Grinding_mill",
-    energy_required = 5,
+    energy_required = 16,
     enabled = "true",
     ingredients =
     {
@@ -2158,7 +2168,7 @@ data:extend(
     type = "recipe",
     name = "Aluminosilicate_glass",
 	category = "Furnace",
-    energy_required = 2,
+    energy_required = 12,
     enabled = "true",
     ingredients =
     {
@@ -2169,7 +2179,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Aluminosilicate_glass", amount=1, probability = 1},
+      {type="item", name="Aluminosilicate_glass", amount=10, probability = 1},
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Aluminosilicate_glass.png",
@@ -2197,7 +2207,7 @@ data:extend(
     type = "recipe",
     name = "Fiberglass_cloth",
 	category = "Assembling_machine",
-    energy_required = 2,
+    energy_required = 4,
     enabled = "true",
     ingredients =
     {
@@ -2237,7 +2247,7 @@ data:extend(
     type = "recipe",
     name = "Oxide_glass",
 	category = "Furnace",
-    energy_required = 2,
+    energy_required = 15,
     enabled = "true",
     ingredients =
     {
@@ -2246,7 +2256,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Oxide_glass", amount=1, probability = 1},
+      {type="item", name="Oxide_glass", amount=10, probability = 1},
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Oxide_glass.png",
@@ -2293,7 +2303,7 @@ data:extend(
     type = "recipe",
     name = "Optical_fiber",
 	category = "Assembling_machine",
-    energy_required = 2,
+    energy_required = 20,
     enabled = "true",
     ingredients =
     {
@@ -2396,7 +2406,7 @@ data:extend(
     type = "recipe",
     name = "Glass",
 	category = "Furnace",
-    energy_required = 2,
+    energy_required = 8,
     enabled = "true",
     ingredients =
     {
@@ -2444,11 +2454,11 @@ data:extend(
     type = "recipe",
     name = "Battery",
     category = "Assembling_machine",
-    energy_required = 2,
+    energy_required = 3,
     enabled = "true",
     ingredients =
     {
-      {"Plastic_pellets", 1},
+      {"Plastic_pellets", 3},
 	  {"Lead_plate", 5},
 	  {type="fluid", name="Sulfuric_acid", amount=1},
     },
@@ -2579,7 +2589,7 @@ data:extend(
     type = "recipe",
     name = "Lead_solder_ingot",
     category = "Furnace",
-    energy_required = 10,
+    energy_required = 6,
     enabled = "true",
     ingredients =
     {
@@ -3083,7 +3093,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"raw-wood", 2},
+      {"raw-wood", 1},
     },
     result = "Charcoal",
   },
@@ -3801,7 +3811,7 @@ data:extend(
     type = "recipe",
     name = "Copper_billet",
     category = "Furnace",
-    energy_required = 0.2,
+    energy_required = 4,
     enabled = "true",
     ingredients =
     {
@@ -4287,7 +4297,7 @@ data:extend(
     type = "recipe",
     name = "Carbon_fiber_fabric",
 	category = "Assembling_machine",
-    energy_required = 2,
+    energy_required = 5,
     enabled = "true",
     ingredients =
     {
@@ -4366,11 +4376,11 @@ data:extend(
     type = "recipe",
     name = "Seed_oil",
 	category = "Compressor",
-    energy_required = 2,
+    energy_required = 5,
     enabled = "true",
     ingredients =
     {
-	  {type="item", name="Cotton_seed", amount=1},
+	  {type="item", name="Cotton_seed", amount=3},
     },
     results = 
     {
