@@ -1055,7 +1055,7 @@ data:extend(
     ingredients =
     {
       {"Pig_iron_early", 2},
-      {"Charcoal", 1},
+      
     },
     result = "Iron_billet",
   },
@@ -1471,8 +1471,9 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="Nitrogen", amount=1},
-      {type="fluid", name="Oxygen", amount=1},
+      {type="fluid", name="Nitrogen", amount=1, probability = 0.781},
+      {type="fluid", name="Oxygen", amount=1, probability = 0.209},
+      {type="fluid", name="Argon", amount=1, probability = 0.209},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Air.png",
 	subgroup = "NCP_fluids",
@@ -1636,15 +1637,16 @@ data:extend(
 
   {
     type = "recipe",
-    name = "Lithium",
-    category = "Electrolyzer",
+    name = "Lithium_carbonate",
+    category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
+      {"Sodium_carbonate", 1},
       {"Lithium_chloride", 1},
     },
-    result = "Lithium",
+    result = "Lithium_carbonate",
   },
   {
     type = "recipe",
@@ -1655,7 +1657,7 @@ data:extend(
     ingredients =
     {
       {"Cobalt_oxide", 1},
-	  {"Lithium", 1},
+      {"Lithium_carbonate", 1},
     },
     result = "Lithium_cobalt_oxide",
   },
@@ -1667,15 +1669,55 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Lithium_chloride", 1},
-	  {type="fluid", name="Water", amount=1},
+      
+	  {type="item", name="Lithium_chloride", amount=1},
+	  {type="item", name="Sodium_perchlorate", amount=1},
     },
     results = 
     {
       {type="item", name="Lithium_perchlorate", amount=1},
-	  {type="fluid", name="Hydrogen", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lithium_perchlorate.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Sodium_chlorate",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      
+	  {type="fluid", name="Water", amount=1},
+	  {type="item", name="Salt", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Sodium_chlorate", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Sodium_chlorate.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Sodium_perchlorate",
+    category = "Electrolyzer",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      
+	  {type="fluid", name="Water", amount=1},
+	  {type="item", name="Sodium_chlorate", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Sodium_perchlorate", amount=1},
+      {type="fluid", name="Hydrogen", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Sodium_perchlorate.png",
 	subgroup = "Recourses",
   },
   {
@@ -1688,7 +1730,7 @@ data:extend(
     {
       {"Lithium_cobalt_oxide", 1},
 	  {"Lithium_perchlorate", 1},
-	  {"Silicon_carbide", 1},
+	  {"Graphite_dust", 1},
 	  {"Battery_casing", 1},
     },
     result = "Li-ion_battery",
@@ -2491,7 +2533,25 @@ data:extend(
   ---------------------
   
   
-  
+  {
+    type = "recipe",
+    name = "Nichrome",
+    category = "Electric_furnace",
+    energy_required = 10,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Ferrochrome", amount=3},
+      {type="item", name="Nickel_billet", amount=2},
+    },
+    results = 
+    {
+	  {type="item", name="Nichrome", amount=5},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Nichrome.png",
+	subgroup = "Recourses",
+  },
   
   {
     type = "recipe",
@@ -3721,7 +3781,7 @@ data:extend(
   {
     type = "recipe",
     name = "Tungsten_carbide_billet",
-    category = "Blast_furnace",
+    category = "Electric_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
