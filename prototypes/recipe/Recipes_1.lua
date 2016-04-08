@@ -1842,7 +1842,7 @@ data:extend(
   {
     type = "recipe",
     name = "Magnesium_chloride",
-    category = "Electric_arc_furnace",
+    category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
     ingredients =
