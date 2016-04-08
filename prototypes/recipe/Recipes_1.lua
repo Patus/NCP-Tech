@@ -4215,8 +4215,8 @@ data:extend(
     },
     results = 
     {
-		{type="item", name="Acrylonitrile", amount=1, probability = 1},
-		{type="item", name="Water", amount=1, probability = 1},
+		{type="fluid", name="Acrylonitrile", amount=1, probability = 1},
+		{type="fluid", name="Water", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Acrylonitrile.png",
 	subgroup = "NCP_fluids",
@@ -4384,7 +4384,7 @@ data:extend(
     },
     results = 
     {
-		{type="item", name="Seed_oil", amount=1, probability = 1},
+		{type="fluid", name="Seed_oil", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Seed_oil.png",
 	subgroup = "NCP_fluids",
@@ -4401,7 +4401,7 @@ data:extend(
     },
     results = 
     {
-		{type="item", name="Seed_oil", amount=1, probability = 1},
+		{type="fluid", name="Seed_oil", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Seed_oil.png",
 	subgroup = "NCP_fluids",
@@ -4420,7 +4420,7 @@ data:extend(
     },
     results = 
     {
-		{type="item", name="Glycerol", amount=1, probability = 1},
+		{type="fluid", name="Glycerol", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Glycerol.png",
 	subgroup = "NCP_fluids",
