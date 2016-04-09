@@ -423,7 +423,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
+        pipe_connections = {{ type="input", position = {1, -3} }}
       },
 	  {
         production_type = "input",
@@ -431,7 +431,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = {{ type="input", position = {-1, -3} }}
       },
 	  {
         production_type = "input",
@@ -439,7 +439,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {2, -1} }}
+        pipe_connections = {{ type="input", position = {3, -1} }}
       },
 	  {
         production_type = "input",
@@ -447,7 +447,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-2, -1} }}
+        pipe_connections = {{ type="input", position = {-3, -1} }}
       },
       {
         production_type = "output",
@@ -455,7 +455,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
+        pipe_connections = {{ type="output", position = {1, 3} }}
       },
 	  {
         production_type = "output",
@@ -463,7 +463,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
+        pipe_connections = {{ type="output", position = {-1, 3} }}
       },
 	  {
         production_type = "output",
@@ -471,7 +471,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {2, 1} }}
+        pipe_connections = {{ type="output", position = {3, 1} }}
       },
 	  {
         production_type = "output",
@@ -479,22 +479,22 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-2, 1} }}
+        pipe_connections = {{ type="output", position = {-3, 1} }}
       },
       off_when_no_fluid_recipe = true
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     fast_replaceable_group = "Chemical_plant",
     animation =
     {
-      filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+      filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
       priority = "high",
-      width = 113,
-      height = 99,
+      width = 189,
+      height = 165,
       frame_count = 32,
       line_length = 8,
-      shift = {0.4, -0.06}
+      shift = {0.66, -0.1}
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -950,7 +950,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
+        pipe_connections = {{ type="input", position = {1, -3} }}
       },
 	  {
         production_type = "input",
@@ -958,7 +958,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = {{ type="input", position = {-1, -3} }}
       },
 	  {
         production_type = "input",
@@ -966,7 +966,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {2, -1} }}
+        pipe_connections = {{ type="input", position = {3, -1} }}
       },
 	  {
         production_type = "input",
@@ -974,7 +974,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-2, -1} }}
+        pipe_connections = {{ type="input", position = {-3, -1} }}
       },
       {
         production_type = "output",
@@ -982,7 +982,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
+        pipe_connections = {{ type="output", position = {1, 3} }}
       },
 	  {
         production_type = "output",
@@ -990,7 +990,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
+        pipe_connections = {{ type="output", position = {-1, 3} }}
       },
 	  {
         production_type = "output",
@@ -998,7 +998,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {2, 1} }}
+        pipe_connections = {{ type="output", position = {3, 1} }}
       },
 	  {
         production_type = "output",
@@ -1006,22 +1006,22 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-2, 1} }}
+        pipe_connections = {{ type="output", position = {-3, 1} }}
       },
       off_when_no_fluid_recipe = true
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     fast_replaceable_group = "Nuclear_fuel_processing_plant",
     animation =
     {
-      filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+      filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
       priority = "high",
-      width = 113,
-      height = 99,
+      width = 189,
+      height = 165,
       frame_count = 32,
       line_length = 8,
-      shift = {0.4, -0.06}
+      shift = {0.66, -0.1}
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -1280,7 +1280,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
+        pipe_connections = {{ type="input", position = {1, -3} }}
       },
 	  {
         production_type = "input",
@@ -1288,7 +1288,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = {{ type="input", position = {-1, -3} }}
       },
 	  {
         production_type = "input",
@@ -1296,7 +1296,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {2, -1} }}
+        pipe_connections = {{ type="input", position = {3, -1} }}
       },
 	  {
         production_type = "input",
@@ -1304,7 +1304,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-2, -1} }}
+        pipe_connections = {{ type="input", position = {-3, -1} }}
       },
       {
         production_type = "output",
@@ -1312,7 +1312,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
+        pipe_connections = {{ type="output", position = {1, 3} }}
       },
 	  {
         production_type = "output",
@@ -1320,7 +1320,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
+        pipe_connections = {{ type="output", position = {-1, 3} }}
       },
 	  {
         production_type = "output",
@@ -1328,7 +1328,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {2, 1} }}
+        pipe_connections = {{ type="output", position = {3, 1} }}
       },
 	  {
         production_type = "output",
@@ -1336,22 +1336,22 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-2, 1} }}
+        pipe_connections = {{ type="output", position = {-3, 1} }}
       },
       off_when_no_fluid_recipe = true
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     fast_replaceable_group = "Cracking_plant",
     animation =
     {
-      filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+      filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
       priority = "high",
-      width = 113,
-      height = 99,
+      width = 189,
+      height = 165,
       frame_count = 32,
       line_length = 8,
-      shift = {0.4, -0.06}
+      shift = {0.66, -0.1}
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -1411,7 +1411,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
+        pipe_connections = {{ type="input", position = {1, -3} }}
       },
 	  {
         production_type = "input",
@@ -1419,7 +1419,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = {{ type="input", position = {-1, -3} }}
       },
 	  {
         production_type = "input",
@@ -1427,7 +1427,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {2, -1} }}
+        pipe_connections = {{ type="input", position = {3, -1} }}
       },
 	  {
         production_type = "input",
@@ -1435,7 +1435,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-2, -1} }}
+        pipe_connections = {{ type="input", position = {-3, -1} }}
       },
       {
         production_type = "output",
@@ -1443,7 +1443,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
+        pipe_connections = {{ type="output", position = {1, 3} }}
       },
 	  {
         production_type = "output",
@@ -1451,7 +1451,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
+        pipe_connections = {{ type="output", position = {-1, 3} }}
       },
 	  {
         production_type = "output",
@@ -1459,7 +1459,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {2, 1} }}
+        pipe_connections = {{ type="output", position = {3, 1} }}
       },
 	  {
         production_type = "output",
@@ -1467,22 +1467,22 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-2, 1} }}
+        pipe_connections = {{ type="output", position = {-3, 1} }}
       },
       off_when_no_fluid_recipe = true
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     fast_replaceable_group = "Distillation",
     animation =
     {
-      filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+      filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
       priority = "high",
-      width = 113,
-      height = 99,
+      width = 189,
+      height = 165,
       frame_count = 32,
       line_length = 8,
-      shift = {0.4, -0.06}
+      shift = {0.66, -0.1}
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
@@ -2844,7 +2844,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
+        pipe_connections = {{ type="input", position = {1, -3} }}
       },
 	  {
         production_type = "input",
@@ -2852,7 +2852,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = {{ type="input", position = {-1, -3} }}
       },
 	  {
         production_type = "input",
@@ -2860,7 +2860,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {2, -1} }}
+        pipe_connections = {{ type="input", position = {3, -1} }}
       },
 	  {
         production_type = "input",
@@ -2868,7 +2868,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {-2, -1} }}
+        pipe_connections = {{ type="input", position = {-3, -1} }}
       },
       {
         production_type = "output",
@@ -2876,7 +2876,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
+        pipe_connections = {{ type="output", position = {1, 3} }}
       },
 	  {
         production_type = "output",
@@ -2884,7 +2884,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
+        pipe_connections = {{ type="output", position = {-1, 3} }}
       },
 	  {
         production_type = "output",
@@ -2892,7 +2892,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {2, 1} }}
+        pipe_connections = {{ type="output", position = {3, 1} }}
       },
 	  {
         production_type = "output",
@@ -2900,22 +2900,22 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {-2, 1} }}
+        pipe_connections = {{ type="output", position = {-3, 1} }}
       },
       off_when_no_fluid_recipe = true
     },
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     fast_replaceable_group = "Refinery",
     animation =
     {
-      filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+      filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
       priority = "high",
-      width = 113,
-      height = 99,
+      width = 189,
+      height = 165,
       frame_count = 32,
       line_length = 8,
-      shift = {0.4, -0.06}
+      shift = {0.66, -0.1}
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },

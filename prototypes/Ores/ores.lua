@@ -156,7 +156,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Graphite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Graphite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -212,7 +212,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Clay.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Clay.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -270,7 +270,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/bauxite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/bauxite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -326,7 +326,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Copper_native.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Copper_native.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -382,7 +382,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Scheelite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Scheelite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -443,7 +443,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Chalcopyrite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Chalcopyrite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -499,7 +499,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Uraninite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Uraninite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -555,7 +555,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Fluorite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Fluorite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -611,7 +611,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Cassiterite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Cassiterite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -672,7 +672,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Galena.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Galena.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -728,7 +728,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Rutile.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Rutile.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -784,7 +784,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Gold.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Gold.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -844,7 +844,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/bauxite/Magnetite.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Magnetite.png",
         priority = "extra-high",
         width = 38,
         height = 38,
@@ -913,7 +913,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__base__/graphics/entity/crude-oil/crude-oil.png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/Brine.png",
         priority = "extra-high",
         width = 75,
         height = 61,
