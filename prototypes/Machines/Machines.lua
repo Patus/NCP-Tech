@@ -1,9 +1,26 @@
-data.raw["offshore-pump"]["offshore-pump"].fluid = "Water_salt"
+data.raw["offshore-pump"]["offshore-pump"].fluid = "Water_dirty"
+data.raw["offshore-pump"]["offshore-pump"].pumping_speed = 0.1
 
+data.raw["boiler"]["boiler"].energy_consumption = "2MW"
+data.raw["boiler"]["boiler"].burner =
+    {
+      effectivity = 0.4,
+      fuel_inventory_size = 1,
+      emissions = 0.1 / 6.5,
+      smoke =
+      {
+        {
+          name = "smoke",
+          position = {0.0, -0.8},
+          frequency = 5,
+          starting_vertical_speed = 0.0,
+          starting_frame_deviation = 60
+        }
+      }
+    }
 
-
-
-
+data.raw["generator"]["steam-engine"].effectivity = 0.3
+data.raw["generator"]["steam-engine"].fluid_usage_per_tick = 0.3
 
 
 
@@ -384,6 +401,91 @@ data:extend(
       apparent_volume = 1.5,
     },
     crafting_categories = {"Ore_washing"},
+    crafting_speed = 0.75,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions = 0.04 / 2.5
+    },
+    energy_usage = "100kW",
+    ingredient_count = 4,
+    module_specification =
+    {
+      module_slots = 2
+    },
+    allowed_effects = {"consumption", "speed", "productivity", "pollution"}
+  },
+  {
+    type = "furnace",
+    name = "Filter",
+    icon = "__NCP-Tech__/graphics/icons/Filter.png",
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Filter"},
+    max_health = 250,
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+	source_inventory_size=1,
+	result_inventory_size=1,
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 70
+      }
+    },
+    fluid_boxes =
+    {
+      {
+        production_type = "input",
+        pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 1,
+        base_level = -1,
+        pipe_connections = {{ type="input", position = {0, -2} }}
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler2pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        base_area = 1,
+        base_level = 1,
+        pipe_connections = {{ type="output", position = {0, 2} }}
+      },
+      off_when_no_fluid_recipe = true
+    },
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    fast_replaceable_group = "Filter",
+    animation =
+    {
+      filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
+      priority = "high",
+      width = 113,
+      height = 99,
+      frame_count = 32,
+      line_length = 8,
+      shift = {0.4, -0.06}
+    },
+    open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
+    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      sound = {
+        {
+          filename = "__base__/sound/assembling-machine-t2-1.ogg",
+          volume = 0.8
+        },
+        {
+          filename = "__base__/sound/assembling-machine-t2-2.ogg",
+          volume = 0.8
+        },
+      },
+      idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
+      apparent_volume = 1.5,
+    },
+    crafting_categories = {"Filter"},
     crafting_speed = 0.75,
     energy_source =
     {
@@ -1943,7 +2045,7 @@ data:extend(
         production_type = "input",
         pipe_picture = assembler2pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        base_area = 1,
         base_level = -1,
         pipe_connections = {{ type="input", position = {1, -2} }}
       },
@@ -1951,7 +2053,7 @@ data:extend(
         production_type = "input",
         pipe_picture = assembler2pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        base_area = 1,
         base_level = -1,
         pipe_connections = {{ type="input", position = {-1, -2} }}
       },
@@ -1959,7 +2061,7 @@ data:extend(
         production_type = "output",
         pipe_picture = assembler2pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        base_area = 1,
         base_level = 1,
         pipe_connections = {{ type="output", position = {1, 2} }}
       },
@@ -1967,7 +2069,7 @@ data:extend(
         production_type = "output",
         pipe_picture = assembler2pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        base_area = 1,
         base_level = 1,
         pipe_connections = {{ type="output", position = {-1, 2} }}
       },

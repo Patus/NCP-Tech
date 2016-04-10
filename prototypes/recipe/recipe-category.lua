@@ -148,4 +148,8 @@ data:extend(
     type = "recipe-category",
     name = "Electric_chemical_furnace"
   },
+  {
+    type = "recipe-category",
+    name = "Filter"
+  },
 })

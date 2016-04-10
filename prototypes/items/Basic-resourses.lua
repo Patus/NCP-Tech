@@ -1802,6 +1802,16 @@ data:extend({
   },
   {
     type= "item",
+    name= "Filter",
+    icon = "__NCP-Tech__/graphics/icons/Filter.png",
+	flags = {"goes-to-quickbar"},
+    subgroup = "Machines",
+    order= "a-b-c",
+	place_result = "Filter",
+    stack_size= 50,
+  },
+  {
+    type= "item",
     name= "Electric_furnace",
     icon = "__NCP-Tech__/graphics/icons/Electric_furnace.png",
 	flags = {"goes-to-quickbar"},

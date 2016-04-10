@@ -15,7 +15,7 @@ data:extend(
     ingredients =
     {
       {"Potassium_nitrate", 1},
-	  {type="fluid", name="Water", amount=4},
+	  {type="fluid", name="Water_distilled", amount=4},
     },
     result = "Fertilizer",
   },
@@ -132,7 +132,7 @@ data:extend(
     ingredients =
     {
       {"Silt", 1},
-	  {type="fluid", name="Water", amount=10},
+	  {type="fluid", name="Water_distilled", amount=10},
     },
     results = 
     {
@@ -178,7 +178,7 @@ data:extend(
     ingredients =
     {
       {"Quartz_crushed", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -253,7 +253,7 @@ data:extend(
     ingredients =
     {
       {"Bauxite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -318,7 +318,7 @@ data:extend(
     ingredients =
     {
       {"Fluorite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -368,7 +368,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Hydrogen_fluoride", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -402,7 +402,7 @@ data:extend(
     ingredients =
     {
       {"Cassiterite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -449,7 +449,7 @@ data:extend(
     ingredients =
     {
       {"Galena_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -590,7 +590,7 @@ data:extend(
     ingredients =
     {
       {"Rutile_ore_sand", 2},
-      {type="fluid", name="Water_salt", amount=10},
+      {type="fluid", name="Water", amount=10},
     },
     results = 
     {
@@ -703,7 +703,7 @@ data:extend(
     ingredients =
     {
 	  {type="item", name="Titanium_dust_dirty", amount=1},
-	  {type="fluid", name="Water", amount=10},
+	  {type="fluid", name="Water_distilled", amount=10},
     },
     results = 
     {
@@ -849,7 +849,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="item", name="Coal", amount=1}
+      {type="item", name="coal", amount=1},
     },
     results = 
     {
@@ -887,7 +887,7 @@ data:extend(
     ingredients =
     {
       {"Coal_ore_dust", 2},
-      {type="fluid", name="Water_salt", amount=10},
+      {type="fluid", name="Water", amount=10},
     },
     results = 
     {
@@ -947,7 +947,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Coal_gas", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -966,7 +966,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Petroleum_gas", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -1095,7 +1095,7 @@ data:extend(
     ingredients =
     {
       {"Magnetite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10},
+      {type="fluid", name="Water", amount=10},
     },
     results = 
     {
@@ -1164,7 +1164,7 @@ data:extend(
     ingredients =
     {
       {"Chromite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10},
+      {type="fluid", name="Water", amount=10},
     },
     results = 
     {
@@ -1222,7 +1222,7 @@ data:extend(
     {
       {type="fluid", name="Benzene", amount=1},
       {type="fluid", name="Petroleum_gas", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -1246,7 +1246,7 @@ data:extend(
     results = 
     {
       {type="fluid", name="Dichloroethane", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Dichloroethane.png",
 	subgroup = "NCP_fluids",
@@ -1279,7 +1279,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Light_oil", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -1297,7 +1297,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Light_oil", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -1394,7 +1394,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Heavy_oil", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -1492,20 +1492,20 @@ data:extend(
 --Natural Water
   {
     type = "recipe",
-    name = "Water",
+    name = "Water_distilled",
     category = "Distillation",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water_salt", amount=10},
+      {type="fluid", name="Water", amount=10},
     },
     results = 
     {
-      {type="fluid", name="Water", amount=9,temperature=80},
-      {type="item", name="Salt", amount=1, probability = 0.4},
+      {type="fluid", name="Water_distilled", amount=9},
+      {type="item", name="Salt", amount=1, probability = 0.01},
     },
-	icon = "__NCP-Tech__/graphics/fluids/Water.png",
+	icon = "__NCP-Tech__/graphics/fluids/Water_distilled.png",
 	subgroup = "NCP_fluids",
   },  
   {
@@ -1516,12 +1516,30 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
       {type="fluid", name="Oxygen", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Water_distilled.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Water",
+    category = "Filter",
+    energy_required = 0.5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Water_dirty", amount=10},
+    },
+    results = 
+    {
+      {type="fluid", name="Water", amount=10},
+      {type="item", name="Sand", amount=1, probability = 0.5/100},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Water.png",
 	subgroup = "NCP_fluids",
@@ -1534,7 +1552,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
       {"Salt", 1},
     },
     results = 
@@ -1573,7 +1591,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Hydrogen_chlorine", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -1619,7 +1637,7 @@ data:extend(
 		{type="item", name="Salt", amount=1, probability = 0.05},
 		{type="item", name="Potassium_nitrate", amount=1, probability = 0.03},
 		{type="item", name="Lithium_chloride", amount=1, probability = 0.01},
-		{type="fluid", name="Water", amount=6},
+		{type="fluid", name="Water_distilled", amount=6},
     },
 	icon = "__NCP-Tech__/graphics/icons/Lithium_chloride.png",
 	subgroup = "Recourses",
@@ -1699,7 +1717,7 @@ data:extend(
     ingredients =
     {
       
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="item", name="Salt", amount=1},
     },
     results = 
@@ -1719,7 +1737,7 @@ data:extend(
     ingredients =
     {
       
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="item", name="Sodium_chlorate", amount=1},
     },
     results = 
@@ -1754,7 +1772,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Calcium_oxide", amount=1},
-	  {type="fluid", name="Water_salt", amount=10},
+	  {type="fluid", name="Water", amount=10},
 	  {type="fluid", name="Brine", amount=10},
     },
     results = 
@@ -1853,7 +1871,7 @@ data:extend(
     results = 
     {
       {type="item", name="Magnesium_chloride", amount=1, probability = 1},
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Magnesium_chloride.png",
 	subgroup = "Recourses",
@@ -1915,7 +1933,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Graphite_crushed_ore", amount=2},
-	  {type="fluid", name="Water_salt", amount=10},
+	  {type="fluid", name="Water", amount=10},
     },
     results = 
     {
@@ -1934,7 +1952,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Graphite_crushed", amount=5},
-	  {type="fluid", name="Water", amount=10},
+	  {type="fluid", name="Water_distilled", amount=10},
     },
     results = 
     {
@@ -2106,7 +2124,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Cement", amount=3},
-	  {type="fluid", name="Water", amount=2},
+	  {type="fluid", name="Water_distilled", amount=2},
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
@@ -2127,7 +2145,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Cement_bauxite", amount=3},
-	  {type="fluid", name="Water", amount=2},
+	  {type="fluid", name="Water_distilled", amount=2},
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
@@ -2148,7 +2166,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Cement_slag", amount=3},
-	  {type="fluid", name="Water", amount=2},
+	  {type="fluid", name="Water_distilled", amount=2},
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
@@ -2392,7 +2410,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Calcium_carbonate", amount=1},
-	  {type="fluid", name="Water_salt", amount=1},
+	  {type="fluid", name="Water", amount=1},
     },
     results = 
     {
@@ -2476,13 +2494,13 @@ data:extend(
     ingredients =
     {
       {"Lithium_chloride", 1},
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
       {type="item", name="Silver_nitrate", amount=1},
 	  {type="fluid", name="Nitrogen_dioxide", amount=1},
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Silver_nitrate.png",
 	subgroup = "Recourses",
@@ -2495,7 +2513,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
 	  {type="fluid", name="Nitrogen_dioxide", amount=1},
     },
     results = 
@@ -2519,7 +2537,7 @@ data:extend(
     results = 
     {
 	  {type="item", name="Silver_oxide", amount=1},
-	  {type="fluid", name="Water", amount=1, probability =0.9},
+	  {type="fluid", name="Water_distilled", amount=1, probability =0.9},
     },
 	icon = "__NCP-Tech__/graphics/icons/Silver_oxide.png",
 	subgroup = "Recourses",
@@ -2724,6 +2742,18 @@ data:extend(
       {"Quarried_stone", 1},
     },
     result = "Electric_chemical_furnace",
+	subgroup = "Machines",
+  },
+  {
+    type = "recipe",
+    name = "Filter",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Filter",
 	subgroup = "Machines",
   },
   {
@@ -3276,7 +3306,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
       {type="fluid", name="Uranium_hexafluoride", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
       {type="fluid", name="Ammonia", amount=1},
@@ -3367,7 +3397,7 @@ data:extend(
     ingredients =
     {
       {"Chalcopyrite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -3505,7 +3535,7 @@ data:extend(
     ingredients =
     {
       {"Pentlandite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -3599,7 +3629,7 @@ data:extend(
     ingredients =
     {
       {"Sphalerite_crushed_ore", 2},
-      {type="fluid", name="Water_salt", amount=10}
+      {type="fluid", name="Water", amount=10}
     },
     results = 
     {
@@ -3676,7 +3706,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="fluid", name="Germanium_tetrachloride", amount=1},
     },
     results = 
@@ -3701,7 +3731,7 @@ data:extend(
     results = 
     {
       {type="item", name="Germanium", amount=1, probability = 1},
-      {type="fluid", name="Water", amount=1, probability = 1},
+      {type="fluid", name="Water_distilled", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Germanium.png",
 	subgroup = "Recourses",
@@ -3733,7 +3763,7 @@ data:extend(
     {
       {"Scheelite_crushed_ore", 2},
 	  {"Sodium_hydroxide", 1},
-      {type="fluid", name="Water", amount=1}
+      {type="fluid", name="Water_distilled", amount=1}
     },
     results = 
     {
@@ -3889,7 +3919,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Sulfur_dioxide", amount=1},
-      {type="fluid", name="Water", amount=1},
+      {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
     {
@@ -4121,7 +4151,7 @@ data:extend(
     results = 
     {
 		{type="item", name="Direct_reduced_iron", amount=1, probability = 1},
-		{type="fluid", name="Water", amount=1, probability = 1},
+		{type="fluid", name="Water_distilled", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Direct_reduced_iron.png",
 	subgroup = "Recourses",
@@ -4216,7 +4246,7 @@ data:extend(
     results = 
     {
 		{type="fluid", name="Acrylonitrile", amount=1, probability = 1},
-		{type="fluid", name="Water", amount=1, probability = 1},
+		{type="fluid", name="Water_distilled", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluids/Acrylonitrile.png",
 	subgroup = "NCP_fluids",
@@ -4415,7 +4445,7 @@ data:extend(
     ingredients =
     {
 	  {type="fluid", name="Seed_oil", amount=1},
-	  {type="fluid", name="Water", amount=1},
+	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="item", name="Sodium_hydroxide", amount=1},
     },
     results = 
