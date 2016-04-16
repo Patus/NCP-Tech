@@ -46,6 +46,12 @@ data:extend(
   },
   {
     type = "item-subgroup",
+    name = "underground_pipe",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
     name = "foil",
     group = "Items",
     order = "a",
