@@ -152,4 +152,12 @@ data:extend(
     type = "recipe-category",
     name = "Filter"
   },
+  {
+    type = "recipe-category",
+    name = "Bank"
+  },
+  {
+    type = "recipe-category",
+    name = "Market"
+  },
 })

@@ -2746,6 +2746,30 @@ data:extend(
   },
   {
     type = "recipe",
+    name = "Bank",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Bank",
+	subgroup = "Machines",
+  },
+  {
+    type = "recipe",
+    name = "Market",
+    energy_required = 0.2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+    result = "Market",
+	subgroup = "Machines",
+  },
+  {
+    type = "recipe",
     name = "Filter",
     energy_required = 0.2,
     enabled = "true",

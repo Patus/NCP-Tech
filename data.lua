@@ -1,7 +1,7 @@
 require("prototypes.items.Basic-resourses")
 require("prototypes.items.item-groups")
 require("prototypes.recipe.Recipes_1")
---require("prototypes.recipe.Recipes_2")
+require("prototypes.recipe.Recipes_2")
 require("prototypes.recipe.recipe-category")
 require("prototypes.ores.ores")
 require("prototypes.autoplace-controls")
