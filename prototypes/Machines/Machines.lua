@@ -3411,7 +3411,8 @@ data:extend(
     },
     energy_usage = "20kW",
 	
-    ingredient_count = 3,
+    ingredient_count = 5,
+	
     module_specification =
     {
       module_slots = 2

@@ -168,3 +168,84 @@ data:extend(
 )
 
 
+
+
+function testfunctio(material,item)
+	local itemName=material.."_"..item
+	
+	data:extend(
+    {
+      {
+		type= "item",
+		name= itemName,
+		icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+		flags= { "goes-to-main-inventory" },
+		subgroup = item,
+		order= "a-b-c",
+		stack_size= 50,
+	},
+      
+    }
+    )
+
+
+end
+
+
+local items={"gear","plate","rod","foil","pipe","chain","transmission_chain","wire"}
+local materials={"Iron","Copper","Steel","Tin","Gold","Nickel","Zirconium","Aluminium","Lead","Titanium","Silver","Stainless_steel","Plastic","Magnesium","Tungsten","Concrete","Brass","Nichrome"}
+
+for i , item in pairs(items) do
+	for i , material in pairs(materials) do
+		testfunctio(material,item)
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

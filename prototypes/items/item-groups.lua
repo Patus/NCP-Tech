@@ -8,6 +8,61 @@ data:extend(
     icon = "__NCP-Tech__/graphics/item-group/Resources.png"
   },
   {
+    type = "item-group",
+    name = "Items",
+    order = "c",
+    inventory_order = "g",
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+  },
+  {
+    type = "item-subgroup",
+    name = "plate",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "rod",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "gear",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "chain",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "pipe",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "foil",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "transmission_chain",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "wire",
+    group = "Items",
+    order = "a",
+  },
+  {
     type = "item-subgroup",
     name = "ores",
     group = "Resources",
