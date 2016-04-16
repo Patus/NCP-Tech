@@ -197,7 +197,15 @@ local materials={"Iron","Copper","Steel","Tin","Gold","Nickel","Zirconium","Alum
 
 for i , item in pairs(items) do
 	for i , material in pairs(materials) do
-		testfunctio(material,item)
+		if(not(material=="Concrete" or material=="Zirconium" or material=="Nichrome")) then
+			testfunctio(material,item)
+
+		else
+			if((material=="Concrete" and item=="pipe")or(material=="Zirconium" and item=="rod")or(material=="Nichrome" and (item=="rod"or item=="wire")))then
+				testfunctio(material,item)
+			end
+		end
+		
 	end
 end
 
