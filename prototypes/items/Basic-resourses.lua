@@ -852,15 +852,6 @@ data:extend({
   },
   {
     type= "item",
-    name= "Plastics",
-    icon = "__NCP-Tech__/graphics/icons/Plastics.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
     name= "Quarried_stone",
     icon = "__NCP-Tech__/graphics/icons/Quarried_stone.png",
     flags= { "goes-to-main-inventory" },
@@ -1487,8 +1478,8 @@ data:extend({
   },
   {
     type= "item",
-    name= "Magnesium",
-    icon = "__NCP-Tech__/graphics/icons/Magnesium.png",
+    name= "Magnesium_billet",
+    icon = "__NCP-Tech__/graphics/icons/Magnesium_billet.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",

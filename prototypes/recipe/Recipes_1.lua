@@ -760,7 +760,7 @@ data:extend(
     ingredients =
     {
       {type="item", name="Zirconium_tetrachloride", amount=1},
-	  {type="item", name="Magnesium", amount=1},
+	  {type="item", name="Magnesium_billet", amount=1},
     },
     results = 
     {
@@ -1801,7 +1801,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Magnesium",
+    name = "Magnesium_billet",
     category = "Electric_furnace",
     energy_required = 2,
     enabled = "true",
@@ -1812,11 +1812,11 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Magnesium", amount=1, probability = 1},
+      {type="item", name="Magnesium_billet", amount=1, probability = 1},
 	  {type="item", name="Pig_iron", amount=1, probability = 1},
 	  {type="item", name="Silicon_dioxide", amount=1, probability = 1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Magnesium.png",
+	icon = "__NCP-Tech__/graphics/icons/Magnesium_billet.png",
 	subgroup = "Recourses",
   },
   {
@@ -1888,10 +1888,10 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Magnesium", amount=1, probability = 1},
+      {type="item", name="Magnesium_billet", amount=1, probability = 1},
 	  {type="fluid", name="Chlorine", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/icons/Magnesium.png",
+	icon = "__NCP-Tech__/graphics/icons/Magnesium_billet.png",
 	subgroup = "Recourses",
   },
   
@@ -2134,6 +2134,45 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/icons/Concrete_block.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Concrete_pipe",
+	category = "Chemical_plant",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Cement", amount=3},
+	  {type="fluid", name="Water_distilled", amount=2},
+	  {type="item", name="Sand", amount=6},
+	  {type="item", name="Gravel", amount=12},
+    },
+    results = 
+    {
+      {type="item", name="Concrete_pipe", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Concrete_pipe.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Concrete_underground_pipe",
+    energy_required = 5,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Concrete_pipe", amount=22},
+
+    },
+    results = 
+    {
+      {type="item", name="Concrete_underground_pipe", amount=1, probability = 1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Concrete_underground_pipe.png",
 	subgroup = "Recourses",
   },
   {
