@@ -4853,7 +4853,36 @@ data:extend(
 	
     },
   },
-  
+  {
+    type = "recipe",
+    name = "akku",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"Quarried_stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="basic-accumulator", amount=50},
+	
+    },
+  },
+  {
+    type = "recipe",
+    name = "alkuu",
+    energy_required = 0.1,
+    enabled = "true",
+    ingredients =
+    {
+      {"stone", 1},
+    },
+	results = 
+    {
+      {type="item", name="Quarried_stone", amount=50},
+	
+    },
+  },
   
   
   
