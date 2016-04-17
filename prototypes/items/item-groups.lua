@@ -10,9 +10,22 @@ data:extend(
   {
     type = "item-group",
     name = "Items",
-    order = "c",
+    order = "cc",
     inventory_order = "g",
     icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+  },
+  {
+    type = "item-group",
+    name = "Weapons",
+    order = "ccc",
+    inventory_order = "g",
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+  },
+  {
+    type = "item-subgroup",
+    name = "Ammo",
+    group = "Weapons",
+    order = "a",
   },
   {
     type = "item-subgroup",
