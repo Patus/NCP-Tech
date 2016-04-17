@@ -1,6 +1,9 @@
 data:extend(
 {
-
+  {
+    type = "ammo-category",
+    name = "lead_shot"
+  },
   {
     type = "ammo",
     name = "lead_shot",
@@ -8,7 +11,7 @@ data:extend(
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {
-      category = "bullet",
+      category = "lead_shot",
       action =
       {
         type = "direct",
