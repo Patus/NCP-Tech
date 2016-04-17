@@ -47,7 +47,6 @@ data:extend(
     results = 
     {
       {type="item", name="Quartz", amount=1},
-	  {type="item", name="Quartz_seed", amount_min= 1, amount_max= 2, probability = 0.005},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/icons/Quartz.png",
@@ -202,16 +201,118 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Silicon_boule",
-    category = "Silicon_furnace",
+    name = "Silicon_metallurgical",
+    category = "Electric_arc_furnace",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
       {"Silicon_dioxide", 1},
-      {"Quartz_seed", 1},
+      {"Coal_coke", 2},
     },
-    result = "Silicon_boule",
+    results = 
+    {
+      {type="item", name="Silicon_metallurgical", amount=1},
+      {type="fluid", name="Carbon_monoxide", amount=2},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_metallurgical.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Trichlorosilane",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Hydrochloric_acid", amount=1},
+	  {type="item", name="Silicon_metallurgical", amount=1},
+    },
+    results = 
+    {
+      {type="fluid", name="Hydrogen", amount=1},
+	  {type="fluid", name="Trichlorosilane", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/fluids/Trichlorosilane.png",
+	subgroup = "NCP_fluids",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_polycrystalline_rod",
+    category = "Chemical_plant",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="fluid", name="Hydrogen", amount=2},
+	  {type="fluid", name="Trichlorosilane", amount=2},
+    },
+    results = 
+    {
+      {type="item", name="Silicon_polycrystalline_rod", amount=1,probability =0.1},
+	  {type="fluid", name="Hydrochloric_acid", amount=1 ,probability =0.1},
+	  {type="fluid", name="Trichlorosilane", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_polycrystalline_rod.png",
+	subgroup = "rod",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_polycrystalline_granule",
+    category = "Crusher",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Silicon_polycrystalline_rod", amount=2},
+
+    },
+    results = 
+    {
+      {type="item", name="Silicon_polycrystalline_granule", amount=1,probability =1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_polycrystalline_granule.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_boule_1",
+    category = "Chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Silicon_polycrystalline_granule", amount=1},
+	  {type="fluid", name="Argon", amount=1},
+    },
+    results = 
+    {
+      {type="item", name="Silicon_boule", amount=1,probability =0.2},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_boule.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
+    name = "Silicon_boule_2",
+    category = "Chemical_furnace",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {type="item", name="Silicon_polycrystalline_granule", amount=1},
+
+    },
+    results = 
+    {
+      {type="item", name="Silicon_boule", amount=1,probability =0.1},
+
+    },
+	icon = "__NCP-Tech__/graphics/icons/Silicon_boule.png",
+	subgroup = "Recourses",
   },
   {
     type = "recipe",
@@ -246,13 +347,30 @@ data:extend(
   },
   {
     type = "recipe",
+    name = "Bauxite_ore_dust",
+    category = "Grinding_mill",
+    energy_required = 2,
+    enabled = "true",
+    ingredients =
+    {
+      {"Bauxite_crushed_ore", 2},
+    },
+    results = 
+    {
+      {type="item", name="Bauxite_ore_dust", amount=1},
+    },
+	icon = "__NCP-Tech__/graphics/icons/Bauxite_ore_dust.png",
+	subgroup = "Recourses",
+  },
+  {
+    type = "recipe",
     name = "Bauxite_concentrate",
     category = "Ore_washing",
     energy_required = 2,
     enabled = "true",
     ingredients =
     {
-      {"Bauxite_crushed_ore", 2},
+      {"Bauxite_ore_dust", 2},
       {type="fluid", name="Water", amount=10}
     },
     results = 
@@ -346,18 +464,6 @@ data:extend(
     },
 	icon = "__NCP-Tech__/graphics/icons/Calcium_sulfate.png",
 	subgroup = "Recourses",
-  },
-  {
-    type = "recipe",
-    name = "Plaster",
-    category = "Furnace",
-    energy_required = 0.8,
-    enabled = "true",
-    ingredients =
-    {
-      {"Calcium_sulfate", 1},
-    },
-    result = "Plaster",
   },
   {
     type = "recipe",
