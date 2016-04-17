@@ -2,7 +2,7 @@ data:extend(
 {
 	{
     type = "recipe",
-    name = "lead-shot",
+    name = "Lead_shot",
     enabled = true,
     energy_required = 3,
     ingredients =
