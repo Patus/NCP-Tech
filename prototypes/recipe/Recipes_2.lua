@@ -193,6 +193,66 @@ local pipeSize={["Iron"]=1,["Copper"]=1,["Steel"]=1,["Tin"]=1,["Gold"]=1,["Nicke
 
 
 
+					
+					
+					
+						
+function makeRecipe(input,output,category,subgroup)
+	
+	data:extend({
+	{
+		type = "recipe",
+		name = output[1][1],
+		category =category,
+		energy_required = 2,
+		enabled = "true",
+		ingredients =
+		{
+			
+		},
+		results = 
+		{
+			
+		},
+		icon = "__NCP-Tech__/graphics/icons/"..output[1][1]..".png",
+		subgroup = subgroup,
+	},
+	})
+	
+	--if(category~="")then
+	--	data.raw["recipe"][input[1][1]].category=category
+	--end
+	
+	for i , item in pairs(input) do
+		
+		table.insert(data.raw["recipe"][output[1][1]].ingredients, {type="item", name=item[1], amount=item[2]})
+	end
+	
+	for i , item in pairs(output) do
+		table.insert(data.raw["recipe"][output[1][1]].results, {type="item", name=item[1], amount=item[2]})
+	end
+
+end
+
+function makeItem(name,subgroup,place_result)
+	data:extend({
+	{
+		type= "item",
+		name= name,
+		icon = "__NCP-Tech__/graphics/icons/"..name..".png",
+		flags= { "goes-to-main-inventory" },
+		subgroup = subgroup,
+		order= "a-b-c",
+		stack_size= 50,
+		place_result =itemName ,
+		},
+
+	})
+	if(place_result==true)then
+		data.raw["item"][name].place_result=name
+	end
+	
+end
 
 function makeItems(material,item)
 	local itemName=material.."_"..item
@@ -487,11 +547,26 @@ for i , item in pairs(items) do
 	end
 end
 
+--barrels
+fluids={"Acrylonitrile","MNT","Oleum","Seed_oil","ADU","Ammonia","Benzene","Bitumi","Crude_oil","Dichloroethane","Diesel","Ethylbenzene","Ferric_chloride_solution","Glycerol","Heavy_oil",
+		"Hydrochloric_acid","Hydrofluoric_acid","Light_oil","Lubricant","Napalm","Nitric_acid","Nitric_sulfuric_acid_mixture","Nitroglycerin","Sodium_tugstate_solution","Styrene","Sulfuric_acid",
+		"Uranyl_nitrate","Water","Water_distilled","Water_dirty","Brine","Germanium_tetrachloride","Titanium_tetrachloride","Toluene","Trichlorosilane","Silicon_tetrachloride"}
 
 
+--bottles
+gases={"Argon","Air","Butadiene","Carbon_monoxide","Chlorine","Coal_gas","Ethylene","Hydrogen","Hydrogen_chlorine","Hydrogen_fluoride","Nitrogen","Nitrogen_dioxide","Oxygen","Petroleum_gas",
+"Sulfur_dioxide","Sulfur_trioxide","Uranium_hexafluoride","Syngas"}
 
 
+for i , item in pairs(gases) do
+	makeItem(item.."_bottle","bottle",false)
+end
+for i , item in pairs(fluids) do
+	makeItem(item.."_barrel","barrel",false)
+end
 
+makeItem("aaaatesti","plate",false)
+makeRecipe({{"stone",3},{"coal",1}},{{"aaaatesti",1},{"stone",1}},nil,"plate")
 
 
 
