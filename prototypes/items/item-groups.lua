@@ -21,6 +21,13 @@ data:extend(
     inventory_order = "g",
     icon = "__NCP-Tech__/graphics/item-group/Resources.png"
   },
+  {
+    type = "item-group",
+    name = "Fluids",
+    order = "ccc",
+    inventory_order = "g",
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+  },
   
   
   
@@ -46,18 +53,56 @@ data:extend(
   {
     type = "item-subgroup",
     name = "bottle",
-    group = "Items",
+    group = "Fluids",
     order = "a",
   },
   {
     type = "item-subgroup",
     name = "barrel",
+    group = "Fluids",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "bottle_empty",
+    group = "Fluids",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "barrel_empty",
+    group = "Fluids",
+    order = "a",
+  },
+  
+  
+  {
+    type = "item-subgroup",
+    name = "plate",
     group = "Items",
     order = "a",
   },
   {
     type = "item-subgroup",
-    name = "plate",
+    name = "dence_plate",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "dence_armor_plate",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "dence_pipe",
+    group = "Items",
+    order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "dence_underground_pipe",
     group = "Items",
     order = "a",
   },

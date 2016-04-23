@@ -30,7 +30,7 @@ data:extend(
 	{
     type = "assembling-machine",
     name = "Electric_furnace",
-	icon = "__NCP-Tech__/graphics/icons/Electric_furnace.png",
+	icon = "__NCP-Tech__/graphics/item/Electric_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Electric_furnace"},
     max_health = 250,
@@ -132,7 +132,7 @@ data:extend(
 	{
     type = "assembling-machine",
     name = "Rotary_kiln",
-    icon = "__NCP-Tech__/graphics/icons/Rotary_kiln.png",
+    icon = "__NCP-Tech__/graphics/item/Rotary_kiln.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Rotary_kiln"},
     max_health = 250,
@@ -234,7 +234,7 @@ data:extend(
 	{
     type = "furnace",
     name = "Crusher",
-    icon = "__NCP-Tech__/graphics/icons/Crusher.png",
+    icon = "__NCP-Tech__/graphics/item/Crusher.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Crusher"},
     max_health = 250,
@@ -336,7 +336,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Ore_washing",
-    icon = "__NCP-Tech__/graphics/icons/Ore_washing.png",
+    icon = "__NCP-Tech__/graphics/item/Ore_washing.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Ore_washing"},
     max_health = 250,
@@ -419,7 +419,7 @@ data:extend(
   {
     type = "furnace",
     name = "Filter",
-    icon = "__NCP-Tech__/graphics/icons/Filter.png",
+    icon = "__NCP-Tech__/graphics/item/Filter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Filter"},
     max_health = 250,
@@ -504,7 +504,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Chemical_plant",
-    icon = "__NCP-Tech__/graphics/icons/Chemical_plant.png",
+    icon = "__NCP-Tech__/graphics/item/Chemical_plant.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Chemical_plant"},
     max_health = 250,
@@ -635,7 +635,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Electrolyzer",
-    icon = "__NCP-Tech__/graphics/icons/Electrolyzer.png",
+    icon = "__NCP-Tech__/graphics/item/Electrolyzer.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Electrolyzer"},
     max_health = 250,
@@ -734,7 +734,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Chemical_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Chemical_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Chemical_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Chemical_furnace"},
     max_health = 250,
@@ -833,7 +833,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Pump",
-    icon = "__NCP-Tech__/graphics/icons/Pump.png",
+    icon = "__NCP-Tech__/graphics/item/Pump.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Pump"},
     max_health = 250,
@@ -932,7 +932,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Blast_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Blast_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Blast_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Blast_furnace"},
     max_health = 250,
@@ -1031,7 +1031,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Nuclear_fuel_processing_plant",
-    icon = "__NCP-Tech__/graphics/icons/Nuclear_fuel_processing_plant.png",
+    icon = "__NCP-Tech__/graphics/item/Nuclear_fuel_processing_plant.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Nuclear_fuel_processing_plant"},
     max_health = 250,
@@ -1162,7 +1162,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Rolling_machine",
-    icon = "__NCP-Tech__/graphics/icons/Rolling_machine.png",
+    icon = "__NCP-Tech__/graphics/item/Rolling_machine.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Rolling_machine"},
     max_health = 250,
@@ -1261,7 +1261,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Mixer",
-    icon = "__NCP-Tech__/graphics/icons/Mixer.png",
+    icon = "__NCP-Tech__/graphics/item/Mixer.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Mixer"},
     max_health = 250,
@@ -1361,7 +1361,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Cracking_plant",
-    icon = "__NCP-Tech__/graphics/icons/Cracking_plant.png",
+    icon = "__NCP-Tech__/graphics/item/Cracking_plant.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Cracking_plant"},
     max_health = 250,
@@ -1492,7 +1492,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Distillation",
-    icon = "__NCP-Tech__/graphics/icons/Distillation.png",
+    icon = "__NCP-Tech__/graphics/item/Distillation.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Distillation"},
     max_health = 250,
@@ -1627,7 +1627,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Compressor",
-    icon = "__NCP-Tech__/graphics/icons/Compressor.png",
+    icon = "__NCP-Tech__/graphics/item/Compressor.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Compressor"},
     ingredient_count = 2,
@@ -1727,7 +1727,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Electric_arc_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Electric_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Electric_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Electric_arc_furnace"},
     max_health = 250,
@@ -1826,7 +1826,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Vacuum_oxygen_decarburization",
-    icon = "__NCP-Tech__/graphics/icons/Vacuum_oxygen_decarburization.png",
+    icon = "__NCP-Tech__/graphics/item/Vacuum_oxygen_decarburization.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Vacuum_oxygen_decarburization"},
     max_health = 250,
@@ -1925,7 +1925,7 @@ data:extend(
   {
     type = "furnace",
     name = "Grinding_mill",
-    icon = "__NCP-Tech__/graphics/icons/Grinding_mill.png",
+    icon = "__NCP-Tech__/graphics/item/Grinding_mill.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Grinding_mill"},
     max_health = 250,
@@ -2026,7 +2026,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Cryogenic_distillation_plant",
-    icon = "__NCP-Tech__/graphics/icons/Cryogenic_distillation_plant.png",
+    icon = "__NCP-Tech__/graphics/item/Cryogenic_distillation_plant.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Cryogenic_distillation_plant"},
     max_health = 250,
@@ -2125,7 +2125,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Farm",
-    icon = "__NCP-Tech__/graphics/icons/Farm.png",
+    icon = "__NCP-Tech__/graphics/item/Farm.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Farm"},
     max_health = 250,
@@ -2224,7 +2224,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Electronics_assembly_machine",
-    icon = "__NCP-Tech__/graphics/icons/Electronics_assembly_machine.png",
+    icon = "__NCP-Tech__/graphics/item/Electronics_assembly_machine.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Electronics_assembly_machine"},
     max_health = 250,
@@ -2323,7 +2323,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Flash_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Flash_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Flash_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Flash_furnace"},
     max_health = 250,
@@ -2422,7 +2422,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "TSL_furnace",
-    icon = "__NCP-Tech__/graphics/icons/TSL_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/TSL_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "TSL_furnace"},
     max_health = 250,
@@ -2525,7 +2525,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Extruder",
-    icon = "__NCP-Tech__/graphics/icons/Extruder.png",
+    icon = "__NCP-Tech__/graphics/item/Extruder.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Extruder"},
     max_health = 250,
@@ -2628,7 +2628,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Milling_machine",
-    icon = "__NCP-Tech__/graphics/icons/Milling_machine.png",
+    icon = "__NCP-Tech__/graphics/item/Milling_machine.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Milling_machine"},
     max_health = 250,
@@ -2727,7 +2727,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Furnace",
-    icon = "__NCP-Tech__/graphics/icons/Furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Furnace"},
     max_health = 250,
@@ -2826,7 +2826,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Assembling_machine",
-    icon = "__NCP-Tech__/graphics/icons/Assembling_machine.png",
+    icon = "__NCP-Tech__/graphics/item/Assembling_machine.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Assembling_machine"},
     max_health = 250,
@@ -2925,7 +2925,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Refinery",
-    icon = "__NCP-Tech__/graphics/icons/Refinery.png",
+    icon = "__NCP-Tech__/graphics/item/Refinery.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Refinery"},
     max_health = 250,
@@ -3056,7 +3056,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Electric_flash_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Electric_flash_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Electric_flash_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Electric_flash_furnace"},
     max_health = 250,
@@ -3155,7 +3155,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Electric_chemical_furnace",
-    icon = "__NCP-Tech__/graphics/icons/Electric_chemical_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Electric_chemical_furnace.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Electric_chemical_furnace"},
     max_health = 250,
@@ -3254,7 +3254,7 @@ data:extend(
   {
     type = "furnace",
     name = "Market",
-    icon = "__NCP-Tech__/graphics/icons/Market.png",
+    icon = "__NCP-Tech__/graphics/item/Market.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Market"},
     max_health = 250,
@@ -3356,7 +3356,7 @@ data:extend(
   {
     type = "assembling-machine",
     name = "Bank",
-    icon = "__NCP-Tech__/graphics/icons/Bank.png",
+    icon = "__NCP-Tech__/graphics/item/Bank.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "Bank"},
     max_health = 250,
@@ -3425,7 +3425,7 @@ data:extend(
   {
     type= "item",
     name= "OP_generator",
-    icon = "__NCP-Tech__/graphics/icons/Electric_chemical_furnace.png",
+    icon = "__NCP-Tech__/graphics/item/Electric_chemical_furnace.png",
     flags= { "goes-to-main-inventory" },
     subgroup = "ores",
     order= "a-b-c",

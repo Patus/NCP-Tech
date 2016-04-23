@@ -14,7 +14,7 @@ data:extend(
 		{
 			{type="item", name="Credit", amount=100},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit.png",
+		icon = "__NCP-Tech__/graphics/item/Credit.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -31,7 +31,7 @@ data:extend(
 		{
 			{type="item", name="Credit100", amount=1},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit100.png",
+		icon = "__NCP-Tech__/graphics/item/Credit100.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -48,7 +48,7 @@ data:extend(
 		{
 			{type="item", name="Credit100", amount=100},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit100.png",
+		icon = "__NCP-Tech__/graphics/item/Credit100.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -65,7 +65,7 @@ data:extend(
 		{
 			{type="item", name="Credit10k", amount=1},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit10k.png",
+		icon = "__NCP-Tech__/graphics/item/Credit10k.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -82,7 +82,7 @@ data:extend(
 		{
 			{type="item", name="Credit10k", amount=100},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit10k.png",
+		icon = "__NCP-Tech__/graphics/item/Credit10k.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -99,7 +99,7 @@ data:extend(
 		{
 			{type="item", name="Credit1M", amount=1},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit1M.png",
+		icon = "__NCP-Tech__/graphics/item/Credit1M.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -116,7 +116,7 @@ data:extend(
 		{
 			{type="item", name="Credit1M", amount=1000},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit1M.png",
+		icon = "__NCP-Tech__/graphics/item/Credit1M.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -133,7 +133,7 @@ data:extend(
 		{
 			{type="item", name="Credit1G", amount=1},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit1G.png",
+		icon = "__NCP-Tech__/graphics/item/Credit1G.png",
 		subgroup = "Recourses",
 	},
 	{
@@ -150,7 +150,7 @@ data:extend(
 		{
 			{type="item", name="Credit1G", amount=1},
 		},
-		icon = "__NCP-Tech__/graphics/icons/Credit1G.png",
+		icon = "__NCP-Tech__/graphics/item/Credit1G.png",
 		subgroup = "Recourses",
 	},
 	
@@ -194,15 +194,15 @@ local pipeSize={["Iron"]=1,["Copper"]=1,["Steel"]=1,["Tin"]=1,["Gold"]=1,["Nicke
 
 
 					
-					
+				
 					
 						
-function makeRecipe(input,output,category,subgroup)
-	
+function makeRecipe(name,input,output,category,subgroup)
+
 	data:extend({
 	{
 		type = "recipe",
-		name = output[1][1],
+		name = name,
 		category =category,
 		energy_required = 2,
 		enabled = "true",
@@ -214,22 +214,20 @@ function makeRecipe(input,output,category,subgroup)
 		{
 			
 		},
-		icon = "__NCP-Tech__/graphics/icons/"..output[1][1]..".png",
+		icon = "__NCP-Tech__/graphics/"..output[1][1].."/"..output[1][2]..".png",
 		subgroup = subgroup,
 	},
 	})
 	
-	--if(category~="")then
-	--	data.raw["recipe"][input[1][1]].category=category
-	--end
+	
 	
 	for i , item in pairs(input) do
 		
-		table.insert(data.raw["recipe"][output[1][1]].ingredients, {type="item", name=item[1], amount=item[2]})
+		table.insert(data.raw["recipe"][name].ingredients, {type=item[1], name=item[2], amount=item[3]})
 	end
 	
 	for i , item in pairs(output) do
-		table.insert(data.raw["recipe"][output[1][1]].results, {type="item", name=item[1], amount=item[2]})
+		table.insert(data.raw["recipe"][name].results, {type=item[1], name=item[2], amount=item[3]})
 	end
 
 end
@@ -239,7 +237,7 @@ function makeItem(name,subgroup,place_result)
 	{
 		type= "item",
 		name= name,
-		icon = "__NCP-Tech__/graphics/icons/"..name..".png",
+		icon = "__NCP-Tech__/graphics/item/"..name..".png",
 		flags= { "goes-to-main-inventory" },
 		subgroup = subgroup,
 		order= "a-b-c",
@@ -263,7 +261,7 @@ function makeItems(material,item)
 		{
 			type= "item",
 			name= itemName,
-			icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			flags= { "goes-to-main-inventory" },
 			subgroup = item,
 			order= "a-b-c",
@@ -279,7 +277,7 @@ function makeItems(material,item)
 		{
 			type= "item",
 			name= itemName,
-			icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			flags= { "goes-to-main-inventory" },
 			subgroup = item,
 			order= "a-b-c",
@@ -312,7 +310,7 @@ local itemName=material.."_"..item
 		{
 			{type="item", name=itemName, amount=itemOutputs[item]},
 		},
-		icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+		icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 		subgroup = item,
 		},
 		})
@@ -334,7 +332,7 @@ local itemName=material.."_"..item
 		{
 			{type="item", name=itemName, amount=itemOutputs[item]},
 		},
-		icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+		icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 		subgroup = item,
 		},
 		})
@@ -357,7 +355,7 @@ local itemName=material.."_"..item
 			{
 				{type="item", name=itemName, amount=itemOutputs[item]},
 			},
-			icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			subgroup = item,
 			},
 			})
@@ -378,7 +376,7 @@ local itemName=material.."_"..item
 			{
 				{type="item", name=itemName, amount=itemOutputs[item]},
 			},
-			icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			subgroup = item,
 			},
 			})
@@ -395,15 +393,13 @@ local itemName=material.."_"..item
 
 end
 
-function makeEntities(material,item)
-local itemName=material.."_"..item
-if(item=="pipe")then
+function makePipeEntitie(itemName,base_area)
 	data:extend(
 	{
 		{
 		type = "pipe",
 		name = itemName,
-		icon ="__NCP-Tech__/graphics/icons/"..itemName..".png",
+		icon ="__NCP-Tech__/graphics/item/"..itemName..".png",
 		flags = {"placeable-neutral", "player-creation"},
 		minable = {hardness = 0.2, mining_time = 0.5, result = itemName},
 		max_health = 50,
@@ -420,7 +416,7 @@ if(item=="pipe")then
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		fluid_box =
 		{
-		base_area = pipeSize[material],
+		base_area = base_area,
 		pipe_connections =
 		{
 			{ position = {0, -1} },
@@ -446,14 +442,16 @@ if(item=="pipe")then
 	},
 	
 	})
-	end
-	if(item=="underground_pipe")then
-		data:extend(
+
+end
+
+function makeUndergroundPipeEntitie(itemName,base_area,max_underground_distance)
+	data:extend(
 		{
 			{
 			type = "pipe-to-ground",
 			name = itemName,
-			icon = "__NCP-Tech__/graphics/icons/"..itemName..".png",
+			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			flags = {"placeable-neutral", "player-creation"},
 			minable = {hardness = 0.2, mining_time = 0.5, result = itemName},
 			max_health = 50,
@@ -469,14 +467,14 @@ if(item=="pipe")then
 			selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 			fluid_box =
 			{
-			base_area = pipeSize[material],
+			base_area = base_area,
 			pipe_covers = pipecoverspictures(),
 			pipe_connections =
 			{
 				{ position = {0, -1} },
 				{
 				position = {0, 1},
-				max_underground_distance = undergroundpipeLenght[material]
+				max_underground_distance = max_underground_distance
 				}
 			},
 			},
@@ -524,7 +522,19 @@ if(item=="pipe")then
 		
 		
 		})
+
+end
+
+
+function makeEntities(material,item)
+local itemName=material.."_"..item
+if(item=="pipe")then
+	makePipeEntitie(itemName,pipeSize[material])
+	
+	end
+	if(item=="underground_pipe")then
 		
+		makeUndergroundPipeEntitie(itemName,pipeSize[material],undergroundpipeLenght[material])
 		
 		
 	end
@@ -548,27 +558,48 @@ for i , item in pairs(items) do
 end
 
 --barrels
-fluids={"Acrylonitrile","MNT","Oleum","Seed_oil","ADU","Ammonia","Benzene","Bitumi","Crude_oil","Dichloroethane","Diesel","Ethylbenzene","Ferric_chloride_solution","Glycerol","Heavy_oil",
+local fluids={"Acrylonitrile","MNT","Oleum","Seed_oil","ADU","Ammonia","Benzene","Bitumi","Crude_oil","Dichloroethane","Diesel","Ethylbenzene","Ferric_chloride_solution","Glycerol","Heavy_oil",
 		"Hydrochloric_acid","Hydrofluoric_acid","Light_oil","Lubricant","Napalm","Nitric_acid","Nitric_sulfuric_acid_mixture","Nitroglycerin","Sodium_tugstate_solution","Styrene","Sulfuric_acid",
 		"Uranyl_nitrate","Water","Water_distilled","Water_dirty","Brine","Germanium_tetrachloride","Titanium_tetrachloride","Toluene","Trichlorosilane","Silicon_tetrachloride"}
 
 
 --bottles
-gases={"Argon","Air","Butadiene","Carbon_monoxide","Chlorine","Coal_gas","Ethylene","Hydrogen","Hydrogen_chlorine","Hydrogen_fluoride","Nitrogen","Nitrogen_dioxide","Oxygen","Petroleum_gas",
-"Sulfur_dioxide","Sulfur_trioxide","Uranium_hexafluoride","Syngas"}
+local gases={"Argon","Air","Butadiene","Carbon_monoxide","Chlorine","Coal_gas","Ethylene","Hydrogen","Hydrogen_chlorine","Hydrogen_fluoride","Nitrogen","Nitrogen_dioxide","Oxygen","Petroleum_gas",
+		"Sulfur_dioxide","Sulfur_trioxide","Uranium_hexafluoride","Syngas"}
 
-
+makeItem("Bottle","bottle",false)
+makeItem("Barrel","barrel",false)
 for i , item in pairs(gases) do
 	makeItem(item.."_bottle","bottle",false)
+	makeRecipe(item.."_bottle",{{"fluid",item,100},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
+	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,100},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
 end
 for i , item in pairs(fluids) do
 	makeItem(item.."_barrel","barrel",false)
+	makeRecipe(item.."_barrel",{{"fluid",item,100}},{{"item","Barrel",1},{"item",item.."_barrel",1}},"Assembling_machine","barrel")
+	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,100},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
 end
 
-makeItem("aaaatesti","plate",false)
-makeRecipe({{"stone",3},{"coal",1}},{{"aaaatesti",1},{"stone",1}},nil,"plate")
+--dence
 
+local dencemetals={"Iron","Copper","Steel","Lead"}
 
+for i , item in pairs(dencemetals) do
+	
+	makeItem(item.."_dence_plate","dence_plate",false)
+	makeRecipe(item.."_dence_plate",{{"item",billetName[item],10}},{{"item",item.."_dence_plate",1}},"Furnace","dence_plate")
+	
+	makeItem(item.."_dence_armor_plate","dence_armor_plate",false)
+	makeRecipe(item.."_dence_armor_plate",{{"item",item.."_dence_plate",10}},{{"item",item.."_dence_armor_plate",1}},"Assembling_machine","dence_armor_plate")
+	
+	makeItem(item.."_dence_pipe","dence_pipe",true)
+	makeRecipe(item.."_dence_pipe",{{"item",item.."_dence_plate",2}},{{"item",item.."_dence_pipe",1}},"Assembling_machine","dence_pipe")
+	makePipeEntitie(item.."_dence_pipe",1)
+	
+	makeItem(item.."_dence_underground_pipe","dence_underground_pipe",true)
+	makeRecipe(item.."_dence_underground_pipe",{{"item",item.."_dence_pipe",24}},{{"item",item.."_dence_underground_pipe",2}},nil,"dence_underground_pipe")
+	makeUndergroundPipeEntitie(item.."_dence_underground_pipe",1,20)
+end
 
 
 

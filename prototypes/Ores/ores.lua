@@ -109,7 +109,7 @@ data:extend(
   {
     type = "resource",
     name = "Graphite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Graphite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Graphite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -169,7 +169,7 @@ data:extend(
   {
     type = "resource",
     name = "Clay_ore",
-    icon = "__NCP-Tech__/graphics/icons/Clay_wet.png",
+    icon = "__NCP-Tech__/graphics/item/Clay_wet.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -227,7 +227,7 @@ data:extend(
   {
     type = "resource",
     name = "Bauxite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Bauxite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Bauxite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -283,7 +283,7 @@ data:extend(
   {
     type = "resource",
     name = "Copper_native_ore",
-    icon = "__NCP-Tech__/graphics/icons/Copper_native_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Copper_native_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -339,7 +339,7 @@ data:extend(
   {
     type = "resource",
     name = "Scheelite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Scheelite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Scheelite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -395,7 +395,7 @@ data:extend(
   {
     type = "resource",
     name = "Chalcopyrite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Chalcopyrite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Chalcopyrite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -456,7 +456,7 @@ data:extend(
   {
     type = "resource",
     name = "Uraninite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Uraninite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Uraninite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -512,7 +512,7 @@ data:extend(
   {
     type = "resource",
     name = "Fluorite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Fluorite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Fluorite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -568,7 +568,7 @@ data:extend(
   {
     type = "resource",
     name = "Cassiterite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Cassiterite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Cassiterite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -624,7 +624,7 @@ data:extend(
   {
     type = "resource",
     name = "Galena_ore",
-    icon = "__NCP-Tech__/graphics/icons/Galena_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Galena_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -685,7 +685,7 @@ data:extend(
   {
     type = "resource",
     name = "Rutile_ore",
-    icon = "__NCP-Tech__/graphics/icons/Rutile_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Rutile_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -741,7 +741,7 @@ data:extend(
   {
     type = "resource",
     name = "Gold_ore",
-    icon = "__NCP-Tech__/graphics/icons/Gold_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Gold_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -797,7 +797,7 @@ data:extend(
   {
     type = "resource",
     name = "Magnetite_ore",
-    icon = "__NCP-Tech__/graphics/icons/Magnetite_ore.png",
+    icon = "__NCP-Tech__/graphics/item/Magnetite_ore.png",
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -857,7 +857,7 @@ data:extend(
   {
     type = "resource",
     name = "Brine_pool",
-    icon = "__NCP-Tech__/graphics/fluids/Brine.png",
+    icon = "__NCP-Tech__/graphics/fluid/Brine.png",
     flags = {"placeable-neutral"},
     category = "basic-fluid",
     order="a-b-a",
