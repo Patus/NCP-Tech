@@ -136,24 +136,7 @@ data:extend(
 		icon = "__NCP-Tech__/graphics/item/Credit1G.png",
 		subgroup = "Recourses",
 	},
-	{
-		type = "recipe",
-		name = "Credit_Quarried_stone",
-		category = "Market",
-		energy_required = 2,
-		enabled = "true",
-		ingredients =
-		{
-			{type="item", name="Quarried_stone", amount=1},
-		},
-		results = 
-		{
-			{type="item", name="Credit1G", amount=1},
-		},
-		icon = "__NCP-Tech__/graphics/item/Credit1G.png",
-		subgroup = "Recourses",
-	},
-	
+
 	
   
   
@@ -232,7 +215,7 @@ function makeRecipe(name,input,output,category,subgroup)
 
 end
 
-function makeItem(name,subgroup,place_result)
+function makeItem(name,stack_size,subgroup,place_result)
 	data:extend({
 	{
 		type= "item",
@@ -241,7 +224,7 @@ function makeItem(name,subgroup,place_result)
 		flags= { "goes-to-main-inventory" },
 		subgroup = subgroup,
 		order= "a-b-c",
-		stack_size= 50,
+		stack_size= stack_size,
 		place_result =itemName ,
 		},
 
@@ -567,17 +550,20 @@ local fluids={"Acrylonitrile","MNT","Oleum","Seed_oil","ADU","Ammonia","Benzene"
 local gases={"Argon","Air","Butadiene","Carbon_monoxide","Chlorine","Coal_gas","Ethylene","Hydrogen","Hydrogen_chlorine","Hydrogen_fluoride","Nitrogen","Nitrogen_dioxide","Oxygen","Petroleum_gas",
 		"Sulfur_dioxide","Sulfur_trioxide","Uranium_hexafluoride","Syngas"}
 
-makeItem("Bottle","bottle",false)
-makeItem("Barrel","barrel",false)
+makeItem("Bottle",10,"bottle",false)
+makeItem("Barrel",10,"barrel",false)
+makeRecipe("Bottle",{{"item","Steel_plate",4}},{{"item","Bottle",1}},"Assembling_machine","bottle")
+makeRecipe("Barrel",{{"item","Steel_plate",2},{"item","Steel_pipe",1}},{{"item","Barrel",1}},"Assembling_machine","barrel")
+
 for i , item in pairs(gases) do
-	makeItem(item.."_bottle","bottle",false)
-	makeRecipe(item.."_bottle",{{"fluid",item,100},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
-	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,100},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
+	makeItem(item.."_bottle",10,"bottle",false)
+	makeRecipe(item.."_bottle",{{"fluid",item,10},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
+	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,10},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
 end
 for i , item in pairs(fluids) do
-	makeItem(item.."_barrel","barrel",false)
-	makeRecipe(item.."_barrel",{{"fluid",item,100}},{{"item","Barrel",1},{"item",item.."_barrel",1}},"Assembling_machine","barrel")
-	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,100},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
+	makeItem(item.."_barrel",10,"barrel",false)
+	makeRecipe(item.."_barrel",{{"fluid",item,10},{"item","Barrel",1}},{{"item",item.."_barrel",1}},"Assembling_machine","barrel")
+	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,10},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
 end
 
 --dence
@@ -586,17 +572,17 @@ local dencemetals={"Iron","Copper","Steel","Lead"}
 
 for i , item in pairs(dencemetals) do
 	
-	makeItem(item.."_dence_plate","dence_plate",false)
+	makeItem(item.."_dence_plate",50,"dence_plate",false)
 	makeRecipe(item.."_dence_plate",{{"item",billetName[item],10}},{{"item",item.."_dence_plate",1}},"Furnace","dence_plate")
 	
-	makeItem(item.."_dence_armor_plate","dence_armor_plate",false)
+	makeItem(item.."_dence_armor_plate",50,"dence_armor_plate",false)
 	makeRecipe(item.."_dence_armor_plate",{{"item",item.."_dence_plate",10}},{{"item",item.."_dence_armor_plate",1}},"Assembling_machine","dence_armor_plate")
 	
-	makeItem(item.."_dence_pipe","dence_pipe",true)
+	makeItem(item.."_dence_pipe",50,"dence_pipe",true)
 	makeRecipe(item.."_dence_pipe",{{"item",item.."_dence_plate",2}},{{"item",item.."_dence_pipe",1}},"Assembling_machine","dence_pipe")
 	makePipeEntitie(item.."_dence_pipe",1)
 	
-	makeItem(item.."_dence_underground_pipe","dence_underground_pipe",true)
+	makeItem(item.."_dence_underground_pipe",50,"dence_underground_pipe",true)
 	makeRecipe(item.."_dence_underground_pipe",{{"item",item.."_dence_pipe",24}},{{"item",item.."_dence_underground_pipe",2}},nil,"dence_underground_pipe")
 	makeUndergroundPipeEntitie(item.."_dence_underground_pipe",1,20)
 end
@@ -619,12 +605,62 @@ end
 
 
 
+function setItemPrice(name,price)
+	credit1G=math.floor(price/1000000000)
+	credit1M=math.floor((price-credit1G*1000000000)/1000000)
+	credit10k=math.floor((price-credit1G*1000000000-credit1M*1000000)/10000)
+	credit100=math.floor((price-credit1G*1000000000-credit1M*1000000-credit10k*10000)/100)
+	credit1=price-credit1G*1000000000-credit1M*1000000-credit10k*10000-credit100*100
+	makeMoneyRecipe(name,credit1,credit100,credit10k,credit1M,credit1G)
+	
+	
+	
+
+end
+
+
+function makeMoneyRecipe(name,credit1,credit100,credit10k,credit1M,credit1G)
+	local list={}
+	local inputList={}
+	local list2={"item",1}
+	if(credit1~=0)then
+		table.insert(list,{"item","Credit",credit1})
+	end
+	if(credit100~=0)then
+		table.insert(list,{"item","Credit100",credit100})
+	end
+	if(credit10k~=0)then
+		table.insert(list,{"item","Credit10k",credit10k})
+	end
+	if(credit1M~=0)then
+		table.insert(list,{"item","Credit1M",credit1M})
+	end
+	if(credit1G~=0)then
+		table.insert(list,{"item","Credit1G",credit1G})
+	end
+	
+	
+	
+	table.insert(list2,2,name)
+	table.insert(inputList,list2)
+	
+	makeRecipe(name.."ToCredits",{{"item",name,1}},list,"Market","Recourses")
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+end
 
 
 
-
-
-
+setItemPrice("Quarried_stone",1500)
+setItemPrice("stone",15000)
 
 
 

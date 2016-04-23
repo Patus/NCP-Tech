@@ -1,3 +1,16 @@
+data.raw["technology"]=nil
+--data.raw["recipe"]["empty-barrel"]=nil
+--data.raw["recipe"]["fill_crude_oil_barrel"]=nil
+--data.raw["recipe"]["empty_crude_oil_barrel"]=nil
+
+
+
+
+
+
+
+
+
 data:extend(
 {
   
@@ -2261,7 +2274,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/item/Concrete_pipe.png",
-	subgroup = "Recourses",
+	subgroup = "pipe",
   },
   {
     type = "recipe",
@@ -2279,7 +2292,7 @@ data:extend(
 
     },
 	icon = "__NCP-Tech__/graphics/item/Concrete_underground_pipe.png",
-	subgroup = "Recourses",
+	subgroup = "underground_pipe",
   },
   {
     type = "recipe",
