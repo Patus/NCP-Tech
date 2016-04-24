@@ -566,25 +566,25 @@ for i , item in pairs(fluids) do
 	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,10},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
 end
 
---dence
+--dense
 
-local dencemetals={"Iron","Copper","Steel","Lead"}
+local densemetals={"Iron","Copper","Steel","Lead"}
 
-for i , item in pairs(dencemetals) do
+for i , item in pairs(densemetals) do
 	
-	makeItem(item.."_dence_plate",50,"dence_plate",false)
-	makeRecipe(item.."_dence_plate",{{"item",billetName[item],10}},{{"item",item.."_dence_plate",1}},"Furnace","dence_plate")
+	makeItem(item.."_dense_plate",50,"dense_plate",false)
+	makeRecipe(item.."_dense_plate",{{"item",billetName[item],10}},{{"item",item.."_dense_plate",1}},"Furnace","dense_plate")
 	
-	makeItem(item.."_dence_armor_plate",50,"dence_armor_plate",false)
-	makeRecipe(item.."_dence_armor_plate",{{"item",item.."_dence_plate",10}},{{"item",item.."_dence_armor_plate",1}},"Assembling_machine","dence_armor_plate")
+	makeItem(item.."_dense_armor_plate",50,"dense_armor_plate",false)
+	makeRecipe(item.."_dense_armor_plate",{{"item",item.."_dense_plate",10}},{{"item",item.."_dense_armor_plate",1}},"Assembling_machine","dense_armor_plate")
 	
-	makeItem(item.."_dence_pipe",50,"dence_pipe",true)
-	makeRecipe(item.."_dence_pipe",{{"item",item.."_dence_plate",2}},{{"item",item.."_dence_pipe",1}},"Assembling_machine","dence_pipe")
-	makePipeEntitie(item.."_dence_pipe",1)
+	makeItem(item.."_dense_pipe",50,"dense_pipe",true)
+	makeRecipe(item.."_dense_pipe",{{"item",item.."_dense_plate",2}},{{"item",item.."_dense_pipe",1}},"Assembling_machine","dense_pipe")
+	makePipeEntitie(item.."_dense_pipe",1)
 	
-	makeItem(item.."_dence_underground_pipe",50,"dence_underground_pipe",true)
-	makeRecipe(item.."_dence_underground_pipe",{{"item",item.."_dence_pipe",24}},{{"item",item.."_dence_underground_pipe",2}},nil,"dence_underground_pipe")
-	makeUndergroundPipeEntitie(item.."_dence_underground_pipe",1,20)
+	makeItem(item.."_dense_underground_pipe",50,"dense_underground_pipe",true)
+	makeRecipe(item.."_dense_underground_pipe",{{"item",item.."_dense_pipe",24}},{{"item",item.."_dense_underground_pipe",2}},nil,"dense_underground_pipe")
+	makeUndergroundPipeEntitie(item.."_dense_underground_pipe",1,20)
 end
 
 
@@ -662,16 +662,120 @@ end
 setItemPrice("Quarried_stone",1500)
 setItemPrice("stone",15000)
 
+function makeLab()
+data:extend(
+{
+	{
+		type = "lab",
+		name = "lab",
+		icon = "__base__/graphics/icons/lab.png",
+		flags = {"placeable-player", "player-creation"},
+		minable = {mining_time = 1, result = "lab"},
+		max_health = 150,
+		corpse = "big-remnants",
+		dying_explosion = "medium-explosion",
+		collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+		selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+		light = {intensity = 0.75, size = 8},
+		on_animation =
+		{
+			filename = "__base__/graphics/entity/lab/lab.png",
+			width = 113,
+			height = 91,
+			frame_count = 33,
+			line_length = 11,
+			animation_speed = 1 / 3,
+			shift = {0.2, 0.15}
+		},
+		off_animation =
+		{
+			filename = "__base__/graphics/entity/lab/lab.png",
+			width = 113,
+			height = 91,
+			frame_count = 1,
+			shift = {0.2, 0.15}
+		},
+		working_sound =
+		{
+			sound =
+			{
+				filename = "__base__/sound/lab.ogg",
+				volume = 0.7
+			},
+			apparent_volume = 1
+		},
+		energy_source =
+		{
+			type = "electric",
+			usage_priority = "secondary-input"
+		},
+		energy_usage = "60kW",
+		researching_speed = 1,
+		inputs =
+		{
+			"Credit100",
+			"Credit10k",
+			"Credit1M",
+			"Credit1G"
+		},
+		module_specification =
+		{
+			module_slots = 2,
+			max_entity_info_module_icons_per_row = 3,
+			max_entity_info_module_icon_rows = 1,
+			module_info_icon_shift = {0, 0.9}
+		}
+	}
+	})
+
+
+end
 
 
 
 
+function makeTech(name)
+	data:extend(
+	{
+	
+	
+	{
+		type = "technology",
+		name = "electric-energy-distribution-1",
+		icon = "__base__/graphics/technology/electric-energy-distribution.png",
+		effects =
+		{
+			{
+				type = "unlock-recipe",
+				recipe = "medium-electric-pole"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "big-electric-pole"
+			}
+		},
+		prerequisites = {},
+    unit =
+	{
+		count = 50,
+		ingredients =
+		{
+			
+			{"Credit100", 10}
+		},
+		time = 30
+    },
+    order = "c-e-b",
+	}
+	})
 
 
 
+end
 
 
-
+makeLab()
+makeTech("asd")
 
 
 
