@@ -1,3 +1,6 @@
+require("prototypes.trasportbeltPictures")
+
+
 data:extend(
 {
 	{
@@ -786,7 +789,7 @@ function makeTransportBelt(name,speed)
 	{
 		type = "transport-belt",
 		name = name,
-		icon = "__base__/graphics/icons/basic-transport-belt.png",
+		icon = "__NCP-Tech__/graphics/item/"..name..".png",
 		flags = {"placeable-neutral", "player-creation"},
 		minable = {hardness = 0.2, mining_time = 0.3, result = name},
 		max_health = 50,
@@ -812,27 +815,116 @@ function makeTransportBelt(name,speed)
 		animation_speed_coefficient = 32,
 		animations =
 		{
-			filename = "__base__/graphics/entity/basic-transport-belt/basic-transport-belt.png",
+			filename = "__NCP-Tech__/graphics/entity/Transport/Transportbelt_crude.png",
 			priority = "extra-high",
 			width = 40,
 			height = 40,
 			frame_count = 16,
 			direction_count = 12
 		},
-		belt_horizontal = basic_belt_horizontal,
-		belt_vertical = basic_belt_vertical,
-		ending_top = basic_belt_ending_top,
-		ending_bottom = basic_belt_ending_bottom,
-		ending_side = basic_belt_ending_side,
-		starting_top = basic_belt_starting_top,
-		starting_bottom = basic_belt_starting_bottom,
-		starting_side = basic_belt_starting_side,
+		belt_horizontal = crude_belt_horizontal,
+		belt_vertical = crude_belt_vertical,
+		ending_top = crude_belt_ending_top,
+		ending_bottom = crude_belt_ending_bottom,
+		ending_side = crude_belt_ending_side,
+		starting_top = crude_belt_starting_top,
+		starting_bottom = crude_belt_starting_bottom,
+		starting_side = crude_belt_starting_side,
 		ending_patch = ending_patch_prototype,
 		fast_replaceable_group = "transport-belt",
 		speed = speed
 	}
 })
 end
+
+
+function makeUnderTransportBelt(name,speed,max_distance)
+	makeItem(name,50,"transportblelt",true)
+	
+
+	data:extend(
+	{
+	{
+    type = "transport-belt-to-ground",
+    name = name,
+    icon = "__base__/graphics/icons/basic-transport-belt-to-ground.png",
+    flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = name},
+    max_health = 70,
+    corpse = "small-remnants",
+    max_distance = max_distance,
+    underground_sprite =
+    {
+      filename = "__core__/graphics/arrows/underground-lines.png",
+      priority = "high",
+      width = 32,
+      height = 32,
+      x = 32
+    },
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 60
+      }
+    },
+    collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
+    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    animation_speed_coefficient = 32,
+    belt_horizontal = crude_belt_horizontal,
+    belt_vertical = crude_belt_vertical,
+    ending_top = crude_belt_ending_top,
+    ending_bottom = crude_belt_ending_bottom,
+    ending_side = crude_belt_ending_side,
+    starting_top = crude_belt_starting_top,
+    starting_bottom = crude_belt_starting_bottom,
+    starting_side = crude_belt_starting_side,
+    fast_replaceable_group = "transport-belt-to-ground",
+    speed = speed,
+    structure =
+    {
+      direction_in =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/basic-transport-belt-to-ground/basic-transport-belt-to-ground-structure.png",
+          priority = "extra-high",
+          shift = {0.26, 0},
+          width = 57,
+          height = 43,
+          y = 43
+        }
+      },
+      direction_out =
+      {
+        sheet =
+        {
+          filename = "__base__/graphics/entity/basic-transport-belt-to-ground/basic-transport-belt-to-ground-structure.png",
+          priority = "extra-high",
+          shift = {0.26, 0},
+          width = 57,
+          height = 43
+        }
+      }
+    },
+    ending_patch = ending_patch_prototype
+  }
+})
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 makeTransportBelt("Transport_belt_crude",0.25/32)
 makeTransportBelt("Transport_belt_basic",0.5/32)
@@ -841,6 +933,14 @@ makeTransportBelt("Transport_belt_fast",2/32)
 makeTransportBelt("Transport_belt_improved_fast",4/32)
 makeTransportBelt("Transport_belt_express",8/32)
 makeTransportBelt("Transport_belt_improved_express",16/32)
+
+makeUnderTransportBelt("Transport_belt_crude_under",0.25/32)
+makeUnderTransportBelt("Transport_belt_basic_under",0.5/32)
+makeUnderTransportBelt("Transport_belt_under",1/32)
+makeUnderTransportBelt("Transport_belt_fast_under",2/32)
+makeUnderTransportBelt("Transport_belt_improved_fast_under",4/32)
+makeUnderTransportBelt("Transport_belt_express_under",8/32)
+makeUnderTransportBelt("Transport_belt_improved_express_under",16/32)
 
 
 
