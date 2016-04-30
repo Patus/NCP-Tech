@@ -225,7 +225,7 @@ function makeItem(name,stack_size,subgroup,place_result)
 		subgroup = subgroup,
 		order= "a-b-c",
 		stack_size= stack_size,
-		place_result =itemName ,
+		place_result =nil,
 		},
 
 	})
@@ -575,8 +575,8 @@ for i , item in pairs(densemetals) do
 	makeItem(item.."_dense_plate",50,"dense_plate",false)
 	makeRecipe(item.."_dense_plate",{{"item",billetName[item],10}},{{"item",item.."_dense_plate",1}},"Furnace","dense_plate")
 	
-	makeItem(item.."_dense_armor_plate",50,"dense_armor_plate",false)
-	makeRecipe(item.."_dense_armor_plate",{{"item",item.."_dense_plate",10}},{{"item",item.."_dense_armor_plate",1}},"Assembling_machine","dense_armor_plate")
+	makeItem(item.."_large_dense_plate",50,"dense_armor_plate",false)
+	makeRecipe(item.."_large_dense_plate",{{"item",item.."_dense_plate",10}},{{"item",item.."_large_dense_plate",1}},"Assembling_machine","dense_armor_plate")
 	
 	makeItem(item.."_dense_pipe",50,"dense_pipe",true)
 	makeRecipe(item.."_dense_pipe",{{"item",item.."_dense_plate",2}},{{"item",item.."_dense_pipe",1}},"Assembling_machine","dense_pipe")
@@ -776,6 +776,75 @@ end
 
 makeLab()
 makeTech("asd")
+
+function makeTransportBelt(name,speed)
+	makeItem(name,50,"transportblelt",true)
+	
+
+	data:extend(
+	{
+	{
+		type = "transport-belt",
+		name = name,
+		icon = "__base__/graphics/icons/basic-transport-belt.png",
+		flags = {"placeable-neutral", "player-creation"},
+		minable = {hardness = 0.2, mining_time = 0.3, result = name},
+		max_health = 50,
+		corpse = "small-remnants",
+		resistances =
+		{
+			{
+				type = "fire",
+				percent = 60
+			}
+		},
+		collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
+		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+		working_sound =
+		{
+			sound =
+			{
+				filename = "__base__/sound/basic-transport-belt.ogg",
+				volume = 0.4
+			},
+			max_sounds_per_type = 3
+		},
+		animation_speed_coefficient = 32,
+		animations =
+		{
+			filename = "__base__/graphics/entity/basic-transport-belt/basic-transport-belt.png",
+			priority = "extra-high",
+			width = 40,
+			height = 40,
+			frame_count = 16,
+			direction_count = 12
+		},
+		belt_horizontal = basic_belt_horizontal,
+		belt_vertical = basic_belt_vertical,
+		ending_top = basic_belt_ending_top,
+		ending_bottom = basic_belt_ending_bottom,
+		ending_side = basic_belt_ending_side,
+		starting_top = basic_belt_starting_top,
+		starting_bottom = basic_belt_starting_bottom,
+		starting_side = basic_belt_starting_side,
+		ending_patch = ending_patch_prototype,
+		fast_replaceable_group = "transport-belt",
+		speed = speed
+	}
+})
+end
+
+makeTransportBelt("Transport_belt_crude",0.25/32)
+makeTransportBelt("Transport_belt_basic",0.5/32)
+makeTransportBelt("Transport_belt",1/32)
+makeTransportBelt("Transport_belt_fast",2/32)
+makeTransportBelt("Transport_belt_improved_fast",4/32)
+makeTransportBelt("Transport_belt_express",8/32)
+makeTransportBelt("Transport_belt_improved_express",16/32)
+
+
+
+
 
 
 

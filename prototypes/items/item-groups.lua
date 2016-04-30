@@ -28,14 +28,25 @@ data:extend(
     inventory_order = "g",
     icon = "__NCP-Tech__/graphics/item-group/Resources.png"
   },
+  {
+    type = "item-group",
+    name = "Transport",
+    order = "ca",
+    inventory_order = "g",
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+  },
   
   
   
   
   
   
-  
-  
+  {
+    type = "item-subgroup",
+    name = "transportblelt",
+    group = "Transport",
+    order = "a",
+  },
   
   
   
@@ -84,25 +95,25 @@ data:extend(
   },
   {
     type = "item-subgroup",
-    name = "dence_plate",
+    name = "dense_plate",
     group = "Items",
     order = "a",
   },
   {
     type = "item-subgroup",
-    name = "dence_armor_plate",
+    name = "dense_armor_plate",
     group = "Items",
     order = "a",
   },
   {
     type = "item-subgroup",
-    name = "dence_pipe",
+    name = "dense_pipe",
     group = "Items",
     order = "a",
   },
   {
     type = "item-subgroup",
-    name = "dence_underground_pipe",
+    name = "dense_underground_pipe",
     group = "Items",
     order = "a",
   },
