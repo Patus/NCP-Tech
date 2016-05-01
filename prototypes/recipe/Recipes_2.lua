@@ -994,15 +994,136 @@ function makeSplitter(name,speed)
 })
 end
 
+function makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain)
+makeItem("Inserter_"..name,50,"transportblelt",true)
+	data:extend(
+	{
+	{
+    type = "inserter",
+    name = "Inserter_"..name,
+    icon = "__base__/graphics/icons/fast-inserter.png",
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable =
+    {
+      hardness = 0.2,
+      mining_time = 0.5,
+      result = "Inserter_"..name
+    },
+    max_health = 40,
+    corpse = "small-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 90
+      }
+    },
+    collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
+    selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
+    pickup_position = {0, -1},
+    insert_position = {0, 1.2},
+    energy_per_movement = energy_per_movement,
+    energy_per_rotation = energy_per_rotation,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      drain = drain
+    },
+    extension_speed = extension_speed,
+    rotation_speed = rotation_speed,
+    fast_replaceable_group = "inserter",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    working_sound =
+    {
+      match_progress_to_activity = true,
+      sound =
+      {
+        {
+          filename = "__base__/sound/inserter-fast-1.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-2.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-3.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-4.ogg",
+          volume = 0.75
+        },
+        {
+          filename = "__base__/sound/inserter-fast-5.ogg",
+          volume = 0.75
+        }
+      }
+    },
+    hand_base_picture =
+    {
+      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-base.png",
+      priority = "extra-high",
+      width = 8,
+      height = 34
+    },
+    hand_closed_picture =
+    {
+      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41
+    },
+    hand_open_picture =
+    {
+      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41
+    },
+    hand_base_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      priority = "extra-high",
+      width = 8,
+      height = 34
+    },
+    hand_closed_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41
+    },
+    hand_open_shadow =
+    {
+      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41
+    },
+    platform_picture =
+    {
+      sheet =
+      {
+        filename = "__base__/graphics/entity/fast-inserter/fast-inserter-platform.png",
+        priority = "extra-high",
+        width = 46,
+        height = 46
+      }
+    }
+  },
+
+
+})
+end
 
 
 
 
 
-
-
-
-
+local tierList={"crude","basic","normal","fast","improved_fast","express","improved_express"}
 
 
 makeTransportBelt("crude",0.25/32)
@@ -1030,7 +1151,11 @@ makeSplitter("express",8/32)
 makeSplitter("improved_express",16/32)
 
 
-
-
-
+makeInserter("crude",0.005,0.005,1000,1000,"1kW")
+makeInserter("basic",0.01,0.01,1000,1000,"1kW")
+makeInserter("normal",0.02,0.02,5000,5000,"20kW")
+makeInserter("fast",0.04,0.04,10000,10000,"40kW")
+makeInserter("improved_fast",0.08,0.08,20000,20000,"80kW")
+makeInserter("express",0.32,0.32,80000,80000,"160kW")
+makeInserter("improved_express",0.64,0.64,160000,160000,"320kW")
 
