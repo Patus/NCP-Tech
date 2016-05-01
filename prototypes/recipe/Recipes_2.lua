@@ -1024,6 +1024,25 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
     insert_position = {0, 1.2},
     energy_per_movement = energy_per_movement,
     energy_per_rotation = energy_per_rotation,
+	hand_size = 1,
+	filter_count = 0,
+	programmable = false,
+	uses_arm_movement = "basic-inserter",
+	circuit_wire_max_distance = 7.5,
+    circuit_wire_connection_point =
+    {
+      shadow =
+      {
+        red = {0, 0},
+        green = {0, 0}
+      },
+      wire =
+      {
+        red = {0, 0},
+        green = {0, 0}
+      }
+    },
+	
     energy_source =
     {
       type = "electric",
