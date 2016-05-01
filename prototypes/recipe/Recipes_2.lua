@@ -781,17 +781,17 @@ makeLab()
 makeTech("asd")
 
 function makeTransportBelt(name,speed)
-	makeItem(name,50,"transportblelt",true)
+	makeItem("Transport_belt_"..name,50,"transportblelt",true)
 	
 
 	data:extend(
 	{
 	{
 		type = "transport-belt",
-		name = name,
-		icon = "__NCP-Tech__/graphics/item/"..name..".png",
+		name = "Transport_belt_"..name,
+		icon = "__NCP-Tech__/graphics/item/Transport_belt_"..name..".png",
 		flags = {"placeable-neutral", "player-creation"},
-		minable = {hardness = 0.2, mining_time = 0.3, result = name},
+		minable = {hardness = 0.2, mining_time = 0.3, result = "Transport_belt_"..name},
 		max_health = 50,
 		corpse = "small-remnants",
 		resistances =
@@ -815,21 +815,21 @@ function makeTransportBelt(name,speed)
 		animation_speed_coefficient = 32,
 		animations =
 		{
-			filename = "__NCP-Tech__/graphics/entity/Transport/Transportbelt_crude.png",
+			filename = "__NCP-Tech__/graphics/entity/Transport/Transport_belt_"..name..".png",
 			priority = "extra-high",
 			width = 40,
 			height = 40,
 			frame_count = 16,
 			direction_count = 12
 		},
-		belt_horizontal = crude_belt_horizontal,
-		belt_vertical = crude_belt_vertical,
-		ending_top = crude_belt_ending_top,
-		ending_bottom = crude_belt_ending_bottom,
-		ending_side = crude_belt_ending_side,
-		starting_top = crude_belt_starting_top,
-		starting_bottom = crude_belt_starting_bottom,
-		starting_side = crude_belt_starting_side,
+		belt_horizontal = belt_horizontal(name),
+		belt_vertical = belt_vertical(name),
+		ending_top = belt_ending_top(name),
+		ending_bottom = belt_ending_bottom(name),
+		ending_side = belt_ending_side(name),
+		starting_top = belt_starting_top(name),
+		starting_bottom = belt_starting_bottom(name),
+		starting_side = belt_starting_side(name),
 		ending_patch = ending_patch_prototype,
 		fast_replaceable_group = "transport-belt",
 		speed = speed
@@ -839,17 +839,17 @@ end
 
 
 function makeUnderTransportBelt(name,speed,max_distance)
-	makeItem(name,50,"transportblelt",true)
+	makeItem("Transport_belt_"..name.."_under",50,"transportblelt",true)
 	
 
 	data:extend(
 	{
 	{
     type = "transport-belt-to-ground",
-    name = name,
-    icon = "__base__/graphics/icons/basic-transport-belt-to-ground.png",
+    name = "Transport_belt_"..name.."_under",
+    icon = "__NCP-Tech__/graphics/item/Transport_belt_"..name.."_under.png",
     flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = name},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Transport_belt_"..name.."_under"},
     max_health = 70,
     corpse = "small-remnants",
     max_distance = max_distance,
@@ -871,14 +871,14 @@ function makeUnderTransportBelt(name,speed,max_distance)
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     animation_speed_coefficient = 32,
-    belt_horizontal = crude_belt_horizontal,
-    belt_vertical = crude_belt_vertical,
-    ending_top = crude_belt_ending_top,
-    ending_bottom = crude_belt_ending_bottom,
-    ending_side = crude_belt_ending_side,
-    starting_top = crude_belt_starting_top,
-    starting_bottom = crude_belt_starting_bottom,
-    starting_side = crude_belt_starting_side,
+    belt_horizontal = belt_horizontal(name),
+    belt_vertical = belt_vertical(name),
+    ending_top = belt_ending_top(name),
+    ending_bottom = belt_ending_bottom(name),
+    ending_side = belt_ending_side(name),
+    starting_top = belt_starting_top(name),
+    starting_bottom = belt_starting_bottom(name),
+    starting_side = belt_starting_side(name),
     fast_replaceable_group = "transport-belt-to-ground",
     speed = speed,
     structure =
@@ -887,7 +887,7 @@ function makeUnderTransportBelt(name,speed,max_distance)
       {
         sheet =
         {
-          filename = "__base__/graphics/entity/basic-transport-belt-to-ground/basic-transport-belt-to-ground-structure.png",
+          filename = "__NCP-Tech__/graphics/entity/Transport/Transport_belt_structure_"..name..".png",
           priority = "extra-high",
           shift = {0.26, 0},
           width = 57,
@@ -899,7 +899,7 @@ function makeUnderTransportBelt(name,speed,max_distance)
       {
         sheet =
         {
-          filename = "__base__/graphics/entity/basic-transport-belt-to-ground/basic-transport-belt-to-ground-structure.png",
+          filename = "__NCP-Tech__/graphics/entity/Transport/Transport_belt_structure_"..name..".png",
           priority = "extra-high",
           shift = {0.26, 0},
           width = 57,
@@ -926,21 +926,21 @@ end
 
 
 
-makeTransportBelt("Transport_belt_crude",0.25/32)
-makeTransportBelt("Transport_belt_basic",0.5/32)
-makeTransportBelt("Transport_belt",1/32)
-makeTransportBelt("Transport_belt_fast",2/32)
-makeTransportBelt("Transport_belt_improved_fast",4/32)
-makeTransportBelt("Transport_belt_express",8/32)
-makeTransportBelt("Transport_belt_improved_express",16/32)
+makeTransportBelt("crude",0.25/32)
+makeTransportBelt("basic",0.5/32)
+makeTransportBelt("normal",1/32)
+makeTransportBelt("fast",2/32)
+makeTransportBelt("improved_fast",4/32)
+makeTransportBelt("express",8/32)
+makeTransportBelt("improved_express",16/32)
 
-makeUnderTransportBelt("Transport_belt_crude_under",0.25/32)
-makeUnderTransportBelt("Transport_belt_basic_under",0.5/32)
-makeUnderTransportBelt("Transport_belt_under",1/32)
-makeUnderTransportBelt("Transport_belt_fast_under",2/32)
-makeUnderTransportBelt("Transport_belt_improved_fast_under",4/32)
-makeUnderTransportBelt("Transport_belt_express_under",8/32)
-makeUnderTransportBelt("Transport_belt_improved_express_under",16/32)
+makeUnderTransportBelt("crude",0.25/32,3)
+makeUnderTransportBelt("basic",0.5/32,6)
+makeUnderTransportBelt("normal",1/32,9)
+makeUnderTransportBelt("fast",2/32,12)
+makeUnderTransportBelt("improved_fast",4/32,15)
+makeUnderTransportBelt("express",8/32,18)
+makeUnderTransportBelt("improved_express",16/32,21)
 
 
 
