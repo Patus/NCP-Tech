@@ -911,9 +911,88 @@ function makeUnderTransportBelt(name,speed,max_distance)
   }
 })
 end
-
-
-
+function makeSplitter(name,speed)
+	makeItem("Splitter_"..name,50,"transportblelt",true)
+	data:extend(
+	{
+	{
+    type = "splitter",
+    name = "Splitter_"..name,
+    icon = "__NCP-Tech__/graphics/item/Splitter_"..name..".png",
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Splitter_"..name},
+    max_health = 80,
+    corpse = "medium-remnants",
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 60
+      }
+    },
+    collision_box = {{-0.9, -0.1}, {0.9, 0.1}},
+    selection_box = {{-0.9, -0.5}, {0.9, 0.5}},
+    animation_speed_coefficient = 32,
+    structure_animation_speed_coefficient = 1,
+    structure_animation_movement_cooldown = 10,
+    belt_horizontal = belt_horizontal(name),
+    belt_vertical = belt_vertical(name),
+    ending_top = belt_ending_top(name),
+    ending_bottom = belt_ending_bottom(name),
+    ending_side = belt_ending_side(name),
+    starting_top = belt_starting_top(name),
+    starting_bottom = belt_starting_bottom(name),
+    starting_side = belt_starting_side(name),
+    ending_patch = ending_patch_prototype,
+    fast_replaceable_group = "splitter",
+    speed = speed,
+    structure =
+    {
+      north =
+      {
+        filename = "__NCP-Tech__/graphics/entity/Transport/Splitter_"..name.."_north.png",
+        frame_count = 32,
+        line_length = 16,
+        priority = "extra-high",
+        width = 80,
+        height = 35,
+        shift = {0.225, 0}
+      },
+      east =
+      {
+        filename = "__NCP-Tech__/graphics/entity/Transport/Splitter_"..name.."_east.png",
+        frame_count = 32,
+        line_length = 16,
+        priority = "extra-high",
+        width = 46,
+        height = 81,
+        shift = {0.075, 0}
+      },
+      south =
+      {
+        filename = "__NCP-Tech__/graphics/entity/Transport/Splitter_"..name.."_south.png",
+        frame_count = 32,
+        line_length = 16,
+        priority = "extra-high",
+        width = 82,
+        height = 36,
+        shift = {0.075, 0}
+      },
+      west =
+      {
+        filename = "__NCP-Tech__/graphics/entity/Transport/Splitter_"..name.."_west.png",
+        frame_count = 32,
+        line_length = 16,
+        priority = "extra-high",
+        width = 47,
+        height = 79,
+        shift = {0.25, 0.05}
+      },
+    },
+    ending_patch = ending_patch_prototype
+  },
+})
+end
 
 
 
@@ -942,8 +1021,13 @@ makeUnderTransportBelt("improved_fast",4/32,15)
 makeUnderTransportBelt("express",8/32,18)
 makeUnderTransportBelt("improved_express",16/32,21)
 
-
-
+makeSplitter("crude",0.25/32)
+makeSplitter("basic",0.5/32)
+makeSplitter("normal",1/32)
+makeSplitter("fast",2/32)
+makeSplitter("improved_fast",4/32)
+makeSplitter("express",8/32)
+makeSplitter("improved_express",16/32)
 
 
 
