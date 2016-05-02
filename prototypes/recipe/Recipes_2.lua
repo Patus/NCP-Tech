@@ -994,7 +994,9 @@ function makeSplitter(name,speed)
 })
 end
 
-function makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain)
+
+
+function makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,energy_source,hand_size,programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 makeItem("Inserter_"..name,50,"transportblelt",true)
 	data:extend(
 	{
@@ -1020,15 +1022,15 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
     },
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
-    pickup_position = {0, -1},
-    insert_position = {0, 1.2},
+    pickup_position = pickup_position,
+    insert_position = insert_position,
     energy_per_movement = energy_per_movement,
     energy_per_rotation = energy_per_rotation,
-	hand_size = 1,
-	filter_count = 0,
-	programmable = false,
+	hand_size = hand_size,
+	filter_count = filter_count,
+	programmable = programmable,
 	uses_arm_movement = "basic-inserter",
-	circuit_wire_max_distance = 7.5,
+	circuit_wire_max_distance = circuit_wire_max_distance,
     circuit_wire_connection_point =
     {
       shadow =
@@ -1043,12 +1045,8 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
       }
     },
 	
-    energy_source =
-    {
-      type = "electric",
-      usage_priority = "secondary-input",
-      drain = drain
-    },
+    energy_source = energy_source,
+    
     extension_speed = extension_speed,
     rotation_speed = rotation_speed,
     fast_replaceable_group = "inserter",
@@ -1138,8 +1136,47 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
 })
 end
 
+function makeBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,fuel_inventory_size,hand_size,
+			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position,frequency)
 
+	makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,
+	{type = "burner",effectivity = effectivity,fuel_inventory_size = fuel_inventory_size,smoke ={{name = "smoke",deviation = {0.1, 0.1},frequency = frequency}}},hand_size,
+			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+end
 
+function makeElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
+			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+
+			
+	makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,{type = "electric",usage_priority = "secondary-input",drain = drain},hand_size,
+			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+
+end
+
+function makeSmartInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
+			filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+			
+			
+	makeElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
+			true,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+
+end
+function makeNormalElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain)
+	makeElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,1,
+			false,0,0,{0, -1},{0, 1.2})
+end
+function makeLongElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain)
+	makeElectricInserter(name.."_long",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,1.5,
+			false,0,0,{0, -2},{0, 2.2})
+end
+function makeNormalBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,frequency)
+	makeBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,1,1,
+			false,0,0,{0, -1},{0, 1.2},frequency)
+end
+function makeLongBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,frequency)
+	makeBurnerInserter(name.."_long",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,1,1.5,
+			false,0,0,{0, -2},{0, 2.2},frequency)
+end
 
 
 local tierList={"crude","basic","normal","fast","improved_fast","express","improved_express"}
@@ -1170,11 +1207,18 @@ makeSplitter("express",8/32)
 makeSplitter("improved_express",16/32)
 
 
-makeInserter("crude",0.005,0.005,1000,1000,"1kW")
-makeInserter("basic",0.01,0.01,1000,1000,"1kW")
-makeInserter("normal",0.02,0.02,5000,5000,"20kW")
-makeInserter("fast",0.04,0.04,10000,10000,"40kW")
-makeInserter("improved_fast",0.08,0.08,20000,20000,"80kW")
-makeInserter("express",0.32,0.32,80000,80000,"160kW")
-makeInserter("improved_express",0.64,0.64,160000,160000,"320kW")
+makeNormalBurnerInserter("crude",0.005,0.005,500000,500000,0.3,20)
+makeNormalBurnerInserter("basic",0.01,0.01,1000000,1000000,0.5,30)
+makeNormalElectricInserter("normal",0.02,0.02,5000,5000,"20kW")
+makeNormalElectricInserter("fast",0.04,0.04,10000,10000,"40kW")
+makeNormalElectricInserter("improved_fast",0.08,0.08,20000,20000,"80kW")
+makeNormalElectricInserter("express",0.32,0.32,80000,80000,"160kW")
+makeNormalElectricInserter("improved_express",0.64,0.64,160000,160000,"320kW")
 
+makeLongBurnerInserter("crude",0.005,0.005,1000000,1000000,0.3,20)
+makeLongBurnerInserter("basic",0.01,0.01,2000000,2000000,0.5,30)
+makeLongElectricInserter("normal",0.02,0.02,10000,10000,"20kW")
+makeLongElectricInserter("fast",0.04,0.04,20000,20000,"40kW")
+makeLongElectricInserter("improved_fast",0.08,0.08,80000,80000,"80kW")
+makeLongElectricInserter("express",0.32,0.32,160000,160000,"160kW")
+makeLongElectricInserter("improved_express",0.64,0.64,320000,320000,"320kW")
