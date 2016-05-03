@@ -1080,21 +1080,21 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
     },
     hand_base_picture =
     {
-      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-base.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_arm.png",
       priority = "extra-high",
       width = 8,
       height = 34
     },
     hand_closed_picture =
     {
-      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-closed.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_hand_closed.png",
       priority = "extra-high",
       width = 18,
       height = 41
     },
     hand_open_picture =
     {
-      filename = "__base__/graphics/entity/fast-inserter/fast-inserter-hand-open.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_hand_open.png",
       priority = "extra-high",
       width = 18,
       height = 41
@@ -1124,7 +1124,7 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
     {
       sheet =
       {
-        filename = "__base__/graphics/entity/fast-inserter/fast-inserter-platform.png",
+        filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_base.png",
         priority = "extra-high",
         width = 46,
         height = 46
