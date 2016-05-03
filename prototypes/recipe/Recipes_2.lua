@@ -996,20 +996,25 @@ end
 
 
 
-function makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,energy_source,hand_size,programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
-makeItem("Inserter_"..name,50,"transportblelt",true)
+function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,energy_source,hand_size,programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+	if(types~="")then
+		types="_"..types
+	end
+	makeItem("Inserter_"..name..types,50,"transportblelt",true)
+	
+	
 	data:extend(
 	{
 	{
     type = "inserter",
-    name = "Inserter_"..name,
+    name = "Inserter_"..name..types,
     icon = "__base__/graphics/icons/fast-inserter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable =
     {
       hardness = 0.2,
       mining_time = 0.5,
-      result = "Inserter_"..name
+      result = "Inserter_"..name..types
     },
     max_health = 40,
     corpse = "small-remnants",
@@ -1080,42 +1085,42 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
     },
     hand_base_picture =
     {
-      filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_arm.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_"..name.."_arm.png",
       priority = "extra-high",
       width = 8,
       height = 34
     },
     hand_closed_picture =
     {
-      filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_hand_closed.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_"..name.."_hand_closed.png",
       priority = "extra-high",
       width = 18,
       height = 41
     },
     hand_open_picture =
     {
-      filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_hand_open.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_"..name.."_hand_open.png",
       priority = "extra-high",
       width = 18,
       height = 41
     },
     hand_base_shadow =
     {
-      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-base-shadow.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_crude_arm_shadow.png",
       priority = "extra-high",
       width = 8,
       height = 34
     },
     hand_closed_shadow =
     {
-      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-closed-shadow.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_crude_hand_closed_shadow.png",
       priority = "extra-high",
       width = 18,
       height = 41
     },
     hand_open_shadow =
     {
-      filename = "__base__/graphics/entity/burner-inserter/burner-inserter-hand-open-shadow.png",
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_crude_hand_open_shadow.png",
       priority = "extra-high",
       width = 18,
       height = 41
@@ -1124,7 +1129,7 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/Inserters/"..name.."_inserter_base.png",
+        filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_"..name.."_base.png",
         priority = "extra-high",
         width = 46,
         height = 46
@@ -1136,19 +1141,19 @@ makeItem("Inserter_"..name,50,"transportblelt",true)
 })
 end
 
-function makeBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,fuel_inventory_size,hand_size,
+function makeBurnerInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,fuel_inventory_size,hand_size,
 			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position,frequency)
 
-	makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,
+	makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,
 	{type = "burner",effectivity = effectivity,fuel_inventory_size = fuel_inventory_size,smoke ={{name = "smoke",deviation = {0.1, 0.1},frequency = frequency}}},hand_size,
 			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 end
 
-function makeElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
+function makeElectricInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
 			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
 			
-	makeInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,{type = "electric",usage_priority = "secondary-input",drain = drain},hand_size,
+	makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,{type = "electric",usage_priority = "secondary-input",drain = drain},hand_size,
 			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
 end
@@ -1157,24 +1162,24 @@ function makeSmartInserter(name,extension_speed,rotation_speed,energy_per_moveme
 			filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 			
 			
-	makeElectricInserter(name.."_smart",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
+	makeElectricInserter(name,"smart",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
 			true,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
 end
 function makeNormalElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain)
-	makeElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,1,
+	makeElectricInserter(name,"",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,1,
 			false,0,0,{0, -1},{0, 1.2})
 end
 function makeLongElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain)
-	makeElectricInserter(name.."_long",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,1.5,
+	makeElectricInserter(name,"long",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,1.5,
 			false,0,0,{0, -2},{0, 2.2})
 end
 function makeNormalBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,frequency)
-	makeBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,1,1,
+	makeBurnerInserter(name,"",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,1,1,
 			false,0,0,{0, -1},{0, 1.2},frequency)
 end
 function makeLongBurnerInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,frequency)
-	makeBurnerInserter(name.."_long",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,1,1.5,
+	makeBurnerInserter(name,"long",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,1,1.5,
 			false,0,0,{0, -2},{0, 2.2},frequency)
 end
 
