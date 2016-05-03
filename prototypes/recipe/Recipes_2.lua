@@ -997,24 +997,25 @@ end
 
 
 function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,energy_source,hand_size,programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+	local types2=""
 	if(types~="")then
-		types="_"..types
+		types2="_"..types
 	end
-	makeItem("Inserter_"..name..types,50,"transportblelt",true)
+	makeItem("Inserter_"..name..types2,50,"transportblelt",true)
 	
 	
 	data:extend(
 	{
 	{
     type = "inserter",
-    name = "Inserter_"..name..types,
+    name = "Inserter_"..name..types2,
     icon = "__base__/graphics/icons/fast-inserter.png",
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable =
     {
       hardness = 0.2,
       mining_time = 0.5,
-      result = "Inserter_"..name..types
+      result = "Inserter_"..name..types2
     },
     max_health = 40,
     corpse = "small-remnants",
@@ -1139,6 +1140,24 @@ function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movem
 
 
 })
+
+	if(types=="smart")then
+	data.raw["inserter"]["Inserter_"..name..types2].hand_closed_picture =
+    {
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_smart_hand_closed.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41
+    }
+    data.raw["inserter"]["Inserter_"..name..types2].hand_open_picture =
+    {
+      filename = "__NCP-Tech__/graphics/entity/Inserters/Inserter_smart_hand_open.png",
+      priority = "extra-high",
+      width = 18,
+      height = 41
+    }
+	end
+
 end
 
 function makeBurnerInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,effectivity,fuel_inventory_size,hand_size,
@@ -1228,8 +1247,11 @@ makeLongElectricInserter("improved_fast",0.08,0.08,80000,80000,"80kW")
 makeLongElectricInserter("express",0.32,0.32,160000,160000,"160kW")
 makeLongElectricInserter("improved_express",0.64,0.64,320000,320000,"320kW")
 
-
-
+makeSmartInserter("normal",0.02,0.02,5000,5000,"20kW",1,1,5,{0, -1},{0, 1.2})
+makeSmartInserter("fast",0.02,0.02,5000,5000,"20kW",1,2,10,{0, -1},{0, 1.2})
+makeSmartInserter("improved_fast",0.02,0.02,5000,5000,"20kW",1,3,15,{0, -1},{0, 1.2})
+makeSmartInserter("express",0.02,0.02,5000,5000,"20kW",1,4,20,{0, -1},{0, 1.2})
+makeSmartInserter("improved_express",0.02,0.02,5000,5000,"20kW",1,5,25,{0, -1},{0, 1.2})
 
 
 
