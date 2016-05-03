@@ -1157,7 +1157,7 @@ function makeSmartInserter(name,extension_speed,rotation_speed,energy_per_moveme
 			filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 			
 			
-	makeElectricInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
+	makeElectricInserter(name.."_smart",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
 			true,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
 end
@@ -1222,3 +1222,41 @@ makeLongElectricInserter("fast",0.04,0.04,20000,20000,"40kW")
 makeLongElectricInserter("improved_fast",0.08,0.08,80000,80000,"80kW")
 makeLongElectricInserter("express",0.32,0.32,160000,160000,"160kW")
 makeLongElectricInserter("improved_express",0.64,0.64,320000,320000,"320kW")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
