@@ -218,7 +218,11 @@ function makeRecipe(name,input,output,category,subgroup)
 
 end
 
-function makeItem(name,stack_size,subgroup,place_result)
+function makeItem(name,stack_size,subgroup,place_result,order)
+	if(order=="" or order==nil)then
+		order="a-b-c"
+	end
+	
 	data:extend({
 	{
 		type= "item",
@@ -226,7 +230,7 @@ function makeItem(name,stack_size,subgroup,place_result)
 		icon = "__NCP-Tech__/graphics/item/"..name..".png",
 		flags= { "goes-to-main-inventory" },
 		subgroup = subgroup,
-		order= "a-b-c",
+		order= order,
 		stack_size= stack_size,
 		place_result =nil,
 		},
@@ -553,18 +557,18 @@ local fluids={"Acrylonitrile","MNT","Oleum","Seed_oil","ADU","Ammonia","Benzene"
 local gases={"Argon","Air","Butadiene","Carbon_monoxide","Chlorine","Coal_gas","Ethylene","Hydrogen","Hydrogen_chlorine","Hydrogen_fluoride","Nitrogen","Nitrogen_dioxide","Oxygen","Petroleum_gas",
 		"Sulfur_dioxide","Sulfur_trioxide","Uranium_hexafluoride","Syngas"}
 
-makeItem("Bottle",10,"bottle",false)
-makeItem("Barrel",10,"barrel",false)
+makeItem("Bottle",10,"bottle",false,"")
+makeItem("Barrel",10,"barrel",false,"")
 makeRecipe("Bottle",{{"item","Steel_plate",4}},{{"item","Bottle",1}},"Assembling_machine","bottle")
 makeRecipe("Barrel",{{"item","Steel_plate",2},{"item","Steel_pipe",1}},{{"item","Barrel",1}},"Assembling_machine","barrel")
 
 for i , item in pairs(gases) do
-	makeItem(item.."_bottle",10,"bottle",false)
+	makeItem(item.."_bottle",10,"bottle",false,"")
 	makeRecipe(item.."_bottle",{{"fluid",item,10},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
 	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,10},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
 end
 for i , item in pairs(fluids) do
-	makeItem(item.."_barrel",10,"barrel",false)
+	makeItem(item.."_barrel",10,"barrel",false,"")
 	makeRecipe(item.."_barrel",{{"fluid",item,10},{"item","Barrel",1}},{{"item",item.."_barrel",1}},"Assembling_machine","barrel")
 	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,10},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
 end
@@ -780,8 +784,10 @@ end
 makeLab()
 makeTech("asd")
 
+
+local tierOrder={["crude"]="a",["basic"]="b",["normal"]="c",["fast"]="d",["improved_fast"]="e",["express"]="f",["improved_express"]="g"}
 function makeTransportBelt(name,speed)
-	makeItem("Transport_belt_"..name,50,"transportblelt",true)
+	makeItem("Transport_belt_"..name,50,"Transportblelt",true,tierOrder[name])
 	
 
 	data:extend(
@@ -838,18 +844,23 @@ function makeTransportBelt(name,speed)
 end
 
 
-function makeUnderTransportBelt(name,speed,max_distance)
-	makeItem("Transport_belt_"..name.."_under",50,"transportblelt",true)
+function makeUnderTransportBelt(name,add,speed,max_distance)
+	if(add=="" or add==nil)then
+		add=""
+	else
+		add="_"..add
+	end
+	makeItem("Transport_belt_"..name.."_under"..add,50,"Transportblelt_under",true,tierOrder[name])
 	
 
 	data:extend(
 	{
 	{
     type = "transport-belt-to-ground",
-    name = "Transport_belt_"..name.."_under",
-    icon = "__NCP-Tech__/graphics/item/Transport_belt_"..name.."_under.png",
+    name = "Transport_belt_"..name.."_under"..add,
+    icon = "__NCP-Tech__/graphics/item/Transport_belt_"..name.."_under"..add..".png",
     flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "Transport_belt_"..name.."_under"},
+    minable = {hardness = 0.2, mining_time = 0.5, result = "Transport_belt_"..name.."_under"..add},
     max_health = 70,
     corpse = "small-remnants",
     max_distance = max_distance,
@@ -912,7 +923,7 @@ function makeUnderTransportBelt(name,speed,max_distance)
 })
 end
 function makeSplitter(name,speed)
-	makeItem("Splitter_"..name,50,"transportblelt",true)
+	makeItem("Splitter_"..name,50,"Splitter",true,tierOrder[name])
 	data:extend(
 	{
 	{
@@ -997,11 +1008,12 @@ end
 
 
 function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,energy_source,hand_size,programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
+	
 	local types2=""
 	if(types~="")then
 		types2="_"..types
 	end
-	makeItem("Inserter_"..name..types2,50,"transportblelt",true)
+	makeItem("Inserter_"..name..types2,50,"Inserter"..types2,true,tierOrder[name])
 	
 	
 	data:extend(
@@ -1214,13 +1226,40 @@ makeTransportBelt("improved_fast",4/32)
 makeTransportBelt("express",8/32)
 makeTransportBelt("improved_express",16/32)
 
-makeUnderTransportBelt("crude",0.25/32,3)
-makeUnderTransportBelt("basic",0.5/32,6)
-makeUnderTransportBelt("normal",1/32,9)
-makeUnderTransportBelt("fast",2/32,12)
-makeUnderTransportBelt("improved_fast",4/32,15)
-makeUnderTransportBelt("express",8/32,18)
-makeUnderTransportBelt("improved_express",16/32,21)
+makeUnderTransportBelt("crude","a",0.25/32,3)
+makeUnderTransportBelt("basic","a",0.5/32,6)
+makeUnderTransportBelt("normal","a",1/32,9)
+makeUnderTransportBelt("fast","a",2/32,12)
+makeUnderTransportBelt("improved_fast","a",4/32,15)
+makeUnderTransportBelt("express","a",8/32,18)
+makeUnderTransportBelt("improved_express","a",16/32,21)
+
+makeUnderTransportBelt("basic","b",0.5/32,6)
+makeUnderTransportBelt("normal","b",1/32,9)
+makeUnderTransportBelt("fast","b",2/32,12)
+makeUnderTransportBelt("improved_fast","b",4/32,15)
+makeUnderTransportBelt("express","b",8/32,18)
+makeUnderTransportBelt("improved_express","b",16/32,21)
+
+makeUnderTransportBelt("normal","c",1/32,9)
+makeUnderTransportBelt("fast","c",2/32,12)
+makeUnderTransportBelt("improved_fast","c",4/32,15)
+makeUnderTransportBelt("express","c",8/32,18)
+makeUnderTransportBelt("improved_express","c",16/32,21)
+
+makeUnderTransportBelt("fast","d",2/32,12)
+makeUnderTransportBelt("improved_fast","d",4/32,15)
+makeUnderTransportBelt("express","d",8/32,18)
+makeUnderTransportBelt("improved_express","d",16/32,21)
+
+
+--makeUnderTransportBelt("fast","e",2/32,12)
+--makeUnderTransportBelt("improved_fast","e",4/32,15)
+--makeUnderTransportBelt("express","e",8/32,18)
+--makeUnderTransportBelt("improved_express","e",16/32,21)
+
+
+
 
 makeSplitter("crude",0.25/32)
 makeSplitter("basic",0.5/32)
@@ -1231,10 +1270,10 @@ makeSplitter("express",8/32)
 makeSplitter("improved_express",16/32)
 
 
-makeNormalBurnerInserter("crude",0.005,0.005,500000,500000,0.3,20)
-makeNormalBurnerInserter("basic",0.01,0.01,1000000,1000000,0.5,30)
-makeNormalElectricInserter("normal",0.02,0.02,5000,5000,"20kW")
-makeNormalElectricInserter("fast",0.04,0.04,10000,10000,"40kW")
+makeNormalBurnerInserter("crude",0.0025,0.0025,500000,500000,0.3,20)
+makeNormalBurnerInserter("basic",0.005,0.005,1000000,1000000,0.5,30)
+makeNormalElectricInserter("normal",0.01,0.01,5000,5000,"20kW")
+makeNormalElectricInserter("fast",0.02,0.02,10000,10000,"40kW")
 makeNormalElectricInserter("improved_fast",0.08,0.08,20000,20000,"80kW")
 makeNormalElectricInserter("express",0.32,0.32,80000,80000,"160kW")
 makeNormalElectricInserter("improved_express",0.64,0.64,160000,160000,"320kW")

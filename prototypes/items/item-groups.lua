@@ -43,9 +43,39 @@ data:extend(
   
   {
     type = "item-subgroup",
-    name = "transportblelt",
+    name = "Inserter",
     group = "Transport",
     order = "a",
+  },
+  {
+    type = "item-subgroup",
+    name = "Inserter_long",
+    group = "Transport",
+    order = "b",
+  },
+  {
+    type = "item-subgroup",
+    name = "Inserter_smart",
+    group = "Transport",
+    order = "c",
+  },
+  {
+    type = "item-subgroup",
+    name = "Transportblelt",
+    group = "Transport",
+    order = "d",
+  },
+  {
+    type = "item-subgroup",
+    name = "Transportblelt_under",
+    group = "Transport",
+    order = "f",
+  },
+  {
+    type = "item-subgroup",
+    name = "Splitter",
+    group = "Transport",
+    order = "g",
   },
   
   
