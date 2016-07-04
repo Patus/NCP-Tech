@@ -856,7 +856,7 @@ function makeUnderTransportBelt(name,add,speed,max_distance)
 	data:extend(
 	{
 	{
-    type = "transport-belt-to-ground",
+    type = "express-underground-belt",
     name = "Transport_belt_"..name.."_under"..add,
     icon = "__NCP-Tech__/graphics/item/Transport_belt_"..name.."_under"..add..".png",
     flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
@@ -1217,7 +1217,7 @@ end
 
 local tierList={"crude","basic","normal","fast","improved_fast","express","improved_express"}
 
-
+--[[
 makeTransportBelt("crude",0.25/32)
 makeTransportBelt("basic",0.5/32)
 makeTransportBelt("normal",1/32)
@@ -1259,7 +1259,7 @@ makeUnderTransportBelt("improved_express","d",16/32,21)
 --makeUnderTransportBelt("improved_express","e",16/32,21)
 
 
-
+--]]
 
 makeSplitter("crude",0.25/32)
 makeSplitter("basic",0.5/32)

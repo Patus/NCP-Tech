@@ -1,4 +1,4 @@
-data.raw["technology"]=nil
+--data.raw["technology"]=nil
 --data.raw["recipe"]["empty-barrel"]=nil
 --data.raw["recipe"]["fill_crude_oil_barrel"]=nil
 --data.raw["recipe"]["empty_crude_oil_barrel"]=nil
@@ -4890,7 +4890,7 @@ data:extend(
     },
 	results = 
     {
-      {type="item", name="smart-inserter", amount=50},
+      {type="item", name="stack-inserter", amount=50},
 	
     },
   },
@@ -4923,7 +4923,7 @@ data:extend(
     },
 	results = 
     {
-      {type="item", name="express-transport-belt-to-ground", amount=50},
+      {type="item", name="express-underground-belt", amount=50},
 	
     },
   },
@@ -4983,7 +4983,7 @@ data:extend(
     },
 	results = 
     {
-      {type="item", name="basic-accumulator", amount=50},
+      {type="item", name="accumulator", amount=50},
 	
     },
   },

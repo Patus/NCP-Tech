@@ -1918,7 +1918,7 @@ data:extend({
   {
     type= "item",
     name= "Miningdrill_1",
-    icon = "__base__/graphics/icons/basic-mining-drill.png",
+    icon = "__base__/graphics/icons/electric-mining-drill.png",
 	flags = {"goes-to-quickbar"},
     subgroup = "Machines",
     order= "a-b-c",

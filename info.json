@@ -1,6 +1,7 @@
 {
 	"name": "NCP-Tech",
 	"version": "0.0.1",
+	"factorio_version": "0.13",
 	"title": "NCP Tech",
 	"author": "Ninjatroll, Corwent, Patus",
 	"contact": "",
