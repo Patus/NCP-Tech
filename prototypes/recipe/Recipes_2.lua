@@ -813,7 +813,7 @@ function makeTransportBelt(name,speed)
 		{
 			sound =
 			{
-				filename = "__base__/sound/basic-transport-belt.ogg",
+				filename = "__base__/sound/fast-transport-belt.ogg",
 				volume = 0.4
 			},
 			max_sounds_per_type = 3
@@ -838,7 +838,11 @@ function makeTransportBelt(name,speed)
 		starting_side = belt_starting_side(name),
 		ending_patch = ending_patch_prototype,
 		fast_replaceable_group = "transport-belt",
-		speed = speed
+		speed = speed,connector_frame_sprites = transport_belt_connector_frame_sprites,
+		circuit_connector_sprites = transport_belt_circuit_connector_sprites,
+		circuit_wire_connection_point = transport_belt_circuit_wire_connection_point,
+		circuit_wire_max_distance = transport_belt_circuit_wire_max_distance,
+		
 	}
 })
 end
@@ -856,7 +860,7 @@ function makeUnderTransportBelt(name,add,speed,max_distance)
 	data:extend(
 	{
 	{
-    type = "express-underground-belt",
+    type = "underground-belt",
     name = "Transport_belt_"..name.."_under"..add,
     icon = "__NCP-Tech__/graphics/item/Transport_belt_"..name.."_under"..add..".png",
     flags = {"placeable-neutral", "player-creation", "fast-replaceable-no-build-while-moving"},
@@ -890,7 +894,7 @@ function makeUnderTransportBelt(name,add,speed,max_distance)
     starting_top = belt_starting_top(name),
     starting_bottom = belt_starting_bottom(name),
     starting_side = belt_starting_side(name),
-    fast_replaceable_group = "transport-belt-to-ground",
+    fast_replaceable_group = "underground-belt",
     speed = speed,
     structure =
     {
@@ -1217,7 +1221,7 @@ end
 
 local tierList={"crude","basic","normal","fast","improved_fast","express","improved_express"}
 
---[[
+
 makeTransportBelt("crude",0.25/32)
 makeTransportBelt("basic",0.5/32)
 makeTransportBelt("normal",1/32)
@@ -1252,14 +1256,14 @@ makeUnderTransportBelt("improved_fast","d",4/32,15)
 makeUnderTransportBelt("express","d",8/32,18)
 makeUnderTransportBelt("improved_express","d",16/32,21)
 
-
+--]]
 --makeUnderTransportBelt("fast","e",2/32,12)
 --makeUnderTransportBelt("improved_fast","e",4/32,15)
 --makeUnderTransportBelt("express","e",8/32,18)
 --makeUnderTransportBelt("improved_express","e",16/32,21)
 
 
---]]
+
 
 makeSplitter("crude",0.25/32)
 makeSplitter("basic",0.5/32)
