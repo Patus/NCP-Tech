@@ -250,7 +250,7 @@ data:extend(
         percent = 70
       }
     },
-    fluid_boxes =
+	fluid_boxes =
     {
       {
         production_type = "input",
@@ -258,15 +258,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
-      },
-	  {
-        production_type = "input",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = { {type="input", position = {1, -2}},{ type="input", position = {-1, -2}}}
       },
       {
         production_type = "output",
@@ -274,17 +266,9 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
-      },
-	  {
-        production_type = "output",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
-      },
-      off_when_no_fluid_recipe = true
+        pipe_connections = {{type="output", position = {1, 2}},{type="output", position = {-1, 2}}}
+    },
+    off_when_no_fluid_recipe = true
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
@@ -1932,7 +1916,7 @@ data:extend(
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
 	result_inventory_size = 4,
-	source_inventory_size = 2,
+	source_inventory_size = 1,
     resistances =
     {
       {
@@ -1948,15 +1932,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
-      },
-	  {
-        production_type = "input",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = { {type="input", position = {1, -2}},{ type="input", position = {-1, -2}}}
       },
       {
         production_type = "output",
@@ -1964,16 +1940,8 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
-      },
-	  {
-        production_type = "output",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
-      },
+        pipe_connections = {{type="output", position = {1, 2}},{type="output", position = {-1, 2}}}
+    },
       off_when_no_fluid_recipe = true
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
@@ -3278,15 +3246,7 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type="input", position = {1, -2} }}
-      },
-	  {
-        production_type = "input",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = -1,
-        pipe_connections = {{ type="input", position = {-1, -2} }}
+        pipe_connections = { {type="input", position = {1, -2}},{ type="input", position = {-1, -2}}}
       },
       {
         production_type = "output",
@@ -3294,16 +3254,8 @@ data:extend(
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type="output", position = {1, 2} }}
-      },
-	  {
-        production_type = "output",
-        pipe_picture = assembler2pipepictures(),
-        pipe_covers = pipecoverspictures(),
-        base_area = 10,
-        base_level = 1,
-        pipe_connections = {{ type="output", position = {-1, 2} }}
-      },
+        pipe_connections = {{type="output", position = {1, 2}},{type="output", position = {-1, 2}}}
+    },
       off_when_no_fluid_recipe = true
     },
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
