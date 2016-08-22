@@ -184,7 +184,12 @@ local pipeSize={["Iron"]=1,["Copper"]=1,["Steel"]=1,["Tin"]=1,["Gold"]=1,["Nicke
 					
 						
 function makeRecipe(name,input,output,category,subgroup)
-
+	local icon = "__NCP-Tech__/graphics/"..output[1][1].."/"..output[1][2]..".png"
+	
+	if(string.sub(output[1][2],-7)=="_bottle" or string.sub(output[1][2],-7)=="_barrel") then
+		icon="__NCP-Tech__/graphics/"..output[1][1].."/B"..string.sub(output[1][2],-5)..".png"
+	end
+	
 	data:extend({
 	{
 		type = "recipe",
@@ -200,7 +205,7 @@ function makeRecipe(name,input,output,category,subgroup)
 		{
 			
 		},
-		icon = "__NCP-Tech__/graphics/"..output[1][1].."/"..output[1][2]..".png",
+		icon = icon,
 		subgroup = subgroup,
 	},
 	})
@@ -219,15 +224,19 @@ function makeRecipe(name,input,output,category,subgroup)
 end
 
 function makeItem(name,stack_size,subgroup,place_result,order)
+	local icon="__NCP-Tech__/graphics/item/"..name..".png"
+	
 	if(order=="" or order==nil)then
 		order="a-b-c"
 	end
-	
+	if(string.sub(name,-7)=="_bottle" or string.sub(name,-7)=="_barrel") then
+		icon="__NCP-Tech__/graphics/item/B"..string.sub(name,-5)..".png"
+	end
 	data:extend({
 	{
 		type= "item",
 		name= name,
-		icon = "__NCP-Tech__/graphics/item/"..name..".png",
+		icon = icon,
 		flags= { "goes-to-main-inventory" },
 		subgroup = subgroup,
 		order= order,

@@ -76,6 +76,11 @@ data.raw.resource["crude-oil"].minable = (
 
 
 function makeore (name,results)
+local spawnarea=200
+if (name=="Copper_native_ore") then
+	spawnarea=1500
+end
+
 data:extend(
 {
  {
@@ -99,10 +104,10 @@ data:extend(
       sharpness = 1,
       richness_multiplier = 700,
       richness_base = 400,
-	  richness_multiplier_distance_bonus = 20,
-      size_control_multiplier = 0.2,
-	  coverage = 0.04,
-	  starting_area_amount = 500,
+	  richness_multiplier_distance_bonus = 100,
+      size_control_multiplier = 0.1,
+	  coverage = 0.03,
+	  starting_area_amount = spawnarea,
 	  random_probability_penalty=0,
 	  --max_probability = 0.035,
       peaks = {
@@ -111,6 +116,7 @@ data:extend(
 			noise_layer = name,
 			noise_octaves_difference = -0.19,
 			noise_persistence = 0.60,
+			
         },
       },
     },
@@ -135,13 +141,14 @@ if name=="Clay_ore" then
 data.raw.resource[name].icon="__NCP-Tech__/graphics/item/Clay_wet.png"
 end
 
+
 end
 
 
 makeore ("Graphite_ore",{		{type="item", name="Graphite_ore", amount=1, probability = 1},
 								{type="item", name="Diamond_uncut", amount=1, probability = 0.001},
 })
-----[[
+--[[
 makeore ("Clay_ore",{			{type="item", name="Clay_wet", amount=1, probability = 1}
 })
 makeore ("Copper_native_ore",{	{type="item", name="Copper_native_ore", amount=1, probability = 1}
