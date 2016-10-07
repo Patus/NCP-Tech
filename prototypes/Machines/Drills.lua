@@ -1,3 +1,7 @@
+function makeMiningDrill ()
+
+end
+
 data:extend(
 {
   {

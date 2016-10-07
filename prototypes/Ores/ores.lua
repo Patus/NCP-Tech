@@ -102,8 +102,8 @@ data:extend(
     {
       control = name,
       sharpness = 1,
-      richness_multiplier = 700,
-      richness_base = 400,
+      richness_multiplier = 13000,
+      richness_base = 350,
 	  richness_multiplier_distance_bonus = 100,
       size_control_multiplier = 0.1,
 	  coverage = 0.03,
@@ -111,12 +111,22 @@ data:extend(
 	  random_probability_penalty=0,
 	  --max_probability = 0.035,
       peaks = {
-
+		{
+			influence = 0.2,
+			starting_area_weight_optimal = 0,
+			starting_area_weight_range = 0,
+			starting_area_weight_max_range = 2,
+		},
         {
+			influence = 0.7,
 			noise_layer = name,
-			noise_octaves_difference = -0.19,
-			noise_persistence = 0.60,
-			
+			--noise_octaves_difference = -0.23,
+			--noise_persistence = 0.6,
+			noise_octaves_difference = -0.75,
+			noise_persistence = 0.5,
+			starting_area_weight_optimal = 0,
+			starting_area_weight_range = 0,
+			starting_area_weight_max_range = 2,
         },
       },
     },
@@ -148,7 +158,7 @@ end
 makeore ("Graphite_ore",{		{type="item", name="Graphite_ore", amount=1, probability = 1},
 								{type="item", name="Diamond_uncut", amount=1, probability = 0.001},
 })
---[[
+
 makeore ("Clay_ore",{			{type="item", name="Clay_wet", amount=1, probability = 1}
 })
 makeore ("Copper_native_ore",{	{type="item", name="Copper_native_ore", amount=1, probability = 1}
@@ -176,12 +186,7 @@ makeore ("Magnetite_ore",{		{type="item", name="Magnetite_ore", amount=1, probab
 })
 makeore ("Bauxite_ore",{{type="item", name="Bauxite_ore", amount=1, probability = 1}
 })
-makeore ("Bauxite_ore",{{type="item", name="Bauxite_ore", amount=1, probability = 1}
-})
-makeore ("Bauxite_ore",{{type="item", name="Bauxite_ore", amount=1, probability = 1}
-})
-makeore ("Bauxite_ore",{{type="item", name="Bauxite_ore", amount=1, probability = 1}
-})
+
 
 
 

@@ -183,73 +183,7 @@ local pipeSize={["Iron"]=1,["Copper"]=1,["Steel"]=1,["Tin"]=1,["Gold"]=1,["Nicke
 				
 					
 						
-function makeRecipe(name,input,output,category,subgroup)
-	local icon = "__NCP-Tech__/graphics/"..output[1][1].."/"..output[1][2]..".png"
-	
-	if(string.sub(output[1][2],-7)=="_bottle" or string.sub(output[1][2],-7)=="_barrel") then
-		icon="__NCP-Tech__/graphics/"..output[1][1].."/B"..string.sub(output[1][2],-5)..".png"
-	end
-	
-	data:extend({
-	{
-		type = "recipe",
-		name = name,
-		category =category,
-		energy_required = 2,
-		enabled = "true",
-		ingredients =
-		{
-			
-		},
-		results = 
-		{
-			
-		},
-		icon = icon,
-		subgroup = subgroup,
-	},
-	})
-	
-	
-	
-	for i , item in pairs(input) do
-		
-		table.insert(data.raw["recipe"][name].ingredients, {type=item[1], name=item[2], amount=item[3]})
-	end
-	
-	for i , item in pairs(output) do
-		table.insert(data.raw["recipe"][name].results, {type=item[1], name=item[2], amount=item[3]})
-	end
 
-end
-
-function makeItem(name,stack_size,subgroup,place_result,order)
-	local icon="__NCP-Tech__/graphics/item/"..name..".png"
-	
-	if(order=="" or order==nil)then
-		order="a-b-c"
-	end
-	if(string.sub(name,-7)=="_bottle" or string.sub(name,-7)=="_barrel") then
-		icon="__NCP-Tech__/graphics/item/B"..string.sub(name,-5)..".png"
-	end
-	data:extend({
-	{
-		type= "item",
-		name= name,
-		icon = icon,
-		flags= { "goes-to-main-inventory" },
-		subgroup = subgroup,
-		order= order,
-		stack_size= stack_size,
-		place_result =nil,
-		},
-
-	})
-	if(place_result==true)then
-		data.raw["item"][name].place_result=name
-	end
-	
-end
 
 function makeItems(material,item)
 	local itemName=material.."_"..item
