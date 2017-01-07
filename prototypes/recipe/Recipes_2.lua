@@ -507,13 +507,13 @@ makeRecipe("Barrel",{{"item","Steel_plate",2},{"item","Steel_pipe",1}},{{"item",
 
 for i , item in pairs(gases) do
 	makeItem(item.."_bottle",10,"bottle",false,"")
-	makeRecipe(item.."_bottle",{{"fluid",item,10},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
-	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,10},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
+	makeRecipe(item.."_bottle",{{"fluid",item,50},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
+	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,50},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
 end
 for i , item in pairs(fluids) do
 	makeItem(item.."_barrel",10,"barrel",false,"")
-	makeRecipe(item.."_barrel",{{"fluid",item,10},{"item","Barrel",1}},{{"item",item.."_barrel",1}},"Assembling_machine","barrel")
-	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,10},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
+	makeRecipe(item.."_barrel",{{"fluid",item,50},{"item","Barrel",1}},{{"item",item.."_barrel",1}},"Assembling_machine","barrel")
+	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,50},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
 end
 
 --dense
@@ -684,48 +684,11 @@ end
 
 
 
-function makeTech(name)
-	data:extend(
-	{
-	
-	
-	{
-		type = "technology",
-		name = "electric-energy-distribution-1",
-		icon = "__base__/graphics/technology/electric-energy-distribution.png",
-		effects =
-		{
-			{
-				type = "unlock-recipe",
-				recipe = "medium-electric-pole"
-			},
-			{
-				type = "unlock-recipe",
-				recipe = "big-electric-pole"
-			}
-		},
-		prerequisites = {},
-    unit =
-	{
-		count = 50,
-		ingredients =
-		{
-			
-			{"Credit100", 10}
-		},
-		time = 30
-    },
-    order = "c-e-b",
-	}
-	})
 
-
-
-end
 
 
 makeLab()
-makeTech("asd")
+
 
 
 local tierOrder={["crude"]="a",["basic"]="b",["normal"]="c",["fast"]="d",["improved_fast"]="e",["express"]="f",["improved_express"]="g"}
@@ -1217,16 +1180,16 @@ makeSplitter("express",8/32)
 makeSplitter("improved_express",16/32)
 
 
-makeNormalBurnerInserter("crude",0.0025,0.0025,500000,500000,0.3,20)
-makeNormalBurnerInserter("basic",0.005,0.005,1000000,1000000,0.5,30)
+makeNormalBurnerInserter("crude",0.0025,0.0025,500000,500000,0.1,20)
+makeNormalBurnerInserter("basic",0.005,0.005,1000000,1000000,0.1,30)
 makeNormalElectricInserter("normal",0.01,0.01,5000,5000,"20kW")
 makeNormalElectricInserter("fast",0.02,0.02,10000,10000,"40kW")
 makeNormalElectricInserter("improved_fast",0.08,0.08,20000,20000,"80kW")
 makeNormalElectricInserter("express",0.32,0.32,80000,80000,"160kW")
 makeNormalElectricInserter("improved_express",0.64,0.64,160000,160000,"320kW")
 
-makeLongBurnerInserter("crude",0.005,0.005,1000000,1000000,0.3,20)
-makeLongBurnerInserter("basic",0.01,0.01,2000000,2000000,0.5,30)
+makeLongBurnerInserter("crude",0.005,0.005,1000000,1000000,0.1,20)
+makeLongBurnerInserter("basic",0.01,0.01,2000000,2000000,0.1,30)
 makeLongElectricInserter("normal",0.02,0.02,10000,10000,"20kW")
 makeLongElectricInserter("fast",0.04,0.04,20000,20000,"40kW")
 makeLongElectricInserter("improved_fast",0.08,0.08,80000,80000,"80kW")
@@ -1238,9 +1201,6 @@ makeSmartInserter("fast",0.02,0.02,5000,5000,"20kW",1,2,10,{0, -1},{0, 1.2})
 makeSmartInserter("improved_fast",0.02,0.02,5000,5000,"20kW",1,3,15,{0, -1},{0, 1.2})
 makeSmartInserter("express",0.02,0.02,5000,5000,"20kW",1,4,20,{0, -1},{0, 1.2})
 makeSmartInserter("improved_express",0.02,0.02,5000,5000,"20kW",1,5,25,{0, -1},{0, 1.2})
-
-
-
 
 
 

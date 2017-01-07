@@ -39,7 +39,7 @@ function makeRecipe(name,input,output,category,subgroup)
 		type = "recipe",
 		name = name,
 		category =category,
-		energy_required = 2,
+		energy_required = 1,
 		enabled = "true",
 		ingredients =
 		{
@@ -96,12 +96,16 @@ end
 
 
 function makeFluidbox (production_type,position)
+	local basepipelevel=1
+	if(production_type=="input")then
+		basepipelevel=-1
+	end
 	return			{
 						production_type = production_type,
 						pipe_picture = assembler2pipepictures(),
 						pipe_covers = pipecoverspictures(),
 						base_area = 10,
-						base_level = -1,
+						base_level = basepipelevel,
 						pipe_connections = {{ type=production_type, position = position }}
 					}
 end
@@ -265,3 +269,38 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 
 end 
 
+function makeTech(name,icon,effects,prerequisites)
+	data:extend(
+	{
+	
+	
+	{
+		type = "technology",
+		name = name,
+		icon = icon,
+		effects =effects,
+		
+		prerequisites = prerequisites,
+    unit =
+	{
+		count = 50,
+		ingredients =
+		{
+			
+			{"Credit100", 10}
+		},
+		time = 30
+    },
+    order = "c-e-b",
+	}
+	})
+
+
+
+end
+
+
+function openRecipe(name,icon,effects,prerequisites)
+	makeTech (name,icon,effects,prerequisites)
+
+end

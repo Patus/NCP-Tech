@@ -1,5 +1,5 @@
 data.raw["offshore-pump"]["offshore-pump"].fluid = "Water_dirty"
-data.raw["offshore-pump"]["offshore-pump"].pumping_speed = 0.1
+--data.raw["offshore-pump"]["offshore-pump"].pumping_speed = 0.1
 
 data.raw["boiler"]["boiler"].energy_consumption = "2MW"
 data.raw["boiler"]["boiler"].burner =
@@ -46,7 +46,7 @@ makeAssemblingmachine ("TSL_furnace","TSL_furnace",0.2,0.5,"TSL_furnace",250,1,1
 makeAssemblingmachine ("Extruder","Extruder",0.2,0.5,"Extruder",250,1,1,2,2,"Extruder",{"Extruder"},1,"0.05MW")
 makeAssemblingmachine ("Milling_machine","Milling_machine",0.2,0.5,"Milling_machine",250,1,1,2,2,"Milling_machine",{"Milling_machine"},1,"0.15MW")
 makeAssemblingmachine ("Furnace","Furnace",0.2,0.5,"Furnace",250,1,1,2,2,"Furnace",{"Furnace"},1,"1.2MW")
-makeAssemblingmachine ("Assembling_machine","Assembling_machine",0.2,0.5,"Assembling_machine",250,1,1,2,2,"Assembling_machine",{"Assembling_machine"},1,"0.15MW")
+makeAssemblingmachine ("Assembling_machine","Assembling_machine",0.2,0.5,"Assembling_machine",250,1,1,2,2,"Assembling_machine",{"Assembling_machine"},2,"0.15MW")
 makeAssemblingmachine ("Refinery","Refinery",0.2,0.5,"Refinery",250,1,1,4,4,"Refinery",{"Refinery"},1,"0.05MW")
 makeAssemblingmachine ("Electric_flash_furnace","Electric_flash_furnace",0.2,0.5,"Electric_flash_furnace",250,1,1,2,2,"Electric_flash_furnace",{"Electric_flash_furnace"},1,"1.2MW")
 makeAssemblingmachine ("Electric_chemical_furnace","Electric_chemical_furnace",0.2,0.5,"Electric_chemical_furnace",250,1,1,2,2,"Electric_chemical_furnace",{"Electric_chemical_furnace"},1,"0.0015MW")
