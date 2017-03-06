@@ -1,4 +1,4 @@
-function makeItem(name,stack_size,subgroup,place_result,order)
+function oldmakeItem(name,stack_size,subgroup,place_result,order)
 	local icon="__NCP-Tech__/graphics/item/"..name..".png"
 	
 	if(order=="" or order==nil)then
@@ -27,7 +27,103 @@ function makeItem(name,stack_size,subgroup,place_result,order)
 end
 
 
-function makeRecipe(name,input,output,category,subgroup)
+
+function makeItem(a)
+	--local icon="__NCP-Tech__/graphics/item/"..a.name..".png"
+	
+	
+	
+	local name=a.name
+	local icon= a.icon or "__NCP-Tech__/graphics/item/"..a.name..".png" 
+	local flags=a.flags or { "goes-to-main-inventory" }
+	local subgroup=a.subgroup or "notsubgoup"
+	local order=a.order or "a-b-c"
+	local stack_size=a.stack_size or 50
+	local place_result=a.place_result or nil
+	
+	data:extend({
+	{
+		type= "item",
+		name= name,
+		icon = icon,
+		flags= flags,
+		subgroup = subgroup,
+		order= order,
+		stack_size= stack_size,
+		place_result =place_result,
+		},
+
+	})
+	
+	
+end
+
+function recipeNumber(name)
+local i=0
+while true do
+	if(data.raw["recipe"][name..i]==nil)then
+		return (name..i)
+	end
+i=i+1
+end
+
+
+
+end
+
+
+recipeNames={}
+function makeRecipe(a)
+	if(data.raw["item"][a.name]==nil)then 
+		--makeItem{name=a.name,icon=a.icon,flags=a.flags,subgroup=a.subgroup,order=a.order,stack_size=a.stack,place_result=a.place_result}
+	end
+	
+	
+	local name=a.name
+	local category= a.category or "crafting"
+	local energy_required=a.energy_required or 2
+	local enabled=a.enabled or "true"
+	local ingredients=a.ingredients or {}
+	local results=a.results or {{type="item", name=a.name, amount=1,probability =1}}
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..a.name..".png" 
+	local subgroup=a.subgroup or "notsubgoup"
+	local itemName=name
+	name=recipeNumber(name)
+	
+	
+	recipeNames[name]={recipeName=name,itemName=itemName}
+	
+	--table.insert(recipeNames, {name=name,itemName=itemName})
+	data:extend({
+	{
+		type = "recipe",
+		name=name,
+		category =category,
+		energy_required = energy_required,
+		enabled = "true",
+		ingredients =ingredients,
+		
+		results = results,
+		
+		icon = icon,
+		subgroup = subgroup,
+	},
+	})
+	
+	
+	
+	--for i , item in pairs(input) do
+		
+		--table.insert(data.raw["recipe"][name].ingredients, {type=item[1], name=item[2], amount=item[3]})
+	--end
+	
+	--for i , item in pairs(output) do
+		--table.insert(data.raw["recipe"][name].results, {type=item[1], name=item[2], amount=item[3]})
+	--end
+
+end
+
+function oldmakeRecipe(name,input,output,category,subgroup)
 	local icon = "__NCP-Tech__/graphics/"..output[1][1].."/"..output[1][2]..".png"
 	
 	if(string.sub(output[1][2],-7)=="_bottle" or string.sub(output[1][2],-7)=="_barrel") then

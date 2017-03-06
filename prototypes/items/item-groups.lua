@@ -37,6 +37,21 @@ data:extend(
   },
   
   
+  {
+    type = "item-group",
+    name = "notgroup",
+    order = "ccc",
+    inventory_order = "g",
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+  },
+  {
+    type = "item-subgroup",
+    name = "notsubgoup",
+    group = "notgroup",
+    order = "a",
+  },
+  
+  
   
   
   

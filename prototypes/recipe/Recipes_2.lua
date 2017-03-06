@@ -500,20 +500,20 @@ local fluids={"Acrylonitrile","MNT","Oleum","Seed_oil","ADU","Ammonia","Benzene"
 local gases={"Argon","Air","Butadiene","Carbon_monoxide","Chlorine","Coal_gas","Ethylene","Hydrogen","Hydrogen_chlorine","Hydrogen_fluoride","Nitrogen","Nitrogen_dioxide","Oxygen","Petroleum_gas",
 		"Sulfur_dioxide","Sulfur_trioxide","Uranium_hexafluoride","Syngas"}
 
-makeItem("Bottle",10,"bottle",false,"")
-makeItem("Barrel",10,"barrel",false,"")
-makeRecipe("Bottle",{{"item","Steel_plate",4}},{{"item","Bottle",1}},"Assembling_machine","bottle")
-makeRecipe("Barrel",{{"item","Steel_plate",2},{"item","Steel_pipe",1}},{{"item","Barrel",1}},"Assembling_machine","barrel")
+oldmakeItem("Bottle",10,"bottle",false,"")
+oldmakeItem("Barrel",10,"barrel",false,"")
+oldmakeRecipe("Bottle",{{"item","Steel_plate",4}},{{"item","Bottle",1}},"Assembling_machine","bottle")
+oldmakeRecipe("Barrel",{{"item","Steel_plate",2},{"item","Steel_pipe",1}},{{"item","Barrel",1}},"Assembling_machine","barrel")
 
 for i , item in pairs(gases) do
-	makeItem(item.."_bottle",10,"bottle",false,"")
-	makeRecipe(item.."_bottle",{{"fluid",item,50},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
-	makeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,50},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
+	oldmakeItem(item.."_bottle",10,"bottle",false,"")
+	oldmakeRecipe(item.."_bottle",{{"fluid",item,50},{"item","Bottle",1}},{{"item",item.."_bottle",1}},"Assembling_machine","bottle")
+	oldmakeRecipe(item.."_drain_bottle",{{"item",item.."_bottle",1}},{{"fluid",item,50},{"item","Bottle",1}},"Assembling_machine","bottle_empty")
 end
 for i , item in pairs(fluids) do
-	makeItem(item.."_barrel",10,"barrel",false,"")
-	makeRecipe(item.."_barrel",{{"fluid",item,50},{"item","Barrel",1}},{{"item",item.."_barrel",1}},"Assembling_machine","barrel")
-	makeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,50},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
+	oldmakeItem(item.."_barrel",10,"barrel",false,"")
+	oldmakeRecipe(item.."_barrel",{{"fluid",item,50},{"item","Barrel",1}},{{"item",item.."_barrel",1}},"Assembling_machine","barrel")
+	oldmakeRecipe(item.."_drain_barrel",{{"item",item.."_barrel",1}},{{"fluid",item,50},{"item","Barrel",1}},"Assembling_machine","barrel_empty")
 end
 
 --dense
@@ -522,18 +522,18 @@ local densemetals={"Iron","Copper","Steel","Lead"}
 
 for i , item in pairs(densemetals) do
 	
-	makeItem(item.."_dense_plate",50,"dense_plate",false)
-	makeRecipe(item.."_dense_plate",{{"item",billetName[item],10}},{{"item",item.."_dense_plate",1}},"Furnace","dense_plate")
+	oldmakeItem(item.."_dense_plate",50,"dense_plate",false)
+	oldmakeRecipe(item.."_dense_plate",{{"item",billetName[item],10}},{{"item",item.."_dense_plate",1}},"Furnace","dense_plate")
 	
-	makeItem(item.."_large_dense_plate",50,"dense_armor_plate",false)
-	makeRecipe(item.."_large_dense_plate",{{"item",item.."_dense_plate",10}},{{"item",item.."_large_dense_plate",1}},"Assembling_machine","dense_armor_plate")
+	oldmakeItem(item.."_large_dense_plate",50,"dense_armor_plate",false)
+	oldmakeRecipe(item.."_large_dense_plate",{{"item",item.."_dense_plate",10}},{{"item",item.."_large_dense_plate",1}},"Assembling_machine","dense_armor_plate")
 	
-	makeItem(item.."_dense_pipe",50,"dense_pipe",true)
-	makeRecipe(item.."_dense_pipe",{{"item",item.."_dense_plate",2}},{{"item",item.."_dense_pipe",1}},"Assembling_machine","dense_pipe")
-	makePipeEntitie(item.."_dense_pipe",1)
+	oldmakeItem(item.."_dense_pipe",50,"dense_pipe",true)
+	oldmakeRecipe(item.."_dense_pipe",{{"item",item.."_dense_plate",2}},{{"item",item.."_dense_pipe",1}},"Assembling_machine","dense_pipe")
+	makePipeEntitie(item.."_dense_pipe",10)
 	
-	makeItem(item.."_dense_underground_pipe",50,"dense_underground_pipe",true)
-	makeRecipe(item.."_dense_underground_pipe",{{"item",item.."_dense_pipe",24}},{{"item",item.."_dense_underground_pipe",2}},nil,"dense_underground_pipe")
+	oldmakeItem(item.."_dense_underground_pipe",50,"dense_underground_pipe",true)
+	oldmakeRecipe(item.."_dense_underground_pipe",{{"item",item.."_dense_pipe",24}},{{"item",item.."_dense_underground_pipe",2}},nil,"dense_underground_pipe")
 	makeUndergroundPipeEntitie(item.."_dense_underground_pipe",1,20)
 end
 
@@ -542,75 +542,13 @@ end
 
 
 
+--NEWmakeItem{name="aaatest3"}
+
+--NEWmakeRecipe{name="aaatest3"}
 
 
 
 
-
-
-
-
-
-
-
-
-
-function setItemPrice(name,price)
-	credit1G=math.floor(price/1000000000)
-	credit1M=math.floor((price-credit1G*1000000000)/1000000)
-	credit10k=math.floor((price-credit1G*1000000000-credit1M*1000000)/10000)
-	credit100=math.floor((price-credit1G*1000000000-credit1M*1000000-credit10k*10000)/100)
-	credit1=price-credit1G*1000000000-credit1M*1000000-credit10k*10000-credit100*100
-	makeMoneyRecipe(name,credit1,credit100,credit10k,credit1M,credit1G)
-	
-	
-	
-
-end
-
-
-function makeMoneyRecipe(name,credit1,credit100,credit10k,credit1M,credit1G)
-	local list={}
-	local inputList={}
-	local list2={"item",1}
-	if(credit1~=0)then
-		table.insert(list,{"item","Credit",credit1})
-	end
-	if(credit100~=0)then
-		table.insert(list,{"item","Credit100",credit100})
-	end
-	if(credit10k~=0)then
-		table.insert(list,{"item","Credit10k",credit10k})
-	end
-	if(credit1M~=0)then
-		table.insert(list,{"item","Credit1M",credit1M})
-	end
-	if(credit1G~=0)then
-		table.insert(list,{"item","Credit1G",credit1G})
-	end
-	
-	
-	
-	table.insert(list2,2,name)
-	table.insert(inputList,list2)
-	
-	makeRecipe(name.."ToCredits",{{"item",name,1}},list,"Market","Recourses")
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-end
-
-
-
-setItemPrice("Quarried_stone",1500)
-setItemPrice("stone",15000)
 
 function makeLab()
 data:extend(
@@ -693,7 +631,7 @@ makeLab()
 
 local tierOrder={["crude"]="a",["basic"]="b",["normal"]="c",["fast"]="d",["improved_fast"]="e",["express"]="f",["improved_express"]="g"}
 function makeTransportBelt(name,speed)
-	makeItem("Transport_belt_"..name,50,"Transportblelt",true,tierOrder[name])
+	oldmakeItem("Transport_belt_"..name,50,"Transportblelt",true,tierOrder[name])
 	
 
 	data:extend(
@@ -760,7 +698,7 @@ function makeUnderTransportBelt(name,add,speed,max_distance)
 	else
 		add="_"..add
 	end
-	makeItem("Transport_belt_"..name.."_under"..add,50,"Transportblelt_under",true,tierOrder[name])
+	oldmakeItem("Transport_belt_"..name.."_under"..add,50,"Transportblelt_under",true,tierOrder[name])
 	
 
 	data:extend(
@@ -833,7 +771,7 @@ function makeUnderTransportBelt(name,add,speed,max_distance)
 })
 end
 function makeSplitter(name,speed)
-	makeItem("Splitter_"..name,50,"Splitter",true,tierOrder[name])
+	oldmakeItem("Splitter_"..name,50,"Splitter",true,tierOrder[name])
 	data:extend(
 	{
 	{
@@ -923,7 +861,7 @@ function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movem
 	if(types~="")then
 		types2="_"..types
 	end
-	makeItem("Inserter_"..name..types2,50,"Inserter"..types2,true,tierOrder[name])
+	oldmakeItem("Inserter_"..name..types2,50,"Inserter"..types2,true,tierOrder[name])
 	
 	
 	data:extend(
