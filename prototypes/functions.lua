@@ -91,7 +91,7 @@ function makeRecipe(a)
 	name=recipeNumber(name)
 	
 	
-	recipeNames[name]={recipeName=name,itemName=itemName}
+	recipeNames[name]={recipeName=name,itemName=itemName,price=nil}
 	
 	--table.insert(recipeNames, {name=name,itemName=itemName})
 	data:extend({

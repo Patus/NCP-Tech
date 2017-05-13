@@ -1,7 +1,7 @@
 data.raw["offshore-pump"]["offshore-pump"].fluid = "Water_dirty"
 --data.raw["offshore-pump"]["offshore-pump"].pumping_speed = 0.1
 
-data.raw["boiler"]["boiler"].energy_consumption = "2MW"
+--[[data.raw["boiler"]["boiler"].energy_consumption = "2MW"
 data.raw["boiler"]["boiler"].burner =
     {
       effectivity = 0.4,
@@ -17,10 +17,10 @@ data.raw["boiler"]["boiler"].burner =
           starting_frame_deviation = 60
         }
       }
-    }
+    }]]--
 
-data.raw["generator"]["steam-engine"].effectivity = 0.3
-data.raw["generator"]["steam-engine"].fluid_usage_per_tick = 0.3
+--data.raw["generator"]["steam-engine"].effectivity = 0.3
+--data.raw["generator"]["steam-engine"].fluid_usage_per_tick = 0.3
 
 makeAssemblingmachine ("Electric_furnace","Electric_furnace",0.2,0.5,"Electric_furnace",250,1,1,1,1,"Electric_furnace",{"Electric_furnace"},1,"1.6MW")
 makeAssemblingmachine ("Rotary_kiln","Rotary_kiln",0.2,0.5,"Rotary_kiln",250,1,1,2,2,"Rotary_kiln",{"Rotary_kiln"},1,"2MW")
@@ -448,11 +448,12 @@ data:extend(
     icon = "__base__/graphics/icons/steam-engine.png",
     flags = {"placeable-neutral","player-creation"},
     minable = {mining_time = 1, result = "OP_generator"},
-    max_health = 300,
+    max_health = 400,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     effectivity = 100000000,
     fluid_usage_per_tick = 0.01,
+	maximum_temperature = 165,
     resistances =
     {
       {
@@ -465,12 +466,21 @@ data:extend(
     fluid_box =
     {
       base_area = 1,
+	  height = 2,
+      base_level = -1,
       pipe_covers = pipecoverspictures(),
       pipe_connections =
       {
-        { position = {0, 3} },
-        { position = {0, -3} },
+        {type = "input-output", position = {0, 3} },
+        {type = "input-output", position = {0, -3} },
       },
+	  production_type = "input-output"
+    },
+	fluid_input =
+    {
+      name = "water",
+      amount = 0.0,
+      minimum_temperature = 100.0
     },
     energy_source =
     {
@@ -479,21 +489,87 @@ data:extend(
     },
     horizontal_animation =
     {
-      filename = "__base__/graphics/entity/steam-engine/steam-engine-horizontal.png",
-      width = 246,
-      height = 137,
-      frame_count = 32,
-      line_length = 8,
-      shift = {1.34, -0.06}
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
+          width = 176,
+          height = 128,
+          frame_count = 32,
+          line_length = 8,
+          shift = util.by_pixel(1, -5),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
+            width = 352,
+            height = 257,
+            frame_count = 32,
+            line_length = 8,
+            shift = util.by_pixel(1, -4.75),
+            scale = 0.5
+          },
+        },
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
+          width = 254,
+          height = 80,
+          frame_count = 32,
+          line_length = 8,
+          draw_as_shadow = true,
+          shift = util.by_pixel(48, 24),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
+            width = 508,
+            height = 160,
+            frame_count = 32,
+            line_length = 8,
+            draw_as_shadow = true,
+            shift = util.by_pixel(48, 24),
+            scale = 0.5
+          },
+        },
+      },
     },
     vertical_animation =
     {
-      filename = "__base__/graphics/entity/steam-engine/steam-engine-vertical.png",
-      width = 155,
-      height = 186,
-      frame_count = 32,
-      line_length = 8,
-      shift = {0.812, 0.031}
+      layers = 
+      {
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
+          width = 112,
+          height = 195,
+          frame_count = 32,
+          line_length = 8,
+          shift = util.by_pixel(5, -6.5),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
+            width = 225,
+            height = 391,
+            frame_count = 32,
+            line_length = 8,
+            shift = util.by_pixel(4.75, -6.25),        
+            scale = 0.5
+          },
+        },
+        {
+          filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
+          width = 165,
+          height = 153,
+          frame_count = 32,
+          line_length = 8,
+          draw_as_shadow = true,
+          shift = util.by_pixel(40.5, 9.5),
+          hr_version = {
+            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
+            width = 330,
+            height = 307,
+            frame_count = 32,
+            line_length = 8,
+            draw_as_shadow = true,
+            shift = util.by_pixel(40.5, 9.25),        
+            scale = 0.5
+          },
+        },
+      },
     },
     smoke =
     {

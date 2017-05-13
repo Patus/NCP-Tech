@@ -3,7 +3,12 @@
 --data.raw["recipe"]["fill_crude_oil_barrel"]=nil
 --data.raw["recipe"]["empty_crude_oil_barrel"]=nil
 
-
+data.raw["generator"]["steam-engine"].fluid_input =
+    {
+      name = "Water_dirty",
+      amount = 0.0,
+      minimum_temperature = 100.0
+    },
 
 
 
@@ -239,7 +244,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Hydrochloric_acid", amount=1},
+      {type="fluid", name="Hydrochloric_acid", amount=3},
 	  {type="item", name="Silicon_metallurgical", amount=1},
     },
     results = 
@@ -402,7 +407,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Bauxite_concentrate", 1},
+      {"Bauxite_concentrate", 2},
       {"Sodium_hydroxide", 1},
     },
     results = 
@@ -586,7 +591,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {"Lead_concentrate", 1},
+      {"Lead_concentrate", 3},
       {type="fluid", name="Oxygen", amount=1},
     },
     results = 
@@ -2938,7 +2943,7 @@ data:extend(
     result = "Filter",
 	subgroup = "Machines",
   },
-  {
+  --[[{
     type = "recipe",
     name = "Miningdrill_1",
     energy_required = 0.2,
@@ -2949,7 +2954,7 @@ data:extend(
     },
     result = "Miningdrill_1",
 	subgroup = "Machines",
-  },
+  },]]--
   {
     type = "recipe",
     name = "Rotary_kiln",

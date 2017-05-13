@@ -55,18 +55,57 @@ function makeMoneyRecipe(name,credit1,credit100,credit10k,credit1M,credit1G)
 	
 
 end
+recipeNames["stone"]={recipeName="stone",itemName="stone",price=10}
 
 makeRecipe{name="Alumina",ingredients={{type="item", name="stone", amount=1}}}
+--recipeNames["Alumn"]={itemName="Alumina",price=900}
+--recipeNames["Alumns"]={itemName="Alumina",price=900}
 
-
-local reclist=data.raw["recipe"]
+--local reclist=data.raw["recipe"]
 local recnamelist={}
+local ready=false
+while (not ready) do
+	ready=true
+	for i,v in pairs(recipeNames) do
+	local ttt=0
+		if(v.price==nil)then
+			ready=false
+			for z,x in pairs(data.raw.recipe[v.recipeName].ingredients) do
+				if (recipeNames[x.name].price==nil) then
+					ttt=nil
+					break
+				
+				else
+					local prob=x.probability or 1
+					local amo=x.amount or 1
+						
+					
+					
+					ttt=ttt+(recipeNames[x.name].price*amo)/prob
+					
+				end
+				
+			end
+			v.price=ttt*1.5	
+		
+		end
+		
+		
+		
+	end
+	
+end
 
-for i,v in ipairs(recipeNames) do
+
+
+for i,v in pairs(recipeNames) do
+	
+
 	--table.insert(recipeNames, v["name"])
 	--if(v["name"]~=nil)then
 		--data.raw["item"][v["name"]].price=3000
-		setItemPrice(v.itemName,3000)
+		--v.price=300
+		setItemPrice(v.itemName,v.price)
 	--end
 	
 
@@ -82,4 +121,4 @@ end
 
 
 --setItemPrice("Quarried_stone",data.raw["item"]["Quarried_stone"].price)
-setItemPrice("stone",15000)
+--setItemPrice("stone",15000)

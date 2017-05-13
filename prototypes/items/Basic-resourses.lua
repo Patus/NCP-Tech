@@ -1915,7 +1915,7 @@ data:extend({
 	place_result = "Electric_furnace",
     stack_size= 50,
   },
-  {
+  --[[{
     type= "item",
     name= "Miningdrill_1",
     icon = "__base__/graphics/icons/electric-mining-drill.png",
@@ -1924,7 +1924,7 @@ data:extend({
     order= "a-b-c",
 	place_result = "Miningdrill_1",
     stack_size= 50,
-  },
+  },]]--
   {
     type= "item",
     name= "Crusher",
@@ -2334,7 +2334,8 @@ data:extend({
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
-	fuel_value="300MJ"
+	fuel_value="300MJ",
+	fuel_category = "chemical",
   },
   {
     type= "item",
