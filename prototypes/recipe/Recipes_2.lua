@@ -1143,9 +1143,16 @@ makeSmartInserter("improved_express",0.02,0.02,5000,5000,"20kW",1,5,25,{0, -1},{
 
 
 
+--Itemeitä
 
-
-
+makeRecipe{name="Inserter_basic",
+ingredients={
+{type="item", name="Iron_rod", amount=4},
+{type="item", name="Iron_plate", amount=4},
+{type="item", name="Basic_electric_motor", amount=2},
+{type="item", name="Iron_transmission_chain", amount=2},
+}
+}
 
 
 

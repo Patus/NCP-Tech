@@ -82,7 +82,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Gravel", amount=1},
+      {type="item", name="Gravel", amount=1, probability = 0.95},
       {type="item", name="Sand", amount=1, probability = 0.05},
     },
 	icon = "__NCP-Tech__/graphics/item/Gravel.png",
@@ -102,7 +102,7 @@ data:extend(
 	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.005},
 	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.0005 },
     },
-	icon = "__NCP-Tech__/graphics/item/Gravel.png",
+	icon = "__NCP-Tech__/graphics/item/Gravel.png",-- virhe
 	subgroup = "Recourses",
   },
   {
@@ -117,7 +117,7 @@ data:extend(
     },
     results = 
     {
-      {type="item", name="Sand", amount=1},
+      {type="item", name="Sand", amount=1, probability = 0.95},
       {type="item", name="Silt", amount=1, probability = 0.05}
     },
 	icon = "__NCP-Tech__/graphics/item/Sand.png",
