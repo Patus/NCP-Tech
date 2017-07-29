@@ -64,6 +64,7 @@ makeRecipe{name="Alumina",ingredients={{type="item", name="stone", amount=1}}}
 --local reclist=data.raw["recipe"]
 local recnamelist={}
 local ready=false
+--[[
 while (not ready) do
 	ready=true
 	for i,v in pairs(recipeNames) do
@@ -95,21 +96,21 @@ while (not ready) do
 	end
 	
 end
+--]]
 
 
-
-for i,v in pairs(recipeNames) do
+--for i,v in pairs(recipeNames) do
 	
 
 	--table.insert(recipeNames, v["name"])
 	--if(v["name"]~=nil)then
 		--data.raw["item"][v["name"]].price=3000
 		--v.price=300
-		setItemPrice(v.itemName,v.price)
+		--setItemPrice(v.itemName,v.price)
 	--end
 	
 
-end
+--end
 
 
 
