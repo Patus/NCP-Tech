@@ -371,7 +371,8 @@ data:extend({
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
-	fuel_value="280MJ"
+	fuel_value="280MJ",
+	fuel_category = "chemical",
   },
   {
     type= "item",
@@ -1272,7 +1273,8 @@ data:extend({
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
-	fuel_value="180MJ"
+	fuel_value="180MJ",
+	fuel_category = "chemical",
   },
   {
     type= "item",
@@ -2336,6 +2338,7 @@ data:extend({
     stack_size= 50,
 	fuel_value="300MJ",
 	fuel_category = "chemical",
+	
   },
   {
     type= "item",
@@ -2457,6 +2460,26 @@ data:extend({
   },
 
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   --CHEATS
   
 
@@ -2471,6 +2494,8 @@ data:extend({
     order= "a-b-c",
     stack_size= 500,
 	fuel_value = "800MJ",
+	fuel_category = "chemical",
+
   },
   
   
@@ -2480,3 +2505,258 @@ data:extend({
   
   
   })
+
+  
+  
+  
+  makeItem{name="Active_provider_chest"}
+  makeItem{name="Active_provider_chest"}
+--makeItem{name="Assembling_machine"}
+makeItem{name="Assembling_machine_mk2"}
+makeItem{name="Assembling_machine_mk3"}
+makeItem{name="Assembling_machine_mk4"}
+makeItem{name="Assembling_machine_mk5"}
+makeItem{name="Basic_electric_motor"}
+makeItem{name="Basic_mining_drill"}
+makeItem{name="Blast_furnace_basic"}
+makeItem{name="Boiler"}
+makeItem{name="Boiler_basic"}
+makeItem{name="Brass_dense_pipe"}
+makeItem{name="Brass_pipe"}
+makeItem{name="Chemical_pipe"}
+--makeItem{name="Chemical_plant"}
+makeItem{name="Chemical_plant_basic"}
+makeItem{name="Chemical_plant_mk2"}
+makeItem{name="Coal_power_plant"}
+makeItem{name="Coal_power_plant_mk2"}
+makeItem{name="Concrete_wall"}
+makeItem{name="Cooling_tower"}
+makeItem{name="Copper_dense_pipe"}
+makeItem{name="Copper_pipe"}
+--makeItem{name="Cracking_plant"}
+makeItem{name="Cracking_plant_mk2"}
+--makeItem{name="Crusher"}
+makeItem{name="Crusher_basic"}
+makeItem{name="Crusher_mk2"}
+--makeItem{name="Cryogenic_distillation_plant"}
+makeItem{name="Cryogenic_pipe"}
+makeItem{name="Currency_exchange"}
+makeItem{name="Curved_track"}
+makeItem{name="Diesel_generator"}
+makeItem{name="Diesel_locomotive"}
+makeItem{name="Diesel_electric_locomotive"}
+makeItem{name="Distillery"}
+makeItem{name="Distillery_basic"}
+makeItem{name="Distillery_mk2"}
+makeItem{name="Distribution_pole"}
+makeItem{name="Distribution_pole_mk2"}
+makeItem{name="Drill_frame_basic"}
+--makeItem{name="Electric_arc_furnace"}
+--makeItem{name="Electric_chemical_furnace"}
+makeItem{name="Electric_chemical_furnace_mk2"}
+makeItem{name="Electric_chemical_furnace_mk3"}
+--makeItem{name="Electric_flash_furnace"}
+makeItem{name="Electric_flash_furnace_mk2"}
+--makeItem{name="Electric_furnace"}
+makeItem{name="Electric_furnace_mk2"}
+makeItem{name="Electric_furnace_mk3"}
+makeItem{name="Electric_motor_hull"}
+makeItem{name="Electric_pole"}
+makeItem{name="Electric_rotor"}
+--makeItem{name="Electrolyzer"}
+makeItem{name="Electrolyzer_basic"}
+makeItem{name="Electrolyzer_mk2"}
+makeItem{name="Electronics_assembling_macine"}
+--makeItem{name="Extruder"}
+makeItem{name="Extruder_basic"}
+makeItem{name="Extruder_crude"}
+makeItem{name="Extruder_mk2"}
+--makeItem{name="Farm"}
+makeItem{name="Farm_basic"}
+makeItem{name="Fast_long_inster"}
+--makeItem{name="Flash_furnace"}
+--makeItem{name="Furnace"}
+makeItem{name="Gas_turbine_power_plant"}
+makeItem{name="Green_wire"}
+--makeItem{name="Grinding_mill"}
+makeItem{name="Grinding_mill_basic"}
+makeItem{name="Grinding_mill_mk2"}
+makeItem{name="Gunpowder"}
+makeItem{name="HS_curved_track"}
+makeItem{name="HS_track"}
+makeItem{name="Inserter_basic"}
+makeItem{name="Iron_ball"}
+makeItem{name="Iron_bearing"}
+makeItem{name="Iron_bearing_hull"}
+makeItem{name="Iron_chest"}
+makeItem{name="Iron_dense_pipe"}
+makeItem{name="Iron_dense_underground_pipe"}
+makeItem{name="Iron_drill_bit"}
+makeItem{name="Iron_engine_block"}
+makeItem{name="Iron_pipe"}
+makeItem{name="Iron_piston"}
+makeItem{name="Iron_rivet"}
+makeItem{name="Iron_riveted_dense_plate"}
+makeItem{name="Iron_riveted_plate"}
+makeItem{name="Iron_tools"}
+makeItem{name="Iron_underground_pipe"}
+makeItem{name="Laboratory"}
+makeItem{name="Lead_dense_pipe"}
+makeItem{name="Lead_pipe"}
+makeItem{name="Long_inserter"}
+makeItem{name="Long_inserter_basic"}
+makeItem{name="Mining_drill"}
+makeItem{name="Nail"}
+makeItem{name="Nail"}
+--makeItem{name="Nuclear_fuel_processing_plant"}
+makeItem{name="Nuclear_power_plant"}
+makeItem{name="Nuclear_reactor"}
+makeItem{name="Oil_power_plant"}
+makeItem{name="Ore_washer"}
+makeItem{name="Ore_washer_basic"}
+makeItem{name="Ore_washer_mk2"}
+makeItem{name="Passive_provider_chest"}
+makeItem{name="Plank"}
+makeItem{name="Pump_jack_basic"}
+makeItem{name="Radar"}
+makeItem{name="Rail_chain_signal"}
+makeItem{name="Rail_signal"}
+makeItem{name="Red_wire"}
+--makeItem{name="Refinery"}
+makeItem{name="Refinery_mk2"}
+makeItem{name="Refractory_furnace"}
+makeItem{name="Requester_chest"}
+makeItem{name="Roboport"}
+--makeItem{name="Rolling_machine"}
+makeItem{name="Rolling_machine_basic"}
+makeItem{name="Rolling_machine_crude"}
+makeItem{name="Rolling_machine_mk2"}
+--makeItem{name="Rotary_kiln"}
+makeItem{name="Small_gearbox"}
+makeItem{name="Solar_array"}
+makeItem{name="Solar_array_mk2"}
+makeItem{name="Splitter"}
+makeItem{name="Splitter_basic"}
+makeItem{name="Splitter_crude"}
+makeItem{name="Splitter_fast"}
+makeItem{name="Stainless_steel_tank_2x2"}
+makeItem{name="Stainless_steel_tank_4x4"}
+makeItem{name="Steam_engine_generator"}
+makeItem{name="Steam_tubine"}
+makeItem{name="Steel_chest"}
+makeItem{name="Steel_dense_pipe"}
+makeItem{name="Steel_dense_underground_pipe"}
+makeItem{name="Steel_pipe"}
+makeItem{name="Steel_rivet"}
+makeItem{name="Steel_riveted_dense_plate"}
+makeItem{name="Steel_riveted_plate"}
+makeItem{name="Steel_tank_2x2"}
+makeItem{name="Steel_tank_4x4"}
+makeItem{name="Steel_tools"}
+makeItem{name="Steel_underground_pipe"}
+makeItem{name="Stick"}
+makeItem{name="Stirling_engine"}
+makeItem{name="Stirling_inserter"}
+makeItem{name="Stirling_miner"}
+makeItem{name="Stirling_offshore_pump"}
+makeItem{name="Stone_gear"}
+makeItem{name="Stone_tools"}
+makeItem{name="Storage_chest"}
+makeItem{name="Tinned_copper_wire"}
+makeItem{name="Track"}
+makeItem{name="Trading_post"}
+makeItem{name="Train_stop"}
+makeItem{name="Transformer"}
+makeItem{name="Transformer_core"}
+makeItem{name="Transformer_core"}
+makeItem{name="Transmission_pole"}
+makeItem{name="Transmission_pole_mk2"}
+makeItem{name="Transport_belt"}
+makeItem{name="Transport_belt_basic"}
+makeItem{name="Transport_belt_basic_underground"}
+makeItem{name="Transport_belt_crude"}
+makeItem{name="Transport_belt_crude_underground"}
+makeItem{name="Transport_belt_express_underground"}
+makeItem{name="Transport_belt_fast_underground"}
+makeItem{name="Transport_belt_ultra_underground"}
+makeItem{name="Transport_belt_underground"}
+makeItem{name="Transport_belt_very_fast_underground"}
+makeItem{name="Tree_seeds"}
+makeItem{name="Wooden_board"}
+makeItem{name="Wooden_box"}
+makeItem{name="Wooden_chest"}
+makeItem{name="Wooden_framework"}
+makeItem{name="Wooden_tank_2x2"}
+makeItem{name="Wooden_tank_4x4"}
+makeItem{name="Workshop"}
+makeItem{name="Crossbow"}
+makeItem{name="Circuit_board"}
+makeItem{name="Titanium_chest"}
+makeItem{name="Sensor"}
+makeItem{name="Computer"}
+makeItem{name="Steel_bearing"}
+makeItem{name="Tungsten_carbide_rod"}
+makeItem{name="Crystal_laser"}
+makeItem{name="Brass_dense_plate"}
+makeItem{name="Gas_turbine_generator"}
+makeItem{name="Inconel_dense_plate"}
+makeItem{name="Factory_frame"}
+makeItem{name="Brick"}
+makeItem{name="Electronics_board"}
+makeItem{name="Compressor_mk2"}
+makeItem{name="Steam_turbine"}
+makeItem{name="Steam_turbine_mk2"}
+makeItem{name="Large_factory_frame"}
+makeItem{name="HV_transformer"}
+makeItem{name="LV_electric_motor"}
+makeItem{name="Heat_exchanger"}
+makeItem{name="Basic_electronics_board"}
+makeItem{name="Hydraulic_transmission"}
+makeItem{name="Tungsten_carbide_gear"}
+makeItem{name="Diesel_locomotive_hull_part"}
+makeItem{name="Data_cable"}
+makeItem{name="Diesel_engine"}
+makeItem{name="Raw_wood"}
+makeItem{name="Cooling_system"}
+makeItem{name="Molecular_sieve"}
+makeItem{name="Refractory_brick"}
+makeItem{name="Excimer_laser"}
+makeItem{name="Polystyrene"}
+makeItem{name="Pump_basic"}
+makeItem{name="Steam_turbine_mk3"}
+makeItem{name="Hydraulic_pump"}
+makeItem{name="Diesel_electric_engine"}
+makeItem{name="Large_diesel_engine"}
+makeItem{name="HV_electric_motor"}
+makeItem{name="Hydraulic_piston"}
+makeItem{name="Steel_HS_rail"} 
+makeItem{name="LV_electric_engine"}
+makeItem{name="Drill_frame"}
+makeItem{name="Magnetron"}
+makeItem{name="Steel_drill_bit"}
+makeItem{name="Gas_centrifuge"}
+makeItem{name="Radar_antenna"}
+makeItem{name="Large_Li-ion_battery"}
+makeItem{name="Lamp"}
+makeItem{name="Solar_panel"}
+makeItem{name="Solar_panel_mk2"}
+makeItem{name="Iron_rail"}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1154,6 +1154,186 @@ ingredients={
 }
 }
 
+makeRecipe{name="Active_provider_chest",ingredients={{type="item", name="Computer", amount=2},{type="item", name="Titanium_chest", amount=1},{type="item", name="Sensor", amount=1},}}
+makeRecipe{name="Assembling_machine",ingredients={{type="item", name="Iron_tools", amount=8},{type="item", name="Transport_belt_basic", amount=8},{type="item", name="Inserter_basic", amount=4},{type="item", name="Iron_riveted_plate", amount=20},}}
+makeRecipe{name="Assembling_machine_mk2",ingredients={{type="item", name="Assembling_machine", amount=1},{type="item", name="Steel_bearing", amount=10},{type="item", name="Inserter_basic_long", amount=2},{type="item", name="Compressor", amount=1},}}
+--makeRecipe{name="Assembling_machine_mk3",ingredients={{type="item", name="Factory_frame", amount=1},{type="item", name="Inserter", amount=8},{type="item", name="Transport_belt_fast", amount=12},{type="item", name="Acetylene_bottle", amount=20},{type="item", name="Compressor", amount=1},}}
+makeRecipe{name="Assembling_machine_mk4",ingredients={{type="item", name="Assembling_machine_mk3", amount=1},{type="item", name="Circuit_board", amount=10},{type="item", name="Inserter_fast", amount=6},{type="item", name="Tungsten_carbide_rod", amount=10},{type="item", name="Inserter_improved_fast", amount=4},}}
+makeRecipe{name="Assembling_machine_mk5",ingredients={{type="item", name="Assembling_machine_mk4", amount=1},{type="item", name="Computer", amount=10},{type="item", name="Inserter_express", amount=6},{type="item", name="Crystal_laser", amount=6},{type="item", name="Inserter_fast", amount=4},}}
+makeRecipe{name="Basic_electric_motor",ingredients={{type="item", name="Electric_motor_hull", amount=1},{type="item", name="Electric_rotor", amount=1},}}
+makeRecipe{name="Basic_mining_drill",ingredients={{type="item", name="Drill_frame_basic", amount=1},{type="item", name="Basic_electric_motor", amount=3},{type="item", name="Transport_belt_basic", amount=3},{type="item", name="Iron_drill_bit", amount=12},}}
+makeRecipe{name="Blast_furnace_basic",ingredients={{type="item", name="Iron_riveted_dense_plate", amount=20},{type="item", name="Refractory_furnace", amount=8},{type="item", name="Brick", amount=200},{type="item", name="Iron_pipe", amount=10},}}
+makeRecipe{name="Boiler",ingredients={{type="item", name="Steel_riveted_dense_plate", amount=10},{type="item", name="Steel_pipe", amount=4},}}
+makeRecipe{name="Boiler_basic",ingredients={{type="item", name="Copper_dense_plate", amount=8},{type="item", name="Copper_pipe", amount=4},}}
+makeRecipe{name="Brass_dense_pipe",ingredients={{type="item", name="Brass_dense_plate", amount=2},}}
+makeRecipe{name="Brass_pipe",ingredients={{type="item", name="Brass_plate", amount=2},}}
+makeRecipe{name="Chemical_pipe",ingredients={{type="item", name="Iron_riveted_plate", amount=10},{type="item", name="Refractory_furnace", amount=1},{type="item", name="Iron_pipe", amount=4},}}
+makeRecipe{name="Chemical_plant",ingredients={{type="item", name="Factory_frame", amount=1},{type="item", name="Electronics_board", amount=15},{type="item", name="Plastic_pipe", amount=30},{type="item", name="Stainless_steel_plate", amount=40},{type="item", name="Electric_chemical_furnace", amount=1},}}
+makeRecipe{name="Chemical_plant_basic",ingredients={{type="item", name="Lead_pipe", amount=12},{type="item", name="Transformer", amount=2},{type="item", name="Refractory_furnace", amount=1},{type="item", name="Iron_plate", amount=10},}}
+makeRecipe{name="Chemical_plant_mk2",ingredients={{type="item", name="Circuit_board", amount=20},{type="item", name="Tungsten_wire", amount=30},{type="item", name="Chemical_plant", amount=1},{type="item", name="Compressor_mk2", amount=4},}}
+makeRecipe{name="Coal_power_plant",ingredients={{type="item", name="Boiler_basic", amount=20},{type="item", name="Steel_dense_plate", amount=10},{type="item", name="Brick", amount=300},{type="item", name="Transformer", amount=5},{type="item", name="Steam_turbine", amount=1},}}
+makeRecipe{name="Coal_power_plant_mk2",ingredients={{type="item", name="Coal_power_plant", amount=1},{type="item", name="Stainless_steel_tank_4x4", amount=1},{type="item", name="HV_transformer", amount=5},{type="item", name="Steam_turbine_mk2", amount=1},}}
+makeRecipe{name="Concrete_wall",ingredients={{type="item", name="Concrete_block", amount=5},{type="item", name="Steel_rod", amount=3},}}
+makeRecipe{name="Cooling_tower",ingredients={{type="item", name="Large_factory_frame", amount=1},{type="item", name="Stainless_steel_pipe", amount=30},{type="item", name="Heat_exchanger", amount=80},}}
+makeRecipe{name="Copper_dense_pipe",ingredients={{type="item", name="Copper_dense_plate", amount=2},}}
+makeRecipe{name="Copper_pipe",ingredients={{type="item", name="Copper_plate", amount=2},}}
+makeRecipe{name="Cracking_plant",ingredients={{type="item", name="Factory_frame", amount=1},{type="item", name="Distillery", amount=1},{type="item", name="Steel_pipe", amount=6},{type="item", name="Basic_electronics_board", amount=5},}}
+makeRecipe{name="Cracking_plant_mk2",ingredients={{type="item", name="Cracking_plant", amount=1},{type="item", name="Distillery_mk2", amount=1},{type="item", name="Stainless_steel_pipe", amount=10},{type="item", name="Circuit_board", amount=20},{type="item", name="HV_transformer", amount=4},}}
+makeRecipe{name="Crusher",ingredients={{type="item", name="Steel_riveted_plate", amount=12},{type="item", name="Basic_electric_motor", amount=8},{type="item", name="Steel_gear", amount=24},{type="item", name="Steel_bearing", amount=4},}}
+makeRecipe{name="Crusher_basic",ingredients={{type="item", name="Basic_electric_motor", amount=4},{type="item", name="Iron_gear", amount=12},{type="item", name="Iron_riveted_plate", amount=6},{type="item", name="Iron_transmission_chain", amount=2},}}
+makeRecipe{name="Crusher_mk2",ingredients={{type="item", name="Circuit_board", amount=5},{type="item", name="Crusher", amount=1},{type="item", name="LV_electric_motor", amount=8},{type="item", name="Tungsten_carbide_gear", amount=24},}}
+makeRecipe{name="Cryogenic_distillation_plant",ingredients={{type="item", name="Compressor_mk2", amount=10},{type="item", name="Circuit_board", amount=20},{type="item", name="Cryogenic_pipe", amount=80},{type="item", name="Molecular_sieve", amount=60},{type="item", name="Cooling_system", amount=30},}}
+makeRecipe{name="Cryogenic_pipe",ingredients={{type="item", name="Aluminium_plate", amount=2},{type="item", name="Stainless_steel_pipe", amount=1},{type="item", name="Polystyrene", amount=4},}}
+makeRecipe{name="Currency_exchange",ingredients={{type="item", name="Iron_riveted_plate", amount=30},{type="item", name="Wooden_framework", amount=30},{type="item", name="Brick", amount=30},}}
+makeRecipe{name="Curved_track",ingredients={{type="item", name="Track", amount=5},}}
+makeRecipe{name="Diesel_generator",ingredients={{type="item", name="Transformer", amount=1},{type="item", name="Basic_electric_motor", amount=6},{type="item", name="Diesel_engine", amount=1},{type="item", name="Steel_transmission_chain", amount=2},{type="item", name="Basic_electronics_board", amount=4},}}
+makeRecipe{name="Diesel_locomotive",ingredients={{type="item", name="Large_diesel_engine", amount=1},{type="item", name="Hydraulic_transmission", amount=1},{type="item", name="Battery", amount=20},{type="item", name="Electronics_board", amount=10},{type="item", name="Diesel_locomotive_hull_part", amount=4},}}
+makeRecipe{name="Diesel_electric_locomotive",ingredients={{type="item", name="Diesel_locomotive_hull_part", amount=4},{type="item", name="Battery", amount=30},{type="item", name="Diesel_electric_engine", amount=1},{type="item", name="Circuit_board", amount=20},{type="item", name="HV_electric_motor", amount=24},}}
+makeRecipe{name="Distillery",ingredients={{type="item", name="Boiler", amount=1},{type="item", name="Glass", amount=50},{type="item", name="Steel_tank_2x2", amount=1},}}
+makeRecipe{name="Distillery_basic",ingredients={{type="item", name="Boiler_basic", amount=1},{type="item", name="Copper_pipe", amount=2},{type="item", name="Wooden_tank_2x2", amount=1},}}
+makeRecipe{name="Distillery_mk2",ingredients={{type="item", name="Nichrome_wire", amount=80},{type="item", name="Stainless_steel_tank_2x2", amount=1},{type="item", name="Electronics_board", amount=15},{type="item", name="Factory_frame", amount=1},{type="item", name="Distillery", amount=1},}}
+makeRecipe{name="Distribution_pole",ingredients={{type="item", name="Copper_wire", amount=6},{type="item", name="Transformer", amount=1},{type="item", name="Raw_wood", amount=1},}}
+makeRecipe{name="Distribution_pole_mk2",ingredients={{type="item", name="Copper_wire", amount=8},{type="item", name="Stainless_steel_plate", amount=6},{type="item", name="Distribution_pole", amount=1},}}
+makeRecipe{name="Drill_frame_basic",ingredients={{type="item", name="Iron_riveted_plate", amount=6},{type="item", name="Iron_rod", amount=20},{type="item", name="Iron_transmission_chain", amount=3},}}
+makeRecipe{name="Electric_arc_furnace",ingredients={{type="item", name="Graphite_electrode", amount=3},{type="item", name="Transformer", amount=20},{type="item", name="Refractory_brick", amount=40},{type="item", name="Basic_electronics_board", amount=20},{type="item", name="Steel_plate", amount=50},{type="item", name="Factory_frame", amount=1},}}
+makeRecipe{name="Electric_chemical_furnace",ingredients={{type="item", name="Electric_furnace", amount=1},{type="item", name="Steel_pipe", amount=6},{type="item", name="Graphite_rod", amount=10},}}
+makeRecipe{name="Electric_chemical_furnace_mk2",ingredients={{type="item", name="Electric_chemical_furnace", amount=1},{type="item", name="Nichrome_wire", amount=80},{type="item", name="Compressor", amount=1},{type="item", name="Electronics_board", amount=10},}}
+makeRecipe{name="Electric_chemical_furnace_mk3",ingredients={{type="item", name="Circuit_board", amount=20},{type="item", name="Tungsten_wire", amount=30},{type="item", name="Compressor_mk2", amount=2},{type="item", name="Electric_chemical_furnace_mk2", amount=1},}}
+makeRecipe{name="Electric_flash_furnace",ingredients={{type="item", name="Electric_furnace_mk2", amount=1},{type="item", name="Stainless_steel_pipe", amount=10},{type="item", name="Compressor", amount=1},}}
+makeRecipe{name="Electric_flash_furnace_mk2",ingredients={{type="item", name="Electric_furnace_mk3", amount=1},{type="item", name="Compressor_mk2", amount=2},}}
+makeRecipe{name="Electric_furnace",ingredients={{type="item", name="Steel_wire", amount=80},{type="item", name="Refractory_brick", amount=20},{type="item", name="Basic_electronics_board", amount=4},{type="item", name="Factory_frame", amount=1},}}
+makeRecipe{name="Electric_furnace_mk2",ingredients={{type="item", name="Nichrome_wire", amount=80},{type="item", name="Electronics_board", amount=20},{type="item", name="Electric_furnace", amount=1},}}
+makeRecipe{name="Electric_furnace_mk3",ingredients={{type="item", name="Circuit_board", amount=20},{type="item", name="Tungsten_wire", amount=30},{type="item", name="Electric_furnace_mk2", amount=1},}}
+makeRecipe{name="Electric_motor_hull",ingredients={{type="item", name="Copper_wire", amount=3},{type="item", name="Iron_riveted_plate", amount=1},}}
+makeRecipe{name="Electric_pole",ingredients={{type="item", name="Copper_wire", amount=4},{type="item", name="Raw_wood", amount=1},}}
+makeRecipe{name="Electric_rotor",ingredients={{type="item", name="Copper_wire", amount=3},{type="item", name="Iron_rod", amount=1},{type="item", name="Iron_gear", amount=1},}}
+makeRecipe{name="Electrolyzer",ingredients={{type="item", name="Electronics_board", amount=30},{type="item", name="Transformer", amount=20},{type="item", name="Plastic_pipe", amount=30},{type="item", name="Stainless_steel_plate", amount=50},{type="item", name="Factory_frame", amount=2},}}
+makeRecipe{name="Electrolyzer_basic",ingredients={{type="item", name="Iron_riveted_plate", amount=15},{type="item", name="Copper_pipe", amount=6},{type="item", name="Transformer", amount=4},}}
+makeRecipe{name="Electrolyzer_mk2",ingredients={{type="item", name="Circuit_board", amount=30},{type="item", name="Electrolyzer_mk2", amount=1},{type="item", name="Gold_wire", amount=30},}}
+makeRecipe{name="Electronics_assembling_macine",ingredients={{type="item", name="Factory_frame", amount=1},{type="item", name="Circuit_board", amount=8},{type="item", name="Inserter_fast", amount=9},{type="item", name="Excimer_laser", amount=10},}}
+makeRecipe{name="Extruder",ingredients={{type="item", name="Basic_electric_motor", amount=4},{type="item", name="Transport_belt_normal", amount=2},{type="item", name="Steel_dense_plate", amount=1},{type="item", name="Transformer", amount=2},{type="item", name="Steel_wire", amount=20},}}
+makeRecipe{name="Extruder_basic",ingredients={{type="item", name="Extruder_crude", amount=1},{type="item", name="Basic_electric_motor", amount=2},{type="item", name="Transformer", amount=1},{type="item", name="Transport_belt_basic", amount=2},}}
+makeRecipe{name="Extruder_crude",ingredients={{type="item", name="Furnace", amount=1},{type="item", name="Iron_plate", amount=8},}}
+makeRecipe{name="Extruder_mk2",ingredients={{type="item", name="Transport_belt_fast", amount=2},{type="item", name="Extruder", amount=1},{type="item", name="LV_electric_motor", amount=4},}}
+makeRecipe{name="Farm",ingredients={{type="item", name="Plastic_pipe", amount=15},{type="item", name="Stainless_steel_tank_4x4", amount=1},{type="item", name="Wooden_framework", amount=30},{type="item", name="Pump", amount=2},{type="item", name="Electronics_board", amount=5},}}
+makeRecipe{name="Farm_basic",ingredients={{type="item", name="Copper_pipe", amount=4},{type="item", name="Wooden_tank_4x4", amount=1},{type="item", name="Wooden_framework", amount=20},{type="item", name="Pump_basic", amount=1},}}
+makeRecipe{name="Fast_long_inster",ingredients={{type="item", name="Hydraulic_pump", amount=1},{type="item", name="Inserter_fast", amount=1},{type="item", name="Hydraulic_piston", amount=3},}}
+makeRecipe{name="Flash_furnace",ingredients={{type="item", name="Iron_riveted_plate", amount=15},{type="item", name="Iron_plate", amount=2},{type="item", name="Furnace", amount=1},}}
+makeRecipe{name="Furnace",ingredients={{type="item", name="Quarried_stone", amount=20},}}
+makeRecipe{name="Furnace",ingredients={{type="item", name="Brick", amount=20},}}
+makeRecipe{name="Gas_turbine_power_plant",ingredients={{type="item", name="Gas_turbine_generator", amount=1},{type="item", name="Large_factory_frame", amount=1},{type="item", name="Cooling_tower", amount=1},{type="item", name="Circuit_board", amount=20},{type="item", name="Steam_turbine_mk3", amount=1},}}
+makeRecipe{name="Green_wire",ingredients={{type="item", name="Data_cable", amount=1},}}
+makeRecipe{name="Grinding_mill",ingredients={{type="item", name="Steel_riveted_plate", amount=12},{type="item", name="Basic_electric_motor", amount=4},{type="item", name="Steel_gear", amount=12},{type="item", name="Steel_bearing", amount=4},{type="item", name="Steel_pipe", amount=8},}}
+makeRecipe{name="Grinding_mill_basic",ingredients={{type="item", name="Basic_electric_motor", amount=2},{type="item", name="Iron_gear", amount=6},{type="item", name="Iron_riveted_plate", amount=6},{type="item", name="Iron_pipe", amount=4},}}
+makeRecipe{name="Grinding_mill_mk2",ingredients={{type="item", name="LV_electric_motor", amount=3},{type="item", name="Tungsten_carbide_gear", amount=12},{type="item", name="Grinding_mill", amount=1},{type="item", name="Circuit_board", amount=5},}}
+makeRecipe{name="Gunpowder",ingredients={{type="item", name="Charcoal", amount=2},{type="item", name="Sulfur", amount=1},{type="item", name="Potassium_nitrate", amount=7},}}
+makeRecipe{name="HS_curved_track",ingredients={{type="item", name="HS_track", amount=5},}}
+makeRecipe{name="HS_track",ingredients={{type="item", name="Gravel", amount=15},{type="item", name="Steel_HS_rail", amount=2},{type="item", name="Concrete_block", amount=8},}}
+makeRecipe{name="Inserter_basic",ingredients={{type="item", name="Basic_electric_motor", amount=1},{type="item", name="Iron_rod", amount=4},{type="item", name="Iron_transmission_chain", amount=2},{type="item", name="Iron_plate", amount=4},}}
+makeRecipe{name="Iron_ball",ingredients={{type="item", name="Iron_rod", amount=1},}}
+makeRecipe{name="Iron_bearing",ingredients={{type="item", name="Iron_ball", amount=8},{type="item", name="Iron_bearing_hull", amount=1},}}
+makeRecipe{name="Iron_bearing_hull",ingredients={{type="item", name="Iron_plate", amount=1},}}
+makeRecipe{name="Iron_chest",ingredients={{type="item", name="Iron_plate", amount=6},{type="item", name="Iron_rivet", amount=48},}}
+makeRecipe{name="Iron_dense_pipe",ingredients={{type="item", name="Iron_riveted_dense_plate", amount=2},}}
+makeRecipe{name="Iron_dense_underground_pipe",ingredients={{type="item", name="Iron_dense_pipe", amount=24},}}
+makeRecipe{name="Iron_drill_bit",ingredients={{type="item", name="Iron_bearing", amount=3},{type="item", name="Iron_gear", amount=9},{type="item", name="Iron_rod", amount=1},}}
+makeRecipe{name="Iron_engine_block",ingredients={{type="item", name="Iron_billet", amount=2},{type="item", name="Iron_pipe", amount=1},}}
+makeRecipe{name="Iron_pipe",ingredients={{type="item", name="Iron_riveted_plate", amount=2},}}
+makeRecipe{name="Iron_piston",ingredients={{type="item", name="Iron_plate", amount=1},{type="item", name="Iron_rod", amount=1},}}
+makeRecipe{name="Iron_rivet",ingredients={{type="item", name="Iron_wire", amount=1},}}
+makeRecipe{name="Iron_riveted_dense_plate",ingredients={{type="item", name="Iron_dense_plate", amount=1},{type="item", name="Iron_rivet", amount=16},}}
+makeRecipe{name="Iron_riveted_plate",ingredients={{type="item", name="Iron_plate", amount=1},{type="item", name="Iron_rivet", amount=8},}}
+makeRecipe{name="Iron_tools",ingredients={{type="item", name="Stick", amount=1},{type="item", name="Iron_rod", amount=1},}}
+makeRecipe{name="Iron_underground_pipe",ingredients={{type="item", name="Iron_pipe", amount=24},}}
+makeRecipe{name="Laboratory",ingredients={{type="item", name="HV_transformer", amount=2},{type="item", name="Factory_frame", amount=1},{type="item", name="Inserter_normal", amount=5},{type="item", name="LV_electric_engine", amount=5},{type="item", name="Glass", amount=30},{type="item", name="Battery", amount=15},}}
+makeRecipe{name="Lead_dense_pipe",ingredients={{type="item", name="Lead_dense_plate", amount=2},}}
+makeRecipe{name="Lead_pipe",ingredients={{type="item", name="Lead_plate", amount=2},}}
+makeRecipe{name="Inserter_normal_long",ingredients={{type="item", name="Basic_electric_motor", amount=1},{type="item", name="Inserter_normal", amount=1},{type="item", name="Steel_rod", amount=2},}}
+makeRecipe{name="Inserter_basic_long",ingredients={{type="item", name="Inserter_basic", amount=1},{type="item", name="Basic_electric_motor", amount=1},{type="item", name="Iron_rod", amount=2},}}
+makeRecipe{name="Mining_drill",ingredients={{type="item", name="Drill_frame", amount=1},{type="item", name="Basic_electric_motor", amount=3},{type="item", name="Transport_belt_normal", amount=3},{type="item", name="Steel_drill_bit", amount=12},}}
+makeRecipe{name="Nail",ingredients={{type="item", name="Iron_wire", amount=1},}}
+makeRecipe{name="Nail",ingredients={{type="item", name="Steel_wire", amount=1},}}
+makeRecipe{name="Nuclear_fuel_processing_plant",ingredients={{type="item", name="Compressor_mk2", amount=1},{type="item", name="Large_factory_frame", amount=1},{type="item", name="Gas_centrifuge", amount=100},{type="item", name="Stainless_steel_pipe", amount=20},{type="item", name="Computer", amount=30},}}
+makeRecipe{name="Nuclear_power_plant",ingredients={{type="item", name="Cooling_tower", amount=1},{type="item", name="Large_factory_frame", amount=1},{type="item", name="Stainless_steel_pipe", amount=35},{type="item", name="Nuclear_reactor", amount=1},{type="item", name="Sensor", amount=40},{type="item", name="Steam_turbine_mk3", amount=1},}}
+makeRecipe{name="Nuclear_reactor",ingredients={{type="item", name="Lead_dense_plate", amount=60},{type="item", name="Large_factory_frame", amount=12},{type="item", name="Silver_rod", amount=50},{type="item", name="Inconel_dense_plate", amount=30},}}
+makeRecipe{name="Oil_power_plant",ingredients={{type="item", name="Stainless_steel_tank_4x4", amount=2},{type="item", name="HV_transformer", amount=5},{type="item", name="Steam_turbine_mk2", amount=1},{type="item", name="Large_factory_frame", amount=1},{type="item", name="Stainless_steel_pipe", amount=20},}}
+makeRecipe{name="Ore_washer",ingredients={{type="item", name="Basic_electric_motor", amount=6},{type="item", name="Transport_belt_normal", amount=6},{type="item", name="Stainless_steel_pipe", amount=4},{type="item", name="Stainless_steel_tank_4x4", amount=1},{type="item", name="Compressor", amount=1},}}
+makeRecipe{name="Ore_washer_basic",ingredients={{type="item", name="Basic_electric_motor", amount=2},{type="item", name="Wooden_tank_2x2", amount=4},{type="item", name="Iron_riveted_plate", amount=6},{type="item", name="Transport_belt_basic", amount=4},}}
+makeRecipe{name="Ore_washer_mk2",ingredients={{type="item", name="Circuit_board", amount=5},{type="item", name="Transport_belt_fast", amount=6},{type="item", name="Ore_washer", amount=1},{type="item", name="Compressor_mk2", amount=1},}}
+makeRecipe{name="Passive_provider_chest",ingredients={{type="item", name="Computer", amount=2},{type="item", name="Titanium_chest", amount=1},{type="item", name="Sensor", amount=1},}}
+makeRecipe{name="Plank",ingredients={{type="item", name="Raw_wood", amount=1},}}
+makeRecipe{name="Pump_jack_basic",ingredients={{type="item", name="Basic_electric_motor", amount=2},{type="item", name="Iron_piston", amount=1},{type="item", name="Iron_riveted_plate", amount=6},{type="item", name="Iron_pipe", amount=12},}}
+makeRecipe{name="Radar",ingredients={{type="item", name="Magnetron", amount=6},{type="item", name="HV_transformer", amount=1},{type="item", name="Radar_antenna", amount=1},{type="item", name="Electronics_board", amount=30},}}
+makeRecipe{name="Rail_chain_signal",ingredients={{type="item", name="Rail_signal", amount=1},{type="item", name="Circuit_board", amount=2},}}
+makeRecipe{name="Rail_signal",ingredients={{type="item", name="Lamp", amount=3},{type="item", name="Steel_rod", amount=2},{type="item", name="Circuit_board", amount=1},}}
+makeRecipe{name="Red_wire",ingredients={{type="item", name="Data_cable", amount=1},}}
+makeRecipe{name="Refinery",ingredients={{type="item", name="Distillery", amount=2},{type="item", name="Large_factory_frame", amount=1},{type="item", name="Steel_pipe", amount=20},{type="item", name="Transformer", amount=8},}}
+makeRecipe{name="Refinery_mk2",ingredients={{type="item", name="Refinery", amount=1},{type="item", name="Distillery_mk2", amount=2},{type="item", name="Stainless_steel_pipe", amount=40},{type="item", name="Circuit_board", amount=30},{type="item", name="HV_transformer", amount=8},}}
+makeRecipe{name="Refractory_furnace",ingredients={{type="item", name="Refractory_brick", amount=20},}}
+makeRecipe{name="Requester_chest",ingredients={{type="item", name="Computer", amount=2},{type="item", name="Titanium_chest", amount=1},{type="item", name="Sensor", amount=1},}}
+makeRecipe{name="Roboport",ingredients={{type="item", name="Copper_wire", amount=50},{type="item", name="Large_Li-ion_battery", amount=4},{type="item", name="Factory_frame", amount=1},{type="item", name="Inserter_express", amount=2},{type="item", name="Sensor", amount=20},}}
+makeRecipe{name="Rolling_machine",ingredients={{type="item", name="Steel_bearing", amount=8},{type="item", name="Transport_belt_normal", amount=2},{type="item", name="Basic_electric_motor", amount=8},{type="item", name="Steel_billet", amount=8},{type="item", name="Transformer", amount=2},}}
+makeRecipe{name="Rolling_machine_basic",ingredients={{type="item", name="Rolling_machine_crude", amount=1},{type="item", name="Basic_electric_motor", amount=2},{type="item", name="Transformer", amount=1},{type="item", name="Transport_belt_basic", amount=2},}}
+makeRecipe{name="Rolling_machine_crude",ingredients={{type="item", name="Furnace", amount=1},{type="item", name="Iron_billet", amount=4},}}
+makeRecipe{name="Rolling_machine_mk2",ingredients={{type="item", name="Transport_belt_fast", amount=2},{type="item", name="Rolling_machine", amount=1},{type="item", name="LV_electric_motor", amount=8},}}
+makeRecipe{name="Rotary_kiln",ingredients={{type="item", name="Refractory_brick", amount=40},{type="item", name="Steel_riveted_plate", amount=60},{type="item", name="Basic_electric_motor", amount=10},{type="item", name="Steel_gear", amount=20},}}
+makeRecipe{name="Small_gearbox",ingredients={{type="item", name="Steel_bearing", amount=8},{type="item", name="Steel_gear", amount=8},{type="item", name="Steel_plate", amount=8},{type="item", name="Steel_rod", amount=1},}}
+makeRecipe{name="Solar_array",ingredients={{type="item", name="Aluminium_rod", amount=20},{type="item", name="Solar_panel", amount=16},{type="item", name="Aluminium_plate", amount=5},}}
+makeRecipe{name="Solar_array_mk2",ingredients={{type="item", name="Aluminium_rod", amount=20},{type="item", name="Solar_panel_mk2", amount=16},{type="item", name="Aluminium_plate", amount=5},{type="item", name="LV_electric_motor", amount=1},}}
+makeRecipe{name="Splitter",ingredients={{type="item", name="Iron_plate", amount=4},{type="item", name="Transport_belt_normal", amount=2},{type="item", name="Basic_electric_motor", amount=1},}}
+makeRecipe{name="Splitter_basic",ingredients={{type="item", name="Transport_belt_basic", amount=2},{type="item", name="Copper_plate", amount=1},}}
+makeRecipe{name="Splitter_crude",ingredients={{type="item", name="Plank", amount=1},{type="item", name="Transport_belt_crude", amount=2},}}
+makeRecipe{name="Splitter_fast",ingredients={{type="item", name="Steel_riveted_plate", amount=4},{type="item", name="Basic_electronics_board", amount=2},{type="item", name="Transport_belt_fast", amount=2},{type="item", name="Basic_electric_motor", amount=2},}}
+makeRecipe{name="Stainless_steel_tank_2x2",ingredients={{type="item", name="Stainless_steel_plate", amount=60},{type="item", name="Stainless_steel_pipe", amount=4},}}
+makeRecipe{name="Stainless_steel_tank_4x4",ingredients={{type="item", name="Stainless_steel_tank_2x2", amount=4},}}
+makeRecipe{name="Steam_engine_generator",ingredients={{type="item", name="Iron_transmission_chain", amount=2},{type="item", name="Iron_piston", amount=3},{type="item", name="Iron_engine_block", amount=3},{type="item", name="Basic_electric_motor", amount=8},{type="item", name="Transformer", amount=4},}}
+makeRecipe{name="Steam_tubine",ingredients={{type="item", name="Basic_electric_motor", amount=30},{type="item", name="Steel_plate", amount=80},{type="item", name="Steel_bearing", amount=20},}}
+makeRecipe{name="Steel_chest",ingredients={{type="item", name="Steel_bearing", amount=4},{type="item", name="Steel_riveted_plate", amount=24},{type="item", name="Steel_rod", amount=2},}}
+makeRecipe{name="Steel_dense_pipe",ingredients={{type="item", name="Steel_riveted_dense_plate", amount=2},}}
+makeRecipe{name="Steel_dense_underground_pipe",ingredients={{type="item", name="Steel_dense_pipe", amount=24},}}
+makeRecipe{name="Steel_pipe",ingredients={{type="item", name="Steel_riveted_plate", amount=2},}}
+makeRecipe{name="Steel_rivet",ingredients={{type="item", name="Steel_wire", amount=1},}}
+makeRecipe{name="Steel_riveted_dense_plate",ingredients={{type="item", name="Steel_dense_plate", amount=1},{type="item", name="Steel_rivet", amount=16},}}
+makeRecipe{name="Steel_riveted_plate",ingredients={{type="item", name="Steel_plate", amount=1},{type="item", name="Steel_rivet", amount=8},}}
+makeRecipe{name="Steel_tank_2x2",ingredients={{type="item", name="Nickel_plate", amount=10},{type="item", name="Steel_riveted_plate", amount=40},{type="item", name="Steel_pipe", amount=4},}}
+makeRecipe{name="Steel_tank_4x4",ingredients={{type="item", name="Steel_tank_2x2", amount=4},}}
+makeRecipe{name="Steel_tools",ingredients={{type="item", name="Stick", amount=1},{type="item", name="Steel_rod", amount=1},}}
+makeRecipe{name="Steel_underground_pipe",ingredients={{type="item", name="Steel_pipe", amount=24},}}
+makeRecipe{name="Stick",ingredients={{type="item", name="Raw_wood", amount=1},}}
+makeRecipe{name="Stirling_engine",ingredients={{type="item", name="Iron_engine_block", amount=1},{type="item", name="Iron_piston", amount=2},{type="item", name="Furnace", amount=1},{type="item", name="Iron_transmission_chain", amount=1},}}
+makeRecipe{name="Inserter_crude",ingredients={{type="item", name="Stirling_engine", amount=1},{type="item", name="Iron_rod", amount=4},{type="item", name="Iron_plate", amount=4},}}
+makeRecipe{name="Stirling_miner",ingredients={{type="item", name="Stirling_engine", amount=1},{type="item", name="Drill_frame_basic", amount=1},{type="item", name="Iron_drill_bit", amount=3},}}
+makeRecipe{name="Stirling_offshore_pump",ingredients={{type="item", name="Stirling_engine", amount=1},{type="item", name="Iron_piston", amount=4},{type="item", name="Copper_pipe", amount=4},}}
+makeRecipe{name="Stone_gear",ingredients={{type="item", name="Quarried_stone", amount=1},}}
+makeRecipe{name="Stone_tools",ingredients={{type="item", name="Stick", amount=1},{type="item", name="Quarried_stone", amount=1},}}
+makeRecipe{name="Storage_chest",ingredients={{type="item", name="Computer", amount=2},{type="item", name="Titanium_chest", amount=1},{type="item", name="Sensor", amount=1},}}
+makeRecipe{name="Tinned_copper_wire",ingredients={{type="item", name="Copper_wire", amount=1},{type="item", name="Tin_foil", amount=1},}}
+makeRecipe{name="Track",ingredients={{type="item", name="Gravel", amount=66},{type="item", name="Iron_rail", amount=2},{type="item", name="Plank", amount=6},}}
+makeRecipe{name="Trading_post",ingredients={{type="item", name="Copper_wire", amount=20},{type="item", name="Wooden_framework", amount=30},{type="item", name="Brick", amount=30},}}
+makeRecipe{name="Train_stop",ingredients={{type="item", name="Iron_rod", amount=10},{type="item", name="Wooden_board", amount=4},{type="item", name="Plank", amount=10},}}
+makeRecipe{name="Transformer",ingredients={{type="item", name="Transformer_core", amount=1},{type="item", name="Copper_wire", amount=8},}}
+makeRecipe{name="Transformer_core",ingredients={{type="item", name="Iron_billet", amount=1},}}
+makeRecipe{name="Transformer_core",ingredients={{type="item", name="Steel_billet", amount=1},}}
+makeRecipe{name="Transmission_pole",ingredients={{type="item", name="Steel_wire", amount=12},{type="item", name="Steel_rod", amount=4},{type="item", name="Transformer", amount=1},}}
+makeRecipe{name="Transmission_pole_mk2",ingredients={{type="item", name="Steel_wire", amount=8},{type="item", name="Transmission_pole", amount=1},{type="item", name="HV_transformer", amount=1},}}
+makeRecipe{name="Transport_belt_normal",ingredients={{type="item", name="Iron_transmission_chain", amount=4},{type="item", name="Iron_riveted_plate", amount=6},{type="item", name="Iron_rod", amount=2},{type="item", name="Basic_electric_motor", amount=1},}}
+makeRecipe{name="Transport_belt_basic",ingredients={{type="item", name="Transport_belt_crude", amount=1},{type="item", name="Copper_plate", amount=4},{type="item", name="Copper_transmission_chain", amount=2},}}
+makeRecipe{name="Transport_belt_basic_under_a",ingredients={{type="item", name="Transport_belt_basic", amount=9},{type="item", name="Wooden_framework", amount=5},}}
+makeRecipe{name="Transport_belt_crude",ingredients={{type="item", name="Stone_gear", amount=4},{type="item", name="Stick", amount=12},{type="item", name="Raw_wood", amount=4},}}
+makeRecipe{name="Transport_belt_crude_under_a",ingredients={{type="item", name="Transport_belt_crude", amount=6},{type="item", name="Wooden_framework", amount=2},}}
+makeRecipe{name="Transport_belt_express_under_a",ingredients={{type="item", name="Transport_belt_express", amount=21},{type="item", name="Concrete_block", amount=21},}}
+makeRecipe{name="Transport_belt_fast_under_a",ingredients={{type="item", name="Transport_belt_fast", amount=15},{type="item", name="Concrete_block", amount=15},}}
+makeRecipe{name="Transport_belt_improved_express_under_a",ingredients={{type="item", name="Transport_belt_improved_express", amount=24},{type="item", name="Concrete_block", amount=24},}}
+makeRecipe{name="Transport_belt_normal_under_a",ingredients={{type="item", name="Transport_belt_normal", amount=12},{type="item", name="Wooden_framework", amount=8},}}
+makeRecipe{name="Transport_belt_improved_fast_under_a",ingredients={{type="item", name="Transport_belt_improved_fast", amount=18},{type="item", name="Concrete_block", amount=18},}}
+makeRecipe{name="Wooden_board",ingredients={{type="item", name="Plank", amount=2},}}
+makeRecipe{name="Wooden_box",ingredients={{type="item", name="Stick", amount=30},}}
+makeRecipe{name="Wooden_chest",ingredients={{type="item", name="Plank", amount=12},{type="item", name="Nail", amount=24},{type="item", name="Wooden_framework", amount=1},}}
+makeRecipe{name="Wooden_framework",ingredients={{type="item", name="Nail", amount=36},{type="item", name="Plank", amount=12},}}
+makeRecipe{name="Wooden_tank_2x2",ingredients={{type="item", name="Iron_plate", amount=4},{type="item", name="Wooden_framework", amount=6},{type="item", name="Plank", amount=24},}}
+makeRecipe{name="Wooden_tank_4x4",ingredients={{type="item", name="Wooden_tank_2x2", amount=4},{type="item", name="Iron_plate", amount=8},}}
+makeRecipe{name="Workshop",ingredients={{type="item", name="Transformer", amount=10},{type="item", name="Wooden_framework", amount=30},{type="item", name="Inserter_normal", amount=6},{type="item", name="Brick", amount=20},}}
+makeRecipe{name="Crossbow",ingredients={{type="item", name="Plank", amount=1},{type="item", name="Iron_billet", amount=1},{type="item", name="Iron_wire", amount=1},}}
 
 
 
