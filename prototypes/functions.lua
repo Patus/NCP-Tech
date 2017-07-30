@@ -38,7 +38,7 @@ function makeItem(a)
 	local flags=a.flags or { "goes-to-main-inventory" }
 	local subgroup=a.subgroup or "notsubgoup"
 	local order=a.order or "a-b-c"
-	local stack_size=a.stack_size or 10
+	local stack_size=a.stack_size or 20
 	local place_result=a.place_result or nil
 	
 	data:extend({
