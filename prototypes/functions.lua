@@ -365,6 +365,96 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 
 end 
 
+
+--(name,icon,hardness,mining_time,result,max_health,result_inventory_size,source_inventory_size,fluidIn,fluidOut,fast_replaceable_group,crafting_categories,crafting_speed,energy_usage)
+function createElectric_furnace(name,mrk)
+	makeAssemblingmachine (name.."_Mrk"..mrk,"Electric_furnace",0.2,0.5,"Electric_furnace",250,1,1,1,1,"Electric_furnace",{"Electric_furnace"},1,"1.6MW")
+end
+function createRotary_kiln(name,mrk)
+	makeAssemblingmachine (name.."_Mrk"..mrk,"Rotary_kiln",0.2,0.5,"Rotary_kiln",250,1,1,2,2,"Rotary_kiln",{"Rotary_kiln"},1,"2MW")
+end
+function createOre_washing(name,mrk)
+	makeAssemblingmachine (name.."_Mrk"..mrk,"Ore_washing",0.2,0.5,"Ore_washing",250,1,1,1,1,"Ore_washing",{"Ore_washing"},1,"0.1MW")
+end
+function createChemical_plant(name,mrk)
+	makeAssemblingmachine ("Chemical_plant","Chemical_plant",0.2,0.5,"Chemical_plant",250,1,1,4,4,"Chemical_plant",{"Chemical_plant"},1,"0.7MW")
+end
+function createElectrolyzer(name,mrk)
+	makeAssemblingmachine ("Electrolyzer","Electrolyzer",0.2,0.5,"Electrolyzer",250,1,1,2,2,"Electrolyzer",{"Electrolyzer"},1,"1.25MW")
+end
+function createChemical_furnace(name,mrk)
+	makeAssemblingmachine ("Chemical_furnace","Chemical_furnace",0.2,0.5,"Chemical_furnace",250,1,1,2,2,"Chemical_furnace",{"Chemical_furnace"},1,"1.1MW")
+end
+function createPump(name,mrk)
+	makeAssemblingmachine ("Pump","Pump",0.2,0.5,"Pump",250,1,1,2,2,"Pump",{"Pump"},1,"30kW")
+end
+function createBlast_furnace(name,mrk)
+	makeAssemblingmachine ("Blast_furnace","Blast_furnace",0.2,0.5,"Blast_furnace",250,1,1,2,2,"Blast_furnace",{"Blast_furnace"},1,"0.35MW")
+end
+function createNuclear_fuel_processing_plant(name,mrk)
+	makeAssemblingmachine ("Nuclear_fuel_processing_plant","Nuclear_fuel_processing_plant",0.2,0.5,"Nuclear_fuel_processing_plant",250,1,1,4,4,"Nuclear_fuel_processing_plant",{"Nuclear_fuel_processing_plant"},1,"0.6MW")
+end
+function createRolling_machine(name,mrk)
+	makeAssemblingmachine ("Rolling_machine","Rolling_machine",0.2,0.5,"Rolling_machine",250,1,1,2,2,"Rolling_machine",{"Rolling_machine"},1,"0.15MW")
+end
+function createMixer(name,mrk)
+	makeAssemblingmachine ("Mixer","Mixer",0.2,0.5,"Mixer",250,1,1,2,2,"Mixer",{"Mixer"},1,"0.15MW")
+end
+function createCracking_plant(name,mrk)
+	makeAssemblingmachine ("Cracking_plant","Cracking_plant",0.2,0.5,"Cracking_plant",250,1,1,4,4,"Cracking_plant",{"Cracking_plant"},1,"2.9MW")
+end
+function createDistillation(name,mrk)
+	makeAssemblingmachine ("Distillation","Distillation",0.2,0.5,"Distillation",250,1,1,4,4,"Distillation",{"Distillation"},1,"4.0MW")
+end
+function createCompressor(name,mrk)
+	makeAssemblingmachine ("Compressor","Compressor",0.2,0.5,"Compressor",250,1,1,2,2,"Compressor",{"Compressor"},1,"0.1MW")
+end
+function createElectric_arc_furnace(name,mrk)
+	makeAssemblingmachine ("Electric_arc_furnace","Electric_arc_furnace",0.2,0.5,"Electric_arc_furnace",250,1,1,2,2,"Electric_arc_furnace",{"Electric_arc_furnace"},1,"1.68MW")
+end
+function createVacuum_oxygen_decarburization(name,mrk)
+	makeAssemblingmachine ("Vacuum_oxygen_decarburization","Vacuum_oxygen_decarburization",0.2,0.5,"Vacuum_oxygen_decarburization",250,1,1,2,2,"Vacuum_oxygen_decarburization",{"Vacuum_oxygen_decarburization"},1,"0.15MW")
+end
+function createCryogenic_distillation_plant(name,mrk)
+	makeAssemblingmachine ("Cryogenic_distillation_plant","Cryogenic_distillation_plant",0.2,0.5,"Cryogenic_distillation_plant",250,1,1,2,2,"Cryogenic_distillation_plant",{"Cryogenic_distillation_plant"},1,"0.3MW")
+end
+function createFarm(name,mrk)
+	makeAssemblingmachine ("Farm","Farm",0.2,0.5,"Farm",250,1,1,2,2,"Farm",{"Farm"},1,"0.1MW")
+end
+function createElectronics_assembly_machine(name,mrk)
+	makeAssemblingmachine ("Electronics_assembly_machine","Electronics_assembly_machine",0.2,0.5,"Electronics_assembly_machine",250,1,1,2,2,"Electronics_assembly_machine",{"Electronics_assembly_machine"},1,"0.15MW")
+end
+function createFlash_furnace(name,mrk)
+	makeAssemblingmachine ("Flash_furnace","Flash_furnace",0.2,0.5,"Flash_furnace",250,1,1,2,2,"Flash_furnace",{"Flash_furnace"},1,"0.8MW")
+end
+function createTSL_furnace(name,mrk)
+	makeAssemblingmachine ("TSL_furnace","TSL_furnace",0.2,0.5,"TSL_furnace",250,1,1,2,2,"TSL_furnace",{"TSL_furnace"},1,"0.15MW")
+end
+function createExtruder(name,mrk)
+	makeAssemblingmachine ("Extruder","Extruder",0.2,0.5,"Extruder",250,1,1,2,2,"Extruder",{"Extruder"},1,"0.05MW")
+end
+function createMilling_machine(name,mrk)
+	makeAssemblingmachine ("Milling_machine","Milling_machine",0.2,0.5,"Milling_machine",250,1,1,2,2,"Milling_machine",{"Milling_machine"},1,"0.15MW")
+end
+function createFurnace(name,mrk)
+	makeAssemblingmachine ("Furnace","Furnace",0.2,0.5,"Furnace",250,1,1,2,2,"Furnace",{"Furnace"},1,"1.2MW")
+end
+function createAssembling_machine(name,mrk)
+	makeAssemblingmachine ("Assembling_machine","Assembling_machine",0.2,0.5,"Assembling_machine",250,1,1,2,2,"Assembling_machine",{"Assembling_machine"},2,"0.15MW")
+end
+function createRefinery(name,mrk)
+	makeAssemblingmachine ("Refinery","Refinery",0.2,0.5,"Refinery",250,1,1,4,4,"Refinery",{"Refinery"},1,"0.05MW")
+end
+function createElectric_flash_furnace(name,mrk)
+	makeAssemblingmachine ("Electric_flash_furnace","Electric_flash_furnace",0.2,0.5,"Electric_flash_furnace",250,1,1,2,2,"Electric_flash_furnace",{"Electric_flash_furnace"},1,"1.2MW")
+end
+function createElectric_chemical_furnace(name,mrk)
+	makeAssemblingmachine ("Electric_chemical_furnace","Electric_chemical_furnace",0.2,0.5,"Electric_chemical_furnace",250,1,1,2,2,"Electric_chemical_furnace",{"Electric_chemical_furnace"},1,"0.0015MW")
+end
+function createBank(name,mrk)
+	makeAssemblingmachine ("Bank","Bank",0.2,0.5,"Bank",250,1,1,0,0,"Bank",{"Bank"},1,"0.02MW")
+end
+
 function makeTech(name,icon,effects,prerequisites)
 	data:extend(
 	{
