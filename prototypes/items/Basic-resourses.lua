@@ -1851,352 +1851,7 @@ data:extend({
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  --Machiness
- 
- 
-  {
-    type= "item",
-    name= "Rotary_kiln",
-    icon = "__NCP-Tech__/graphics/item/Rotary_kiln.png",
-	flags = {"goes-to-quickbar"},
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Rotary_kiln",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Bank",
-    icon = "__NCP-Tech__/graphics/item/Bank.png",
-	flags = {"goes-to-quickbar"},
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Bank",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Market",
-    icon = "__NCP-Tech__/graphics/item/Market.png",
-	flags = {"goes-to-quickbar"},
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Market",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Filter",
-    icon = "__NCP-Tech__/graphics/item/Filter.png",
-	flags = {"goes-to-quickbar"},
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Filter",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Electric_furnace",
-    icon = "__NCP-Tech__/graphics/item/Electric_furnace.png",
-	flags = {"goes-to-quickbar"},
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Electric_furnace",
-    stack_size= 50,
-  },
-  --[[{
-    type= "item",
-    name= "Miningdrill_1",
-    icon = "__base__/graphics/icons/electric-mining-drill.png",
-	flags = {"goes-to-quickbar"},
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Miningdrill_1",
-    stack_size= 50,
-  },]]--
-  {
-    type= "item",
-    name= "Crusher",
-    icon = "__NCP-Tech__/graphics/item/Crusher.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Crusher",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Ore_washing",
-    icon = "__NCP-Tech__/graphics/item/Ore_washing.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Ore_washing",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Chemical_plant",
-    icon = "__NCP-Tech__/graphics/item/Chemical_plant.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Chemical_plant",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Electrolyzer",
-    icon = "__NCP-Tech__/graphics/item/Electrolyzer.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Electrolyzer",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Chemical_furnace",
-    icon = "__NCP-Tech__/graphics/item/Chemical_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Chemical_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Pump",
-    icon = "__NCP-Tech__/graphics/item/Pump.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Pump",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Blast_furnace",
-    icon = "__NCP-Tech__/graphics/item/Blast_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Blast_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Nuclear_fuel_processing_plant",
-    icon = "__NCP-Tech__/graphics/item/Nuclear_fuel_processing_plant.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Nuclear_fuel_processing_plant",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Rolling_machine",
-    icon = "__NCP-Tech__/graphics/item/Rolling_machine.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Rolling_machine",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Mixer",
-    icon = "__NCP-Tech__/graphics/item/Mixer.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Mixer",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Cracking_plant",
-    icon = "__NCP-Tech__/graphics/item/Cracking_plant.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Cracking_plant",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Distillation",
-    icon = "__NCP-Tech__/graphics/item/Distillation.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Distillation",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Compressor",
-    icon = "__NCP-Tech__/graphics/item/Compressor.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Compressor",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Electric_arc_furnace",
-    icon = "__NCP-Tech__/graphics/item/Electric_arc_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Electric_arc_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Vacuum_oxygen_decarburization",
-    icon = "__NCP-Tech__/graphics/item/Vacuum_oxygen_decarburization.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Vacuum_oxygen_decarburization",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Grinding_mill",
-    icon = "__NCP-Tech__/graphics/item/Grinding_mill.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Grinding_mill",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Cryogenic_distillation_plant",
-    icon = "__NCP-Tech__/graphics/item/Cryogenic_distillation_plant.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Cryogenic_distillation_plant",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Farm",
-    icon = "__NCP-Tech__/graphics/item/Farm.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Farm",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Electronics_assembly_machine",
-    icon = "__NCP-Tech__/graphics/item/Electronics_assembly_machine.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Electronics_assembly_machine",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Flash_furnace",
-    icon = "__NCP-Tech__/graphics/item/Flash_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Flash_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "TSL_furnace",
-    icon = "__NCP-Tech__/graphics/item/TSL_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "TSL_furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Extruder",
-    icon = "__NCP-Tech__/graphics/item/Extruder.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Extruder",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Milling_machine",
-    icon = "__NCP-Tech__/graphics/item/Milling_machine.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Milling_machine",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Furnace",
-    icon = "__NCP-Tech__/graphics/item/Furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Furnace",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Assembling_machine",
-    icon = "__NCP-Tech__/graphics/item/Assembling_machine.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Assembling_machine",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Refinery",
-    icon = "__NCP-Tech__/graphics/item/Refinery.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Refinery",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Electric_flash_furnace",
-    icon = "__NCP-Tech__/graphics/item/Electric_flash_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "Machines",
-    order= "a-b-c",
-	place_result = "Electric_flash_furnace",
-    stack_size= 50,
-  },
+
   {
     type= "item",
     name= "Lead_scrap",
@@ -2367,16 +2022,7 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  {
-    type= "item",
-    name= "Electric_chemical_furnace",
-    icon = "__NCP-Tech__/graphics/item/Electric_chemical_furnace.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-	place_result= "Electric_chemical_furnace",
-  },
+  
   {
     type= "item",
     name= "Titanium_dioxide_pellet",
@@ -2506,140 +2152,400 @@ data:extend({
   
   })
 
-  
-  
+
+ 
   -- place items
-  makeItem{name="Assembling_machine_t1",place_result="Assembling_machine_t1"}
+makeItem{name="Assembling_machine_t1",place_result="Assembling_machine_t1"}
+Assembling_machine("Assembling_machine_t1")
+
 makeItem{name="Assembling_machine_t2",place_result="Assembling_machine_t2"}
+Assembling_machine("Assembling_machine_t2")
+
 makeItem{name="Assembling_machine_t3",place_result="Assembling_machine_t3"}
+Assembling_machine("Assembling_machine_t3")
+
 makeItem{name="Assembling_machine_t4",place_result="Assembling_machine_t4"}
+Assembling_machine("Assembling_machine_t4")
+
 makeItem{name="Assembling_machine_t5",place_result="Assembling_machine_t5"}
+Assembling_machine("Assembling_machine_t5")
+
 makeItem{name="Blast_furnace_t1",place_result="Blast_furnace_t1"}
+Boiler("Blast_furnace_t1")
+
 makeItem{name="Boiler_t1",place_result="Boiler_t1"}
+Boiler("Boiler_t1")
+
 makeItem{name="Boiler_t2",place_result="Boiler_t2"}
+Boiler("Boiler_t2")
+
 makeItem{name="Boiler_t3",place_result="Boiler_t3"}
+Boiler("Boiler_t3")
+
 makeItem{name="Boiler_t4",place_result="Boiler_t4"}
+Boiler("Boiler_t4")
+
 makeItem{name="Chemical_plant_t1",place_result="Chemical_plant_t1"}
+Chemical_plant("Chemical_plant_t1")
+
 makeItem{name="Chemical_plant_t2",place_result="Chemical_plant_t2"}
+Chemical_plant("Chemical_plant_t2")
+
 makeItem{name="Chemical_plant_t3",place_result="Chemical_plant_t3"}
+Chemical_plant("Chemical_plant_t3")
+
 makeItem{name="Compressor_t1",place_result="Compressor_t1"}
+Compressor("Compressor_t1")
+
 makeItem{name="Compressor_t2",place_result="Compressor_t2"}
+Compressor("Compressor_t2")
+
 makeItem{name="Cracking_plant_t1",place_result="Cracking_plant_t1"}
+Cracking_plant("Cracking_plant_t1")
+
 makeItem{name="Cracking_plant_t2",place_result="Cracking_plant_t2"}
+Cracking_plant("Cracking_plant_t2")
+
 makeItem{name="Crusher_t1",place_result="Crusher_t1"}
+Crusher("Crusher_t1")
+
 makeItem{name="Crusher_t2",place_result="Crusher_t2"}
+Crusher("Crusher_t2")
+
 makeItem{name="Crusher_t3",place_result="Crusher_t3"}
+Crusher("Crusher_t3")
+
 makeItem{name="Cryogenic_distillation_plant_t1",place_result="Cryogenic_distillation_plant_t1"}
+Cryogenic_distillation_plant("Cryogenic_distillation_plant_t1")
+
 makeItem{name="Currency_exchange_t1",place_result="Currency_exchange_t1"}
+Bank("Currency_exchange_t1")
+
 makeItem{name="Distillery_t1",place_result="Distillery_t1"}
+Distillation("Distillery_t1")
+
 makeItem{name="Distillery_t2",place_result="Distillery_t2"}
+Distillation("Distillery_t2")
+
 makeItem{name="Distillery_t3",place_result="Distillery_t3"}
+Distillation("Distillery_t3")
+
 makeItem{name="Distribution_pole_t1",place_result="Distribution_pole_t1"}
+Electric_pole("Distribution_pole_t1")
+
 makeItem{name="Distribution_pole_t2",place_result="Distribution_pole_t2"}
+Electric_pole("Distribution_pole_t2")
+
 makeItem{name="Distribution_pole_t3",place_result="Distribution_pole_t3"}
+Electric_pole("Distribution_pole_t3")
+
 makeItem{name="Electric_arc_furnace_t1",place_result="Electric_arc_furnace_t1"}
+Electric_arc_furnace("Electric_arc_furnace_t1")
+
 makeItem{name="Electric_chemical_furnace_t1",place_result="Electric_chemical_furnace_t1"}
+Electric_chemical_furnace("Electric_chemical_furnace_t1")
+
 makeItem{name="Electric_chemical_furnace_t2",place_result="Electric_chemical_furnace_t2"}
+Electric_chemical_furnace("Electric_chemical_furnace_t2")
+
 makeItem{name="Electric_chemical_furnace_t3",place_result="Electric_chemical_furnace_t3"}
+Electric_chemical_furnace("Electric_chemical_furnace_t3")
+
 makeItem{name="Electric_flash_furnace_t1",place_result="Electric_flash_furnace_t1"}
+Electric_flash_furnace("Electric_flash_furnace_t1")
+
 makeItem{name="Electric_flash_furnace_t2",place_result="Electric_flash_furnace_t2"}
+Electric_flash_furnace("Electric_flash_furnace_t2")
+
 makeItem{name="Electric_furnace_t1",place_result="Electric_furnace_t1"}
+Electric_furnace("Electric_furnace_t1")
+
 makeItem{name="Electric_furnace_t2",place_result="Electric_furnace_t2"}
+Electric_furnace("Electric_furnace_t2")
+
 makeItem{name="Electric_furnace_t3",place_result="Electric_furnace_t3"}
+Electric_furnace("Electric_furnace_t3")
+
 makeItem{name="Electric_pole_t1",place_result="Electric_pole_t1"}
+Electric_pole("Electric_pole_t1")
+
 makeItem{name="Electrolyzer_t1",place_result="Electrolyzer_t1"}
+Electrolyzer("Electrolyzer_t1")
+
 makeItem{name="Electrolyzer_t2",place_result="Electrolyzer_t2"}
+Electrolyzer("Electrolyzer_t2")
+
 makeItem{name="Electrolyzer_t3",place_result="Electrolyzer_t3"}
+Electrolyzer("Electrolyzer_t3")
+
 makeItem{name="Electronics_assembling_macine_t1",place_result="Electronics_assembling_macine_t1"}
+Electronics_assembly_machine("Electronics_assembling_macine_t1")
+
 makeItem{name="Extruder_t1",place_result="Extruder_t1"}
+Extruder("Extruder_t1")
+
 makeItem{name="Extruder_t2",place_result="Extruder_t2"}
+Extruder("Extruder_t2")
+
 makeItem{name="Extruder_t3",place_result="Extruder_t3"}
+Extruder("Extruder_t3")
+
 makeItem{name="Extruder_t4",place_result="Extruder_t4"}
+Extruder("Extruder_t4")
+
 makeItem{name="Farm_t1",place_result="Farm_t1"}
+Farm("Farm_t1")
+
 makeItem{name="Farm_t2",place_result="Farm_t2"}
+Farm("Farm_t2")
+
 makeItem{name="Flash_furnace_t1",place_result="Flash_furnace_t1"}
+Flash_furnace("Flash_furnace_t1")
+
 makeItem{name="Furnace_t1",place_result="Furnace_t1"}
+Furnace("Furnace_t1")
+
 makeItem{name="Furnace_t3",place_result="Furnace_t3"}
+Furnace("Furnace_t3")
+
 makeItem{name="Grinding_mill_t1",place_result="Grinding_mill_t1"}
+GrindingMill("Grinding_mill_t1")
+
 makeItem{name="Grinding_mill_t2",place_result="Grinding_mill_t2"}
+GrindingMill("Grinding_mill_t2")
+
 makeItem{name="Grinding_mill_t3",place_result="Grinding_mill_t3"}
+GrindingMill("Grinding_mill_t3")
+
 makeItem{name="Inserter_filter_stack_t3",place_result="Inserter_filter_stack_t3"}
+InserterFilterStack("Inserter_filter_stack_t3")
+
 makeItem{name="Inserter_filter_t3",place_result="Inserter_filter_t3"}
+InserterFilter("Inserter_filter_t3")
+
 makeItem{name="Inserter_filter_t4",place_result="Inserter_filter_t4"}
+InserterFilter("Inserter_filter_t4")
+
 makeItem{name="Inserter_long_stack_t3",place_result="Inserter_long_stack_t3"}
+InserterLongStack("Inserter_long_stack_t3")
+
 makeItem{name="Inserter_long_stack_t4",place_result="Inserter_long_stack_t4"}
+InserterLongStack("Inserter_long_stack_t4")
+
 makeItem{name="Inserter_long_t2",place_result="Inserter_long_t2"}
+InserterLong("Inserter_long_t2")
+
 makeItem{name="Inserter_long_t3",place_result="Inserter_long_t3"}
+InserterLong("Inserter_long_t3")
+
 makeItem{name="Inserter_long_t4",place_result="Inserter_long_t4"}
+InserterLong("Inserter_long_t4")
+
 makeItem{name="Inserter_stack_t3",place_result="Inserter_stack_t3"}
+InserterStack("Inserter_stack_t3")
+
 makeItem{name="Inserter_stack_t4",place_result="Inserter_stack_t4"}
+InserterStack("Inserter_stack_t4")
+
 makeItem{name="Inserter_t1",place_result="Inserter_t1"}
+InserterNormal("Inserter_t1")
+
 makeItem{name="Inserter_t2",place_result="Inserter_t2"}
+InserterNormal("Inserter_t2")
+
 makeItem{name="Inserter_t3",place_result="Inserter_t3"}
+InserterNormal("Inserter_t3")
+
 makeItem{name="Inserter_t4",place_result="Inserter_t4"}
+InserterNormal("Inserter_t4")
+
 makeItem{name="Inserter_t5",place_result="Inserter_t5"}
+InserterNormal("Inserter_t5")
+
 makeItem{name="Laboratory_t1",place_result="Laboratory_t1"}
+Laboratory("Laboratory_t1")
+
 makeItem{name="Locomotive_t1",place_result="Locomotive_t1"}
+Locomotive("Locomotive_t1")
+
 makeItem{name="Locomotive_t2",place_result="Locomotive_t2"}
+Locomotive("Locomotive_t2")
+
 makeItem{name="Mining_drill_t1",place_result="Mining_drill_t1"}
+MiningDrill("Mining_drill_t1")
+
 makeItem{name="Mining_drill_t2",place_result="Mining_drill_t2"}
+MiningDrill("Mining_drill_t2")
+
 makeItem{name="Mining_drill_t3",place_result="Mining_drill_t3"}
+MiningDrill("Mining_drill_t3")
+
 makeItem{name="Nuclear_fuel_processing_plant_t1",place_result="Nuclear_fuel_processing_plant_t1"}
+Nuclear_fuel_processing_plant("Nuclear_fuel_processing_plant_t1")
+
 makeItem{name="Offshore_pump_t1",place_result="Offshore_pump_t1"}
+OffsorePump("Offshore_pump_t1")
+
 makeItem{name="Offshore_pump_t2",place_result="Offshore_pump_t2"}
+OffsorePump("Offshore_pump_t2")
+
 makeItem{name="Offshore_pump_t3",place_result="Offshore_pump_t3"}
+OffsorePump("Offshore_pump_t3")
+
 makeItem{name="Ore_washer_t1",place_result="Ore_washer_t1"}
+Ore_washing("Ore_washer_t1")
+
 makeItem{name="Ore_washer_t2",place_result="Ore_washer_t2"}
+Ore_washing("Ore_washer_t2")
+
 makeItem{name="Ore_washer_t3",place_result="Ore_washer_t3"}
-makeItem{name="Pump_jack_t1",place_result="Pump_jack_t1"}
+Ore_washing("Ore_washer_t3")
+
+--makeItem{name="Pump_jack_t1",place_result="Pump_jack_t1"}
+--PumpJack("Pump_jack_t1")
+
 makeItem{name="Pump_t1",place_result="Pump_t1"}
+Pump("Pump_t1")
+
 makeItem{name="Pump_t2",place_result="Pump_t2"}
+Pump("Pump_t2")
+
 makeItem{name="Pump_t3",place_result="Pump_t3"}
+Pump("Pump_t3")
+
 makeItem{name="Pumpjack_t1",place_result="Pumpjack_t1"}
+PumpJack("Pumpjack_t1")
+
 makeItem{name="Pumpjack_t2",place_result="Pumpjack_t2"}
+PumpJack("Pumpjack_t2")
+
 makeItem{name="Pumpjack_t3",place_result="Pumpjack_t3"}
+PumpJack("Pumpjack_t3")
+
 makeItem{name="Radar_t1",place_result="Radar_t1"}
+Radar("Radar_t1")
+
 makeItem{name="Refinery_t1",place_result="Refinery_t1"}
+Refinery("Refinery_t1")
+
 makeItem{name="Refinery_t2",place_result="Refinery_t2"}
+Refinery("Refinery_t2")
+
 makeItem{name="Roboport_t1",place_result="Roboport_t1"}
+Roboport("Roboport_t1")
+
 makeItem{name="Rolling_machine_t1",place_result="Rolling_machine_t1"}
+Rolling_machine("Rolling_machine_t1")
+
 makeItem{name="Rolling_machine_t2",place_result="Rolling_machine_t2"}
+Rolling_machine("Rolling_machine_t2")
+
 makeItem{name="Rolling_machine_t3",place_result="Rolling_machine_t3"}
+Rolling_machine("Rolling_machine_t3")
+
 makeItem{name="Rolling_machine_t4",place_result="Rolling_machine_t4"}
+Rolling_machine("Rolling_machine_t4")
+
 makeItem{name="Solar_array_t1",place_result="Solar_array_t1"}
+SolarArray("Solar_array_t1")
+
 makeItem{name="Solar_array_t2",place_result="Solar_array_t2"}
+SolarArray("Solar_array_t2")
+
 makeItem{name="Splitter_t1",place_result="Splitter_t1"}
+Splitter("Splitter_t1")
+
 makeItem{name="Splitter_t2",place_result="Splitter_t2"}
+Splitter("Splitter_t2")
+
 makeItem{name="Splitter_t3",place_result="Splitter_t3"}
+Splitter("Splitter_t3")
+
 makeItem{name="Splitter_t4",place_result="Splitter_t4"}
+Splitter("Splitter_t4")
+
 makeItem{name="Splitter_t5",place_result="Splitter_t5"}
+Splitter("Splitter_t5")
+
 makeItem{name="Splitter_t6",place_result="Splitter_t6"}
+Splitter("Splitter_t6")
+
 makeItem{name="Splitter_t7",place_result="Splitter_t7"}
+Splitter("Splitter_t7")
+
 makeItem{name="Steam_engine_generator_t1",place_result="Steam_engine_generator_t1"}
+SteamEngine("Steam_engine_generator_t1")
+
 makeItem{name="Steam_tubine_t1",place_result="Steam_tubine_t1"}
+SteamTurbine("Steam_tubine_t1")
+
 makeItem{name="Steam_turbine_t2",place_result="Steam_turbine_t2"}
+SteamTurbine("Steam_turbine_t2")
+
 makeItem{name="Steam_turbine_t3",place_result="Steam_turbine_t3"}
+SteamTurbine("Steam_turbine_t3")
+
 makeItem{name="Stirling_miner_t1",place_result="Stirling_miner_t1"}
+MiningDrill("Stirling_miner_t1")
+
 makeItem{name="Stirling_offshore_pump_t1",place_result="Stirling_offshore_pump_t1"}
+OffsorePump("Stirling_offshore_pump_t1")
+
 makeItem{name="Substation_t1",place_result="Substation_t1"}
+Electric_pole("Substation_t1")
+
 makeItem{name="Transmission_pole_t1",place_result="Transmission_pole_t1"}
+Electric_pole("Transmission_pole_t1")
+
 makeItem{name="Transmission_pole_t2",place_result="Transmission_pole_t2"}
+Electric_pole("Transmission_pole_t2")
+
 makeItem{name="Transmission_pole_t3",place_result="Transmission_pole_t3"}
+Electric_pole("Transmission_pole_t3")
+
 makeItem{name="Transport_belt_t1",place_result="Transport_belt_t1"}
+TransportBelt("Transport_belt_t1")
+
 makeItem{name="Transport_belt_t2",place_result="Transport_belt_t2"}
+TransportBelt("Transport_belt_t2")
+
 makeItem{name="Transport_belt_t3",place_result="Transport_belt_t3"}
+TransportBelt("Transport_belt_t3")
+
 makeItem{name="Transport_belt_t4",place_result="Transport_belt_t4"}
+TransportBelt("Transport_belt_t4")
+
 makeItem{name="Transport_belt_t5",place_result="Transport_belt_t5"}
+TransportBelt("Transport_belt_t5")
+
 makeItem{name="Transport_belt_t6",place_result="Transport_belt_t6"}
+TransportBelt("Transport_belt_t6")
+
 makeItem{name="Transport_belt_t7",place_result="Transport_belt_t7"}
+TransportBelt("Transport_belt_t7")
+
 makeItem{name="Transport_belt_underground_t1",place_result="Transport_belt_underground_t1"}
+TransportBeltUnderground("Transport_belt_underground_t1")
+
 makeItem{name="Transport_belt_underground_t2",place_result="Transport_belt_underground_t2"}
+TransportBeltUnderground("Transport_belt_underground_t2")
+
 makeItem{name="Transport_belt_underground_t3",place_result="Transport_belt_underground_t3"}
+TransportBeltUnderground("Transport_belt_underground_t3")
+
 makeItem{name="Transport_belt_underground_t4",place_result="Transport_belt_underground_t4"}
+TransportBeltUnderground("Transport_belt_underground_t4")
+
 makeItem{name="Transport_belt_underground_t5",place_result="Transport_belt_underground_t5"}
+TransportBeltUnderground("Transport_belt_underground_t5")
+
 makeItem{name="Transport_belt_underground_t6",place_result="Transport_belt_underground_t6"}
+TransportBeltUnderground("Transport_belt_underground_t6")
+
 makeItem{name="Transport_belt_underground_t7",place_result="Transport_belt_underground_t7"}
-  
+TransportBeltUnderground("Transport_belt_underground_t7")
+
+  --]]
   
   -- items
 makeItem{name="ABS-plastic_pellets"}
@@ -2824,7 +2730,6 @@ makeItem{name="Hydraulic_piston"}
 makeItem{name="Hydraulic_pump"}
 makeItem{name="Hydraulic_pump_hull"}
 makeItem{name="Hydraulic_transmission"}
-makeItem{name="Hydrogen_chloride"}
 makeItem{name="Inconel_ball"}
 makeItem{name="Inconel_bearing"}
 makeItem{name="Inconel_bearing_hull"}
@@ -3126,7 +3031,7 @@ makeItem{name="Zirconium_billet"}
 makeItem{name="Zirconium_rod"}
 makeItem{name="Zirconium_sponge"}
 makeItem{name="Zirconium_tetrachloride"}
-makeItem{name="Zirconium_tube"} 
+makeItem{name="Zirconium_tube"}
   
   
   

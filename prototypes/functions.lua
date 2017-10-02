@@ -367,6 +367,7 @@ end
 
 
 function createAssemblingMachine (a)
+	
 	local name=a.name
 	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
 	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
@@ -493,16 +494,28 @@ end
 
 function createFurnace (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {mining_time = 1, result = name}
+	local max_health=a.max_health or 350
+	local crafting_categories=a.crafting_categories or {"smelting"}
+	local crafting_speed=a.crafting_speed or 2
+	local energy_usage=a.energy_usage or "180kW"
+	local source_inventory_size=a.source_inventory_size or 1
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "furnace"
+	
+	
+
 	data:extend({
 	
 	
 	{
     type = "furnace",
-    name = "electric-furnace",
-    icon = "__base__/graphics/icons/electric-furnace.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = "electric-furnace"},
-    max_health = 350,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     light = {intensity = 1, size = 10},
@@ -521,11 +534,11 @@ function createFurnace (a)
       module_info_icon_shift = {0, 0.8}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"smelting"},
-    result_inventory_size = 1,
-    crafting_speed = 2,
-    energy_usage = "180kW",
-    source_inventory_size = 1,
+    crafting_categories = crafting_categories,
+    result_inventory_size = result_inventory_size,
+    crafting_speed = crafting_speed,
+    energy_usage = energy_usage,
+    source_inventory_size = source_inventory_size,
     energy_source =
     {
       type = "electric",
@@ -653,22 +666,27 @@ function createFurnace (a)
         }
       }
     },
-    fast_replaceable_group = "furnace"
+    fast_replaceable_group = fast_replaceable_group
   },
 })
 end
 
 function createTrasportBelt (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.3, result = name}
+	local max_health=a.max_health or 150
+	
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "transport-belt",
-    name = "transport-belt",
-    icon = "__base__/graphics/icons/transport-belt.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.3, result = "transport-belt"},
-    max_health = 150,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     resistances =
     {
@@ -729,15 +747,23 @@ end
 
 function createBoiler (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.3, result = "transport-belt"}
+	local max_health=a.max_health or 200
+	local target_temperature=a.target_temperature or 165
+	local energy_consumption=a.energy_consumption or "1.8MW"
+	local burning_cooldown=a.burning_cooldown or 20
+	
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "boiler",
-    name = "boiler",
-    icon = "__base__/graphics/icons/boiler.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "boiler"},
-    max_health = 200,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     mode = "output-to-separate-pipe",
@@ -758,7 +784,7 @@ function createBoiler (a)
     },
     collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
     selection_box = {{-1.5, -1}, {1.5, 1}},
-    target_temperature = 165,
+    target_temperature = target_temperature,
     fluid_box =
     {
       base_area = 1,
@@ -794,7 +820,7 @@ function createBoiler (a)
       name = "steam",
       amount = 0.0
     },
-    energy_consumption = "1.8MW",
+    energy_consumption = energy_consumption,
     energy_source =
     {
       type = "burner",
@@ -1179,25 +1205,31 @@ function createBoiler (a)
         }
       }
     },
-    burning_cooldown = 20
+    burning_cooldown = burning_cooldown
   },
 	})
 end
 function createContainer (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
+	local max_health=a.max_health or 100
+	local inventory_size=a.inventory_size or 16
+	local fast_replaceable_group=a.fast_replaceable_group or "container"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "container",
-    name = "wooden-chest",
-    icon = "__base__/graphics/icons/wooden-chest.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "wooden-chest"},
-    max_health = 100,
+    max_health = max_health,
     corpse = "small-remnants",
     collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
-    fast_replaceable_group = "container",
+    fast_replaceable_group = fast_replaceable_group,
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    inventory_size = 16,
+    inventory_size = inventory_size,
     open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
     vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
@@ -1230,21 +1262,27 @@ function createContainer (a)
 end
 function createElectricPole (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 100
+	local maximum_wire_distance=a.maximum_wire_distance or 7.5
+	local supply_area_distance=a.supply_area_distance or 2.5
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "electric-pole",
-    name = "small-electric-pole",
-    icon = "__base__/graphics/icons/small-electric-pole.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "small-electric-pole"},
-    max_health = 100,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.4}, {0.4, 0.4}},
     drawing_box = {{-0.5, -2.6}, {0.5, 0.5}},
-    maximum_wire_distance = 7.5,
-    supply_area_distance = 2.5,
+    maximum_wire_distance = maximum_wire_distance,
+    supply_area_distance = supply_area_distance,
     vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
     track_coverage_during_build_by_moving = true,
     pictures =
@@ -1327,20 +1365,30 @@ function createElectricPole (a)
 end
 function createGenerator (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
+	local max_health=a.max_health or 400
+	local effectivity=a.effectivity or 1
+	local fluid_usage_per_tick=a.fluid_usage_per_tick or 0.5
+	local maximum_temperature=a.maximum_temperature or 165
+	local source_inventory_size=a.source_inventory_size or 1
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "steam-engine"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "generator",
-    name = "steam-engine",
-    icon = "__base__/graphics/icons/steam-engine.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 1, result = "steam-engine"},
-    max_health = 400,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    effectivity = 1,
-    fluid_usage_per_tick = 0.5,
-    maximum_temperature = 165,
+    effectivity = effectivity,
+    fluid_usage_per_tick = fluid_usage_per_tick,
+    maximum_temperature = maximum_temperature,
     resistances =
     {
       {
@@ -1352,7 +1400,7 @@ function createGenerator (a)
         percent = 30
       }
     },
-    fast_replaceable_group = "steam-engine",
+    fast_replaceable_group = fast_replaceable_group,
     collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
     selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
     fluid_box =
@@ -1492,17 +1540,23 @@ function createGenerator (a)
 end
 function createOffshorePump (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
+	local max_health=a.max_health or 150
+	local fluid=a.fluid or "water"
+	local pumping_speed=a.pumping_speed or 20
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "offshore-pump",
-    name = "offshore-pump",
-    icon = "__base__/graphics/icons/offshore-pump.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
-    minable = {mining_time = 1, result = "offshore-pump"},
-    max_health = 150,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
-    fluid = "water",
+    fluid = fluid,
     resistances =
     {
       {
@@ -1526,7 +1580,7 @@ function createOffshorePump (a)
         { position = {0, 1} },
       },
     },
-    pumping_speed = 20,
+    pumping_speed = pumping_speed,
     tile_width = 1,
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
@@ -1632,15 +1686,24 @@ function createOffshorePump (a)
 end
 function createInserter (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 150
+	local energy_per_movement=a.energy_per_movement or 5000
+	local energy_per_rotation=a.energy_per_rotation or 5000
+	local extension_speed=a.extension_speed or 0.03
+	local rotation_speed=a.rotation_speed or 0.014
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "inserter",
-    name = "inserter",
-    icon = "__base__/graphics/icons/inserter.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "inserter"},
-    max_health = 150,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     allow_custom_vectors = false,
     resistances =
@@ -1652,16 +1715,16 @@ function createInserter (a)
     },
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.4, -0.35}, {0.4, 0.45}},
-    energy_per_movement = 5000,
-    energy_per_rotation = 5000,
+    energy_per_movement = energy_per_movement,
+    energy_per_rotation = energy_per_rotation,
     energy_source =
     {
       type = "electric",
       usage_priority = "secondary-input",
       drain = "0.4kW"
     },
-    extension_speed = 0.03,
-    rotation_speed = 0.014,
+    extension_speed = extension_speed,
+    rotation_speed = rotation_speed,
     fast_replaceable_group = "inserter",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
@@ -1805,15 +1868,21 @@ function createInserter (a)
 end
 function createRadar (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 250
+	local energy_per_sector=a.energy_per_sector or "10MJ"
+	
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "radar",
-    name = "radar",
-    icon = "__base__/graphics/icons/radar.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "radar"},
-    max_health = 250,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     resistances =
     {
@@ -1828,7 +1897,7 @@ function createRadar (a)
     },
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    energy_per_sector = "10MJ",
+    energy_per_sector = energy_per_sector,
     max_distance_of_sector_revealed = 14,
     max_distance_of_nearby_sector_revealed = 3,
     energy_per_nearby_scan = "250kJ",
@@ -1865,15 +1934,25 @@ function createRadar (a)
 end
 function createLamp (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 100
+	local energy_usage_per_tick=a.energy_usage_per_tick or "5KW"
+	local energy_per_rotation=a.energy_per_rotation or 5000
+	local extension_speed=a.extension_speed or 0.03
+	local rotation_speed=a.rotation_speed or 0.014
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "lamp",
-    name = "small-lamp",
-    icon = "__base__/graphics/icons/small-lamp.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "small-lamp"},
-    max_health = 100,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     collision_box = {{-0.15, -0.15}, {0.15, 0.15}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
@@ -1883,7 +1962,7 @@ function createLamp (a)
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage_per_tick = "5KW",
+    energy_usage_per_tick = energy_usage_per_tick,
     light = {intensity = 0.9, size = 40, color = {r=1.0, g=1.0, b=1.0}},
     light_when_colored = {intensity = 1, size = 6, color = {r=1.0, g=1.0, b=1.0}},
     glow_size = 6,
@@ -1941,14 +2020,23 @@ function createLamp (a)
 end
 function createMiningDrill (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
+	local max_health=a.max_health or 300
+	local mining_speed=a.mining_speed or 0.5
+	local energy_usage=a.energy_usage or "90kW"
+	local mining_power=a.mining_power or 3
+	local resource_searching_radius=a.resource_searching_radius or 2.49
+	
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "mining-drill",
-    name = "electric-mining-drill",
-    icon = "__base__/graphics/icons/electric-mining-drill.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "electric-mining-drill"},
-    max_health = 300,
+    minable = minable,
+    max_health = max_health,
     resource_categories = {"basic-solid"},
     corpse = "big-remnants",
     collision_box = {{ -1.4, -1.4}, {1.4, 1.4}},
@@ -2792,9 +2880,9 @@ function createMiningDrill (a)
       emissions = 0.15 / 1.5,
       usage_priority = "secondary-input"
     },
-    energy_usage = "90kW",
-    mining_power = 3,
-    resource_searching_radius = 2.49,
+    energy_usage = energy_usage,
+    mining_power = mining_power,
+    resource_searching_radius = resource_searching_radius,
     vector_to_place_result = {0, -1.85},
     module_specification =
     {
@@ -2829,16 +2917,23 @@ function createMiningDrill (a)
 end
 function createTrasportBeltUnderground (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 150
+	local max_distance=a.max_distance or 5
+	local speed=a.speed or 0.03125
+
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "underground-belt",
-    name = "underground-belt",
-    icon = "__base__/graphics/icons/underground-belt.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "underground-belt"},
-    max_health = 150,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
-    max_distance = 5,
+    max_distance = max_distance,
     underground_sprite =
     {
       filename = "__core__/graphics/arrows/underground-lines.png",
@@ -2871,7 +2966,7 @@ function createTrasportBeltUnderground (a)
     starting_bottom = basic_belt_starting_bottom,
     starting_side = basic_belt_starting_side,
     fast_replaceable_group = "underground-belt",
-    speed = 0.03125,
+    speed = speed,
     structure =
     {
       direction_in =
@@ -2926,14 +3021,20 @@ function createTrasportBeltUnderground (a)
 end
 function createSplitter (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 170
+	local speed=a.speed or 0.03125
+	
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "splitter",
-    name = "splitter",
-    icon = "__base__/graphics/icons/splitter.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "splitter"},
-    max_health = 170,
+    minable = minable,
+    max_health = max_health,
     corpse = "medium-remnants",
     resistances =
     {
@@ -2957,7 +3058,7 @@ function createSplitter (a)
     starting_side = basic_belt_starting_side,
     ending_patch = ending_patch_prototype,
     fast_replaceable_group = "splitter",
-    speed = 0.03125,
+    speed = speed,
     structure =
     {
       north =
@@ -3052,14 +3153,20 @@ function createSplitter (a)
 end
 function createSolarPanel (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 200
+	local production=a.production or "60kW"
+
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "solar-panel",
-    name = "solar-panel",
-    icon = "__base__/graphics/icons/solar-panel.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "solar-panel"},
-    max_health = 200,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
@@ -3076,30 +3183,39 @@ function createSolarPanel (a)
       height = 96
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    production = "60kW"  
+    production = production  
   },
 	
 	})
 end
 function createLocomotive (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 2, result = name}
+	local max_health=a.max_health or 1000
+	local weight=a.weight or 2000
+	local max_speed=a.max_speed or 1.2
+	local max_power=a.max_power or "600kW"
+	local rail_category=a.rail_category or "regular"
+
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "locomotive",
-    name = "locomotive",
-    icon = "__base__/graphics/icons/diesel-locomotive.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {mining_time = 1, result = "locomotive"},
+    minable = minable,
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
-    max_health = 1000,
+    max_health = max_health,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-0.6, -2.6}, {0.6, 2.6}},
     selection_box = {{-1, -3}, {1, 3}},
     drawing_box = {{-1, -4}, {1, 3}},
-    weight = 2000,
-    max_speed = 1.2,
-    max_power = "600kW",
+    weight = weight,
+    max_speed = max_speed,
+    max_power = max_power,
     reversing_power_modifier = 0.6,
     braking_force = 10,
     friction_force = 0.50,
@@ -3330,7 +3446,7 @@ function createLocomotive (a)
       }
     },
     wheels = standard_train_wheels,
-    rail_category = "regular",
+    rail_category = rail_category,
     stop_trigger =
     {
       -- left side
@@ -3389,23 +3505,32 @@ function createLocomotive (a)
 end
 function createCargoWagon (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 2, result = name}
+	local max_health=a.max_health or 600
+	local weight=a.weight or 1000
+	local max_speed=a.max_speed or 1.5
+	local inventory_size=a.inventory_size or 40
+	local rail_category=a.rail_category or "regular"
+
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "cargo-wagon",
-    name = "cargo-wagon",
-    icon = "__base__/graphics/icons/cargo-wagon.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
-    inventory_size = 40,
-    minable = {mining_time = 1, result = "cargo-wagon"},
+    inventory_size = inventory_size,
+    minable = minable,
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
-    max_health = 600,
+    max_health = max_health,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-0.6, -2.4}, {0.6, 2.4}},
     selection_box = {{-1, -2.703125}, {1, 3.296875}},
     vertical_selection_shift = -0.796875,
-    weight = 1000,
-    max_speed = 1.5,
+    weight = weight,
+    max_speed = max_speed,
     braking_force = 3,
     friction_force = 0.50,
     air_resistance = 0.01,
@@ -3764,7 +3889,7 @@ function createCargoWagon (a)
       }
     },
     wheels = standard_train_wheels,
-    rail_category = "regular",
+    rail_category = rail_category,
     drive_over_tie_trigger = drive_over_tie(),
     tie_distance = 50,
     working_sound =
@@ -3787,16 +3912,26 @@ function createCargoWagon (a)
 end
 function createFluidWagon (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 2, result = name}
+	local max_health=a.max_health or 600
+	local weight=a.weight or 3000
+	local max_speed=a.max_speed or 1.5
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "fluid-wagon",
-    name = "fluid-wagon",
-    icon = "__base__/graphics/icons/fluid-wagon.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {mining_time = 1, result = "fluid-wagon"},
+    minable = minable,
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
-    max_health = 600,
-    total_capacity = 25000 * 3,
+    max_health = max_health,
+    total_capacity = total_capacity,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-0.6, -2.4}, {0.6, 2.4}},
@@ -3851,8 +3986,8 @@ function createFluidWagon (a)
       flags = {"icon"}
     },
     vertical_selection_shift = -0.796875,
-    weight = 3000,
-    max_speed = 1.5,
+    weight = weight,
+    max_speed = max_speed,
     braking_force = 3,
     friction_force = 0.50,
     air_resistance = 0.01,
@@ -3980,7 +4115,7 @@ function createFluidWagon (a)
       }
     },
     wheels = standard_train_wheels,
-    rail_category = "regular",
+    rail_category = rail_category,
     drive_over_tie_trigger = drive_over_tie(),
     tie_distance = 50,
     working_sound =
@@ -4001,11 +4136,12 @@ function createFluidWagon (a)
 end
 function createTrainStop (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
 	data:extend({
 	{
     type = "train-stop",
-    name = "train-stop",
-    icon = "__base__/graphics/icons/train-stop.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
     minable = {mining_time = 1, result = "train-stop"},
     max_health = 250,
@@ -4475,7 +4611,7 @@ function createRailSignal (a)
 	data:extend({
 	{
     type = "rail-signal",
-    name = "rail-signal",
+    name = name,
     icon = "__base__/graphics/icons/rail-signal.png",
     flags = {"placeable-neutral", "player-creation", "building-direction-8-way", "filter-directions", "fast-replaceable-no-build-while-moving"},
     fast_replaceable_group = "rail-signal",
@@ -4646,7 +4782,7 @@ function createRailChainSignal (a)
 	data:extend({
 	{
     type = "rail-chain-signal",
-    name = "rail-chain-signal",
+    name = name,
     icon = "__base__/graphics/icons/rail-chain-signal.png",
     flags = {"placeable-neutral", "player-creation", "building-direction-8-way", "filter-directions", "fast-replaceable-no-build-while-moving"},
     fast_replaceable_group = "rail-signal",
@@ -4716,14 +4852,20 @@ function createRailChainSignal (a)
 end
 function createLab (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
+	local max_health=a.max_health or 150
+	local energy_usage=a.energy_usage or "60kW"
+
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "lab",
-    name = "lab",
-    icon = "__base__/graphics/icons/lab.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation"},
-    minable = {mining_time = 1, result = "lab"},
-    max_health = 150,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
@@ -4762,7 +4904,7 @@ function createLab (a)
       type = "electric",
       usage_priority = "secondary-input"
     },
-    energy_usage = "60kW",
+    energy_usage = energy_usage,
     researching_speed = 1,
     inputs =
     {
@@ -4787,19 +4929,29 @@ function createLab (a)
 end
 function createLogisticRobot (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.1, mining_time = 0.1, result = name}
+	local max_health=a.max_health or 100
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "logistic-robot",
-    name = "logistic-robot",
-    icon = "__base__/graphics/icons/logistic-robot.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = 0.1, mining_time = 0.1, result = "logistic-robot"},
+    minable = minable,
     resistances = { { type = "fire", percent = 85 } },
-    max_health = 100,
+    max_health = max_health,
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
-    max_payload_size = 1,
-    speed = 0.05,
+    max_payload_size = max_payload_size,
+    speed = speed,
     transfer_distance = 0.5,
     max_energy = "1.5MJ",
     energy_per_tick = "0.05kJ",
@@ -4908,19 +5060,29 @@ function createLogisticRobot (a)
 end
 function createConstructionRobot (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.1, mining_time = 0.1, result = name}
+	local max_health=a.max_health or 100
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.06
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "construction-robot",
-    name = "construction-robot",
-    icon = "__base__/graphics/icons/construction-robot.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = {hardness = 0.1, mining_time = 0.1, result = "construction-robot"},
+    minable = minable,
     resistances = { { type = "fire", percent = 85 } },
-    max_health = 100,
+    max_health = max_health,
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{-0.5, -1.5}, {0.5, -0.5}},
     max_payload_size = 1,
-    speed = 0.06,
+    speed = speed,
     transfer_distance = 0.5,
     max_energy = "1.5MJ",
     energy_per_tick = "0.05kJ",
@@ -5085,14 +5247,24 @@ function createConstructionRobot (a)
 end
 function createLogisticContainer (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 350
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "logistic-container",
-    name = "logistic-chest-passive-provider",
-    icon = "__base__/graphics/icons/logistic-chest-passive-provider.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "logistic-chest-passive-provider"},
-    max_health = 350,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
@@ -5142,14 +5314,24 @@ function createLogisticContainer (a)
 end
 function createRoboport (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 500
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "roboport",
-    name = "roboport",
-    icon = "__base__/graphics/icons/roboport.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "roboport"},
-    max_health = 500,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
@@ -5294,14 +5476,24 @@ function createRoboport (a)
 end
 function createStorageTank (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 500
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "storage-tank",
-    name = "storage-tank",
-    icon = "__base__/graphics/icons/storage-tank.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-player", "player-creation"},
-    minable = {mining_time = 1.5, result = "storage-tank"},
-    max_health = 500,
+    minable = minable,
+    max_health = max_health,
     corpse = "medium-remnants",
     collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
@@ -5455,14 +5647,24 @@ function createStorageTank (a)
 end
 function createPump (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 180
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "pump",
-    name = "pump",
-    icon = "__base__/graphics/icons/pump.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "pump"},
-    max_health = 180,
+    minable = minable,
+    max_health = max_health,
     fast_replaceable_group = "pipe",
     corpse = "small-remnants",
     collision_box = {{-0.29, -0.79}, {0.29, 0.79}},
@@ -5785,14 +5987,24 @@ function createPump (a)
 end
 function createAccumulator (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 150
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "accumulator",
-    name = "accumulator",
-    icon = "__base__/graphics/icons/accumulator.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "accumulator"},
-    max_health = 150,
+    minable = minable,
+    max_health = max_health,
     corpse = "medium-remnants",
     collision_box = {{-0.9, -0.9}, {0.9, 0.9}},
     selection_box = {{-1, -1}, {1, 1}},
@@ -5872,13 +6084,23 @@ function createAccumulator (a)
 end
 function createPowerSwitch (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 150
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "power-switch",
-    name = "power-switch",
-    icon = "__base__/graphics/icons/power-switch.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 1, result = "power-switch"},
+    minable = minable,
     max_health = 200,
     corpse = "medium-remnants",
 
@@ -5985,14 +6207,24 @@ function createPowerSwitch (a)
 end
 function createReactor (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 400
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "reactor",
-    name = "nuclear-reactor",
-    icon  = "__base__/graphics/icons/nuclear-reactor.png",
+    name = name,
+    icon  = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1.5, result = "nuclear-reactor"},
-    max_health = 500,
+    minable = minable,
+    max_health = max_health,
     corpse = "big-remnants",
     consumption = "40MW",
     burner =
@@ -6214,14 +6446,24 @@ function createReactor (a)
 end
 function createHeatPipe (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 200
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
     type = "heat-pipe",
-    name = "heat-pipe",
-    icon = "__base__/graphics/icons/heat-pipe.png",
+    name = name,
+    icon = icon,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "heat-pipe"},
-    max_health = 200,
+    minable = minable,
+    max_health = max_health,
     corpse = "small-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     resistances =
@@ -6325,6 +6567,16 @@ end
 
 function createEEEXXXXPPP (a)
 	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
+	local max_health=a.max_health or 200
+	local max_payload_size=a.max_payload_size or 1
+	local speed=a.speed or 0.05
+	local total_capacity=a.total_capacity or 25000 * 3
+	local rail_category=a.rail_category or "regular"
+	local result_inventory_size=a.result_inventory_size or 1
+	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
+	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	
@@ -6346,163 +6598,160 @@ end
 
 --(name,icon,hardness,mining_time,result,max_health,result_inventory_size,source_inventory_size,fluidIn,fluidOut,fast_replaceable_group,crafting_categories,crafting_speed,energy_usage)
 function Electric_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Electric_furnace"}}
 end
 function Rotary_kiln(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Rotary_kiln"}}
 end
 function Ore_washing(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Ore_washing"}}
 end
 function Chemical_plant(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Chemical_plant"}}
 end
 function Electrolyzer(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Electrolyzer"}}
 end
 function Chemical_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Chemical_furnace","Electric_chemical_furnace"}}
 end
 function Pump(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Pump"}}
 end
 function Blast_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Blast_furnace"}}
 end
 function Nuclear_fuel_processing_plant(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Nuclear_fuel_processing_plant"}}
 end
 function Rolling_machine(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Rolling_machine"}}
 end
 function Mixer(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Mixer"}}
 end
 function Cracking_plant(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Cracking_plant"}}
 end
 function Distillation(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Distillation","Dry_distillation"}}
 end
 function Compressor(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Compressor"}}
 end
 function Electric_arc_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Electric_arc_furnace"}}
 end
 function Vacuum_oxygen_decarburization(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Vacuum_oxygen_decarburization"}}
 end
 function Cryogenic_distillation_plant(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Cryogenic_distillation_plant"}}
 end
 function Farm(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Farm"}}
 end
 function Electronics_assembly_machine(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Electronics_assembly_machine"}}
 end
 function Flash_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Flash_furnace"}}
 end
 function TSL_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"TSL_furnace"}}
 end
 function Extruder(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Extruder"}}
 end
 function Milling_machine(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Milling_machine"}}
 end
 function Furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Furnace","Alloy_furnace"}}
 end
 function Assembling_machine(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Assembling_machine","Shifter","Silicon_crucible","Lithium_extractor","Anode_furnace","Silicon_furnace","Filter"}}
 end
 function Refinery(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Refinery"}}
 end
 function Electric_flash_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Electric_flash_furnace"}}
 end
 function Electric_chemical_furnace(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Chemical_furnace"}}
 end
 function Bank(name,mrk)
-	createAssemblingMachine{name=name}
+	createAssemblingMachine{name=name,crafting_categories={"Bank","Market"}}
 end
 function GrindingMill(name,mrk)
-	
+	createFurnace{name=name,crafting_categories={"Grinding_mill"}}
 end
 function Crusher(name,mrk)
-	
+	createFurnace{name=name,crafting_categories={"Crusher"}}
 end
 function Boiler(name,mrk)
-	
+	createBoiler{name=name}
 end
 function Electric_pole(name,mrk)
-	
+	createElectricPole{name=name}
 end
 function InserterNormal(name,mrk)
-	
+	createInserter{name=name}
 end
 function InserterLong(name,mrk)
-	
+	createInserter{name=name}
 end
 function InserterStack(name,mrk)
-	
+	createInserter{name=name}
 end
 function InserterLongStack(name,mrk)
-	
+	createInserter{name=name}
 end
 function InserterFilter(name,mrk)
-	
+	createInserter{name=name}
 end
 function InserterFilterStack(name,mrk)
-	
+	createInserter{name=name}
 end
 function Laboratory(name,mrk)
-	
+	createLab{name=name}
 end
 function Locomotive(name,mrk)
-	
+	createLocomotive{name=name}
 end
 function MiningDrill(name,mrk)
-	
-end
-function NuclearFuelProcessingPlant(name,mrk)
-	
+	createMiningDrill{name=name}
 end
 function OffsorePump(name,mrk)
-	
+	createOffshorePump{name=name}
 end
 function PumpJack(name,mrk)
-	
+	createFurnace{name=name}
 end
 function Radar(name,mrk)
-	
+	createRadar{name=name}
 end
 function Roboport(name,mrk)
-	
+	createRoboport{name=name}
 end
 function SolarArray(name,mrk)
-	
+	createSolarPanel{name=name}
 end
 function Splitter(name,mrk)
-	
+	createSplitter{name=name}
 end
 function SteamEngine(name,mrk)
-	
+	createGenerator{name=name}
 end
 function SteamTurbine(name,mrk)
-	
+	createGenerator{name=name}
 end
 function TransportBelt(name,mrk)
-	
+	createTrasportBelt{name=name}
 end
 function TransportBeltUnderground(name,mrk)
-	
+	createTrasportBeltUnderground{name=name}
 end
 
 

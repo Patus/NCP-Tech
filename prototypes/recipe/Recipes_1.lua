@@ -1364,7 +1364,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="fluid", name="Hydrogen_chloride", amount=1},
       {type="fluid", name="Ethylene", amount=1},
     },
     results = 
@@ -1387,7 +1387,7 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="Hydrogen_chlorine", amount=1, probability = 0.9},
+      {type="fluid", name="Hydrogen_chloride", amount=1, probability = 0.9},
       {type="item", name="Plastic_pellets", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/item/Plastic_pellets.png",
@@ -1505,7 +1505,7 @@ data:extend(
     ingredients =
     {
       {type="fluid", name="Glycerol", amount=1},
-      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="fluid", name="Hydrogen_chloride", amount=1},
     },
       result = "Resin",
   },
@@ -1690,7 +1690,7 @@ data:extend(
   },
   {
     type = "recipe",
-    name = "Hydrogen_chlorine",
+    name = "Hydrogen_chloride",
     category = "Chemical_plant",
     energy_required = 2,
     enabled = "true",
@@ -1701,9 +1701,9 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="fluid", name="Hydrogen_chloride", amount=1},
     },
-	icon = "__NCP-Tech__/graphics/fluid/Hydrogen_chlorine.png",
+	icon = "__NCP-Tech__/graphics/fluid/Hydrogen_chloride.png",
 	subgroup = "NCP_fluids",
   },
   {
@@ -1714,7 +1714,7 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      {type="fluid", name="Hydrogen_chlorine", amount=1},
+      {type="fluid", name="Hydrogen_chloride", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
     results = 
@@ -2163,25 +2163,7 @@ data:extend(
   
   --Concrete
   
-  {
-	type = "recipe",
-	name = "Cement_clinker",
-	category = "Rotary_kiln",
-	energy_required = 30,
-	enabled = "true",
-	ingredients =
-	{
-		{type="item", name="Calcium_carbonate", amount=7},
-		{type="item", name="Silt", amount=3},
-	},
-	results = 
-	{
-		{type="item", name="Cement_clinker", amount=1, probability = 1},
-
-	},
-	icon = "__NCP-Tech__/graphics/item/Cement_clinker.png",
-	subgroup = "Recourses",
-  },
+  
  {
     type = "recipe",
     name = "Cement",
@@ -2546,24 +2528,7 @@ data:extend(
 	subgroup = "Recourses",
   },
   
-  {
-    type = "recipe",
-    name = "Calcium_oxide",
-	category = "Rotary_kiln",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {type="item", name="Calcium_carbonate", amount=1},
-    },
-    results = 
-    {
-      {type="item", name="Calcium_oxide", amount=1, probability = 1},
-
-    },
-	icon = "__NCP-Tech__/graphics/item/Calcium_oxide.png",
-	subgroup = "Recourses",
-  },
+  
   {
     type = "recipe",
     name = "Sodium_carbonate",
@@ -2890,394 +2855,8 @@ data:extend(
   
   
   
-  
-  
-  --Machines
 
-  
-  {
-    type = "recipe",
-    name = "Electric_chemical_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Electric_chemical_furnace",
-	subgroup = "Machines",
-  },
-  {
-    type = "recipe",
-    name = "Bank",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Bank",
-	subgroup = "Machines",
-  },
-  {
-    type = "recipe",
-    name = "Market",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Market",
-	subgroup = "Machines",
-  },
-  {
-    type = "recipe",
-    name = "Filter",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Filter",
-	subgroup = "Machines",
-  },
-  --[[{
-    type = "recipe",
-    name = "Miningdrill_1",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Miningdrill_1",
-	subgroup = "Machines",
-  },]]--
-  {
-    type = "recipe",
-    name = "Rotary_kiln",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Rotary_kiln",
-	subgroup = "Machines",
-  },
- 
-  {
-    type = "recipe",
-    name = "Crusher",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Crusher",
-  },
-  {
-    type = "recipe",
-    name = "Ore_washing",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Ore_washing",
-  },
-  {
-    type = "recipe",
-    name = "Electric_flash_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Electric_flash_furnace",
-  },
-  {
-    type = "recipe",
-    name = "Chemical_plant",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Chemical_plant",
-  },
-  {
-    type = "recipe",
-    name = "Electrolyzer",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Electrolyzer",
-  },
-  {
-    type = "recipe",
-    name = "Chemical_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Chemical_furnace",
-  },
-  {
-    type = "recipe",
-    name = "Pump",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Pump",
-  },
-  {
-    type = "recipe",
-    name = "Blast_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Blast_furnace",
-  },
-  {
-    type = "recipe",
-    name = "Nuclear_fuel_processing_plant",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Nuclear_fuel_processing_plant",
-  },
-  {
-    type = "recipe",
-    name = "Rolling_machine",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Rolling_machine",
-  },
-  {
-    type = "recipe",
-    name = "Mixer",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Mixer",
-  },
-  {
-    type = "recipe",
-    name = "Cracking_plant",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Cracking_plant",
-  },
-  {
-    type = "recipe",
-    name = "Distillation",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Distillation",
-  },
- 
-  {
-    type = "recipe",
-    name = "Compressor",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Compressor",
-  },
-  {
-    type = "recipe",
-    name = "Electric_arc_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Electric_arc_furnace",
-  },
-  {
-    type = "recipe",
-    name = "Vacuum_oxygen_decarburization",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Vacuum_oxygen_decarburization",
-  },
-  {
-    type = "recipe",
-    name = "Grinding_mill",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Grinding_mill",
-  },
-  {
-    type = "recipe",
-    name = "Cryogenic_distillation_plant",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Cryogenic_distillation_plant",
-  },
-  {
-    type = "recipe",
-    name = "Farm",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Farm",
-  },
-  {
-    type = "recipe",
-    name = "Electronics_assembly_machine",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Electronics_assembly_machine",
-  },
-  {
-    type = "recipe",
-    name = "Flash_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Flash_furnace",
-  },
-  {
-    type = "recipe",
-    name = "TSL_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "TSL_furnace",
-  },
-  {
-    type = "recipe",
-    name = "Extruder",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Extruder",
-  },
-  {
-    type = "recipe",
-    name = "Milling_machine",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Milling_machine",
-  },
-  {
-    type = "recipe",
-    name = "Furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Furnace",
-  },
-  {
-    type = "recipe",
-    name = "Assembling_machine",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Assembling_machine",
-  },
-  {
-    type = "recipe",
-    name = "Refinery",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Refinery",
-  },
-  {
-    type = "recipe",
-    name = "Electric_furnace",
-    energy_required = 0.2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Quarried_stone", 1},
-    },
-    result = "Electric_furnace",
-  },
-  
+
   
   --tree
   {
@@ -4322,27 +3901,7 @@ data:extend(
   --steel
   
   
-  {
-    type = "recipe",
-    name = "Direct_reduced_iron",
-	category = "Rotary_kiln",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {type="item", name="Magnetite_concentrate", amount=2},
-      {type="item", name="Coal_coke", amount=1},
-      {type="item", name="Limestone_crushed", amount=1},
-      {type="fluid", name="Syngas", amount=2},
-    },
-    results = 
-    {
-		{type="item", name="Direct_reduced_iron", amount=1, probability = 1},
-		{type="fluid", name="Water_distilled", amount=1, probability = 1},
-    },
-	icon = "__NCP-Tech__/graphics/item/Direct_reduced_iron.png",
-	subgroup = "Recourses",
-  },
+  
   {
     type = "recipe",
     name = "Steel_billet",
