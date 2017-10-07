@@ -5,7 +5,7 @@
 
 data.raw["generator"]["steam-engine"].fluid_input =
     {
-      name = "Water_dirty",
+      name = "Water",
       amount = 0.0,
       minimum_temperature = 100.0
     },
@@ -88,23 +88,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Gravel.png",
 	subgroup = "Recourses",
   },
-  {
-    type = "recipe",
-    name = "Seeds",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {"Clay_wet", 1},
-    },
-    results = 
-    {
-	  {type="item", name="Wood_seed", amount_min= 1, amount_max= 2, probability = 0.005},
-	  {type="item", name="Cotton_seed", amount_min= 1, amount_max= 2, probability = 0.0005 },
-    },
-	icon = "__NCP-Tech__/graphics/item/Gravel.png",-- virhe
-	subgroup = "Recourses",
-  },
+  
   {
     type = "recipe",
     name = "Sand",
@@ -1650,24 +1634,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluid/Water_distilled.png",
 	subgroup = "NCP_fluids",
   },
-  {
-    type = "recipe",
-    name = "Water",
-    category = "Filter",
-    energy_required = 0.5,
-    enabled = "true",
-    ingredients =
-    {
-      {type="fluid", name="Water_dirty", amount=10},
-    },
-    results = 
-    {
-      {type="fluid", name="Water", amount=10},
-      {type="item", name="Sand", amount=1, probability = 0.5/100},
-    },
-	icon = "__NCP-Tech__/graphics/fluid/Water.png",
-	subgroup = "NCP_fluids",
-  },
+  
   {
     type = "recipe",
     name = "Chlorine",
@@ -2140,7 +2107,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Graphite_rod.png",
 	subgroup = "Recourses",
   },
-  {
+  --[[{
     type = "recipe",
     name = "Silicon_furnace",
     energy_required = 5,
@@ -2159,7 +2126,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Silicon_furnace.png",
 	subgroup = "Recourses",
   },
-  
+  ]]--
   
   --Concrete
   
@@ -3064,63 +3031,9 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluid/Uranium_hexafluoride.png",
 	subgroup = "NCP_fluids",
   },
-  {
-    type = "recipe",
-    name = "Uranium_oxide_powder",
-    category = "Nuclear_fuel_processing_plant",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-      {type="fluid", name="Water_distilled", amount=1},
-      {type="fluid", name="Uranium_hexafluoride", amount=1},
-      {type="fluid", name="Hydrogen", amount=1},
-      {type="fluid", name="Ammonia", amount=1},
-    },
-    results = 
-    {
-      {type="item", name="Uranium_oxide_powder_235", amount=1, probability = 0.01},
-      {type="item", name="Uranium_oxide_powder_238", amount=1, probability = 0.99},
-    },
-	icon = "__NCP-Tech__/graphics/item/Uranium_oxide_powder_235.png",
-	subgroup = "Recourses",
-  },
-  {
-    type = "recipe",
-    name = "Uranium_235_pellet",
-    category = "Compressor",
-    energy_required = 15,
-    enabled = "true",
-    ingredients =
-    {
-      {"Uranium_oxide_powder_235", 25},
-    },
-    result = "Uranium_235_pellet",
-  },
-  {
-    type = "recipe",
-    name = "Uranium_238_pellet",
-    category = "Compressor",
-    energy_required = 15,
-    enabled = "true",
-    ingredients =
-    {
-      {"Uranium_oxide_powder_238", 25},
-    },
-    result = "Uranium_238_pellet",
-  },
-  {
-    type = "recipe",
-    name = "Uranium_235_rod",
-    category = "Compressor",
-    energy_required = 10,
-    enabled = "true",
-    ingredients =
-    {
-      {"Uranium_235_pellet", 10},
-    },
-    result = "Uranium_235_rod",
-  },
+ 
+  
+  
   
   
    
@@ -3756,27 +3669,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Cotton.png",
 	subgroup = "Recourses",
   },
-  {
-    type = "recipe",
-    name = "Wood_farm",
-    category = "Farm",
-    energy_required = 120,
-    enabled = "true",
-    ingredients =
-    {
-      {type="item", name="Fertilizer", amount=9},
-	  {type="item", name="Wood_seed", amount=5},
-      {type="fluid", name="Water", amount=600},
-    },
-    results = 
-    {
-      {type="item", name="raw-wood", amount_min=1, amount_max= 25},
-	  {type="item", name="Wood_seed", amount_min=0, amount_max= 14, probability= 0.8},
-      
-    },
-	icon = "__base__/graphics/icons/raw-wood.png",
-	subgroup = "Recourses",
-  },
+  
   {
     type = "recipe",
     name = "Guncotton",
@@ -4165,23 +4058,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluid/Seed_oil.png",
 	subgroup = "NCP_fluids",
   },
-  {
-    type = "recipe",
-    name = "Seed_oil",
-	category = "Compressor",
-    energy_required = 2,
-    enabled = "true",
-    ingredients =
-    {
-	  {type="item", name="Wood_seed", amount=1},
-    },
-    results = 
-    {
-		{type="fluid", name="Seed_oil", amount=1, probability = 1},
-    },
-	icon = "__NCP-Tech__/graphics/fluid/Seed_oil.png",
-	subgroup = "NCP_fluids",
-  },
+  
   {
     type = "recipe",
     name = "Glycerol",
@@ -4458,7 +4335,7 @@ data:extend(
 	
     },
   },
-  {
+ --[[ {
     type = "recipe",
     name = "op_gen",
     energy_required = 0.1,
@@ -4473,7 +4350,7 @@ data:extend(
 	
     },
   },
-  
+  --]]
   
   
   {

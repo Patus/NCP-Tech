@@ -1211,60 +1211,8 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  {
-    type= "item",
-    name= "Uranium_235_pellet",
-    icon = "__NCP-Tech__/graphics/item/Uranium_235_pellet.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Uranium_235_rod",
-    icon = "__NCP-Tech__/graphics/item/Uranium_235_rod.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Uranium_235_rod_alt",
-    icon = "__NCP-Tech__/graphics/item/Uranium_235_rod_alt.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Uranium_238_pellet",
-    icon = "__NCP-Tech__/graphics/item/Uranium_238_pellet.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Uranium_oxide_powder_235",
-    icon = "__NCP-Tech__/graphics/item/Uranium_oxide_powder_235.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
-  {
-    type= "item",
-    name= "Uranium_oxide_powder_238",
-    icon = "__NCP-Tech__/graphics/item/Uranium_oxide_powder_238.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
+ 
+  
   {
     type= "item",
     name= "Wood",
@@ -1888,15 +1836,7 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  {
-    type= "item",
-    name= "Wood_seed",
-    icon = "__NCP-Tech__/graphics/item/Wood_seed.png",
-    flags= { "goes-to-main-inventory" },
-    subgroup = "ores",
-    order= "a-b-c",
-    stack_size= 50,
-  },
+  
   {
     type= "item",
     name= "Cotton_seed",
@@ -2305,6 +2245,9 @@ Flash_furnace("Flash_furnace_t1")
 makeItem{name="Furnace_t1",place_result="Furnace_t1"}
 Furnace("Furnace_t1")
 
+makeItem{name="Furnace_t2",place_result="Furnace_t2"}
+Furnace("Furnace_t2")
+
 makeItem{name="Furnace_t3",place_result="Furnace_t3"}
 Furnace("Furnace_t3")
 
@@ -2401,8 +2344,8 @@ Ore_washing("Ore_washer_t2")
 makeItem{name="Ore_washer_t3",place_result="Ore_washer_t3"}
 Ore_washing("Ore_washer_t3")
 
---makeItem{name="Pump_jack_t1",place_result="Pump_jack_t1"}
---PumpJack("Pump_jack_t1")
+makeItem{name="Pump_jack_t1",place_result="Pump_jack_t1"}
+PumpJack("Pump_jack_t1")
 
 makeItem{name="Pump_t1",place_result="Pump_t1"}
 Pump("Pump_t1")

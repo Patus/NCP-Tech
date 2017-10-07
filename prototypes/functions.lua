@@ -77,7 +77,10 @@ function makeRecipe(a)
 	if(data.raw["item"][a.name]==nil)then 
 		--makeItem{name=a.name,icon=a.icon,flags=a.flags,subgroup=a.subgroup,order=a.order,stack_size=a.stack,place_result=a.place_result}
 	end
-	
+	local itemType="item"
+	if(a.fluidIcon==true)then
+		itemType="fluid"
+	end
 	
 	local name=a.name
 	local category= a.category or "crafting"
@@ -85,9 +88,10 @@ function makeRecipe(a)
 	local enabled=a.enabled or "true"
 	local ingredients=a.ingredients or {}
 	local results=a.results or {{type="item", name=a.name, amount=1,probability =1}}
-	local icon=a.icon or "__NCP-Tech__/graphics/item/"..a.name..".png" 
+	local icon=a.icon or "__NCP-Tech__/graphics/"..itemType.."/"..a.name..".png" 
 	local subgroup=a.subgroup or "notsubgoup"
 	local itemName=name
+	
 	name=recipeNumber(name)
 	
 	

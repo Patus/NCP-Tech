@@ -102,6 +102,10 @@ data:extend(
   },
   {
     type = "recipe-category",
+    name = "Electronics_assembling_machine"
+  },
+  {
+    type = "recipe-category",
     name = "Anode_furnace"
   },
   {
