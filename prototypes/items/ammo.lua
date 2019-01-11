@@ -8,6 +8,7 @@ data:extend(
     type = "ammo",
     name = "lead_shot",
     icon = "__NCP-Tech__/graphics/item/Lead_shot.png",
+	icon_size = 32,
     flags = {"goes-to-main-inventory"},
     ammo_type =
     {

@@ -87,6 +87,7 @@ data:extend(
     type = "resource",
     name = name,
     icon = "__NCP-Tech__/graphics/item/"..name..".png",
+	icon_size = 32,
     flags = {"placeable-neutral"},
     order="a-b-a",
     minable =
@@ -201,6 +202,7 @@ data:extend(
     type = "resource",
     name = "Brine_pool",
     icon = "__NCP-Tech__/graphics/fluid/Brine.png",
+	icon_size = 32,
     flags = {"placeable-neutral"},
     category = "basic-fluid",
     order="a-b-a",

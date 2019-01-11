@@ -5,35 +5,40 @@ data:extend(
     name = "Resources",
     order = "c",
     inventory_order = "g",
-    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png",
+	icon_size = 64
   },
   {
     type = "item-group",
     name = "Items",
     order = "cc",
     inventory_order = "g",
-    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png",
+	icon_size = 64
   },
   {
     type = "item-group",
     name = "Weapons",
     order = "ccc",
     inventory_order = "g",
-    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png",
+	icon_size = 64
   },
   {
     type = "item-group",
     name = "Fluids",
     order = "ccc",
     inventory_order = "g",
-    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png",
+	icon_size = 64
   },
   {
     type = "item-group",
     name = "Transport",
     order = "ca",
     inventory_order = "g",
-    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png",
+	icon_size = 64
   },
   
   
@@ -42,7 +47,8 @@ data:extend(
     name = "notgroup",
     order = "ccc",
     inventory_order = "g",
-    icon = "__NCP-Tech__/graphics/item-group/Resources.png"
+    icon = "__NCP-Tech__/graphics/item-group/Resources.png",
+	icon_size = 64
   },
   {
     type = "item-subgroup",

@@ -1,0 +1,2 @@
+--data.raw.item["Coal_dust"].fuel_value="300MJ"
+--data.raw.item["Coal_dust"].fuel_category = "chemical"

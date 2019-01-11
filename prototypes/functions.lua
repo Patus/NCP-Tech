@@ -12,6 +12,8 @@ function oldmakeItem(name,stack_size,subgroup,place_result,order)
 		type= "item",
 		name= name,
 		icon = icon,
+		
+	icon_size=32,
 		flags= { "goes-to-main-inventory" },
 		subgroup = subgroup,
 		order= order,
@@ -46,6 +48,7 @@ function makeItem(a)
 		type= "item",
 		name= name,
 		icon = icon,
+		icon_size = 32,
 		flags= flags,
 		subgroup = subgroup,
 		order= order,
@@ -110,6 +113,8 @@ function makeRecipe(a)
 		results = results,
 		
 		icon = icon,
+		
+	icon_size=32,
 		subgroup = subgroup,
 	},
 	})
@@ -150,6 +155,8 @@ function oldmakeRecipe(name,input,output,category,subgroup)
 			
 		},
 		icon = icon,
+		
+	icon_size=32,
 		subgroup = subgroup,
 	},
 	})
@@ -186,6 +193,7 @@ function noRecipe(name)
 			{type="item", name=name, amount=1},
 		},
 		icon = icon,
+	icon_size=32,
 		--subgroup = subgroup,
 	},
 	})
@@ -310,6 +318,8 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 				type = "assembling-machine",
 				name = name,
 				icon = "__NCP-Tech__/graphics/item/"..icon..".png",
+				
+				icon_size=32,
 				flags = {"placeable-neutral", "placeable-player", "player-creation"},
 				minable = {hardness = hardness, mining_time = mining_time, result = result},
 				max_health = max_health,
@@ -385,7 +395,7 @@ function createAssemblingMachine (a)
 	local fluidIn=a.fluidIn or 1
 	local fluidOut=a.fluidOut or 1
 	
-	local size=3
+	local size=a.size or 3
 	local fluid_boxes={off_when_no_fluid_recipe = false}
 	local asd={}
 	local animation
@@ -404,15 +414,25 @@ function createAssemblingMachine (a)
 	if (size==5) then
 		collision_box = {{-2.2, -2.2}, {2.2, 2.2}}
 		selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
-		animation =
+		--animation =
+			-- {
+			-- filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
+			-- priority = "high",
+			-- width = 189,
+			-- height = 165,
+			-- frame_count = 32,
+			-- line_length = 8,
+			-- shift = {0.66, -0.1}
+			-- }
+			animation =
 			{
-			filename = "__NCP-Tech__/graphics/entity/Machines/assembling-machine-2.png",
+			filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2.png",
 			priority = "high",
-			width = 189,
-			height = 165,
+			width = 113,
+			height = 99,
 			frame_count = 32,
 			line_length = 8,
-			shift = {0.66, -0.1}
+			shift = {0.4, -0.06}
 			}
 	else
 		collision_box = {{-1.2, -1.2}, {1.2, 1.2}}
@@ -437,6 +457,7 @@ function createAssemblingMachine (a)
 				type = "assembling-machine",
 				name = name,
 				icon = icon,
+				icon_size = 32,
 				flags = {"placeable-neutral", "placeable-player", "player-creation"},
 				minable = minable,
 				max_health = max_health,
@@ -517,6 +538,7 @@ function createFurnace (a)
     type = "furnace",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -688,6 +710,7 @@ function createTrasportBelt (a)
     type = "transport-belt",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -765,6 +788,7 @@ function createBoiler (a)
     type = "boiler",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -816,12 +840,12 @@ function createBoiler (a)
     },
     fluid_input =
     {
-      name = "water",
+      name = "Water",
       amount = 0.0
     },
     fluid_output =
     {
-      name = "steam",
+      name = "steam",-- oli steam
       amount = 0.0
     },
     energy_consumption = energy_consumption,
@@ -1226,6 +1250,7 @@ function createContainer (a)
     type = "container",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "wooden-chest"},
     max_health = max_health,
@@ -1278,6 +1303,7 @@ function createElectricPole (a)
     type = "electric-pole",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -1385,6 +1411,7 @@ function createGenerator (a)
     type = "generator",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-neutral","player-creation"},
     minable = minable,
     max_health = max_health,
@@ -1547,20 +1574,24 @@ function createOffshorePump (a)
 	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
 	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
 	local max_health=a.max_health or 150
-	local fluid=a.fluid or "water"
+	local fluid=a.fluid or "Water"
 	local pumping_speed=a.pumping_speed or 20
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	
 	{
     type = "offshore-pump",
-    name = name,
-    icon = icon,
+    name = "offshore-pump",
+    icon = "__base__/graphics/icons/offshore-pump.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
-    minable = minable,
-    max_health = max_health,
+    collision_mask = { "ground-tile", "object-layer" },
+    fluid_box_tile_collision_test = { "ground-tile" },
+    adjacent_tile_collision_test = { "water-tile" },
+    minable = {mining_time = 1, result = "offshore-pump"},
+    max_health = 150,
     corpse = "small-remnants",
-    fluid = fluid,
+    fluid = "water",
     resistances =
     {
       {
@@ -1579,12 +1610,16 @@ function createOffshorePump (a)
       base_area = 1,
       base_level = 1,
       pipe_covers = pipecoverspictures(),
+      production_type = "output",
       pipe_connections =
       {
-        { position = {0, 1} },
+        {
+          position = {0, 1},
+          type = "output"
+        },
       },
     },
-    pumping_speed = pumping_speed,
+    pumping_speed = 20,
     tile_width = 1,
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture =
@@ -1625,65 +1660,18 @@ function createOffshorePump (a)
         height = 102
       }
     },
-    circuit_wire_connection_points =
+    placeable_position_visualization =
     {
-      {
-        shadow =
-        {
-          red = {2.71875, 0.375},
-          green = {2.5, 0.375},
-        },
-        wire =
-        {
-          red = {0.84375, -0.09375},
-          green = {0.6875, -0.09375},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {0.765625, 0.546875},
-          green = {0.765625, 0.421875},
-        },
-        wire =
-        {
-          red = {-0.28125, -0.09375},
-          green = {-0.28125, -0.21875},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {-0.09375, 0.5625},
-          green = {0.0625, 0.5625},
-        },
-        wire =
-        {
-          red = {-0.90625, -0.53125},
-          green = {-0.75, -0.53125},
-        }
-      },
-      {
-        shadow =
-        {
-          red = {1.78125, -0.46875},
-          green = {1.78125, -0.3125},
-        },
-        wire =
-        {
-          red = {0.34375, -1.40625},
-          green = {0.34375, -1.25},
-        }
-      }
+      filename = "__core__/graphics/cursor-boxes-32x32.png",
+      priority = "extra-high-no-scale",
+      width = 64,
+      height = 64,
+      scale = 0.5,
+      x = 3*64
     },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({0.90625, -0.15625}, nil, 0),
-      get_circuit_connector_sprites({0, 0.03125}, nil, 6),
-      get_circuit_connector_sprites({-0.9375, -0.25}, nil, 4),
-      get_circuit_connector_sprites({0.125, -1.3125}, nil, 2),
-    },
-    circuit_wire_max_distance = 9
+    circuit_wire_connection_points = circuit_connector_definitions["offshore-pump"].points,
+    circuit_connector_sprites = circuit_connector_definitions["offshore-pump"].sprites,
+    circuit_wire_max_distance = default_circuit_wire_max_distance
 
   },
 	})
@@ -1705,6 +1693,7 @@ function createInserter (a)
     type = "inserter",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -1884,6 +1873,7 @@ function createRadar (a)
     type = "radar",
     name = name,
     icon = icon,
+	icon_size = 32,
     flags = {"placeable-player", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -1954,6 +1944,7 @@ function createLamp (a)
     type = "lamp",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -2038,6 +2029,7 @@ function createMiningDrill (a)
     type = "mining-drill",
     name = name,
     icon = icon,
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -2059,7 +2051,7 @@ function createMiningDrill (a)
         { position = {2, 0} },
         { position = {0, 2} },
       }
-    } or nil,    
+    } or nil,
     working_sound =
     {
       sound =
@@ -2069,12 +2061,12 @@ function createMiningDrill (a)
       },
       apparent_volume = 1.5,
     },
-	vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     animations =
     {
       north =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N.png",
         line_length = 8,
         width = 98,
@@ -2085,7 +2077,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(0, -8.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N.png",
           line_length = 8,
           width = 196,
@@ -2100,7 +2092,7 @@ function createMiningDrill (a)
       },
       east =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E.png",
         line_length = 8,
         width = 105,
@@ -2111,7 +2103,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(3.5, -1),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E.png",
           line_length = 8,
           width = 211,
@@ -2120,13 +2112,13 @@ function createMiningDrill (a)
           animation_speed = 0.5,
           direction_count = 1,
           shift = util.by_pixel(3.75, -1.25),
-          run_mode = "forward-then-backward",      
+          run_mode = "forward-then-backward",
           scale = 0.5
         }
       },
       south =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S.png",
         line_length = 8,
         width = 98,
@@ -2137,7 +2129,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(0, -1.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S.png",
           line_length = 8,
           width = 196,
@@ -2152,7 +2144,7 @@ function createMiningDrill (a)
       },
       west =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W.png",
         line_length = 8,
         width = 105,
@@ -2163,7 +2155,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(-3.5, -1),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W.png",
           line_length = 8,
           width = 211,
@@ -2181,7 +2173,7 @@ function createMiningDrill (a)
     {
       north =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-drill-shadow.png",
         flags = { "shadow" },
         line_length = 8,
@@ -2193,7 +2185,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(1.5, -7.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-drill-shadow.png",
           flags = { "shadow" },
           line_length = 8,
@@ -2209,7 +2201,7 @@ function createMiningDrill (a)
       },
       east =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-drill-shadow.png",
         flags = { "shadow" },
         line_length = 8,
@@ -2221,7 +2213,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(6, -0.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-drill-shadow.png",
           flags = { "shadow" },
           line_length = 8,
@@ -2237,7 +2229,7 @@ function createMiningDrill (a)
       },
       south =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-drill-shadow.png",
         flags = { "shadow" },
         line_length = 8,
@@ -2249,7 +2241,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(1, 2.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-drill-shadow.png",
           flags = { "shadow" },
           line_length = 8,
@@ -2265,7 +2257,7 @@ function createMiningDrill (a)
       },
       west =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-drill-shadow.png",
         flags = { "shadow" },
         line_length = 8,
@@ -2277,7 +2269,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(1, -0.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-drill-shadow.png",
           flags = { "shadow" },
           line_length = 8,
@@ -2486,7 +2478,7 @@ function createMiningDrill (a)
     {
       north =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-drill-received-shadow.png",
         tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
         line_length = 8,
@@ -2498,7 +2490,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(-1, -3),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-drill-received-shadow.png",
           tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
           line_length = 8,
@@ -2514,7 +2506,7 @@ function createMiningDrill (a)
       },
       east =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-drill-received-shadow.png",
         tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
         line_length = 8,
@@ -2526,7 +2518,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(0, -2),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-drill-received-shadow.png",
           tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
           line_length = 8,
@@ -2542,7 +2534,7 @@ function createMiningDrill (a)
       },
       south =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-drill-received-shadow.png",
         tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
         line_length = 8,
@@ -2554,7 +2546,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(-1, -1),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-drill-received-shadow.png",
           tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
           line_length = 8,
@@ -2570,7 +2562,7 @@ function createMiningDrill (a)
       },
       west =
       {
-        priority = "extra-high",
+        priority = "high",
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-drill-received-shadow.png",
         tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
         line_length = 8,
@@ -2582,7 +2574,7 @@ function createMiningDrill (a)
         shift = util.by_pixel(0, -1.5),
         run_mode = "forward-then-backward",
         hr_version = {
-          priority = "extra-high",
+          priority = "high",
           filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-drill-received-shadow.png",
           tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
           line_length = 8,
@@ -2688,7 +2680,7 @@ function createMiningDrill (a)
         }
       }
     },
-    
+
     input_fluid_patch_window_flow_sprites =
     {
       {
@@ -2875,7 +2867,7 @@ function createMiningDrill (a)
         }
       },
     },
-    
+
     mining_speed = 0.5,
     energy_source =
     {
@@ -2900,21 +2892,10 @@ function createMiningDrill (a)
     },
     monitor_visualization_tint = {r=78, g=173, b=255},
     fast_replaceable_group = "mining-drill",
-    circuit_wire_connection_points =
-    {
-      get_circuit_connector_wire_shifting_for_connector({-0.09375, -1.65625}, {-0.09375, -1.65625}, 4),
-      get_circuit_connector_wire_shifting_for_connector({1.28125, -0.40625},  {1.28125, -0.40625},  2),
-      get_circuit_connector_wire_shifting_for_connector({0.09375, 1},         {0.09375, 1},         0),
-      get_circuit_connector_wire_shifting_for_connector({-1.3125, -0.3125},   {-1.3125, -0.3125},   6)
-    },
-    circuit_connector_sprites =
-    {
-      get_circuit_connector_sprites({-0.09375, -1.65625}, {-0.09375, -1.65625}, 4),
-      get_circuit_connector_sprites({1.28125, -0.40625},  {1.28125, -0.40625},  2),
-      get_circuit_connector_sprites({0.09375, 1},         {0.09375, 1},         0),
-      get_circuit_connector_sprites({-1.3125, -0.3125},   {-1.3125, -0.3125},   6)
-    },
-    circuit_wire_max_distance = 9,
+    
+    circuit_wire_connection_points = circuit_connector_definitions["electric-mining-drill"].points,
+    circuit_connector_sprites = circuit_connector_definitions["electric-mining-drill"].sprites,
+    circuit_wire_max_distance = default_circuit_wire_max_distance
   },
 	
 	})
@@ -2933,6 +2914,7 @@ function createTrasportBeltUnderground (a)
     type = "underground-belt",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -2941,6 +2923,15 @@ function createTrasportBeltUnderground (a)
     underground_sprite =
     {
       filename = "__core__/graphics/arrows/underground-lines.png",
+      priority = "high",
+      width = 64,
+      height = 64,
+      x = 64,
+      scale = 0.5
+    },
+	underground_remove_belts_sprite =
+    {
+      filename = "__core__/graphics/arrows/underground-lines-remove.png",
       priority = "high",
       width = 64,
       height = 64,
@@ -2969,7 +2960,7 @@ function createTrasportBeltUnderground (a)
     starting_top = basic_belt_starting_top,
     starting_bottom = basic_belt_starting_bottom,
     starting_side = basic_belt_starting_side,
-    fast_replaceable_group = "underground-belt",
+    fast_replaceable_group = "transport-belt",
     speed = speed,
     structure =
     {
@@ -3036,6 +3027,7 @@ function createSplitter (a)
     type = "splitter",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -3168,6 +3160,7 @@ function createSolarPanel (a)
     type = "solar-panel",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -3208,6 +3201,7 @@ function createLocomotive (a)
     type = "locomotive",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = minable,
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
@@ -3523,6 +3517,7 @@ function createCargoWagon (a)
     type = "cargo-wagon",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
     inventory_size = inventory_size,
     minable = minable,
@@ -3931,6 +3926,7 @@ function createFluidWagon (a)
     type = "fluid-wagon",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = minable,
     mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
@@ -4146,6 +4142,7 @@ function createTrainStop (a)
     type = "train-stop",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
     minable = {mining_time = 1, result = "train-stop"},
     max_health = 250,
@@ -4617,6 +4614,7 @@ function createRailSignal (a)
     type = "rail-signal",
     name = name,
     icon = "__base__/graphics/icons/rail-signal.png",
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation", "building-direction-8-way", "filter-directions", "fast-replaceable-no-build-while-moving"},
     fast_replaceable_group = "rail-signal",
     minable = {mining_time = 0.5, result = "rail-signal"},
@@ -4788,6 +4786,7 @@ function createRailChainSignal (a)
     type = "rail-chain-signal",
     name = name,
     icon = "__base__/graphics/icons/rail-chain-signal.png",
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation", "building-direction-8-way", "filter-directions", "fast-replaceable-no-build-while-moving"},
     fast_replaceable_group = "rail-signal",
     minable = {mining_time = 0.5, result = "rail-chain-signal"},
@@ -4867,6 +4866,7 @@ function createLab (a)
     type = "lab",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-player", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -4948,6 +4948,7 @@ function createLogisticRobot (a)
     type = "logistic-robot",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = minable,
     resistances = { { type = "fire", percent = 85 } },
@@ -5079,6 +5080,7 @@ function createConstructionRobot (a)
     type = "construction-robot",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-player", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = minable,
     resistances = { { type = "fire", percent = 85 } },
@@ -5266,6 +5268,7 @@ function createLogisticContainer (a)
     type = "logistic-container",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-player", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -5331,11 +5334,12 @@ function createRoboport (a)
 	data:extend({
 	{
     type = "roboport",
-    name = name,
-    icon = icon,
+    name = "roboport",
+    icon = "__base__/graphics/icons/roboport.png",
+    icon_size = 32,
     flags = {"placeable-player", "player-creation"},
-    minable = minable,
-    max_health = max_health,
+    minable = {hardness = 0.2, mining_time = 0.5, result = "roboport"},
+    max_health = 500,
     corpse = "big-remnants",
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
@@ -5374,10 +5378,37 @@ function createRoboport (a)
     },
     base =
     {
-      filename = "__base__/graphics/entity/roboport/roboport-base.png",
-      width = 143,
-      height = 135,
-      shift = {0.5, 0.25}
+      layers =
+      {
+        {
+          filename = "__base__/graphics/entity/roboport/roboport-base.png",
+          width = 143,
+          height = 135,
+          shift = {0.5, 0.25},
+          hr_version = {
+            filename = "__base__/graphics/entity/roboport/hr-roboport-base.png",
+            width = 228,
+            height = 277,
+            shift = util.by_pixel(2, 7.75),
+            scale = 0.5
+          }
+        },
+        {
+          filename = "__base__/graphics/entity/roboport/roboport-shadow.png",
+          width = 147,
+          height = 102,
+          draw_as_shadow = true,
+          shift = util.by_pixel(28.5, 19.25),
+          hr_version = {
+            filename = "__base__/graphics/entity/roboport/hr-roboport-shadow.png",
+            width = 294,
+            height = 201,
+            draw_as_shadow = true,
+            shift = util.by_pixel(28.5, 19.25),
+            scale = 0.5
+          }
+        }
+      }
     },
     base_patch =
     {
@@ -5386,7 +5417,16 @@ function createRoboport (a)
       width = 69,
       height = 50,
       frame_count = 1,
-      shift = {0.03125, 0.203125}
+      shift = {0.03125, 0.203125},
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-base-patch.png",
+        priority = "medium",
+        width = 138,
+        height = 100,
+        frame_count = 1,
+        shift = util.by_pixel(1.5, 5),
+        scale = 0.5
+      }
     },
     base_animation =
     {
@@ -5396,7 +5436,17 @@ function createRoboport (a)
       height = 31,
       frame_count = 8,
       animation_speed = 0.5,
-      shift = {-0.5315, -1.9375}
+      shift = {-0.5315, -1.9375},
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-base-animation.png",
+        priority = "medium",
+        width = 83,
+        height = 59,
+        frame_count = 8,
+        animation_speed = 0.5,
+        shift = util.by_pixel(-17.75, -61.25),
+        scale = 0.5
+      }
     },
     door_animation_up =
     {
@@ -5405,7 +5455,16 @@ function createRoboport (a)
       width = 52,
       height = 20,
       frame_count = 16,
-      shift = {0.015625, -0.890625}
+      shift = {0.015625, -0.890625},
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-door-up.png",
+        priority = "medium",
+        width = 97,
+        height = 38,
+        frame_count = 16,
+        shift = util.by_pixel(-0.25, -29.5),
+        scale = 0.5
+      }
     },
     door_animation_down =
     {
@@ -5414,7 +5473,16 @@ function createRoboport (a)
       width = 52,
       height = 22,
       frame_count = 16,
-      shift = {0.015625, -0.234375}
+      shift = {0.015625, -0.234375},
+      hr_version = {
+        filename = "__base__/graphics/entity/roboport/hr-roboport-door-down.png",
+        priority = "medium",
+        width = 97,
+        height = 41,
+        frame_count = 16,
+        shift = util.by_pixel(-0.25,-9.75),
+        scale = 0.5
+      }
     },
     recharging_animation =
     {
@@ -5455,21 +5523,11 @@ function createRoboport (a)
         sound = { filename = "__base__/sound/roboport-door.ogg", volume = 0.75 }
       },
     },
-    circuit_wire_connection_point =
-    {
-      shadow =
-      {
-        red = {1.17188, 1.98438},
-        green = {1.04688, 2.04688}
-      },
-      wire =
-      {
-        red = {0.78125, 1.375},
-        green = {0.78125, 1.53125}
-      }
-    },
-    circuit_connector_sprites = get_circuit_connector_sprites({0.59375, 1.3125}, nil, 18),
-    circuit_wire_max_distance = 9,
+
+    circuit_wire_connection_point = circuit_connector_definitions["roboport"].points,
+    circuit_connector_sprites = circuit_connector_definitions["roboport"].sprites,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
+
     default_available_logistic_output_signal = {type = "virtual", name = "signal-X"},
     default_total_logistic_output_signal = {type = "virtual", name = "signal-Y"},
     default_available_construction_output_signal = {type = "virtual", name = "signal-Z"},
@@ -5495,6 +5553,7 @@ function createStorageTank (a)
     type = "storage-tank",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-player", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -5666,6 +5725,7 @@ function createPump (a)
     type = "pump",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -6006,6 +6066,7 @@ function createAccumulator (a)
     type = "accumulator",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -6103,6 +6164,7 @@ function createPowerSwitch (a)
     type = "power-switch",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = 200,
@@ -6465,6 +6527,7 @@ function createHeatPipe (a)
     type = "heat-pipe",
     name = name,
     icon = icon,
+	icon_size=32,
     flags = {"placeable-neutral", "player-creation"},
     minable = minable,
     max_health = max_health,
@@ -6638,7 +6701,7 @@ function Cracking_plant(name,mrk)
 	createAssemblingMachine{name=name,crafting_categories={"Cracking_plant"}}
 end
 function Distillation(name,mrk)
-	createAssemblingMachine{name=name,crafting_categories={"Distillation","Dry_distillation"}}
+	createAssemblingMachine{name=name,crafting_categories={"Distillation","Dry_distillation"},size=5,fluidIn=5,fluidOut=5,}
 end
 function Compressor(name,mrk)
 	createAssemblingMachine{name=name,crafting_categories={"Compressor"}}
@@ -6772,6 +6835,7 @@ function makeTech(name,icon,effects,prerequisites)
 		type = "technology",
 		name = name,
 		icon = icon,
+	icon_size=32,
 		effects =effects,
 		
 		prerequisites = prerequisites,
