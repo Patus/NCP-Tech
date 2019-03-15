@@ -1,6 +1,6 @@
 function oldmakeItem(name,stack_size,subgroup,place_result,order)
 	local icon="__NCP-Tech__/graphics/item/"..name..".png"
-	
+
 	if(order=="" or order==nil)then
 		order="a-b-c"
 	end
@@ -12,7 +12,7 @@ function oldmakeItem(name,stack_size,subgroup,place_result,order)
 		type= "item",
 		name= name,
 		icon = icon,
-		
+
 	icon_size=32,
 		flags= { "goes-to-main-inventory" },
 		subgroup = subgroup,
@@ -25,24 +25,24 @@ function oldmakeItem(name,stack_size,subgroup,place_result,order)
 	if(place_result==true)then
 		data.raw["item"][name].place_result=name
 	end
-	
+
 end
 
 
 
 function makeItem(a)
 	--local icon="__NCP-Tech__/graphics/item/"..a.name..".png"
-	
-	
-	
+
+
+
 	local name=a.name
-	local icon= a.icon or "__NCP-Tech__/graphics/item/"..a.name..".png" 
+	local icon= a.icon or "__NCP-Tech__/graphics/item/"..a.name..".png"
 	local flags=a.flags or { "goes-to-main-inventory" }
 	local subgroup=a.subgroup or "notsubgoup"
 	local order=a.order or "a-b-c"
 	local stack_size=a.stack_size or 20
 	local place_result=a.place_result or nil
-	
+
 	data:extend({
 	{
 		type= "item",
@@ -57,8 +57,8 @@ function makeItem(a)
 		},
 
 	})
-	
-	
+
+
 end
 
 function recipeNumber(name)
@@ -77,29 +77,29 @@ end
 
 recipeNames={}
 function makeRecipe(a)
-	if(data.raw["item"][a.name]==nil)then 
+	if(data.raw["item"][a.name]==nil)then
 		--makeItem{name=a.name,icon=a.icon,flags=a.flags,subgroup=a.subgroup,order=a.order,stack_size=a.stack,place_result=a.place_result}
 	end
 	local itemType="item"
 	if(a.fluidIcon==true)then
 		itemType="fluid"
 	end
-	
+
 	local name=a.name
 	local category= a.category or "crafting"
 	local energy_required=a.energy_required or 2
 	local enabled=a.enabled or "true"
 	local ingredients=a.ingredients or {}
 	local results=a.results or {{type="item", name=a.name, amount=1,probability =1}}
-	local icon=a.icon or "__NCP-Tech__/graphics/"..itemType.."/"..a.name..".png" 
+	local icon=a.icon or "__NCP-Tech__/graphics/"..itemType.."/"..a.name..".png"
 	local subgroup=a.subgroup or "notsubgoup"
 	local itemName=name
-	
+
 	name=recipeNumber(name)
-	
-	
+
+
 	recipeNames[name]={recipeName=name,itemName=itemName,price=nil}
-	
+
 	--table.insert(recipeNames, {name=name,itemName=itemName})
 	data:extend({
 	{
@@ -109,23 +109,23 @@ function makeRecipe(a)
 		energy_required = energy_required,
 		enabled = "true",
 		ingredients =ingredients,
-		
+
 		results = results,
-		
+
 		icon = icon,
-		
+
 	icon_size=32,
 		subgroup = subgroup,
 	},
 	})
-	
-	
-	
+
+
+
 	--for i , item in pairs(input) do
-		
+
 		--table.insert(data.raw["recipe"][name].ingredients, {type=item[1], name=item[2], amount=item[3]})
 	--end
-	
+
 	--for i , item in pairs(output) do
 		--table.insert(data.raw["recipe"][name].results, {type=item[1], name=item[2], amount=item[3]})
 	--end
@@ -134,11 +134,11 @@ end
 
 function oldmakeRecipe(name,input,output,category,subgroup)
 	local icon = "__NCP-Tech__/graphics/"..output[1][1].."/"..output[1][2]..".png"
-	
+
 	if(string.sub(output[1][2],-7)=="_bottle" or string.sub(output[1][2],-7)=="_barrel") then
 		icon="__NCP-Tech__/graphics/"..output[1][1].."/B"..string.sub(output[1][2],-5)..".png"
 	end
-	
+
 	data:extend({
 	{
 		type = "recipe",
@@ -148,26 +148,26 @@ function oldmakeRecipe(name,input,output,category,subgroup)
 		enabled = "true",
 		ingredients =
 		{
-			
+
 		},
-		results = 
+		results =
 		{
-			
+
 		},
 		icon = icon,
-		
+
 	icon_size=32,
 		subgroup = subgroup,
 	},
 	})
-	
-	
-	
+
+
+
 	for i , item in pairs(input) do
-		
+
 		table.insert(data.raw["recipe"][name].ingredients, {type=item[1], name=item[2], amount=item[3]})
 	end
-	
+
 	for i , item in pairs(output) do
 		table.insert(data.raw["recipe"][name].results, {type=item[1], name=item[2], amount=item[3]})
 	end
@@ -176,7 +176,7 @@ end
 
 function noRecipe(name)
 	local icon = "__NCP-Tech__/graphics/None.png"
-	
+
 	data:extend({
 	{
 		type = "recipe",
@@ -186,9 +186,9 @@ function noRecipe(name)
 		enabled = "true",
 		ingredients =
 		{
-			
+
 		},
-		results = 
+		results =
 		{
 			{type="item", name=name, amount=1},
 		},
@@ -197,7 +197,7 @@ function noRecipe(name)
 		--subgroup = subgroup,
 	},
 	})
-	
+
 
 end
 
@@ -222,7 +222,7 @@ function boxes(name,size,Number,fluid_boxes)
 	local size=size
 	local fluid_boxes=fluid_boxes
 	local x=1
-	if(name=="input")then 
+	if(name=="input")then
 		x=-1
 	end
 	if(Number==1)then
@@ -232,7 +232,7 @@ function boxes(name,size,Number,fluid_boxes)
 			fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{0, x*3})
 		end
 	end
-	if(Number==2)then 
+	if(Number==2)then
 		if (size==3)then
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{-1, x*2})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{1, x*2})
@@ -241,20 +241,20 @@ function boxes(name,size,Number,fluid_boxes)
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{1, x*3})
 		end
 	end
-	if(Number==3)then 
+	if(Number==3)then
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{-2, x*3})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{0, x*3})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{2, x*3})
 		size=5
 	end
-	if(Number==4)then 
+	if(Number==4)then
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{-3, x*1})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{-1, x*3})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{1, x*3})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{3, x*1})
 		size=5
 	end
-	if(Number==5)then 
+	if(Number==5)then
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{-3, x*1})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{-2, x*3})
 		fluid_boxes[#fluid_boxes+1]=makeFluidbox(name,{0, x*3})
@@ -272,7 +272,7 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 	local animation
 	local collision_box
 	local selection_box
-	
+
 	if(fluidIn>fluidOut)then
 		size,fluid_boxes=boxes("input",size,fluidIn,fluid_boxes)
 		size,fluid_boxes=boxes("output",size,fluidOut,fluid_boxes)
@@ -280,8 +280,8 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 		size,fluid_boxes=boxes("output",size,fluidOut,fluid_boxes)
 		size,fluid_boxes=boxes("input",size,fluidIn,fluid_boxes)
 	end
-	
-	
+
+
 	if (size==5) then
 		collision_box = {{-2.2, -2.2}, {2.2, 2.2}}
 		selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
@@ -309,16 +309,16 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 			line_length = 8,
 			shift = {0.4, -0.06}
 			}
-	
+
 	end
 	data:extend(
 		{
-	
+
 			{
 				type = "assembling-machine",
 				name = name,
 				icon = "__NCP-Tech__/graphics/item/"..icon..".png",
-				
+
 				icon_size=32,
 				flags = {"placeable-neutral", "placeable-player", "player-creation"},
 				minable = {hardness = hardness, mining_time = mining_time, result = result},
@@ -327,7 +327,7 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 				dying_explosion = "medium-explosion",
 				result_inventory_size = result_inventory_size,
 				source_inventory_size = source_inventory_size,
-	
+
 				resistances =
 				{
 					{
@@ -377,11 +377,11 @@ function makeAssemblingmachine (name,icon,hardness,mining_time,result,max_health
 		}
 	)
 
-end 
+end
 
 
 function createAssemblingMachine (a)
-	
+
 	local name=a.name
 	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
 	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
@@ -394,14 +394,14 @@ function createAssemblingMachine (a)
 	local energy_usage=a.energy_usage or "1kW"
 	local fluidIn=a.fluidIn or 1
 	local fluidOut=a.fluidOut or 1
-	
+
 	local size=a.size or 3
 	local fluid_boxes={off_when_no_fluid_recipe = false}
 	local asd={}
 	local animation
 	local collision_box
 	local selection_box
-	
+
 	if(fluidIn>fluidOut)then
 		size,fluid_boxes=boxes("input",size,fluidIn,fluid_boxes)
 		size,fluid_boxes=boxes("output",size,fluidOut,fluid_boxes)
@@ -409,8 +409,8 @@ function createAssemblingMachine (a)
 		size,fluid_boxes=boxes("output",size,fluidOut,fluid_boxes)
 		size,fluid_boxes=boxes("input",size,fluidIn,fluid_boxes)
 	end
-	
-	
+
+
 	if (size==5) then
 		collision_box = {{-2.2, -2.2}, {2.2, 2.2}}
 		selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
@@ -448,11 +448,11 @@ function createAssemblingMachine (a)
 			line_length = 8,
 			shift = {0.4, -0.06}
 			}
-	
+
 	end
 	data:extend(
 		{
-	
+
 			{
 				type = "assembling-machine",
 				name = name,
@@ -465,7 +465,7 @@ function createAssemblingMachine (a)
 				dying_explosion = "medium-explosion",
 				result_inventory_size = result_inventory_size,
 				source_inventory_size = source_inventory_size,
-	
+
 				resistances =
 				{
 					{
@@ -515,7 +515,7 @@ function createAssemblingMachine (a)
 		}
 	)
 
-end 
+end
 
 function createFurnace (a)
 	local name=a.name
@@ -528,12 +528,12 @@ function createFurnace (a)
 	local source_inventory_size=a.source_inventory_size or 1
 	local result_inventory_size=a.result_inventory_size or 1
 	local fast_replaceable_group=a.fast_replaceable_group or "furnace"
-	
-	
+
+
 
 	data:extend({
-	
-	
+
+
 	{
     type = "furnace",
     name = name,
@@ -702,10 +702,10 @@ function createTrasportBelt (a)
 	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
 	local minable=a.minable or {hardness = 0.2, mining_time = 0.3, result = name}
 	local max_health=a.max_health or 150
-	
+
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
+
 	{
     type = "transport-belt",
     name = name,
@@ -780,10 +780,10 @@ function createBoiler (a)
 	local target_temperature=a.target_temperature or 165
 	local energy_consumption=a.energy_consumption or "1.8MW"
 	local burning_cooldown=a.burning_cooldown or 20
-	
+
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
+
 	{
     type = "boiler",
     name = name,
@@ -879,13 +879,13 @@ function createBoiler (a)
       },
       max_sounds_per_type = 3
     },
-    
+
     structure =
     {
       north =
-      { 
-        layers = 
-        { 
+      {
+        layers =
+        {
           {
             filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
             priority = "extra-high",
@@ -922,8 +922,8 @@ function createBoiler (a)
       },
       east =
       {
-        layers = 
-        { 
+        layers =
+        {
           {
             filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
             priority = "extra-high",
@@ -960,8 +960,8 @@ function createBoiler (a)
       },
       south =
       {
-        layers = 
-        { 
+        layers =
+        {
           {
             filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
             priority = "extra-high",
@@ -998,8 +998,8 @@ function createBoiler (a)
       },
       west =
       {
-        layers = 
-        { 
+        layers =
+        {
           {
             filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
             priority = "extra-high",
@@ -1035,8 +1035,8 @@ function createBoiler (a)
         }
       }
     },
-   
-    patch = 
+
+    patch =
     {
       east =
       {
@@ -1054,7 +1054,7 @@ function createBoiler (a)
         }
       },
     },
-    
+
     fire_flicker_enabled = true,
     fire =
     {
@@ -1147,9 +1147,9 @@ function createBoiler (a)
         }
       }
     },
-   
+
     fire_glow_flicker_enabled = true,
-    
+
     fire_glow =
     {
       north =
@@ -1286,7 +1286,7 @@ function createContainer (a)
     circuit_connector_sprites = get_circuit_connector_sprites({0.1875, 0.15625}, nil, 18),
     circuit_wire_max_distance = 9
   },
-	
+
 	})
 end
 function createElectricPole (a)
@@ -1298,7 +1298,7 @@ function createElectricPole (a)
 	local supply_area_distance=a.supply_area_distance or 2.5
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
+
 	{
     type = "electric-pole",
     name = name,
@@ -1406,167 +1406,168 @@ function createGenerator (a)
 	local fast_replaceable_group=a.fast_replaceable_group or "steam-engine"
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
-	{
-    type = "generator",
-    name = name,
-    icon = icon,
-	icon_size = 32,
-    flags = {"placeable-neutral","player-creation"},
-    minable = minable,
-    max_health = max_health,
-    corpse = "big-remnants",
-    dying_explosion = "medium-explosion",
-    effectivity = effectivity,
-    fluid_usage_per_tick = fluid_usage_per_tick,
-    maximum_temperature = maximum_temperature,
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
-    fast_replaceable_group = fast_replaceable_group,
-    collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
-    selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
-    fluid_box =
-    {
-      base_area = 1,
-      height = 2,
-      base_level = -1,
-      pipe_covers = pipecoverspictures(),
-      pipe_connections =
-      {
-        { type = "input-output", position = {0, 3} },
-        { type = "input-output", position = {0, -3} },
-      },
-      production_type = "input-output"
-    },
-    fluid_input =
-    {
-      name = "steam",
-      amount = 0.0,
-      minimum_temperature = 100.0
-    },
-    energy_source =
-    {
-      type = "electric",
-      usage_priority = "secondary-output"
-    },
-    horizontal_animation =
-    {
-      layers =
-      {
-        {
-          filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
-          width = 176,
-          height = 128,
-          frame_count = 32,
-          line_length = 8,
-          shift = util.by_pixel(1, -5),
-          hr_version = {
-            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
-            width = 352,
-            height = 257,
-            frame_count = 32,
-            line_length = 8,
-            shift = util.by_pixel(1, -4.75),
-            scale = 0.5
-          },
-        },
-        {
-          filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
-          width = 254,
-          height = 80,
-          frame_count = 32,
-          line_length = 8,
-          draw_as_shadow = true,
-          shift = util.by_pixel(48, 24),
-          hr_version = {
-            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
-            width = 508,
-            height = 160,
-            frame_count = 32,
-            line_length = 8,
-            draw_as_shadow = true,
-            shift = util.by_pixel(48, 24),
-            scale = 0.5
-          },
-        },
-      },
-    },
-    vertical_animation =
-    {
-      layers = 
-      {
-        {
-          filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
-          width = 112,
-          height = 195,
-          frame_count = 32,
-          line_length = 8,
-          shift = util.by_pixel(5, -6.5),
-          hr_version = {
-            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
-            width = 225,
-            height = 391,
-            frame_count = 32,
-            line_length = 8,
-            shift = util.by_pixel(4.75, -6.25),        
-            scale = 0.5
-          },
-        },
-        {
-          filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
-          width = 165,
-          height = 153,
-          frame_count = 32,
-          line_length = 8,
-          draw_as_shadow = true,
-          shift = util.by_pixel(40.5, 9.5),
-          hr_version = {
-            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
-            width = 330,
-            height = 307,
-            frame_count = 32,
-            line_length = 8,
-            draw_as_shadow = true,
-            shift = util.by_pixel(40.5, 9.25),        
-            scale = 0.5
-          },
-        },
-      },
-    },
-    smoke =
-    {
-      {
-        name = "light-smoke",
-        north_position = {0.9, 0.0},
-        east_position = {-2.0, -2.0},
-        frequency = 10 / 32,
-        starting_vertical_speed = 0.08,
-        slow_down_factor = 1,
-        starting_frame_deviation = 60
-      }
-    },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-      sound =
-      {
-        filename = "__base__/sound/steam-engine-90bpm.ogg",
-        volume = 0.6
-      },
-      match_speed_to_activity = true,
-    },
-    min_perceived_performance = 0.25,
-    performance_to_sound_speedup = 0.5
-  },
+
+		{
+	    type = "generator",
+	    name = name,
+	    icon = icon,
+	    icon_size = 32,
+	    flags = {"placeable-neutral","player-creation"},
+	    minable = {mining_time = 1, result = "steam-engine"},
+	    max_health = 400,
+	    corpse = "big-remnants",
+	    dying_explosion = "medium-explosion",
+	    alert_icon_shift = util.by_pixel(3, -34),
+	    effectivity = 1,
+	    fluid_usage_per_tick = 0.5,
+	    maximum_temperature = 165,
+	    resistances =
+	    {
+	      {
+	        type = "fire",
+	        percent = 70
+	      },
+	      {
+	        type = "impact",
+	        percent = 30
+	      }
+	    },
+	    fast_replaceable_group = "steam-engine",
+	    collision_box = {{-1.35, -2.35}, {1.35, 2.35}},
+	    selection_box = {{-1.5, -2.5}, {1.5, 2.5}},
+	    fluid_box =
+	    {
+	      base_area = 1,
+	      height = 2,
+	      base_level = -1,
+	      pipe_covers = pipecoverspictures(),
+	      pipe_connections =
+	      {
+	        { type = "input-output", position = {0, 3} },
+	        { type = "input-output", position = {0, -3} }
+	      },
+	      production_type = "input-output",
+	      filter = "steam",
+	      minimum_temperature = 100.0
+	    },
+	    energy_source =
+	    {
+	      type = "electric",
+	      usage_priority = "secondary-output"
+	    },
+	    horizontal_animation =
+	    {
+	      layers =
+	      {
+	        {
+	          filename = "__base__/graphics/entity/steam-engine/steam-engine-H.png",
+	          width = 176,
+	          height = 128,
+	          frame_count = 32,
+	          line_length = 8,
+	          shift = util.by_pixel(1, -5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H.png",
+	            width = 352,
+	            height = 257,
+	            frame_count = 32,
+	            line_length = 8,
+	            shift = util.by_pixel(1, -4.75),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/steam-engine/steam-engine-H-shadow.png",
+	          width = 254,
+	          height = 80,
+	          frame_count = 32,
+	          line_length = 8,
+	          draw_as_shadow = true,
+	          shift = util.by_pixel(48, 24),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-H-shadow.png",
+	            width = 508,
+	            height = 160,
+	            frame_count = 32,
+	            line_length = 8,
+	            draw_as_shadow = true,
+	            shift = util.by_pixel(48, 24),
+	            scale = 0.5
+	          }
+	        }
+	      }
+	    },
+	    vertical_animation =
+	    {
+	      layers =
+	      {
+	        {
+	          filename = "__base__/graphics/entity/steam-engine/steam-engine-V.png",
+	          width = 112,
+	          height = 195,
+	          frame_count = 32,
+	          line_length = 8,
+	          shift = util.by_pixel(5, -6.5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V.png",
+	            width = 225,
+	            height = 391,
+	            frame_count = 32,
+	            line_length = 8,
+	            shift = util.by_pixel(4.75, -6.25),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/steam-engine/steam-engine-V-shadow.png",
+	          width = 165,
+	          height = 153,
+	          frame_count = 32,
+	          line_length = 8,
+	          draw_as_shadow = true,
+	          shift = util.by_pixel(40.5, 9.5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/steam-engine/hr-steam-engine-V-shadow.png",
+	            width = 330,
+	            height = 307,
+	            frame_count = 32,
+	            line_length = 8,
+	            draw_as_shadow = true,
+	            shift = util.by_pixel(40.5, 9.25),
+	            scale = 0.5
+	          }
+	        }
+	      }
+	    },
+	    smoke =
+	    {
+	      {
+	        name = "light-smoke",
+	        north_position = {0.9, 0.0},
+	        east_position = {-2.0, -2.0},
+	        frequency = 10 / 32,
+	        starting_vertical_speed = 0.08,
+	        slow_down_factor = 1,
+	        starting_frame_deviation = 60
+	      }
+	    },
+	    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+	    working_sound =
+	    {
+	      sound =
+	      {
+	        filename = "__base__/sound/steam-engine-90bpm.ogg",
+	        volume = 0.6
+	      },
+	      match_speed_to_activity = true
+	    },
+	    min_perceived_performance = 0.25,
+	    performance_to_sound_speedup = 0.5
+	  },
 	})
 end
 function createOffshorePump (a)
@@ -1578,17 +1579,17 @@ function createOffshorePump (a)
 	local pumping_speed=a.pumping_speed or 20
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
+
 	{
     type = "offshore-pump",
-    name = "offshore-pump",
+    name = name,
     icon = "__base__/graphics/icons/offshore-pump.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation", "filter-directions"},
     collision_mask = { "ground-tile", "object-layer" },
     fluid_box_tile_collision_test = { "ground-tile" },
     adjacent_tile_collision_test = { "water-tile" },
-    minable = {mining_time = 1, result = "offshore-pump"},
+    minable = minable,
     max_health = 150,
     corpse = "small-remnants",
     fluid = "water",
@@ -1688,7 +1689,7 @@ function createInserter (a)
 	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
+
 	{
     type = "inserter",
     name = name,
@@ -1865,65 +1866,132 @@ function createRadar (a)
 	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
 	local max_health=a.max_health or 250
 	local energy_per_sector=a.energy_per_sector or "10MJ"
-	
+
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
-	{
-    type = "radar",
-    name = name,
-    icon = icon,
-	icon_size = 32,
-    flags = {"placeable-player", "player-creation"},
-    minable = minable,
-    max_health = max_health,
-    corpse = "big-remnants",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
-    collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    energy_per_sector = energy_per_sector,
-    max_distance_of_sector_revealed = 14,
-    max_distance_of_nearby_sector_revealed = 3,
-    energy_per_nearby_scan = "250kJ",
-    energy_source =
-    {
-      type = "electric",
-      usage_priority = "secondary-input"
-    },
-    energy_usage = "300kW",
-    pictures =
-    {
-      filename = "__base__/graphics/entity/radar/radar.png",
-      priority = "low",
-      width = 153,
-      height = 131,
-      apply_projection = false,
-      direction_count = 64,
-      line_length = 8,
-      shift = util.by_pixel(27.5,-12.5)
-    },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-      sound = {
-        {
-          filename = "__base__/sound/radar.ogg"
-        }
-      },
-      apparent_volume = 2,
-    },
-    radius_minimap_visualisation_color = { r = 0.059, g = 0.092, b = 0.235, a = 0.275 },
-  },
+
+		{
+	    type = "radar",
+	    name = name,
+	    icon = "__base__/graphics/icons/radar.png",
+	    icon_size = 32,
+	    flags = {"placeable-player", "player-creation"},
+	    minable = {hardness = 0.2, mining_time = 0.5, result = "radar"},
+	    max_health = 250,
+	    corpse = "big-remnants",
+	    resistances =
+	    {
+	      {
+	        type = "fire",
+	        percent = 70
+	      },
+	      {
+	        type = "impact",
+	        percent = 30
+	      }
+	    },
+	    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+	    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+	    energy_per_sector = "10MJ",
+	    max_distance_of_sector_revealed = 14,
+	    max_distance_of_nearby_sector_revealed = 3,
+	    energy_per_nearby_scan = "250kJ",
+	    energy_source =
+	    {
+	      type = "electric",
+	      usage_priority = "secondary-input"
+	    },
+	    energy_usage = "300kW",
+	    integration_patch =
+	    {
+	      filename = "__base__/graphics/entity/radar/radar-integration.png",
+	      priority = "low",
+	      width = 119,
+	      height = 108,
+	      apply_projection = false,
+	      direction_count = 1,
+	      repeat_count = 64,
+	      line_length = 1,
+	      shift = util.by_pixel(1.5, 4),
+	      hr_version =
+	      {
+	        filename = "__base__/graphics/entity/radar/hr-radar-integration.png",
+	        priority = "low",
+	        width = 238,
+	        height = 216,
+	        apply_projection = false,
+	        direction_count = 1,
+	        repeat_count = 64,
+	        line_length = 1,
+	        shift = util.by_pixel(1.5, 4),
+	        scale = 0.5
+	      }
+	    },
+	    pictures =
+	    {
+	      layers =
+	      {
+	        {
+	          filename = "__base__/graphics/entity/radar/radar.png",
+	          priority = "low",
+	          width = 98,
+	          height = 128,
+	          apply_projection = false,
+	          direction_count = 64,
+	          line_length = 8,
+	          shift = util.by_pixel(1, -16),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/radar/hr-radar.png",
+	            priority = "low",
+	            width = 196,
+	            height = 254,
+	            apply_projection = false,
+	            direction_count = 64,
+	            line_length = 8,
+	            shift = util.by_pixel(1, -16),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/radar/radar-shadow.png",
+	          priority = "low",
+	          width = 172,
+	          height = 94,
+	          apply_projection = false,
+	          direction_count = 64,
+	          line_length = 8,
+	          shift = util.by_pixel(39,3),
+	          draw_as_shadow = true,
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/radar/hr-radar-shadow.png",
+	            priority = "low",
+	            width = 343,
+	            height = 186,
+	            apply_projection = false,
+	            direction_count = 64,
+	            line_length = 8,
+	            shift = util.by_pixel(39.25,3),
+	            draw_as_shadow = true,
+	            scale = 0.5
+	          }
+	        }
+	      }
+	    },
+	    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+	    working_sound =
+	    {
+	      sound =
+	      {
+	        {
+	          filename = "__base__/sound/radar.ogg"
+	        }
+	      },
+	      apparent_volume = 2
+	    },
+	    radius_minimap_visualisation_color = { r = 0.059, g = 0.092, b = 0.235, a = 0.275 }
+	  },
 	})
 end
 function createLamp (a)
@@ -1939,7 +2007,7 @@ function createLamp (a)
 	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
+
 	{
     type = "lamp",
     name = name,
@@ -2022,7 +2090,7 @@ function createMiningDrill (a)
 	local energy_usage=a.energy_usage or "90kW"
 	local mining_power=a.mining_power or 3
 	local resource_searching_radius=a.resource_searching_radius or 2.49
-	
+
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
@@ -2892,12 +2960,12 @@ function createMiningDrill (a)
     },
     monitor_visualization_tint = {r=78, g=173, b=255},
     fast_replaceable_group = "mining-drill",
-    
+
     circuit_wire_connection_points = circuit_connector_definitions["electric-mining-drill"].points,
     circuit_connector_sprites = circuit_connector_definitions["electric-mining-drill"].sprites,
     circuit_wire_max_distance = default_circuit_wire_max_distance
   },
-	
+
 	})
 end
 function createTrasportBeltUnderground (a)
@@ -3011,7 +3079,7 @@ function createTrasportBeltUnderground (a)
     },
     ending_patch = ending_patch_prototype
   },
-	
+
 	})
 end
 function createSplitter (a)
@@ -3020,7 +3088,7 @@ function createSplitter (a)
 	local minable=a.minable or {hardness = 0.2, mining_time = 0.5, result = name}
 	local max_health=a.max_health or 170
 	local speed=a.speed or 0.03125
-	
+
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
@@ -3144,7 +3212,7 @@ function createSplitter (a)
     },
     ending_patch = ending_patch_prototype
   },
-	
+
 	})
 end
 function createSolarPanel (a)
@@ -3180,9 +3248,9 @@ function createSolarPanel (a)
       height = 96
     },
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    production = production  
+    production = production
   },
-	
+
 	})
 end
 function createLocomotive (a)
@@ -3198,307 +3266,319 @@ function createLocomotive (a)
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 	{
-    type = "locomotive",
-    name = name,
-    icon = icon,
-	icon_size=32,
-    flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
-    minable = minable,
-    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
-    max_health = max_health,
-    corpse = "medium-remnants",
-    dying_explosion = "medium-explosion",
-    collision_box = {{-0.6, -2.6}, {0.6, 2.6}},
-    selection_box = {{-1, -3}, {1, 3}},
-    drawing_box = {{-1, -4}, {1, 3}},
-    weight = weight,
-    max_speed = max_speed,
-    max_power = max_power,
-    reversing_power_modifier = 0.6,
-    braking_force = 10,
-    friction_force = 0.50,
-    vertical_selection_shift = -0.5,
-    air_resistance = 0.0075, -- this is a percentage of current speed that will be subtracted
-    connection_distance = 3,
-    joint_distance = 4,
-    energy_per_hit_point = 5,
-    resistances =
-    {
-      {
-        type = "fire",
-        decrease = 15,
-        percent = 50
-      },
-      {
-        type = "physical",
-        decrease = 15,
-        percent = 30
-      },
-      {
-        type = "impact",
-        decrease = 50,
-        percent = 60
-      },
-      {
-        type = "explosion",
-        decrease = 15,
-        percent = 30
-      },
-      {
-        type = "acid",
-        decrease = 10,
-        percent = 20
-      }
-    },
-    burner =
-    {
-      fuel_category = "chemical",
-      effectivity = 1,
-      fuel_inventory_size = 3,
-      smoke =
-      {
-        {
-          name = "train-smoke",
-          deviation = {0.3, 0.3},
-          frequency = 100,
-          position = {0, 0},
-          starting_frame = 0,
-          starting_frame_deviation = 60,
-          height = 2,
-          height_deviation = 0.5,
-          starting_vertical_speed = 0.2,
-          starting_vertical_speed_deviation = 0.1,
-        }
-      }
-    },
-    front_light =
-    {
-      {
-        type = "oriented",
-        minimum_darkness = 0.3,
-        picture =
-        {
-          filename = "__core__/graphics/light-cone.png",
-          priority = "extra-high",
-          flags = { "light" },
-          scale = 2,
-          width = 200,
-          height = 200
-        },
-        shift = {-0.6, -16},
-        size = 2,
-        intensity = 0.6,
-        color = {r = 1.0, g = 0.9, b = 0.9}
-      },
-      {
-        type = "oriented",
-        minimum_darkness = 0.3,
-        picture =
-        {
-          filename = "__core__/graphics/light-cone.png",
-          priority = "extra-high",
-          flags = { "light" },
-          scale = 2,
-          width = 200,
-          height = 200
-        },
-        shift = {0.6, -16},
-        size = 2,
-        intensity = 0.6,
-        color = {r = 1.0, g = 0.9, b = 0.9}
-      }
-    },
-    back_light = rolling_stock_back_light(),
-    stand_by_light = rolling_stock_stand_by_light(),
-    color = {r = 0.92, g = 0.07, b = 0, a = 0.5},
-    pictures =
-    {
-      layers =
-      {
-        {
-          priority = "very-low",
-          width = 238,
-          height = 230,
-          direction_count = 256,
-          filenames =
-          {
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-02.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-03.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-04.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-05.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-06.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-07.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-08.png"
-          },
-          line_length = 4,
-          lines_per_file = 8,
-          shift = {0.0, -0.5},
-          hr_version =
-            {
-            priority = "very-low",
-            width = 474,
-            height = 458,
-            direction_count = 256,
-            filenames =
-            {
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-1.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-2.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-3.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-4.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-5.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-6.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-7.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-8.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-9.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-10.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-11.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-12.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-13.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-14.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-15.png",
-              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-16.png"
-            },
-            line_length = 4,
-            lines_per_file = 4,
-            shift = {0.0, -0.5},
-            scale = 0.5
-            }
-        },
-        {
-          priority = "very-low",
-          flags = { "mask" },
-          width = 236,
-          height = 228,
-          direction_count = 256,
-          filenames =
-          {
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-01.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-02.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-03.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-04.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-05.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-06.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-07.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-08.png"
-          },
-          line_length = 4,
-          lines_per_file = 8,
-          shift = {0.0, -0.5},
-          apply_runtime_tint = true,
-          hr_version =
-            {
-              priority = "very-low",
-              flags = { "mask" },
-              width = 472,
-              height = 456,
-              direction_count = 256,
-              filenames =
-              {
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-1.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-2.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-3.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-4.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-5.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-6.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-7.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-8.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-9.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-10.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-11.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-12.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-13.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-14.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-15.png",
-                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-16.png"
-              },
-              line_length = 4,
-              lines_per_file = 4,
-              shift = {0.0, -0.5},
-              apply_runtime_tint = true,
-              scale = 0.5
-            }
-        },
-        {
-          priority = "very-low",
-          flags = { "shadow" },
-          width = 253,
-          height = 212,
-          direction_count = 256,
-          draw_as_shadow = true,
-          filenames =
-          {
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-01.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-02.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-03.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-04.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-05.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-06.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-07.png",
-            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-08.png"
-          },
-          line_length = 4,
-          lines_per_file = 8,
-          shift = {1, 0.3}
-        }
-      }
-    },
-    wheels = standard_train_wheels,
-    rail_category = rail_category,
-    stop_trigger =
-    {
-      -- left side
-      {
-        type = "create-smoke",
-        repeat_count = 125,
-        entity_name = "smoke-train-stop",
-        initial_height = 0,
-        -- smoke goes to the left
-        speed = {-0.03, 0},
-        speed_multiplier = 0.75,
-        speed_multiplier_deviation = 1.1,
-        offset_deviation = {{-0.75, -2.7}, {-0.3, 2.7}}
-      },
-      -- right side
-      {
-        type = "create-smoke",
-        repeat_count = 125,
-        entity_name = "smoke-train-stop",
-        initial_height = 0,
-        -- smoke goes to the right
-        speed = {0.03, 0},
-        speed_multiplier = 0.75,
-        speed_multiplier_deviation = 1.1,
-        offset_deviation = {{0.3, -2.7}, {0.75, 2.7}}
-      },
-      {
-        type = "play-sound",
-        sound =
-        {
-          {
-            filename = "__base__/sound/train-breaks.ogg",
-            volume = 0.6
-          },
-        }
-      },
-    },
-    drive_over_tie_trigger = drive_over_tie(),
-    tie_distance = 50,
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-      sound =
-      {
-        filename = "__base__/sound/train-engine.ogg",
-        volume = 0.4
-      },
-      match_speed_to_activity = true,
-    },
-    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume=0.7 },
-    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
-    sound_minimum_speed = 0.5;
-  },
-	
+
+	    type = "locomotive",
+	    name = name,
+	    icon = "__base__/graphics/icons/diesel-locomotive.png",
+	    icon_size = 32,
+	    flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
+	    minable = minable,
+	    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+	    max_health = 1000,
+	    corpse = "medium-remnants",
+	    dying_explosion = "medium-explosion",
+	    collision_box = {{-0.6, -2.6}, {0.6, 2.6}},
+	    selection_box = {{-1, -3}, {1, 3}},
+	    drawing_box = {{-1, -4}, {1, 3}},
+	    alert_icon_shift = util.by_pixel(0, -24),
+	    weight = 2000,
+	    max_speed = 1.2,
+	    max_power = "600kW",
+	    reversing_power_modifier = 0.6,
+	    braking_force = 10,
+	    friction_force = 0.50,
+	    vertical_selection_shift = -0.5,
+	    air_resistance = 0.0075, -- this is a percentage of current speed that will be subtracted
+	    connection_distance = 3,
+	    joint_distance = 4,
+	    energy_per_hit_point = 5,
+	    resistances =
+	    {
+	      {
+	        type = "fire",
+	        decrease = 15,
+	        percent = 50
+	      },
+	      {
+	        type = "physical",
+	        decrease = 15,
+	        percent = 30
+	      },
+	      {
+	        type = "impact",
+	        decrease = 50,
+	        percent = 60
+	      },
+	      {
+	        type = "explosion",
+	        decrease = 15,
+	        percent = 30
+	      },
+	      {
+	        type = "acid",
+	        decrease = 10,
+	        percent = 20
+	      }
+	    },
+	    burner =
+	    {
+	      fuel_category = "chemical",
+	      effectivity = 1,
+	      fuel_inventory_size = 3,
+	      smoke =
+	      {
+	        {
+	          name = "train-smoke",
+	          deviation = {0.3, 0.3},
+	          frequency = 100,
+	          position = {0, 0},
+	          starting_frame = 0,
+	          starting_frame_deviation = 60,
+	          height = 2,
+	          height_deviation = 0.5,
+	          starting_vertical_speed = 0.2,
+	          starting_vertical_speed_deviation = 0.1
+	        }
+	      }
+	    },
+	    front_light =
+	    {
+	      {
+	        type = "oriented",
+	        minimum_darkness = 0.3,
+	        picture =
+	        {
+	          filename = "__core__/graphics/light-cone.png",
+	          priority = "extra-high",
+	          flags = { "light" },
+	          scale = 2,
+	          width = 200,
+	          height = 200
+	        },
+	        shift = {-0.6, -16},
+	        size = 2,
+	        intensity = 0.6,
+	        color = {r = 1.0, g = 0.9, b = 0.9}
+	      },
+	      {
+	        type = "oriented",
+	        minimum_darkness = 0.3,
+	        picture =
+	        {
+	          filename = "__core__/graphics/light-cone.png",
+	          priority = "extra-high",
+	          flags = { "light" },
+	          scale = 2,
+	          width = 200,
+	          height = 200
+	        },
+	        shift = {0.6, -16},
+	        size = 2,
+	        intensity = 0.6,
+	        color = {r = 1.0, g = 0.9, b = 0.9}
+	      }
+	    },
+	    back_light = rolling_stock_back_light(),
+	    stand_by_light = rolling_stock_stand_by_light(),
+	    color = {r = 0.92, g = 0.07, b = 0, a = 0.5},
+	    pictures =
+	    {
+	      layers =
+	      {
+	        {
+	          slice = 4,
+	          priority = "very-low",
+	          width = 238,
+	          height = 230,
+	          direction_count = 256,
+	          allow_low_quality_rotation = true,
+	          filenames =
+	          {
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-01.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-02.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-03.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-04.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-05.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-06.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-07.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-08.png"
+	          },
+	          line_length = 4,
+	          lines_per_file = 8,
+	          shift = {0.0, -0.5},
+	          hr_version =
+	          {
+	            priority = "very-low",
+	            slice = 4,
+	            width = 474,
+	            height = 458,
+	            direction_count = 256,
+	            allow_low_quality_rotation = true,
+	            filenames =
+	            {
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-1.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-2.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-3.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-4.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-5.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-6.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-7.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-8.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-9.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-10.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-11.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-12.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-13.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-14.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-15.png",
+	              "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-16.png"
+	            },
+	            line_length = 4,
+	            lines_per_file = 4,
+	            shift = {0.0, -0.5},
+	            scale = 0.5
+	            }
+	        },
+	        {
+	          priority = "very-low",
+	          flags = { "mask" },
+	          slice = 4,
+	          width = 236,
+	          height = 228,
+	          direction_count = 256,
+	          allow_low_quality_rotation = true,
+	          filenames =
+	          {
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-01.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-02.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-03.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-04.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-05.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-06.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-07.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-mask-08.png"
+	          },
+	          line_length = 4,
+	          lines_per_file = 8,
+	          shift = {0.0, -0.5},
+	          apply_runtime_tint = true,
+	          hr_version =
+	            {
+	              priority = "very-low",
+	              flags = { "mask" },
+	              slice = 4,
+	              width = 472,
+	              height = 456,
+	              direction_count = 256,
+	              allow_low_quality_rotation = true,
+	              filenames =
+	              {
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-1.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-2.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-3.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-4.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-5.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-6.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-7.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-8.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-9.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-10.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-11.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-12.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-13.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-14.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-15.png",
+	                "__base__/graphics/entity/diesel-locomotive/hr-diesel-locomotive-mask-16.png"
+	              },
+	              line_length = 4,
+	              lines_per_file = 4,
+	              shift = {0.0, -0.5},
+	              apply_runtime_tint = true,
+	              scale = 0.5
+	            }
+	        },
+	        {
+	          priority = "very-low",
+	          slice = 4,
+	          flags = { "shadow" },
+	          width = 253,
+	          height = 212,
+	          direction_count = 256,
+	          draw_as_shadow = true,
+	          allow_low_quality_rotation = true,
+	          filenames =
+	          {
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-01.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-02.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-03.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-04.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-05.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-06.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-07.png",
+	            "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-shadow-08.png"
+	          },
+	          line_length = 4,
+	          lines_per_file = 8,
+	          shift = {1, 0.3}
+	        }
+	      }
+	    },
+	    wheels = standard_train_wheels,
+	    rail_category = "regular",
+	    stop_trigger =
+	    {
+	      -- left side
+	      {
+	        type = "create-trivial-smoke",
+	        repeat_count = 125,
+	        smoke_name = "smoke-train-stop",
+	        initial_height = 0,
+	        -- smoke goes to the left
+	        speed = {-0.03, 0},
+	        speed_multiplier = 0.75,
+	        speed_multiplier_deviation = 1.1,
+	        offset_deviation = {{-0.75, -2.7}, {-0.3, 2.7}}
+	      },
+	      -- right side
+	      {
+	        type = "create-trivial-smoke",
+	        repeat_count = 125,
+	        smoke_name = "smoke-train-stop",
+	        initial_height = 0,
+	        -- smoke goes to the right
+	        speed = {0.03, 0},
+	        speed_multiplier = 0.75,
+	        speed_multiplier_deviation = 1.1,
+	        offset_deviation = {{0.3, -2.7}, {0.75, 2.7}}
+	      },
+	      {
+	        type = "play-sound",
+	        sound =
+	        {
+	          {
+	            filename = "__base__/sound/train-breaks.ogg",
+	            volume = 0.6
+	          }
+	        }
+	      }
+	    },
+	    drive_over_tie_trigger = drive_over_tie(),
+	    tie_distance = 50,
+	    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+	    working_sound =
+	    {
+	      sound =
+	      {
+	        filename = "__base__/sound/train-engine.ogg",
+	        volume = 0.4
+	      },
+	      match_speed_to_activity = true
+	    },
+	    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume=0.7 },
+	    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
+	    sound_minimum_speed = 0.5;
+	  },
+
 	})
 end
 function createCargoWagon (a)
@@ -3906,7 +3986,7 @@ function createCargoWagon (a)
     sound_minimum_speed = 0.5;
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 }
   },
-	
+
 	})
 end
 function createFluidWagon (a)
@@ -4131,7 +4211,7 @@ function createFluidWagon (a)
     sound_minimum_speed = 0.5;
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 }
   },
-	
+
 	})
 end
 function createTrainStop (a)
@@ -4604,7 +4684,7 @@ function createTrainStop (a)
     circuit_wire_max_distance = 9,
     default_train_stopped_signal = {type = "virtual", name = "signal-T"}
   },
-	
+
 	})
 end
 function createRailSignal (a)
@@ -4776,7 +4856,7 @@ function createRailSignal (a)
     default_orange_output_signal = {type = "virtual", name = "signal-yellow"},
     default_green_output_signal = {type = "virtual", name = "signal-green"}
   },
-	
+
 	})
 end
 function createRailChainSignal (a)
@@ -4850,7 +4930,7 @@ function createRailChainSignal (a)
     red_light = {intensity = 0.3, size = 4, color={r=0.784314, g=0.431373, b=0.431373}},
     blue_light = {intensity = 0.3, size = 4, color={r=0.431373, g=0.694118, b=0.623529}},
   },
-	
+
 	})
 end
 function createLab (a)
@@ -4862,73 +4942,183 @@ function createLab (a)
 
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	{
-    type = "lab",
-    name = name,
-    icon = icon,
-	icon_size=32,
-    flags = {"placeable-player", "player-creation"},
-    minable = minable,
-    max_health = max_health,
-    corpse = "big-remnants",
-    dying_explosion = "medium-explosion",
-    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},
-    on_animation =
-    {
-      filename = "__base__/graphics/entity/lab/lab.png",
-      width = 113,
-      height = 91,
-      frame_count = 33,
-      line_length = 11,
-      animation_speed = 1 / 3,
-      shift = {0.2, 0.15}
-    },
-    off_animation =
-    {
-      filename = "__base__/graphics/entity/lab/lab.png",
-      width = 113,
-      height = 91,
-      frame_count = 1,
-      shift = {0.2, 0.15}
-    },
-    working_sound =
-    {
-      sound =
-      {
-        filename = "__base__/sound/lab.ogg",
-        volume = 0.7
-      },
-      apparent_volume = 1
-    },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    energy_source =
-    {
-      type = "electric",
-      usage_priority = "secondary-input"
-    },
-    energy_usage = energy_usage,
-    researching_speed = 1,
-    inputs =
-    {
-      "science-pack-1",
-      "science-pack-2",
-      "science-pack-3",
-      "military-science-pack",
-      "production-science-pack",
-      "high-tech-science-pack",
-      "space-science-pack"
-    },
-    module_specification =
-    {
-      module_slots = 2,
-      max_entity_info_module_icons_per_row = 3,
-      max_entity_info_module_icon_rows = 1,
-      module_info_icon_shift = {0, 0.9}
-    }
-  },
-	
+		{
+	    type = "lab",
+	    name = name,
+	    icon = "__base__/graphics/icons/lab.png",
+	    icon_size = 32,
+	    flags = {"placeable-player", "player-creation"},
+	    minable = {mining_time = 1, result = "lab"},
+	    max_health = 150,
+	    corpse = "big-remnants",
+	    dying_explosion = "medium-explosion",
+	    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+	    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+	    light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},
+	    on_animation =
+	    {
+	      layers =
+	      {
+	        {
+	          filename = "__base__/graphics/entity/lab/lab.png",
+	          width = 98,
+	          height = 87,
+	          frame_count = 33,
+	          line_length = 11,
+	          animation_speed = 1 / 3,
+	          shift = util.by_pixel(0, 1.5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/lab/hr-lab.png",
+	            width = 194,
+	            height = 174,
+	            frame_count = 33,
+	            line_length = 11,
+	            animation_speed = 1 / 3,
+	            shift = util.by_pixel(0, 1.5),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/lab/lab-integration.png",
+	          width = 122,
+	          height = 81,
+	          frame_count = 1,
+	          line_length = 1,
+	          repeat_count = 33,
+	          animation_speed = 1 / 3,
+	          shift = util.by_pixel(0, 15.5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
+	            width = 242,
+	            height = 162,
+	            frame_count = 1,
+	            line_length = 1,
+	            repeat_count = 33,
+	            animation_speed = 1 / 3,
+	            shift = util.by_pixel(0, 15.5),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/lab/lab-shadow.png",
+	          width = 122,
+	          height = 68,
+	          frame_count = 1,
+	          line_length = 1,
+	          repeat_count = 33,
+	          animation_speed = 1 / 3,
+	          shift = util.by_pixel(13, 11),
+	          draw_as_shadow = true,
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
+	            width = 242,
+	            height = 136,
+	            frame_count = 1,
+	            line_length = 1,
+	            repeat_count = 33,
+	            animation_speed = 1 / 3,
+	            shift = util.by_pixel(13, 11),
+	            scale = 0.5,
+	            draw_as_shadow = true
+	          }
+	        }
+	      }
+	    },
+	    off_animation =
+	    {
+	      layers =
+	      {
+	        {
+	          filename = "__base__/graphics/entity/lab/lab.png",
+	          width = 98,
+	          height = 87,
+	          frame_count = 1,
+	          shift = util.by_pixel(0, 1.5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/lab/hr-lab.png",
+	            width = 194,
+	            height = 174,
+	            frame_count = 1,
+	            shift = util.by_pixel(0, 1.5),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/lab/lab-integration.png",
+	          width = 122,
+	          height = 81,
+	          frame_count = 1,
+	          shift = util.by_pixel(0, 15.5),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/lab/hr-lab-integration.png",
+	            width = 242,
+	            height = 162,
+	            frame_count = 1,
+	            shift = util.by_pixel(0, 15.5),
+	            scale = 0.5
+	          }
+	        },
+	        {
+	          filename = "__base__/graphics/entity/lab/lab-shadow.png",
+	          width = 122,
+	          height = 68,
+	          frame_count = 1,
+	          shift = util.by_pixel(13, 11),
+	          draw_as_shadow = true,
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/lab/hr-lab-shadow.png",
+	            width = 242,
+	            height = 136,
+	            frame_count = 1,
+	            shift = util.by_pixel(13, 11),
+	            draw_as_shadow = true,
+	            scale = 0.5
+	          }
+	        }
+	      }
+	    },
+	    working_sound =
+	    {
+	      sound =
+	      {
+	        filename = "__base__/sound/lab.ogg",
+	        volume = 0.7
+	      },
+	      apparent_volume = 1
+	    },
+	    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+	    energy_source =
+	    {
+	      type = "electric",
+	      usage_priority = "secondary-input"
+	    },
+	    energy_usage = "60kW",
+	    researching_speed = 1,
+	    inputs =
+	    {
+	      "science-pack-1",
+	      "science-pack-2",
+	      "science-pack-3",
+	      "military-science-pack",
+	      "production-science-pack",
+	      "high-tech-science-pack",
+	      "space-science-pack"
+	    },
+	    module_specification =
+	    {
+	      module_slots = 2,
+	      max_entity_info_module_icons_per_row = 3,
+	      max_entity_info_module_icon_rows = 1,
+	      module_info_icon_shift = {0, 0.9}
+	    }
+	  },
+
 	})
 end
 function createLogisticRobot (a)
@@ -5060,7 +5250,7 @@ function createLogisticRobot (a)
     working_sound = flying_robot_sounds(),
     cargo_centered = {0.0, 0.2},
   },
-	
+
 	})
 end
 function createConstructionRobot (a)
@@ -5248,7 +5438,7 @@ function createConstructionRobot (a)
     cargo_centered = {0.0, 0.2},
     construction_vector = {0.30, 0.22},
   },
-	
+
 	})
 end
 function createLogisticContainer (a)
@@ -5316,7 +5506,7 @@ function createLogisticContainer (a)
     circuit_wire_max_distance = 9,
     circuit_connector_sprites = get_circuit_connector_sprites({0.1875, 0.15625}, nil, 18),
   },
-	
+
 	})
 end
 function createRoboport (a)
@@ -5334,11 +5524,11 @@ function createRoboport (a)
 	data:extend({
 	{
     type = "roboport",
-    name = "roboport",
+    name = name,
     icon = "__base__/graphics/icons/roboport.png",
     icon_size = 32,
     flags = {"placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 0.5, result = "roboport"},
+    minable = minable,
     max_health = 500,
     corpse = "big-remnants",
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
@@ -5533,7 +5723,7 @@ function createRoboport (a)
     default_available_construction_output_signal = {type = "virtual", name = "signal-Z"},
     default_total_construction_output_signal = {type = "virtual", name = "signal-T"},
   },
-	
+
 	})
 end
 function createStorageTank (a)
@@ -5705,7 +5895,7 @@ function createStorageTank (a)
     },
     circuit_wire_max_distance = 9
   },
-	
+
 	})
 end
 function createPump (a)
@@ -6046,7 +6236,7 @@ function createPump (a)
     circuit_wire_max_distance = 9
 
   },
-	
+
 	})
 end
 function createAccumulator (a)
@@ -6144,7 +6334,7 @@ function createAccumulator (a)
     circuit_wire_max_distance = 9,
     default_output_signal = {type = "virtual", name = "signal-A"}
   },
-	
+
 	})
 end
 function createPowerSwitch (a)
@@ -6268,7 +6458,7 @@ function createPowerSwitch (a)
 
     wire_max_distance = 10
   },
-	
+
 	})
 end
 function createReactor (a)
@@ -6507,7 +6697,7 @@ function createReactor (a)
 
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
   },
-	
+
 	})
 end
 function createHeatPipe (a)
@@ -6627,7 +6817,7 @@ function createHeatPipe (a)
       --add_perspective = true
     },
   },
-	
+
 	})
 end
 
@@ -6645,16 +6835,16 @@ function createEEEXXXXPPP (a)
 	local fast_replaceable_group=a.fast_replaceable_group or "inserter"
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	
-	
+
+
 	})
 end
 --[[
 function createTrasportBelt (a)
 	local name=a.name
 	data:extend({
-	
-	
+
+
 	})
 end
 
@@ -6829,22 +7019,22 @@ end
 function makeTech(name,icon,effects,prerequisites)
 	data:extend(
 	{
-	
-	
+
+
 	{
 		type = "technology",
 		name = name,
 		icon = icon,
 	icon_size=32,
 		effects =effects,
-		
+
 		prerequisites = prerequisites,
     unit =
 	{
 		count = 50,
 		ingredients =
 		{
-			
+
 			{"Credit100", 10}
 		},
 		time = 30

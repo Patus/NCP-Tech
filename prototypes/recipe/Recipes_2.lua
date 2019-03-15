@@ -13,11 +13,12 @@ data:extend(
 		{
 			{type="item", name="Credit100", amount=1},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit", amount=100},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -30,11 +31,12 @@ data:extend(
 		{
 			{type="item", name="Credit", amount=100},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit100", amount=1},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit100.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -47,11 +49,12 @@ data:extend(
 		{
 			{type="item", name="Credit10k", amount=1},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit100", amount=100},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit100.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -64,11 +67,12 @@ data:extend(
 		{
 			{type="item", name="Credit100", amount=100},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit10k", amount=1},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit10k.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -81,11 +85,12 @@ data:extend(
 		{
 			{type="item", name="Credit1M", amount=1},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit10k", amount=100},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit10k.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -98,11 +103,12 @@ data:extend(
 		{
 			{type="item", name="Credit10k", amount=100},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit1M", amount=1},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit1M.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -115,11 +121,12 @@ data:extend(
 		{
 			{type="item", name="Credit1G", amount=1},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit1M", amount=1000},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit1M.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 	{
@@ -132,22 +139,23 @@ data:extend(
 		{
 			{type="item", name="Credit1M", amount=1000},
 		},
-		results = 
+		results =
 		{
 			{type="item", name="Credit1G", amount=1},
 		},
 		icon = "__NCP-Tech__/graphics/item/Credit1G.png",
+		icon_size=32,
 		subgroup = "Recourses",
 	},
 
-	
-  
-  
-  
-  
-  
-  
- 
+
+
+
+
+
+
+
+
 
 
 }
@@ -159,7 +167,7 @@ local billetName={["Iron"]="Iron_billet",["Copper"]="Copper_billet",["Steel"]="S
 					["Aluminium"]="Aluminium_billet",["Lead"]="Lead_billet",["Titanium"]="Titanium_billet",["Silver"]="Silver_ingot",["Stainless_steel"]="Stainless_steel_billet",
 					["Plastic"]="Plastic_pellets",["Magnesium"]="Magnesium_billet",["Tungsten"]="Tungsten_carbide_billet",["Concrete"]="Concrete_block",["Brass"]="Brass_billet",
 					["Nichrome"]="Nichrome"}
-					
+
 local itemMachines={["gear"]=nil,["plate"]="Rolling_machine",["rod"]="Extruder",["foil"]="Rolling_machine",["pipe"]=nil,["chain"]=nil,
 					["transmission_chain"]=nil,["wire"]="Extruder",["underground_pipe"]=nil}
 local itemOutputs={["gear"]=1,["plate"]=2,["rod"]=4,["foil"]=4,["pipe"]=1,["chain"]=1,["transmission_chain"]=1,["wire"]=2,["underground_pipe"]=1}
@@ -171,7 +179,7 @@ local inputItem={["gear"]="plate",["foil"]="plate",["pipe"]="plate",["chain"]="r
 local undergroundpipeLenght={["Iron"]=10,["Copper"]=10,["Steel"]=10,["Tin"]=10,["Gold"]=10,["Nickel"]=10,
 					["Aluminium"]=10,["Lead"]=10,["Titanium"]=10,["Silver"]=10,["Stainless_steel"]=10,
 					["Plastic"]=10,["Magnesium"]=10,["Tungsten"]=10,["Brass"]=10}
-					
+
 local pipeSize={["Iron"]=1,["Copper"]=1,["Steel"]=1,["Tin"]=1,["Gold"]=1,["Nickel"]=1,
 					["Aluminium"]=1,["Lead"]=1,["Titanium"]=1,["Silver"]=1,["Stainless_steel"]=1,
 					["Plastic"]=1,["Magnesium"]=1,["Tungsten"]=1,["Brass"]=1}
@@ -179,22 +187,23 @@ local pipeSize={["Iron"]=1,["Copper"]=1,["Steel"]=1,["Tin"]=1,["Gold"]=1,["Nicke
 
 
 
-					
-				
-					
-						
+
+
+
+
 
 
 function makeItems(material,item)
 	local itemName=material.."_"..item
 	if(item=="pipe" or item=="underground_pipe")then
-		
+
 		data:extend(
 		{
 		{
 			type= "item",
 			name= itemName,
 			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
+			icon_size=32,
 			flags= { "goes-to-main-inventory" },
 			subgroup = item,
 			order= "a-b-c",
@@ -211,6 +220,7 @@ function makeItems(material,item)
 			type= "item",
 			name= itemName,
 			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
+			icon_size=32,
 			flags= { "goes-to-main-inventory" },
 			subgroup = item,
 			order= "a-b-c",
@@ -219,7 +229,7 @@ function makeItems(material,item)
 
 		})
 	end
-	
+
 end
 
 function makeRecipes(material,item)
@@ -239,11 +249,12 @@ local itemName=material.."_"..item
 			{type="item", name=material.."_gear", amount=itemInputs[item]},
 			{type="item", name=material.."_chain", amount=itemInputs[item]/2},
 		},
-		results = 
+		results =
 		{
 			{type="item", name=itemName, amount=itemOutputs[item]},
 		},
 		icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
+		icon_size=32,
 		subgroup = item,
 		},
 		})
@@ -261,11 +272,12 @@ local itemName=material.."_"..item
 		{
 			{type="item", name=material.."_pipe", amount=undergroundpipeLenght[material]+4},
 		},
-		results = 
+		results =
 		{
 			{type="item", name=itemName, amount=itemOutputs[item]},
 		},
 		icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
+		icon_size=32,
 		subgroup = item,
 		},
 		})
@@ -284,11 +296,12 @@ local itemName=material.."_"..item
 			{
 				{type="item", name=billetName[material], amount=itemInputs[item]},
 			},
-			results = 
+			results =
 			{
 				{type="item", name=itemName, amount=itemOutputs[item]},
 			},
 			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
+			icon_size=32,
 			subgroup = item,
 			},
 			})
@@ -305,23 +318,24 @@ local itemName=material.."_"..item
 			{
 				{type="item", name=material.."_"..inputItem[item], amount=itemInputs[item]},
 			},
-			results = 
+			results =
 			{
 				{type="item", name=itemName, amount=itemOutputs[item]},
 			},
 			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
+			icon_size=32,
 			subgroup = item,
 			},
 			})
 		end
-		
+
 	end
-		
-	
-	
-	
-      
-    
+
+
+
+
+
+
 
 
 end
@@ -374,7 +388,7 @@ function makePipeEntitie(itemName,base_area)
 		horizontal_window_bounding_box = {{-0.25, -0.25}, {0.25, 0.15625}},
 		vertical_window_bounding_box = {{-0.28125, -0.40625}, {0.03125, 0.125}}
 	},
-	
+
 	})
 
 end
@@ -453,9 +467,9 @@ function makeUndergroundPipeEntitie(itemName,base_area,max_underground_distance)
 			},
 			}
 			},
-		
-		
-		
+
+
+
 		})
 
 end
@@ -465,13 +479,13 @@ function makeEntities(material,item)
 local itemName=material.."_"..item
 if(item=="pipe")then
 	makePipeEntitie(itemName,pipeSize[material])
-	
+
 	end
 	if(item=="underground_pipe")then
-		
+
 		makeUndergroundPipeEntitie(itemName,pipeSize[material],undergroundpipeLenght[material])
-		
-		
+
+
 	end
 end
 
@@ -481,14 +495,14 @@ for i , item in pairs(items) do
 		if(not(material=="Zirconium" or material=="Nichrome")) then
 			makeItems(material,item)
 			makeRecipes(material,item)
-			
+
 		else
 			if((material=="Zirconium" and item=="rod")or(material=="Nichrome" and (item=="rod"or item=="wire")))then
 				makeItems(material,item)
 				makeRecipes(material,item)
 			end
 		end
-		
+
 	end
 end
 
@@ -523,17 +537,17 @@ end
 local densemetals={"Iron","Copper","Steel","Lead"}
 --[[
 for i , item in pairs(densemetals) do
-	
+
 	oldmakeItem(item.."_dense_plate",50,"dense_plate",false)
 	oldmakeRecipe(item.."_dense_plate",{{"item",billetName[item],10}},{{"item",item.."_dense_plate",1}},"Furnace","dense_plate")
-	
+
 	oldmakeItem(item.."_large_dense_plate",50,"dense_armor_plate",false)
 	oldmakeRecipe(item.."_large_dense_plate",{{"item",item.."_dense_plate",10}},{{"item",item.."_large_dense_plate",1}},"Assembling_machine","dense_armor_plate")
-	
+
 	oldmakeItem(item.."_dense_pipe",50,"dense_pipe",true)
 	oldmakeRecipe(item.."_dense_pipe",{{"item",item.."_dense_plate",2}},{{"item",item.."_dense_pipe",1}},"Assembling_machine","dense_pipe")
 	makePipeEntitie(item.."_dense_pipe",10)
-	
+
 	oldmakeItem(item.."_dense_underground_pipe",50,"dense_underground_pipe",true)
 	oldmakeRecipe(item.."_dense_underground_pipe",{{"item",item.."_dense_pipe",24}},{{"item",item.."_dense_underground_pipe",2}},nil,"dense_underground_pipe")
 	makeUndergroundPipeEntitie(item.."_dense_underground_pipe",1,20)
@@ -559,6 +573,7 @@ data:extend(
 		type = "lab",
 		name = "lab",
 		icon = "__base__/graphics/icons/lab.png",
+		icon_size=32,
 		flags = {"placeable-player", "player-creation"},
 		minable = {mining_time = 1, result = "lab"},
 		max_health = 150,
@@ -627,14 +642,14 @@ end
 
 
 
-makeLab()
+--makeLab()
 
 
 
 local tierOrder={["crude"]="a",["basic"]="b",["normal"]="c",["fast"]="d",["improved_fast"]="e",["express"]="f",["improved_express"]="g"}
 function makeTransportBelt(name,speed)
 	oldmakeItem("Transport_belt_"..name,50,"Transportblelt",true,tierOrder[name])
-	
+
 
 	data:extend(
 	{
@@ -688,7 +703,7 @@ function makeTransportBelt(name,speed)
 		circuit_connector_sprites = transport_belt_circuit_connector_sprites,
 		circuit_wire_connection_point = transport_belt_circuit_wire_connection_point,
 		circuit_wire_max_distance = transport_belt_circuit_wire_max_distance,
-		
+
 	}
 })
 end
@@ -701,7 +716,7 @@ function makeUnderTransportBelt(name,add,speed,max_distance)
 		add="_"..add
 	end
 	oldmakeItem("Transport_belt_"..name.."_under"..add,50,"Transportblelt_under",true,tierOrder[name])
-	
+
 
 	data:extend(
 	{
@@ -858,14 +873,14 @@ end
 
 
 function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,energy_source,hand_size,programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
-	
+
 	local types2=""
 	if(types~="")then
 		types2="_"..types
 	end
 	oldmakeItem("Inserter_"..name..types2,50,"Inserter"..types2,true,tierOrder[name])
-	
-	
+
+
 	data:extend(
 	{
 	{
@@ -912,9 +927,9 @@ function makeInserter(name,types,extension_speed,rotation_speed,energy_per_movem
         green = {0, 0}
       }
     },
-	
+
     energy_source = energy_source,
-    
+
     extension_speed = extension_speed,
     rotation_speed = rotation_speed,
     fast_replaceable_group = "inserter",
@@ -1033,7 +1048,7 @@ end
 function makeElectricInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
 			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
-			
+
 	makeInserter(name,types,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,{type = "electric",usage_priority = "secondary-input",drain = drain},hand_size,
 			programmable,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
@@ -1041,8 +1056,8 @@ end
 
 function makeSmartInserter(name,extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
 			filter_count,circuit_wire_max_distance,pickup_position,insert_position)
-			
-			
+
+
 	makeElectricInserter(name,"smart",extension_speed,rotation_speed,energy_per_movement,energy_per_rotation,drain,hand_size,
 			true,filter_count,circuit_wire_max_distance,pickup_position,insert_position)
 
@@ -1715,5 +1730,3 @@ makeRecipe{name="Zirconium_billet",energy_required=5,category="Electric_furnace"
 makeRecipe{name="Zirconium_sponge",energy_required=10,category="Electric_furnace",ingredients={{type="item", name="Zirconium_tetrachloride", amount=1},{type="item", name="Magnesium_billet", amount=1},},results={{type="item", name="Zirconium_sponge", amount=8,probability =1},},}
 makeRecipe{name="Zirconium_tetrachloride",energy_required=12,category="Chemical_furnace",ingredients={{type="item", name="Zircon", amount=1},{type="item", name="Coal_coke", amount=2},{type="fluid", name="Chlorine", amount=4},},results={{type="item", name="Zirconium_tetrachloride", amount=1,probability =1},},}
 makeRecipe{name="Zirconium_tube",energy_required=1.5,category="Assembling_machine",ingredients={{type="item", name="Zirconium_rod", amount=1},},results={{type="item", name="Zirconium_tube", amount=1,probability =1},},}
-
-

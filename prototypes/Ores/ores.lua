@@ -9,7 +9,7 @@ data.raw.resource["coal"].minable = (
       hardness = 0.9,
       mining_particle = "stone-particle",
       mining_time = 2,
-      results = 
+      results =
       {
          {type="item", name="coal", amount=1 ,probability = 1},
          {type="item", name="Diamond_uncut", amount=1, probability = 0.0001},
@@ -35,7 +35,7 @@ data.raw.resource["stone"].autoplace = (
         noise_octaves_difference = -1.5,
 		noise_persistence = 0.3,
       },
-      
+
     }
   }
 )
@@ -46,10 +46,10 @@ data.raw.resource["stone"].minable = (
       hardness = 0.9,
       mining_particle = "stone-particle",
       mining_time = 2,
-      results = 
+      results =
       {
          {type="item", name="Quarried_stone", amount=1 ,probability = 0.60},
-		 {type="item", name="Quarried_limestone", amount=1, probability = 0.60},
+		 {type="item", name="Limestone_Quarried", amount=1, probability = 0.60},
 		 {type="item", name="Quartz_rock", amount=1, probability = 0.10},
       },
     }
@@ -96,6 +96,8 @@ data:extend(
       mining_particle = "copper-ore-particle",
       mining_time = 2,
       results=results,
+	  --fluid_amount = 10,
+      --required_fluid = "water"
     },
     collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
@@ -160,8 +162,7 @@ makeore ("Graphite_ore",{		{type="item", name="Graphite_ore", amount=1, probabil
 								{type="item", name="Diamond_uncut", amount=1, probability = 0.001},
 })
 
-makeore ("Clay_ore",{			{type="item", name="Clay_wet", amount=1, probability = 1}
-})
+--makeore ("Clay_ore",{			{type="item", name="Clay_wet", amount=1, probability = 1}})
 makeore ("Copper_native_ore",{	{type="item", name="Copper_native_ore", amount=1, probability = 1}
 })
 makeore ("Scheelite_ore",{		{type="item", name="Scheelite_ore", amount=1, probability = 1}
@@ -260,7 +261,7 @@ data:extend(
     map_color = {r=0.3, g=0.3, b=1},
     map_grid = false
   }
-})	  
+})
 
 
 
@@ -274,7 +275,7 @@ data:extend(
 --[[
 data:extend(
 {
-  
+
   {
     type = "resource",
     name = "Graphite_ore",
@@ -286,7 +287,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      results = 
+      results =
       {
          {type="item", name="Graphite_ore", amount=1, probability = 1},
          {type="item", name="Diamond_uncut", amount=1, probability = 0.001},
@@ -304,7 +305,7 @@ data:extend(
       size_control_multiplier = 0.06,
 	  coverage = 0.02,
 	  starting_area_amount = 1500,
-	  
+
       peaks = {
 
         {
@@ -360,7 +361,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Clay_ore",
           noise_persistence = 0.3,
@@ -385,8 +386,8 @@ data:extend(
     },
     map_color = {r=0.803, g=0.388, b=0.215}
   },
-  
-  
+
+
   {
     type = "resource",
     name = "Bauxite_ore",
@@ -418,7 +419,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Bauxite_ore",
           noise_persistence = 0.3,
@@ -474,7 +475,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Copper_native_ore",
           noise_persistence = 0.8,
@@ -530,7 +531,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Scheelite_ore",
           noise_persistence = 0.3,
@@ -566,7 +567,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      results = 
+      results =
       {
          {type="item", name="Chalcopyrite_ore", amount=1, probability = 1},
          {type="item", name="Pentlandite_ore", amount=1, probability = 0.25},
@@ -591,7 +592,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Chalcopyrite_ore",
           noise_persistence = 0.3,
@@ -647,7 +648,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Uraninite_ore",
           noise_persistence = 0.3,
@@ -703,7 +704,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Fluorite_ore",
           noise_persistence = 0.3,
@@ -759,7 +760,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Cassiterite_ore",
           noise_persistence = 0.3,
@@ -795,7 +796,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      results = 
+      results =
       {
          {type="item", name="Galena_ore", amount=1, probability = 1},
          {type="item", name="Sphalerite_ore", amount=1, probability = 0.25},
@@ -820,7 +821,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Galena_ore",
           noise_persistence = 0.3,
@@ -876,7 +877,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Rutile_ore",
           noise_persistence = 0.3,
@@ -912,7 +913,7 @@ data:extend(
       hardness = 0.9,
       mining_particle = "copper-ore-particle",
       mining_time = 2,
-      results = 
+      results =
       {
          {type="item", name="Magnetite_ore", amount=1, probability = 1},
          {type="item", name="Chromite_ore", amount=1, probability = 0.10},
@@ -936,7 +937,7 @@ data:extend(
         },
         {
           influence = 0.65,
-          
+
           noise_octaves_difference = -1.9,
 		  noise_layer = "Magnetite_ore",
           noise_persistence = 0.3,

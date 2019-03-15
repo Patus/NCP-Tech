@@ -1,5 +1,97 @@
 data.raw["item"]["coal"].fuel_value =nil
 data.raw["item"]["raw-wood"].fuel_value =nil
+
+
+data:extend({
+{
+  type= "item",
+  icon_size=32,
+  name= "aaaaaaCheatFuel",
+  icon = "__NCP-Tech__/graphics/item/Zinc_billet.png",
+  icon_size=32,
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "a-b-c",
+  stack_size= 500,
+  fuel_value = "800MJ",
+  fuel_category = "chemical",
+
+},
+{
+  type= "tool",
+  name= "Credit",
+  icon = "__NCP-Tech__/graphics/item/Credit.png",
+  icon_size=32,
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "aa",
+  stack_size= 100,
+  durability = 1,
+},
+{
+  type= "tool",
+  name= "Credit100",
+  icon = "__NCP-Tech__/graphics/item/Credit100.png",
+  icon_size=32,
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "ab",
+  stack_size= 100,
+  durability = 1,
+},
+{
+  type= "tool",
+  name= "Credit10k",
+  icon = "__NCP-Tech__/graphics/item/Credit10k.png",
+  icon_size=32,
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "ac",
+  stack_size= 100,
+  durability = 1,
+},
+{
+  type= "tool",
+  name= "Credit1M",
+  icon = "__NCP-Tech__/graphics/item/Credit1M.png",
+  icon_size=32,
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "ad",
+  stack_size= 1000,
+  durability = 1,
+},
+{
+  type= "tool",
+  name= "Credit1G",
+  icon = "__NCP-Tech__/graphics/item/Credit1G.png",
+  icon_size=32,
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "ae",
+  stack_size= 50,
+  durability = 1,
+},
+{
+  type= "item",
+  icon_size=32,
+  name= "Tungsten_carbide_billet",
+  icon = "__NCP-Tech__/graphics/item/Tungsten_carbide_billet.png",
+  flags= { "goes-to-main-inventory" },
+  subgroup = "ores",
+  order= "a-b-c",
+  stack_size= 50,
+},
+
+
+
+
+
+
+
+
+})
+
 --[[
 data:extend({
 
@@ -1345,8 +1437,8 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
- 
-  
+
+
   {
     type= "item",
     icon_size=32,
@@ -1479,10 +1571,10 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
-  
+
+
   ----------------------------
-  
+
   {
     type= "item",
     icon_size=32,
@@ -1963,32 +2055,32 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   {
     type= "item",
@@ -2030,7 +2122,7 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
+
   {
     type= "item",
     icon_size=32,
@@ -2041,19 +2133,19 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
   --------------------------------------------
   {
     type= "item",
@@ -2136,7 +2228,7 @@ data:extend({
     stack_size= 50,
 	fuel_value="300MJ",
 	fuel_category = "chemical",
-	
+
   },
   {
     type= "item",
@@ -2168,7 +2260,7 @@ data:extend({
     order= "a-b-c",
     stack_size= 50,
   },
-  
+
   {
     type= "item",
     icon_size=32,
@@ -2260,32 +2352,32 @@ data:extend({
     stack_size= 50,
   },
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  --CHEATS
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  --CHEATS
+
+
+
+
   {
     type= "item",
     icon_size=32,
@@ -2299,17 +2391,17 @@ data:extend({
 	fuel_category = "chemical",
 
   },
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   })
 
 --]]
- 
+
   -- place items
 makeItem{name="Assembling_machine_t1",place_result="Assembling_machine_t1"}
 Assembling_machine("Assembling_machine_t1")
@@ -2705,7 +2797,19 @@ makeItem{name="Transport_belt_underground_t7",place_result="Transport_belt_under
 TransportBeltUnderground("Transport_belt_underground_t7")
 
   --]]
-  
+
+--minerals or unused
+makeItem{name="Diamond_uncut"}
+
+
+
+
+
+
+
+
+
+
   -- items
 makeItem{name="ABS-plastic_pellets"}
 makeItem{name="Acetylene"}
@@ -3191,18 +3295,3 @@ makeItem{name="Zirconium_rod"}
 makeItem{name="Zirconium_sponge"}
 makeItem{name="Zirconium_tetrachloride"}
 makeItem{name="Zirconium_tube"}
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  

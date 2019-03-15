@@ -1,16 +1,17 @@
 require("prototypes.functions")
 require("prototypes.recipe.recipe-category")
+require("prototypes.items.item-groups")
+require("prototypes.map_settings")
 require("prototypes.items.Basic-resourses")
 
-require("prototypes.items.item-groups")
 
-require("prototypes.map_settings")
 
---require("prototypes.recipe.Recipes_1")
+
+require("prototypes.recipe.Recipes_1")
 
 require("prototypes.recipe.Recipes_2")
 
---[[
+
 require("prototypes.fluids.fluids")
 
 require("prototypes.ores.ores")
@@ -27,4 +28,3 @@ require("prototypes.norecipe")
 require("prototypes.tech")
 require("prototypes.itemFuelValues")
 --]]
-

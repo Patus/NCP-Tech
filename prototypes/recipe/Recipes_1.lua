@@ -18,12 +18,12 @@ data.raw["generator"]["steam-engine"].fluid_input =
 
 data:extend(
 {
-  
-  
-  
-  
+
+--[[
+
+
   --Nitre
-  
+
   {
     type = "recipe",
     name = "Fertilizer",
@@ -37,9 +37,9 @@ data:extend(
     },
     result = "Fertilizer",
   },
-  
+
   --stone
-  
+
   {
     type = "recipe",
     name = "Stone_crushed",
@@ -62,7 +62,7 @@ data:extend(
     {
       {"Quartz_crushed", 2},
     },
-    results = 
+    results =
     {
       {type="item", name="Quartz", amount=1},
       {type="item", name="Stone_crushed", amount=1},
@@ -80,7 +80,7 @@ data:extend(
     {
       {"Stone_crushed", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Gravel", amount=1, probability = 0.95},
       {type="item", name="Sand", amount=1, probability = 0.05},
@@ -88,7 +88,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Gravel.png",
 	subgroup = "Recourses",
   },
-  
+
   {
     type = "recipe",
     name = "Sand",
@@ -99,7 +99,7 @@ data:extend(
     {
       {"Gravel", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Sand", amount=1, probability = 0.95},
       {type="item", name="Silt", amount=1, probability = 0.05}
@@ -117,7 +117,7 @@ data:extend(
     {
       {"Sand", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Silt", amount=1},
     },
@@ -135,7 +135,7 @@ data:extend(
       {"Silt", 1},
 	  {type="fluid", name="Water_distilled", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Rare_earth", amount=1, probability = 1/10000},
 	  {type="item", name="Gold_concentrate", amount=1, probability = 0.004},
@@ -181,7 +181,7 @@ data:extend(
       {"Quartz_crushed", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
@@ -212,7 +212,7 @@ data:extend(
       {"Silicon_dioxide", 1},
       {"Coal_coke", 2},
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_metallurgical", amount=1},
       {type="fluid", name="Carbon_monoxide", amount=2},
@@ -231,7 +231,7 @@ data:extend(
       {type="fluid", name="Hydrochloric_acid", amount=3},
 	  {type="item", name="Silicon_metallurgical", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Hydrogen", amount=1},
 	  {type="fluid", name="Trichlorosilane", amount=1},
@@ -250,7 +250,7 @@ data:extend(
       {type="fluid", name="Hydrogen", amount=2},
 	  {type="fluid", name="Trichlorosilane", amount=2},
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_polycrystalline_rod", amount=1,probability =0.1},
 	  {type="fluid", name="Hydrochloric_acid", amount=1 ,probability =0.1},
@@ -270,7 +270,7 @@ data:extend(
       {type="item", name="Silicon_polycrystalline_rod", amount=2},
 
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_polycrystalline_granule", amount=1,probability =1},
 
@@ -289,7 +289,7 @@ data:extend(
       {type="item", name="Silicon_polycrystalline_granule", amount=1},
 	  {type="fluid", name="Argon", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_boule", amount=1,probability =0.2},
 
@@ -308,7 +308,7 @@ data:extend(
       {type="item", name="Silicon_polycrystalline_granule", amount=1},
 
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_boule", amount=1,probability =0.1},
 
@@ -326,7 +326,7 @@ data:extend(
     {
       {"Silicon_boule", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_wafer", amount=20},
     },
@@ -357,7 +357,7 @@ data:extend(
     {
       {"Bauxite_crushed_ore", 2},
     },
-    results = 
+    results =
     {
       {type="item", name="Bauxite_ore_dust", amount=1},
     },
@@ -375,7 +375,7 @@ data:extend(
       {"Bauxite_ore_dust", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Bauxite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
@@ -394,7 +394,7 @@ data:extend(
       {"Bauxite_concentrate", 2},
       {"Sodium_hydroxide", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Bauxite_tailings", amount=1},
       {type="item", name="Alumina", amount=1}
@@ -440,7 +440,7 @@ data:extend(
       {"Fluorite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Calcium_fluoride", amount=1},
       {type="item", name="Stone_crushed", amount=1}
@@ -459,7 +459,7 @@ data:extend(
       {"Calcium_fluoride", 2},
       {type="fluid", name="Sulfuric_acid", amount=1}
     },
-    results = 
+    results =
     {
       {type="item", name="Calcium_sulfate", amount=1},
       {type="fluid", name="Hydrogen_fluoride", amount=1}
@@ -478,7 +478,7 @@ data:extend(
       {type="fluid", name="Hydrogen_fluoride", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Hydrofluoric_acid", amount=1},
     },
@@ -512,7 +512,7 @@ data:extend(
       {"Cassiterite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Tin_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
@@ -559,7 +559,7 @@ data:extend(
       {"Galena_crushed_ore", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
@@ -578,7 +578,7 @@ data:extend(
       {"Lead_concentrate", 3},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_bullion", amount=1},
       {type="item", name="Slag", amount=1},
@@ -597,7 +597,7 @@ data:extend(
     {
       {"Lead_bullion", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_billet", amount=1},
       {type="item", name="Silver_ingot", amount=1, probability = 0.02},
@@ -615,7 +615,7 @@ data:extend(
     {
       {"Lead_billet", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_scrap", amount_min= 1,amount_max= 4},
     },
@@ -632,7 +632,7 @@ data:extend(
     {
       {"Lead_scrap", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_dust", amount= 1},
     },
@@ -649,16 +649,16 @@ data:extend(
     {
       {"Lead_dust", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Lead_oxide", amount= 1},
     },
 	icon = "__NCP-Tech__/graphics/item/Lead_oxide.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
+
+
+
   --rutile
   {
     type = "recipe",
@@ -682,7 +682,7 @@ data:extend(
     {
       {"Rutile_crushed_ore", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Rutile_ore_sand", amount=1},
     },
@@ -700,7 +700,7 @@ data:extend(
       {"Rutile_ore_sand", 2},
       {type="fluid", name="Water", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Rutile_sand", amount=1},
       {type="item", name="Zircon", amount=1, amount=1, probability = 0.02},
@@ -721,7 +721,7 @@ data:extend(
 	  {type="item", name="Rutile_sand", amount=1},
 	  {type="fluid", name="Chlorine", amount=2},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Titanium_tetrachloride", amount=1},
 
@@ -740,7 +740,7 @@ data:extend(
 	  {type="fluid", name="Oxygen", amount=1},
 	  {type="fluid", name="Titanium_tetrachloride", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Chlorine", amount=2, probability =0.9},
 	  {type="item", name="Titanium_dioxide", amount=1},
@@ -758,7 +758,7 @@ data:extend(
     {
 	  {type="item", name="Titanium_dioxide", amount=10},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Titanium_dioxide_pellet", amount=1},
     },
@@ -776,7 +776,7 @@ data:extend(
 	  {type="item", name="Titanium_dioxide_pellet", amount=1},
 	  {type="item", name="Calcium_chloride", amount=1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Titanium_pellet", amount=1},
 	  {type="item", name="Calcium_oxide", amount=1},
@@ -794,7 +794,7 @@ data:extend(
     {
 	  {type="item", name="Titanium_pellet", amount=1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Titanium_dust_dirty", amount=1},
 
@@ -813,7 +813,7 @@ data:extend(
 	  {type="item", name="Titanium_dust_dirty", amount=1},
 	  {type="fluid", name="Water_distilled", amount=10},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Titanium_dust", amount=1},
 
@@ -831,7 +831,7 @@ data:extend(
     {
 	  {type="item", name="Titanium_dust", amount=1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Titanium_billet", amount=1},
 
@@ -839,7 +839,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Titanium_billet.png",
 	subgroup = "Recourses",
   },
-  
+
   {
     type = "recipe",
     name = "Zirconium_tetrachloride",
@@ -852,7 +852,7 @@ data:extend(
 	  {type="item", name="Coal_coke", amount=2},
 	  {type="fluid", name="Chlorine", amount=4},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Zirconium_tetrachloride", amount=1},
     },
@@ -870,7 +870,7 @@ data:extend(
       {type="item", name="Zirconium_tetrachloride", amount=1},
 	  {type="item", name="Magnesium_billet", amount=1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Zirconium_sponge", amount=1},
     },
@@ -887,7 +887,7 @@ data:extend(
     {
       {type="item", name="Zirconium_sponge", amount=8},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Zirconium_billet", amount=1},
 	  {type="item", name="Magnesium_chloride", amount=7},
@@ -895,13 +895,13 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Zirconium_billet.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
+
+
+
+
   --Gold
-  
-  
+
+
   {
     type = "recipe",
     name = "Dore_bar",
@@ -940,15 +940,15 @@ data:extend(
     },
     result = "Gold_ingot",
   },
-  
-  
-  
-  
-  
+
+
+
+
+
   --Coal
-  
-  
-  
+
+
+
   {
     type = "recipe",
     name = "Coal_crushed_ore",
@@ -959,13 +959,13 @@ data:extend(
     {
       {type="item", name="coal", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Coal_crushed_ore", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/item/Coal_crushed_ore.png",
 	subgroup = "Recourses",
-	
+
   },
   {
     type = "recipe",
@@ -976,15 +976,15 @@ data:extend(
     ingredients =
     {
       {type="item", name="Coal_crushed_ore", amount=1, probability = 1},
-      
+
     },
-    results = 
+    results =
     {
       {type="item", name="Coal_ore_dust", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/item/Coal_ore_dust.png",
 	subgroup = "Recourses",
-	
+
   },
   {
     type = "recipe",
@@ -997,14 +997,14 @@ data:extend(
       {"Coal_ore_dust", 2},
       {type="fluid", name="Water", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Coal_dust", amount=1, probability = 1},
       {type="item", name="Sand", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/item/Coal_dust.png",
 	subgroup = "Recourses",
-	
+
   },
   {
     type = "recipe",
@@ -1016,7 +1016,7 @@ data:extend(
     {
       {"Coal_dust", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Coal_coke", amount=1},
       {type="item", name="Coal_tar", amount=1},
@@ -1037,7 +1037,7 @@ data:extend(
     {
       {type="fluid", name="Coal_gas", amount=10},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Hydrogen", amount=5},
       {type="fluid", name="Petroleum_gas", amount=4},
@@ -1057,7 +1057,7 @@ data:extend(
       {type="fluid", name="Coal_gas", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Syngas", amount=1},
       {type="fluid", name="Toluene", amount=1, probability = 0.1},
@@ -1076,10 +1076,10 @@ data:extend(
       {type="fluid", name="Petroleum_gas", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Syngas", amount=2},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Syngas.png",
 	subgroup = "NCP_fluids",
@@ -1095,7 +1095,7 @@ data:extend(
       {"Graphite_dust", 1},
       {"Silicon_dioxide", 1},S
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_carbide", amount=1},
       {type="fluid", name="Carbon_monoxide", amount=1},
@@ -1113,7 +1113,7 @@ data:extend(
     {
       {"Coal_tar", 1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Ethylbenzene", amount=1},
       {type="fluid", name="Bitumi", amount=1},
@@ -1132,19 +1132,19 @@ data:extend(
       {"Gravel", 5},
       {type="fluid", name="Bitumi", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Asphalt_concrete", amount=5},
     },
 	icon = "__NCP-Tech__/graphics/item/Asphalt_concrete.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
+
+
+
   --Magnetite
   --early
-  
+
   {
     type = "recipe",
     name = "Pig_iron_early",
@@ -1156,7 +1156,7 @@ data:extend(
       {"Magnetite_ore", 6},
       {type="item", name="Charcoal", amount=3},
     },
-    results = 
+    results =
     {
       {type="item", name="Pig_iron_early", amount=1},
       {type="item", name="Slag", amount=2},
@@ -1173,15 +1173,15 @@ data:extend(
     ingredients =
     {
       {"Pig_iron_early", 2},
-      
+
     },
     result = "Iron_billet",
   },
-  
+
   ------------------------------------
-  
-  
-  
+
+
+
   {
     type = "recipe",
     name = "Magnetite_crushed_ore",
@@ -1205,7 +1205,7 @@ data:extend(
       {"Magnetite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Magnetite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1},
@@ -1225,7 +1225,7 @@ data:extend(
       {"Coal_coke", 1},
 	  {"Limestone_crushed", 1},
     },
-    results = 
+    results =
     {
       {type="item", name="Pig_iron", amount=1},
       {type="item", name="Slag", amount=1},
@@ -1246,11 +1246,11 @@ data:extend(
     },
     result = "Iron_billet",
   },
-  
- 
-  
+
+
+
   --Cromite
-  
+
   {
     type = "recipe",
     name = "Chromite_crushed_ore",
@@ -1274,14 +1274,14 @@ data:extend(
       {"Chromite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Chromite_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/item/Chromite_concentrate.png",
 	subgroup = "Recourses",
-  },  
+  },
   {
     type = "recipe",
     name = "Ferrochrome",
@@ -1296,7 +1296,7 @@ data:extend(
     result = "Ferrochrome",
   },
 
- 
+
 
 
 --Oil
@@ -1311,7 +1311,7 @@ data:extend(
     {
       {type="fluid", name="Crude_oil", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Petroleum_gas", amount=1},
       {type="fluid", name="Light_oil", amount=1},
@@ -1332,7 +1332,7 @@ data:extend(
       {type="fluid", name="Petroleum_gas", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Ethylene", amount=1},
       {type="fluid", name="Toluene", amount=1, probability = 0.1},
@@ -1351,7 +1351,7 @@ data:extend(
       {type="fluid", name="Hydrogen_chloride", amount=1},
       {type="fluid", name="Ethylene", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Dichloroethane", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
@@ -1369,7 +1369,7 @@ data:extend(
     {
       {type="fluid", name="Dichloroethane", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Hydrogen_chloride", amount=1, probability = 0.9},
       {type="item", name="Plastic_pellets", amount=1},
@@ -1389,7 +1389,7 @@ data:extend(
       {type="fluid", name="Light_oil", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Petroleum_gas", amount=1},
     },
@@ -1407,7 +1407,7 @@ data:extend(
       {type="fluid", name="Light_oil", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Butadiene", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
@@ -1438,7 +1438,7 @@ data:extend(
     {
       {type="fluid", name="Light_oil", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Diesel", amount=1},
     },
@@ -1456,7 +1456,7 @@ data:extend(
       {type="fluid", name="Diesel", amount=1},
       {type="item", name="Canister", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Diesel_canister", amount=1},
     },
@@ -1473,7 +1473,7 @@ data:extend(
     {
       {type="fluid", name="Light_oil", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Toluene", amount=1},
     },
@@ -1504,7 +1504,7 @@ data:extend(
       {type="fluid", name="Heavy_oil", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Light_oil", amount=1},
     },
@@ -1521,7 +1521,7 @@ data:extend(
     {
       {type="fluid", name="Heavy_oil", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Bitumi", amount=1},
     },
@@ -1538,7 +1538,7 @@ data:extend(
     {
       {type="fluid", name="Heavy_oil", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Lubricant", amount=1},
     },
@@ -1568,9 +1568,9 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      
+
     },
-    results = 
+    results =
     {
       {type="fluid", name="Air", amount=1},
     },
@@ -1587,7 +1587,7 @@ data:extend(
     {
       --{type="fluid", name="Air", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Nitrogen", amount=1, probability = 0.781},
       {type="fluid", name="Oxygen", amount=1, probability = 0.209},
@@ -1608,14 +1608,14 @@ data:extend(
     {
       {type="fluid", name="Water", amount=10},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Water_distilled", amount=9},
       {type="item", name="Salt", amount=1, probability = 0.01},
     },
 	icon = "__NCP-Tech__/graphics/fluid/Water_distilled.png",
 	subgroup = "NCP_fluids",
-  },  
+  },
   {
     type = "recipe",
     name = "Water_electrolyzer",
@@ -1626,7 +1626,7 @@ data:extend(
     {
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Oxygen", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
@@ -1634,7 +1634,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/fluid/Water_distilled.png",
 	subgroup = "NCP_fluids",
   },
-  
+
   {
     type = "recipe",
     name = "Chlorine",
@@ -1646,7 +1646,7 @@ data:extend(
       {type="fluid", name="Water_distilled", amount=1},
       {"Salt", 1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Chlorine", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
@@ -1666,7 +1666,7 @@ data:extend(
       {type="fluid", name="Chlorine", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Hydrogen_chloride", amount=1},
     },
@@ -1684,7 +1684,7 @@ data:extend(
       {type="fluid", name="Hydrogen_chloride", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Hydrochloric_acid", amount=1},
     },
@@ -1702,7 +1702,7 @@ data:extend(
       {type="fluid", name="Hydrochloric_acid", amount=1},
       {"Magnetite_concentrate", 1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Ferric_chloride_solution", amount=1},
     },
@@ -1723,7 +1723,7 @@ data:extend(
     {
       {type="fluid", name="Brine", amount=10},
     },
-    results = 
+    results =
     {
 		{type="item", name="Salt", amount=1, probability = 0.05},
 		{type="item", name="Potassium_nitrate", amount=1, probability = 0.03},
@@ -1743,7 +1743,7 @@ data:extend(
     {
 	  {type="fluid", name="Brine", amount=10},
     },
-    results = 
+    results =
     {
     {type="item", name="Salt", amount=1, probability = 0.05},
 	{type="item", name="Lithium_chloride", amount=1, probability = 0.01},
@@ -1752,7 +1752,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Lithium_chloride.png",
 	subgroup = "Recourses",
   },
-  
+
 
   {
     type = "recipe",
@@ -1788,11 +1788,11 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      
+
 	  {type="item", name="Lithium_chloride", amount=1},
 	  {type="item", name="Sodium_perchlorate", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Lithium_perchlorate", amount=1},
     },
@@ -1807,11 +1807,11 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      
+
 	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="item", name="Salt", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Sodium_chlorate", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
@@ -1827,11 +1827,11 @@ data:extend(
     enabled = "true",
     ingredients =
     {
-      
+
 	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="item", name="Sodium_chlorate", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Sodium_perchlorate", amount=1},
       {type="fluid", name="Hydrogen", amount=1},
@@ -1866,7 +1866,7 @@ data:extend(
 	  {type="fluid", name="Water", amount=10},
 	  {type="fluid", name="Brine", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Magnesium_hydroxide", amount=1, probability = 0.5},
     },
@@ -1883,7 +1883,7 @@ data:extend(
     {
       {type="item", name="Magnesium_hydroxide", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Magnesium_oxide", amount=1, probability = 1},
     },
@@ -1901,7 +1901,7 @@ data:extend(
       {type="item", name="Magnesium_oxide", amount=1},
 	  {type="item", name="Ferrosilicon", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Magnesium_billet", amount=1, probability = 1},
 	  {type="item", name="Pig_iron", amount=1, probability = 1},
@@ -1922,7 +1922,7 @@ data:extend(
 	  {type="item", name="Silicon_dioxide", amount=1},
 	  {type="item", name="Coal_coke", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Ferrosilicon", amount=1, probability = 1},
     },
@@ -1941,7 +1941,7 @@ data:extend(
 	  {type="item", name="Silicon_dioxide", amount=1},
 	  {type="item", name="Coal_coke", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Ferrosilicon", amount=1, probability = 1},
     },
@@ -1959,7 +1959,7 @@ data:extend(
       {type="item", name="Magnesium_hydroxide", amount=1},
 	  {type="fluid", name="Hydrochloric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Magnesium_chloride", amount=1, probability = 1},
 	  {type="fluid", name="Water_distilled", amount=1},
@@ -1977,7 +1977,7 @@ data:extend(
     {
       {type="item", name="Magnesium_chloride", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Magnesium_billet", amount=1, probability = 1},
 	  {type="fluid", name="Chlorine", amount=1},
@@ -1985,19 +1985,19 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Magnesium_billet.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
   --Graphite
-  
+
   {
     type = "recipe",
     name = "Graphite_crushed_ore",
@@ -2008,7 +2008,7 @@ data:extend(
     {
       {type="item", name="Graphite_ore", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Graphite_crushed_ore", amount=1, probability = 1},
     },
@@ -2026,7 +2026,7 @@ data:extend(
       {type="item", name="Graphite_crushed_ore", amount=2},
 	  {type="fluid", name="Water", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Graphite_crushed", amount=1, probability = 1},
 	  {type="item", name="Stone_crushed", amount=1, probability = 1},
@@ -2045,7 +2045,7 @@ data:extend(
       {type="item", name="Graphite_crushed", amount=5},
 	  {type="fluid", name="Water_distilled", amount=10},
     },
-    results = 
+    results =
     {
       {type="item", name="Graphite_crushed", amount=4, probability = 1},
 	  {type="item", name="Graphite_dust", amount=1, probability = 1},
@@ -2063,7 +2063,7 @@ data:extend(
     {
       {type="item", name="Graphite_dust", amount=100},
     },
-    results = 
+    results =
     {
       {type="item", name="Graphite_electrode", amount=1, probability = 1},
 
@@ -2081,7 +2081,7 @@ data:extend(
     {
       {type="item", name="Graphite_dust", amount=20},
     },
-    results = 
+    results =
     {
       {type="item", name="Graphite_crucible", amount=1, probability = 1},
 
@@ -2099,7 +2099,7 @@ data:extend(
     {
       {type="item", name="Graphite_dust", amount=20},
     },
-    results = 
+    results =
     {
       {type="item", name="Graphite_rod", amount=1, probability = 1},
 
@@ -2118,7 +2118,7 @@ data:extend(
 	  {type="item", name="Graphite_crucible", amount=1},
 	  {type="item", name="Graphite_rod", amount=2},
     },
-    results = 
+    results =
     {
       {type="item", name="Silicon_furnace", amount=1, probability = 1},
 
@@ -2126,11 +2126,11 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Silicon_furnace.png",
 	subgroup = "Recourses",
   },
-  ]]--
-  
+
+
   --Concrete
-  
-  
+
+
  {
     type = "recipe",
     name = "Cement",
@@ -2142,7 +2142,7 @@ data:extend(
       {type="item", name="Calcium_sulfate", amount=1},
 	  {type="item", name="Cement_clinker", amount=9},
     },
-    results = 
+    results =
     {
       {type="item", name="Cement", amount=10, probability = 1},
 
@@ -2161,7 +2161,7 @@ data:extend(
       {type="item", name="Cement", amount=7},
 	  {type="item", name="Bauxite_tailings", amount=3},
     },
-    results = 
+    results =
     {
       {type="item", name="Cement_bauxite", amount=10, probability = 1},
 
@@ -2180,7 +2180,7 @@ data:extend(
       {type="item", name="Cement", amount=1},
 	  {type="item", name="Slag", amount=9},
     },
-    results = 
+    results =
     {
       {type="item", name="Cement_slag", amount=10, probability = 1},
 
@@ -2201,7 +2201,7 @@ data:extend(
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
-    results = 
+    results =
     {
       {type="item", name="Concrete_block", amount=1, probability = 1},
 
@@ -2222,7 +2222,7 @@ data:extend(
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
-    results = 
+    results =
     {
       {type="item", name="Concrete_pipe", amount=1, probability = 1},
 
@@ -2240,7 +2240,7 @@ data:extend(
       {type="item", name="Concrete_pipe", amount=22},
 
     },
-    results = 
+    results =
     {
       {type="item", name="Concrete_underground_pipe", amount=1, probability = 1},
 
@@ -2261,7 +2261,7 @@ data:extend(
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
-    results = 
+    results =
     {
       {type="item", name="Concrete_block", amount=1, probability = 1},
 
@@ -2282,7 +2282,7 @@ data:extend(
 	  {type="item", name="Sand", amount=6},
 	  {type="item", name="Gravel", amount=12},
     },
-    results = 
+    results =
     {
       {type="item", name="Concrete_block", amount=1, probability = 1},
 
@@ -2290,10 +2290,10 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Concrete_block.png",
 	subgroup = "Recourses",
   },
-  
-  
+
+
     --fiberglass
-  
+
   {
     type = "recipe",
     name = "Aluminosilicate_glass",
@@ -2307,7 +2307,7 @@ data:extend(
 	  {type="item", name="Alumina", amount=2},
 	  {type="item", name="Calcium_carbonate", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Aluminosilicate_glass", amount=10, probability = 1},
 
@@ -2325,7 +2325,7 @@ data:extend(
     {
       {type="item", name="Aluminosilicate_glass", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Fiberglass_roving", amount=1, probability = 1},
 
@@ -2343,7 +2343,7 @@ data:extend(
     {
       {type="item", name="Fiberglass_roving", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Fiberglass_cloth", amount=1, probability = 1},
 
@@ -2362,7 +2362,7 @@ data:extend(
       {type="item", name="Fiberglass_cloth", amount=1},
 	  {type="item", name="Resin", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Fiberglass_laminate", amount=1, probability = 1},
 
@@ -2370,9 +2370,9 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Fiberglass_laminate.png",
 	subgroup = "Recourses",
   },
-  
 
-  
+
+
   {
     type = "recipe",
     name = "Oxide_glass",
@@ -2384,7 +2384,7 @@ data:extend(
       {type="item", name="Alumina", amount=9},
 	  {type="item", name="Germanium_dioxide", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Oxide_glass", amount=10, probability = 1},
 
@@ -2402,7 +2402,7 @@ data:extend(
     {
       {type="item", name="Oxide_glass", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Glass_tube", amount=1, probability = 1},
 
@@ -2421,7 +2421,7 @@ data:extend(
       {type="item", name="Glass_tube", amount=1},
 	  {type="fluid", name="Hydrofluoric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Purified_glass_tube", amount=1, probability = 1},
 
@@ -2439,7 +2439,7 @@ data:extend(
     {
       {type="item", name="Purified_glass_tube", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Optical_fiber", amount=1, probability = 1},
 
@@ -2447,17 +2447,17 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Optical_fiber.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
   --Limestone
-  
+
   {
     type = "recipe",
     name = "Limestone_crushed",
@@ -2468,7 +2468,7 @@ data:extend(
     {
       {type="item", name="Quarried_limestone", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Limestone_crushed", amount=1, probability = 1},
 
@@ -2486,7 +2486,7 @@ data:extend(
     {
       {type="item", name="Limestone_crushed", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Calcium_carbonate", amount=1, probability = 1},
 
@@ -2494,8 +2494,8 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Calcium_carbonate.png",
 	subgroup = "Recourses",
   },
-  
-  
+
+
   {
     type = "recipe",
     name = "Sodium_carbonate",
@@ -2507,7 +2507,7 @@ data:extend(
       {type="item", name="Calcium_carbonate", amount=1},
 	  {type="fluid", name="Water", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Sodium_carbonate", amount=1, probability = 1},
 	  {type="item", name="Calcium_chloride", amount=1, probability = 1},
@@ -2527,7 +2527,7 @@ data:extend(
 	  {type="item", name="Sodium_carbonate", amount=2},
 	  {type="item", name="Silicon_dioxide", amount=7},
     },
-    results = 
+    results =
     {
       {type="item", name="Glass", amount=10, probability = 1},
 
@@ -2535,22 +2535,22 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Glass.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   --Item Recipes
-  
+
   {
     type = "recipe",
     name = "Battery_casing",
@@ -2577,9 +2577,9 @@ data:extend(
     },
     result = "Battery",
   },
-  
+
   ---------------------------------
-  
+
   {
     type = "recipe",
     name = "Silver_nitrate",
@@ -2591,7 +2591,7 @@ data:extend(
       {"Lithium_chloride", 1},
 	  {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Silver_nitrate", amount=1},
 	  {type="fluid", name="Nitrogen_dioxide", amount=1},
@@ -2611,7 +2611,7 @@ data:extend(
       {type="fluid", name="Water_distilled", amount=1},
 	  {type="fluid", name="Nitrogen_dioxide", amount=1},
     },
-    results = 
+    results =
     {
 	  {type="fluid", name="Nitric_acid", amount=1},
     },
@@ -2629,7 +2629,7 @@ data:extend(
       {type="item", name="Silver_nitrate", amount=1},
 	  {type="item", name="Sodium_hydroxide", amount=1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Silver_oxide", amount=1},
 	  {type="fluid", name="Water_distilled", amount=1, probability =0.9},
@@ -2652,10 +2652,10 @@ data:extend(
     },
     result = "Silver-oxide_battery",
   },
-  
+
   ---------------------
-  
-  
+
+
   {
     type = "recipe",
     name = "Nichrome",
@@ -2667,7 +2667,7 @@ data:extend(
       {type="item", name="Ferrochrome", amount=3},
       {type="item", name="Nickel_billet", amount=2},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Nichrome", amount=5},
 
@@ -2675,7 +2675,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Nichrome.png",
 	subgroup = "Recourses",
   },
-  
+
   {
     type = "recipe",
     name = "Brass_billet",
@@ -2687,7 +2687,7 @@ data:extend(
       {"Copper_billet", 7},
 	  {"Zinc_billet", 3},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Brass_billet", amount=10},
 
@@ -2695,9 +2695,9 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Brass_billet.png",
 	subgroup = "Recourses",
   },
-  
+
   ------------------------
-  
+
   {
     type = "recipe",
     name = "Lead_solder_ingot",
@@ -2709,7 +2709,7 @@ data:extend(
       {"Tin_billet", 6},
 	  {"Lead_billet", 4},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Lead_solder_ingot", amount=10},
 
@@ -2741,7 +2741,7 @@ data:extend(
 	  {"Copper_billet", 1},
 	  {"Silver_ingot", 1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Lead_free_solder_ingot", amount=3},
 
@@ -2759,7 +2759,7 @@ data:extend(
     {
       {"Lead_free_solder_ingot", 1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Lead_free_solder", amount=1},
 
@@ -2778,7 +2778,7 @@ data:extend(
       {"Lead_free_solder_ingot", 1},
 	  {"Resin", 1},
     },
-    results = 
+    results =
     {
 	  {type="item", name="Solder_paste", amount=1},
 
@@ -2786,45 +2786,45 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Solder_paste.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   --tree
   {
     type = "recipe",
@@ -2885,12 +2885,12 @@ data:extend(
     },
     result = "Gunpowder",
   },
-  
-  
-  
-  
+
+
+
+
   --uraninite
-  
+
   {
     type = "recipe",
     name = "Uraninite_crushed_ore",
@@ -2912,16 +2912,16 @@ data:extend(
     ingredients =
     {
       {"Uraninite_crushed_ore", 2},
-      
+
     },
-    results = 
+    results =
     {
       {type="item", name="Uraninite_ore_concentrate", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/item/Uraninite_ore_concentrate.png",
 	subgroup = "Recourses",
-  }, 
+  },
   {
     type = "recipe",
     name = "Yellowcake",
@@ -2933,14 +2933,14 @@ data:extend(
       {"Uraninite_ore_concentrate", 1},
 	  {type="fluid", name="Ferric_chloride_solution", amount=1}
     },
-    results = 
+    results =
     {
       {type="item", name="Yellowcake", amount=1},
 	  {type="item", name="Sand", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/item/Yellowcake.png",
 	subgroup = "Recourses",
-  }, 
+  },
   {
     type = "recipe",
     name = "Uranyl_nitrate",
@@ -2952,7 +2952,7 @@ data:extend(
       {"Yellowcake", 1},
       {type="fluid", name="Nitric_acid", amount=1}
     },
-    results = 
+    results =
     {
       {type="fluid", name="Uranyl_nitrate", amount=1},
     },
@@ -2970,7 +2970,7 @@ data:extend(
       {type="fluid", name="Ammonia", amount=1},
       {type="fluid", name="Uranyl_nitrate", amount=1}
     },
-    results = 
+    results =
     {
       {type="fluid", name="ADU", amount=1},
     },
@@ -2988,7 +2988,7 @@ data:extend(
       {type="fluid", name="ADU", amount=1},
       {type="fluid", name="Hydrogen", amount=1}
     },
-    results = 
+    results =
     {
       {type="item", name="Uranium_dioxide", amount=1},
     },
@@ -3006,7 +3006,7 @@ data:extend(
       {type="item", name="Uranium_dioxide", amount=1},
       {type="fluid", name="Hydrofluoric_acid", amount=4},
     },
-    results = 
+    results =
     {
       {type="item", name="Uranium_tetrafluoride", amount=1},
     },
@@ -3024,36 +3024,36 @@ data:extend(
       {type="item", name="Uranium_tetrafluoride", amount=1},
       {type="fluid", name="Hydrofluoric_acid", amount=2},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Uranium_hexafluoride", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/fluid/Uranium_hexafluoride.png",
 	subgroup = "NCP_fluids",
   },
- 
-  
-  
-  
-  
-   
-  
-  
-  
-  
-  
-  
-  
-   
-  
-  
- 
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   --chalcopyrite
    {
     type = "recipe",
@@ -3078,14 +3078,14 @@ data:extend(
       {"Chalcopyrite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Copper_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/item/Copper_concentrate.png",
 	subgroup = "Recourses",
-  }, 
+  },
   {
     type = "recipe",
     name = "Copper_blister",
@@ -3097,7 +3097,7 @@ data:extend(
       {"Copper_concentrate", 1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Copper_blister", amount=1},
       {type="item", name="Slag", amount=1},
@@ -3117,7 +3117,7 @@ data:extend(
       {"Copper_concentrate", 1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Copper_blister", amount=1},
       {type="item", name="Slag", amount=1},
@@ -3137,7 +3137,7 @@ data:extend(
       {"Copper_blister", 1},
       {type="fluid", name="Petroleum_gas", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Copper_anode", amount=1},
 
@@ -3156,7 +3156,7 @@ data:extend(
       {"Copper_anode", 1},
       {type="fluid", name="Sulfuric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Copper_billet", amount=1},
       {type="fluid", name="Anode_slime", amount=1},
@@ -3176,22 +3176,22 @@ data:extend(
       {type="fluid", name="Chlorine", amount=2},
 	  {type="fluid", name="Hydrochloric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Gold_concentrate", amount=1, probability =0.02},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/item/Gold_concentrate.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
-  
-  
 
- 
+
+
+
+
+
+
+
   --pentlandite
   {
     type = "recipe",
@@ -3216,14 +3216,14 @@ data:extend(
       {"Pentlandite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Nickel_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/item/Nickel_concentrate.png",
 	subgroup = "Recourses",
-  }, 
+  },
   {
     type = "recipe",
     name = "Nickel_dust",
@@ -3235,7 +3235,7 @@ data:extend(
       {"Nickel_concentrate", 1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Nickel_dust", amount=1},
       {type="item", name="Slag", amount=1},
@@ -3255,7 +3255,7 @@ data:extend(
       {"Nickel_dust", 1},
       {type="fluid", name="Sulfuric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Nickel_cathode", amount=1},
       {type="item", name="Cobalt_oxide", amount=1, probability =0.04},
@@ -3274,18 +3274,18 @@ data:extend(
       {"Nickel_cathode", 1},
       {type="fluid", name="Hydrogen", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Nickel_billet", amount=1},
     },
 	icon = "__NCP-Tech__/graphics/item/Nickel_billet.png",
 	subgroup = "Recourses",
-  }, 
-  
-  
-  
-  
-  
+  },
+
+
+
+
+
   --sphalerite
   {
     type = "recipe",
@@ -3310,14 +3310,14 @@ data:extend(
       {"Sphalerite_crushed_ore", 2},
       {type="fluid", name="Water", amount=10}
     },
-    results = 
+    results =
     {
       {type="item", name="Zinc_concentrate", amount=1},
       {type="item", name="Stone_crushed", amount=1}
     },
 	icon = "__NCP-Tech__/graphics/item/Zinc_concentrate.png",
 	subgroup = "Recourses",
-  }, 
+  },
   {
     type = "recipe",
     name = "Zinc_matte",
@@ -3329,7 +3329,7 @@ data:extend(
       {"Zinc_concentrate", 1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Zinc_matte", amount=1},
       {type="item", name="Slag", amount=1},
@@ -3350,7 +3350,7 @@ data:extend(
       {"Zinc_matte", 1},
       {type="fluid", name="Sulfuric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Zinc_billet", amount=1},
       {type="fluid", name="Anode_slime", amount=1},
@@ -3369,7 +3369,7 @@ data:extend(
       {type="item", name="Germanium_concentrate", amount=1},
 	  {type="fluid", name="Chlorine", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Germanium_tetrachloride", amount=1, probability = 1},
       {type="fluid", name="Oxygen", amount=1, probability = 1},
@@ -3388,7 +3388,7 @@ data:extend(
 	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="fluid", name="Germanium_tetrachloride", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Germanium_dioxide", amount=1, probability = 1},
       {type="fluid", name="Hydrogen", amount=1, probability = 1},
@@ -3407,7 +3407,7 @@ data:extend(
 	  {type="fluid", name="Hydrogen", amount=1},
 	  {type="item", name="Germanium_dioxide", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Germanium", amount=1, probability = 1},
       {type="fluid", name="Water_distilled", amount=1, probability = 1},
@@ -3415,10 +3415,10 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Germanium.png",
 	subgroup = "Recourses",
   },
-  
-  
-   
-  
+
+
+
+
   --scheelite
   {
     type = "recipe",
@@ -3444,7 +3444,7 @@ data:extend(
 	  {"Sodium_hydroxide", 1},
       {type="fluid", name="Water_distilled", amount=1}
     },
-    results = 
+    results =
     {
       {type="fluid", name="Sodium_tugstate_solution", amount=1},
       {type="item", name="Stone_crushed", amount=1}
@@ -3463,14 +3463,14 @@ data:extend(
 	  {type="fluid", name="Sodium_tugstate_solution", amount=1},
       {type="fluid", name="Ammonia", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Ammonium_Paratungstate", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/item/Ammonium_Paratungstate.png",
 	subgroup = "Recourses",
-  },  
+  },
   {
     type = "recipe",
     name = "Tungsten_oxide",
@@ -3510,11 +3510,11 @@ data:extend(
     },
     result = "Tungsten_carbide_billet",
   },
-  
-  
-  
-  
-  
+
+
+
+
+
   --native copper
   {
     type = "recipe",
@@ -3529,9 +3529,9 @@ data:extend(
     result = "Copper_billet",
   },
 
-  
+
   -----------------------------------------------
-  
+
   {
     type = "recipe",
     name = "Ammonia",
@@ -3543,10 +3543,10 @@ data:extend(
       {type="fluid", name="Hydrogen", amount=1},
       {type="fluid", name="Nitrogen", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Ammonia", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Ammonia.png",
 	subgroup = "NCP_fluids",
@@ -3562,14 +3562,14 @@ data:extend(
       {type="fluid", name="Ammonia", amount=1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Nitric_acid", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Nitric_acid.png",
 	subgroup = "NCP_fluids",
-  },  
+  },
   {
     type = "recipe",
     name = "Sulfur_dioxide",
@@ -3581,10 +3581,10 @@ data:extend(
       {type="item", name="Sulfur", amount=1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Sulfur_dioxide", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Sulfur_dioxide.png",
 	subgroup = "NCP_fluids",
@@ -3600,10 +3600,10 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1},
       {type="fluid", name="Water_distilled", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Sulfuric_acid", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Sulfuric_acid.png",
 	subgroup = "NCP_fluids",
@@ -3619,10 +3619,10 @@ data:extend(
       {type="fluid", name="Sulfur_dioxide", amount=1},
       {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Sulfur_trioxide", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Sulfur_trioxide.png",
 	subgroup = "NCP_fluids",
@@ -3638,17 +3638,17 @@ data:extend(
       {type="fluid", name="Sulfur_trioxide", amount=1},
       {type="fluid", name="Sulfuric_acid", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Oleum", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/fluid/Oleum.png",
 	subgroup = "NCP_fluids",
   },
-  
-  
-  
+
+
+
   {
     type = "recipe",
     name = "Cotton_farm",
@@ -3661,7 +3661,7 @@ data:extend(
 	  {type="item", name="Cotton_seed", amount=9},
       {type="fluid", name="Water", amount=600},
     },
-    results = 
+    results =
     {
       {type="item", name="Cotton", amount_min=1, amount_max= 30},
       {type="item", name="Cotton_seed", amount_min=0, amount_max= 17, probability= 0.8},
@@ -3669,7 +3669,7 @@ data:extend(
 	icon = "__NCP-Tech__/graphics/item/Cotton.png",
 	subgroup = "Recourses",
   },
-  
+
   {
     type = "recipe",
     name = "Guncotton",
@@ -3682,10 +3682,10 @@ data:extend(
       {type="fluid", name="Sulfuric_acid", amount=1},
       {type="item", name="Cotton", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Guncotton", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/item/Guncotton.png",
 	subgroup = "Recourses",
@@ -3702,19 +3702,19 @@ data:extend(
       {type="fluid", name="Nitroglycerin", amount=1},
       {type="item", name="Guncotton", amount=1},
     },
-    results = 
+    results =
     {
       {type="item", name="Cordite", amount=1},
-      
+
     },
 	icon = "__NCP-Tech__/graphics/item/Cordite.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
+
+
+
   --napalm
-  
+
   {
     type = "recipe",
     name = "Ethylbenzene",
@@ -3726,7 +3726,7 @@ data:extend(
       {type="fluid", name="Ethylene", amount=1},
 	  {type="fluid", name="Benzene", amount=1},
     },
-    results = 
+    results =
     {
       {type="fluid", name="Ethylbenzene", amount=1, probability = 1},
 
@@ -3744,7 +3744,7 @@ data:extend(
     {
       {type="fluid", name="Ethylbenzene", amount=1},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="Styrene", amount=1, probability = 1},
 		{type="fluid", name="Hydrogen", amount=1, probability = 1},
@@ -3762,7 +3762,7 @@ data:extend(
     {
       {type="fluid", name="Styrene", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="Styrofoam", amount=1, probability = 1},
     },
@@ -3780,21 +3780,21 @@ data:extend(
       {type="item", name="Styrofoam", amount=1},
 	  {type="fluid", name="Diesel", amount=1},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="Napalm", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluid/Napalm.png",
 	subgroup = "NCP_fluids",
   },
-  
-  
-  
-  
+
+
+
+
   --steel
-  
-  
-  
+
+
+
   {
     type = "recipe",
     name = "Steel_billet",
@@ -3805,7 +3805,7 @@ data:extend(
     {
       {type="item", name="Direct_reduced_iron", amount=1},
     },
-    results = 
+    results =
     {
 	{type="item", name="Steel_billet", amount=1, probability = 1},
 	{type="item", name="Slag", amount=1, probability = 1},
@@ -3824,7 +3824,7 @@ data:extend(
       {type="item", name="Pig_iron", amount=1},
 	  {type="fluid", name="Oxygen", amount=100},
     },
-    results = 
+    results =
     {
 		{type="item", name="Steel_billet", amount=1, probability = 1},
     },
@@ -3843,7 +3843,7 @@ data:extend(
 	  {type="item", name="Ferrochrome", amount=1},
 	  {type="item", name="Steel_billet", amount=1},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="Stainless_steel_mix_hot", amount=1, probability = 1},
     },
@@ -3861,14 +3861,14 @@ data:extend(
 	  {type="fluid", name="Oxygen", amount=1},
 	  {type="fluid", name="Stainless_steel_mix_hot", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="Stainless_steel_billet", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/item/Stainless_steel_billet.png",
 	subgroup = "Recourses",
   },
-  
+
   ------carbon fiber fabric
   {
     type = "recipe",
@@ -3882,7 +3882,7 @@ data:extend(
 	  {type="fluid", name="Ammonia", amount=1},
 	  {type="fluid", name="Oxygen", amount=1},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="Acrylonitrile", amount=1, probability = 1},
 		{type="fluid", name="Water_distilled", amount=1, probability = 1},
@@ -3902,7 +3902,7 @@ data:extend(
 	  {type="fluid", name="Styrene", amount=1},
 	  {type="fluid", name="Butadiene", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="Plastic_pellets", amount=1, probability = 1},
     },
@@ -3921,7 +3921,7 @@ data:extend(
 	  {type="fluid", name="Styrene", amount=1},
 	  {type="fluid", name="Butadiene", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="Plastic_pellets", amount=1, probability = 1},
     },
@@ -3938,7 +3938,7 @@ data:extend(
     {
 	  {type="fluid", name="Acrylonitrile", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="PAN_filament", amount=1, probability = 1},
     },
@@ -3955,7 +3955,7 @@ data:extend(
     {
 	  {type="item", name="PAN_filament", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="Carbon_fiber_filament", amount=1, probability = 1},
     },
@@ -3973,7 +3973,7 @@ data:extend(
 	  {type="item", name="Carbon_fiber_filament", amount=1},
 	  {type="item", name="Resin", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="Carbon_fiber_fabric", amount=1, probability = 1},
     },
@@ -3981,7 +3981,7 @@ data:extend(
 	subgroup = "Recourses",
   },
   --TNT
-  
+
   {
     type = "recipe",
     name = "MNT",
@@ -3993,7 +3993,7 @@ data:extend(
 	  {type="fluid", name="Nitric_sulfuric_acid_mixture", amount=1},
 	  {type="fluid", name="Toluene", amount=1},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="MNT", amount=1, probability = 1},
     },
@@ -4011,7 +4011,7 @@ data:extend(
 	  {type="fluid", name="MNT", amount=1},
 	  {type="fluid", name="Nitric_acid", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="DNT", amount=1, probability = 1},
     },
@@ -4030,17 +4030,17 @@ data:extend(
 	  {type="fluid", name="Nitric_acid", amount=1},
 	  {type="fluid", name="Oleum", amount=1},
     },
-    results = 
+    results =
     {
 		{type="item", name="TNT", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/item/TNT.png",
 	subgroup = "Recourses",
   },
-  
-  
-  
-  
+
+
+
+
   {
     type = "recipe",
     name = "Seed_oil",
@@ -4051,14 +4051,14 @@ data:extend(
     {
 	  {type="item", name="Cotton_seed", amount=3},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="Seed_oil", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluid/Seed_oil.png",
 	subgroup = "NCP_fluids",
   },
-  
+
   {
     type = "recipe",
     name = "Glycerol",
@@ -4071,62 +4071,62 @@ data:extend(
 	  {type="fluid", name="Water_distilled", amount=1},
 	  {type="item", name="Sodium_hydroxide", amount=1},
     },
-    results = 
+    results =
     {
 		{type="fluid", name="Glycerol", amount=1, probability = 1},
     },
 	icon = "__NCP-Tech__/graphics/fluid/Glycerol.png",
 	subgroup = "NCP_fluids",
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   
- 
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   --------------------------------
-  
+
   {
     type = "recipe",
     name = "irontest",
@@ -4197,22 +4197,23 @@ data:extend(
     type = "tool",
     name = "testTool",
     icon = "__base__/graphics/icons/science-pack-1.png",
+    icon_size=32,
     flags = {"goes-to-main-inventory"},
     subgroup = "science-pack",
     order = "a[science-pack-1]",
     stack_size = 200,
     durability = 10,
-    
+
   },
-  
-  
-  
-  
+
+  --]]
+
+
   --CHEATS
-  
-  
-  
-  
+
+
+
+
   {
     type = "recipe",
     name = "copper_cheat",
@@ -4222,10 +4223,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="copper-plate", amount=50},
-      
+
     },
   },
   {
@@ -4237,10 +4238,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="iron-plate", amount=50},
-      
+
     },
   },
   {
@@ -4252,13 +4253,13 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="steel-plate", amount=5},
-	
+
     },
   },
-  
+
   {
     type = "recipe",
     name = "CheatFuelrecipe",
@@ -4268,10 +4269,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="aaaaaaCheatFuel", amount=50},
-	
+
     },
   },
   {
@@ -4283,10 +4284,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="Quarried_stone", amount=50},
-	
+
     },
   },
 
@@ -4299,10 +4300,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="express-transport-belt", amount=50},
-	
+
     },
   },
   {
@@ -4314,10 +4315,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="fast-inserter", amount=50},
-	
+
     },
   },
   {
@@ -4329,10 +4330,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="stack-inserter", amount=50},
-	
+
     },
   },
  --[[ {
@@ -4344,15 +4345,15 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="OP_generator", amount=50},
-	
+
     },
   },
   --]]
-  
-  
+
+
   {
     type = "recipe",
     name = "expundbelt",
@@ -4362,10 +4363,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="express-underground-belt", amount=50},
-	
+
     },
   },
   {
@@ -4377,10 +4378,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="pipe", amount=50},
-	
+
     },
   },
   {
@@ -4392,10 +4393,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="pipe-to-ground", amount=50},
-	
+
     },
   },
   {
@@ -4407,10 +4408,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="medium-electric-pole", amount=50},
-	
+
     },
   },
   {
@@ -4422,10 +4423,10 @@ data:extend(
     {
       {"Quarried_stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="accumulator", amount=50},
-	
+
     },
   },
   {
@@ -4437,16 +4438,16 @@ data:extend(
     {
       {"stone", 1},
     },
-	results = 
+	results =
     {
       {type="item", name="Quarried_stone", amount=50},
-	
+
     },
   },
-  
-  
-  
-  
-  
+
+
+
+
+
 }
 )
