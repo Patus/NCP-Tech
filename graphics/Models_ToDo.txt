@@ -1,19 +1,11 @@
 ToDo:
 
-Extruder
-Rolling machine
-Mining drills
-distillery
 Cruhser
 grinding mill
 ore-washer
 electrolyzer
-farms
 cryogenic distillation plant
-cracking plant
 radars
-nuclearfuel processing plant
-boilers
 turbines
 Electric poles
 Storage tanks
