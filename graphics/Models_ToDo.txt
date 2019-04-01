@@ -1,14 +1,7 @@
 ToDo:
 
-Cruhser
-grinding mill
-ore-washer
-electrolyzer
-cryogenic distillation plant
-radars
-turbines
-Electric poles
-Storage tanks
+radars (meh)
+Electric poles (more meh)
 +
 Vehicles
 tracks
