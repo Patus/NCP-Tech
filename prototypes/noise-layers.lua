@@ -22,7 +22,7 @@ data:extend(
   },
   {
     type = "noise-layer",
-    name = "Uraninite_ore"
+    name = "Uranite_ore"
   },
   {
     type = "noise-layer",
@@ -60,6 +60,6 @@ data:extend(
     type = "noise-layer",
     name = "Graphite_ore"
   },
-  
+
 }
 )

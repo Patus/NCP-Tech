@@ -4086,7 +4086,7 @@ data:extend(
 
 
 
-]]--
+
 
 
 
@@ -4198,7 +4198,7 @@ data:extend(
     name = "testTool",
     icon = "__base__/graphics/icons/science-pack-1.png",
     icon_size=32,
-    flags = {"goes-to-main-inventory"},
+    
     subgroup = "science-pack",
     order = "a[science-pack-1]",
     stack_size = 200,
@@ -4210,7 +4210,6 @@ data:extend(
 
 
   --CHEATS
-
 
 
 

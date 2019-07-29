@@ -204,7 +204,7 @@ function makeItems(material,item)
 			name= itemName,
 			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			icon_size=32,
-			flags= { "goes-to-main-inventory" },
+			
 			subgroup = item,
 			order= "a-b-c",
 			stack_size= 50,
@@ -221,7 +221,7 @@ function makeItems(material,item)
 			name= itemName,
 			icon = "__NCP-Tech__/graphics/item/"..itemName..".png",
 			icon_size=32,
-			flags= { "goes-to-main-inventory" },
+			
 			subgroup = item,
 			order= "a-b-c",
 			stack_size= 50,
@@ -1701,7 +1701,7 @@ makeRecipe{name="Tree_seeds",energy_required=3,category="crafting",ingredients={
 makeRecipe{name="Trichlorosilane",energy_required=2,category="Chemical_plant",fluidIcon=true,ingredients={{type="fluid", name="Silicon_tetrachloride", amount=1},{type="fluid", name="Hydrogen", amount=1},},results={{type="fluid", name="Trichlorosilane", amount=1,probability =1},{type="fluid", name="Hydrogen_chloride", amount=1,probability =1},},}
 makeRecipe{name="Trichlorosilane",energy_required=3,category="Chemical_plant",fluidIcon=true,ingredients={{type="item", name="Silicon_metallurgical", amount=1},{type="fluid", name="Hydrochloric_acid", amount=3},},results={{type="fluid", name="Trichlorosilane", amount=1,probability =1},{type="fluid", name="Hydrogen", amount=1,probability =1},},}
 makeRecipe{name="Tubine_fan",energy_required=12,category="Assembling_machine",ingredients={{type="item", name="Titanium_plate", amount=12},{type="item", name="Titanium_bearing", amount=6},{type="item", name="Steel_rod", amount=1},},results={{type="item", name="Tubine_fan", amount=1,probability =1},},}
-makeRecipe{name="Tungsten_carbide_drill_bit",energy_required=3,category="Assembling_machine",ingredients={{type="item", name="Steel_bearing", amount=3},{type="item", name="Tungsten_carbide_gear", amount=9},{type="item", name="Tungsten_carbide_gear", amount=1},},results={{type="item", name="Tungsten_carbide_drill_bit", amount=1,probability =1},},}
+makeRecipe{name="Tungsten_carbide_drill_bit",energy_required=3,category="Assembling_machine",ingredients={{type="item", name="Steel_bearing", amount=3},{type="item", name="Tungsten_carbide_gear", amount=9},},results={{type="item", name="Tungsten_carbide_drill_bit", amount=1,probability =1},},}
 makeRecipe{name="Tungsten_carbide_dust",energy_required=5,category="Electric_chemical_furnace",ingredients={{type="fluid", name="Hydrogen", amount=2},{type="item", name="Tungsten_powder", amount=1},{type="item", name="Graphite_dust", amount=1},},results={{type="item", name="Tungsten_carbide_dust", amount=1,probability =1},},}
 makeRecipe{name="Tungsten_carbide_gear",energy_required=6,category="Electric_chemical_furnace",ingredients={{type="fluid", name="Hydrogen", amount=2},{type="item", name="Tungsten_carbide_dust", amount=1},{type="item", name="Cobalt_dust", amount=1},},results={{type="item", name="Tungsten_carbide_gear", amount=1,probability =1},},}
 makeRecipe{name="Tungsten_carbide_rod",energy_required=6,category="Electric_chemical_furnace",ingredients={{type="fluid", name="Hydrogen", amount=2},{type="item", name="Tungsten_carbide_dust", amount=1},{type="item", name="Cobalt_dust", amount=1},},results={{type="item", name="Tungsten_carbide_rod", amount=1,probability =1},},}

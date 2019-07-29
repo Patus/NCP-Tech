@@ -37,7 +37,7 @@ data:extend(
   },
   {
     type = "autoplace-control",
-    name = "Uraninite_ore",
+    name = "Uranite_ore",
     richness = true,
     order = "b-a",
     category = "resource",

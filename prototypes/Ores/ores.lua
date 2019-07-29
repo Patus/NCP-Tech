@@ -75,7 +75,11 @@ data.raw.resource["crude-oil"].minable = (
 )
 
 
-function makeore (name,results)
+function makeore (a)
+	local name=a.name
+	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
+	local results=a.results
+	local map_color = a.map_color or {r=math.random(), g=math.random(), b=math.random()}
 local spawnarea=200
 if (name=="Copper_native_ore") then
 	spawnarea=1500
@@ -86,7 +90,7 @@ data:extend(
  {
     type = "resource",
     name = name,
-    icon = "__NCP-Tech__/graphics/item/"..name..".png",
+    icon = icon,
 	icon_size = 32,
     flags = {"placeable-neutral"},
     order="a-b-a",
@@ -133,20 +137,20 @@ data:extend(
         },
       },
     },
-    stage_counts = {5000, 4000, 3000, 2000, 1000, 500, 100, 1},
+    stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
     stages =
     {
       sheet =
       {
-        filename = "__NCP-Tech__/graphics/entity/Ores/"..name..".png",
+        filename = "__NCP-Tech__/graphics/entity/Ores/hr_"..name..".png",
         priority = "extra-high",
-        width = 38,
-        height = 38,
-        frame_count = 4,
-        variation_count = 8
+          size = 128,
+          frame_count = 8,
+          variation_count = 8,
+          scale = 0.5
       }
     },
-    map_color = {r=math.random(), g=math.random(), b=math.random()}
+    map_color = map_color
   }
   })
 
@@ -158,36 +162,47 @@ end
 end
 
 
-makeore ("Graphite_ore",{		{type="item", name="Graphite_ore", amount=1, probability = 1},
-								{type="item", name="Diamond_uncut", amount=1, probability = 0.001},
-})
+makeore {name="Graphite_ore",map_color={r=0.25, g=0.25, b=0.25},
+	results={		{type="item", name="Graphite_ore", amount=1, probability = 1},
+									{type="item", name="Diamond_uncut", amount=1, probability = 0.001},
+									}}
 
 --makeore ("Clay_ore",{			{type="item", name="Clay_wet", amount=1, probability = 1}})
-makeore ("Copper_native_ore",{	{type="item", name="Copper_native_ore", amount=1, probability = 1}
-})
-makeore ("Scheelite_ore",{		{type="item", name="Scheelite_ore", amount=1, probability = 1}
-})
-makeore ("Chalcopyrite_ore",{	{type="item", name="Chalcopyrite_ore", amount=1, probability = 1},
+makeore{ name="Copper_native_ore",map_color={r=0.921, g=0.619, b=0.298},
+results={	{type="item", name="Copper_native_ore", amount=1, probability = 1}
+}}
+makeore{ name="Scheelite_ore",map_color={r=0.866, g=0.690, b=0.333},
+results={		{type="item", name="Scheelite_ore", amount=1, probability = 1}
+}}
+makeore{ name="Chalcopyrite_ore",map_color={r=0.650, g=0.682, b=0.380},
+results={	{type="item", name="Chalcopyrite_ore", amount=1, probability = 1},
 								{type="item", name="Pentlandite_ore", amount=1, probability = 0.25},
 								{type="item", name="Sulfur", amount=1, probability = 0.10}
-								})
-makeore ("Uraninite_ore",{		{type="item", name="Uraninite_ore", amount=1, probability = 1}
-})
-makeore ("Fluorite_ore",{		{type="item", name="Fluorite_ore", amount=1, probability = 1}
-})
-makeore ("Cassiterite_ore",{	{type="item", name="Cassiterite_ore", amount=1, probability = 1}
-})
-makeore ("Galena_ore",{			{type="item", name="Galena_ore", amount=1, probability = 1},
+								}}
+makeore{ name="Uranite_ore",map_color={r=0.164, g=0.600, b=0.019},
+results={		{type="item", name="Uraninite_ore", amount=1, probability = 1}
+}}
+makeore{ name="Fluorite_ore",map_color={r=0.396, g=0.117, b=0.462},
+results={		{type="item", name="Fluorite_ore", amount=1, probability = 1}
+}}
+makeore{ name="Cassiterite_ore",map_color={r=0.560, g=0.560, b=0.560},
+results={	{type="item", name="Cassiterite_ore", amount=1, probability = 1}
+}}
+makeore{name="Galena_ore",map_color={r=0.658, g=0.666, b=0.701},
+results={			{type="item", name="Galena_ore", amount=1, probability = 1},
 								{type="item", name="Sphalerite_ore", amount=1, probability = 0.25},
 								{type="item", name="Sulfur", amount=1, probability = 0.10}
-})
-makeore ("Rutile_ore",{			{type="item", name="Rutile_ore", amount=1, probability = 1}
-})
-makeore ("Magnetite_ore",{		{type="item", name="Magnetite_ore", amount=1, probability = 1},
+}}
+makeore{name="Rutile_ore",map_color={r=0.384, g=0.305, b=0.450},
+results={			{type="item", name="Rutile_ore", amount=1, probability = 1}
+}}
+makeore{name="Magnetite_ore",map_color={r=0.286, g=0.372, b=0.731},
+results={		{type="item", name="Magnetite_ore", amount=1, probability = 1},
 								{type="item", name="Chromite_ore", amount=1, probability = 0.10}
-})
-makeore ("Bauxite_ore",{{type="item", name="Bauxite_ore", amount=1, probability = 1}
-})
+}}
+makeore{name="Bauxite_ore",map_color={r=0.741, g=0.596, b=0.725},
+results={{type="item", name="Bauxite_ore", amount=1, probability = 1}
+}}
 
 
 

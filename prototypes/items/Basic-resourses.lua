@@ -1,5 +1,5 @@
 data.raw["item"]["coal"].fuel_value =nil
-data.raw["item"]["raw-wood"].fuel_value =nil
+data.raw["item"]["wood"].fuel_value =nil
 
 
 data:extend({
@@ -9,7 +9,7 @@ data:extend({
   name= "aaaaaaCheatFuel",
   icon = "__NCP-Tech__/graphics/item/Zinc_billet.png",
   icon_size=32,
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "a-b-c",
   stack_size= 500,
@@ -22,7 +22,7 @@ data:extend({
   name= "Credit",
   icon = "__NCP-Tech__/graphics/item/Credit.png",
   icon_size=32,
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "aa",
   stack_size= 100,
@@ -33,7 +33,7 @@ data:extend({
   name= "Credit100",
   icon = "__NCP-Tech__/graphics/item/Credit100.png",
   icon_size=32,
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "ab",
   stack_size= 100,
@@ -44,7 +44,7 @@ data:extend({
   name= "Credit10k",
   icon = "__NCP-Tech__/graphics/item/Credit10k.png",
   icon_size=32,
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "ac",
   stack_size= 100,
@@ -55,7 +55,7 @@ data:extend({
   name= "Credit1M",
   icon = "__NCP-Tech__/graphics/item/Credit1M.png",
   icon_size=32,
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "ad",
   stack_size= 1000,
@@ -66,7 +66,7 @@ data:extend({
   name= "Credit1G",
   icon = "__NCP-Tech__/graphics/item/Credit1G.png",
   icon_size=32,
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "ae",
   stack_size= 50,
@@ -77,7 +77,7 @@ data:extend({
   icon_size=32,
   name= "Tungsten_carbide_billet",
   icon = "__NCP-Tech__/graphics/item/Tungsten_carbide_billet.png",
-  flags= { "goes-to-main-inventory" },
+  
   subgroup = "ores",
   order= "a-b-c",
   stack_size= 50,
@@ -100,7 +100,7 @@ data:extend({
 	icon_size=32,
     name= "Alumina",
     icon = "__NCP-Tech__/graphics/item/Alumina.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -110,7 +110,7 @@ data:extend({
     icon_size=32,
     name= "Nichrome",
     icon = "__NCP-Tech__/graphics/item/Nichrome.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -120,7 +120,7 @@ data:extend({
      icon_size=32,
     name= "Lithium_carbonate",
     icon = "__NCP-Tech__/graphics/item/Lithium_carbonate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -130,7 +130,7 @@ data:extend({
     icon_size=32,
     name= "Sodium_chlorate",
     icon = "__NCP-Tech__/graphics/item/Sodium_chlorate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -140,7 +140,7 @@ data:extend({
     icon_size=32,
     name= "Sodium_perchlorate",
     icon = "__NCP-Tech__/graphics/item/Sodium_perchlorate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -150,7 +150,7 @@ data:extend({
     icon_size=32,
     name= "Quarried_limestone",
     icon = "__NCP-Tech__/graphics/item/Quarried_limestone.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -160,7 +160,7 @@ data:extend({
     icon_size=32,
     name= "Carbon_fiber_fabric",
     icon = "__NCP-Tech__/graphics/item/Carbon_fiber_fabric.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -170,7 +170,7 @@ data:extend({
     icon_size=32,
     name= "Carbon_fiber_filament",
     icon = "__NCP-Tech__/graphics/item/Carbon_fiber_filament.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -180,7 +180,7 @@ data:extend({
     icon_size=32,
     name= "DNT",
     icon = "__NCP-Tech__/graphics/item/DNT.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -190,7 +190,7 @@ data:extend({
     icon_size=32,
     name= "PAN_filament",
     icon = "__NCP-Tech__/graphics/item/PAN_filament.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -200,7 +200,7 @@ data:extend({
     icon_size=32,
     name= "TNT",
     icon = "__NCP-Tech__/graphics/item/TNT.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -210,7 +210,7 @@ data:extend({
     icon_size=32,
     name= "Limestone_crushed",
     icon = "__NCP-Tech__/graphics/item/Limestone_crushed.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Raw_ores",
     order= "a-b-c",
     stack_size= 50,
@@ -220,7 +220,7 @@ data:extend({
     icon_size=32,
     name= "Aluminium_billet",
     icon = "__NCP-Tech__/graphics/item/Aluminium_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -230,7 +230,7 @@ data:extend({
     icon_size=32,
     name= "Ammonium_Paratungstate",
     icon = "__NCP-Tech__/graphics/item/Ammonium_Paratungstate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -240,7 +240,7 @@ data:extend({
     icon_size=32,
     name= "Asphalt_concrete",
     icon = "__NCP-Tech__/graphics/item/Asphalt_concrete.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -250,7 +250,7 @@ data:extend({
     icon_size=32,
     name= "Battery",
     icon = "__NCP-Tech__/graphics/item/Battery.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -260,7 +260,7 @@ data:extend({
     icon_size=32,
     name= "Battery_casing",
     icon = "__NCP-Tech__/graphics/item/Battery_casing.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -270,7 +270,7 @@ data:extend({
     icon_size=32,
     name= "Bauxite_concentrate",
     icon = "__NCP-Tech__/graphics/item/Bauxite_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -280,7 +280,7 @@ data:extend({
     icon_size=32,
     name= "Bauxite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Bauxite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -290,7 +290,7 @@ data:extend({
     icon_size=32,
     name= "Bauxite_ore",
     icon = "__NCP-Tech__/graphics/item/Bauxite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -300,7 +300,7 @@ data:extend({
     icon_size=32,
     name= "Bauxite_tailings",
     icon = "__NCP-Tech__/graphics/item/Bauxite_tailings.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -310,7 +310,7 @@ data:extend({
     icon_size=32,
     name= "Brass_billet",
     icon = "__NCP-Tech__/graphics/item/Brass_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -320,7 +320,7 @@ data:extend({
     icon_size=32,
     name= "Brass_plate",
     icon = "__NCP-Tech__/graphics/item/Brass_plate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -330,7 +330,7 @@ data:extend({
     icon_size=32,
     name= "Calcium_chloride",
     icon = "__NCP-Tech__/graphics/item/Calcium_chloride.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -340,7 +340,7 @@ data:extend({
     icon_size=32,
     name= "Calcium_fluoride",
     icon = "__NCP-Tech__/graphics/item/Calcium_fluoride.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -350,7 +350,7 @@ data:extend({
     icon_size=32,
     name= "Calcium_oxide",
     icon = "__NCP-Tech__/graphics/item/Calcium_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -360,7 +360,7 @@ data:extend({
     icon_size=32,
     name= "Calcium_sulfate",
     icon = "__NCP-Tech__/graphics/item/Calcium_sulfate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -370,7 +370,7 @@ data:extend({
     icon_size=32,
     name= "Canister",
     icon = "__NCP-Tech__/graphics/item/Canister.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -380,7 +380,7 @@ data:extend({
     icon_size=32,
     name= "Carbon_dust",
     icon = "__NCP-Tech__/graphics/item/Carbon_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -390,7 +390,7 @@ data:extend({
     icon_size=32,
     name= "Cassiterite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Cassiterite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -400,7 +400,7 @@ data:extend({
     icon_size=32,
     name= "Cassiterite_ore",
     icon = "__NCP-Tech__/graphics/item/Cassiterite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -410,7 +410,7 @@ data:extend({
     icon_size=32,
     name= "Chalcopyrite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Chalcopyrite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -420,7 +420,7 @@ data:extend({
     icon_size=32,
     name= "Chalcopyrite_ore",
     icon = "__NCP-Tech__/graphics/item/Chalcopyrite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -430,7 +430,7 @@ data:extend({
     icon_size=32,
     name= "Charcoal",
     icon = "__NCP-Tech__/graphics/item/Charcoal.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -440,7 +440,7 @@ data:extend({
     icon_size=32,
     name= "Chloroauric_acid",
     icon = "__NCP-Tech__/graphics/item/Chloroauric_acid.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -450,7 +450,7 @@ data:extend({
     icon_size=32,
     name= "Chromite_concentrate",
     icon = "__NCP-Tech__/graphics/item/Chromite_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -460,7 +460,7 @@ data:extend({
     icon_size=32,
     name= "Chromite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Chromite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -470,7 +470,7 @@ data:extend({
     icon_size=32,
     name= "Chromite_ore",
     icon = "__NCP-Tech__/graphics/item/Chromite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -480,7 +480,7 @@ data:extend({
     icon_size=32,
     name= "Clay_dry",
     icon = "__NCP-Tech__/graphics/item/Clay_dry.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -490,7 +490,7 @@ data:extend({
     icon_size=32,
     name= "Clay_wet",
     icon = "__NCP-Tech__/graphics/item/Clay_wet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -500,7 +500,7 @@ data:extend({
     icon_size=32,
     name= "Coal_coke",
     icon = "__NCP-Tech__/graphics/item/Coal_coke.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -512,7 +512,7 @@ data:extend({
     icon_size=32,
     name= "Coal_tar",
     icon = "__NCP-Tech__/graphics/item/Coal_tar.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -522,7 +522,7 @@ data:extend({
     icon_size=32,
     name= "Cobalt_oxide",
     icon = "__NCP-Tech__/graphics/item/Cobalt_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -532,7 +532,7 @@ data:extend({
     icon_size=32,
     name= "Copper_anode",
     icon = "__NCP-Tech__/graphics/item/Copper_anode.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -542,7 +542,7 @@ data:extend({
     icon_size=32,
     name= "Copper_billet",
     icon = "__NCP-Tech__/graphics/item/Copper_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -552,7 +552,7 @@ data:extend({
     icon_size=32,
     name= "Copper_blister",
     icon = "__NCP-Tech__/graphics/item/Copper_blister.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -562,7 +562,7 @@ data:extend({
     icon_size=32,
     name= "Copper_concentrate",
     icon = "__NCP-Tech__/graphics/item/Copper_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -572,7 +572,7 @@ data:extend({
     icon_size=32,
     name= "Copper_native_ore",
     icon = "__NCP-Tech__/graphics/item/Copper_native_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -582,7 +582,7 @@ data:extend({
     icon_size=32,
     name= "Copper_plate",
     icon = "__NCP-Tech__/graphics/item/Copper_plate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -592,7 +592,7 @@ data:extend({
     icon_size=32,
     name= "Copper_rod",
     icon = "__NCP-Tech__/graphics/item/Copper_rod.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -602,7 +602,7 @@ data:extend({
     icon_size=32,
     name= "Cordite",
     icon = "__NCP-Tech__/graphics/item/Cordite.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -612,7 +612,7 @@ data:extend({
     icon_size=32,
     name= "Cotton",
     icon = "__NCP-Tech__/graphics/item/Cotton.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -622,7 +622,7 @@ data:extend({
     icon_size=32,
     name= "Diesel_canister",
     icon = "__NCP-Tech__/graphics/item/Diesel_canister.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -632,7 +632,7 @@ data:extend({
     icon_size=32,
     name= "Direct_reduced_iron",
     icon = "__NCP-Tech__/graphics/item/Direct_reduced_iron.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -642,7 +642,7 @@ data:extend({
     icon_size=32,
     name= "Dore_bar",
     icon = "__NCP-Tech__/graphics/item/Dore_bar.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -652,7 +652,7 @@ data:extend({
     icon_size=32,
     name= "Ferrochrome",
     icon = "__NCP-Tech__/graphics/item/Ferrochrome.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -662,7 +662,7 @@ data:extend({
     icon_size=32,
     name= "Fertilizer",
     icon = "__NCP-Tech__/graphics/item/Fertilizer.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -672,7 +672,7 @@ data:extend({
     icon_size=32,
     name= "Fluorite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Fluorite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -682,7 +682,7 @@ data:extend({
     icon_size=32,
     name= "Fluorite_ore",
     icon = "__NCP-Tech__/graphics/item/Fluorite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -692,7 +692,7 @@ data:extend({
     icon_size=32,
     name= "Galena_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Galena_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -702,7 +702,7 @@ data:extend({
     icon_size=32,
     name= "Galena_ore",
     icon = "__NCP-Tech__/graphics/item/Galena_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -712,7 +712,7 @@ data:extend({
     icon_size=32,
     name= "Glass",
     icon = "__NCP-Tech__/graphics/item/Glass.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -722,7 +722,7 @@ data:extend({
     icon_size=32,
     name= "Gold_concentrate",
     icon = "__NCP-Tech__/graphics/item/Gold_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -732,7 +732,7 @@ data:extend({
     icon_size=32,
     name= "Gold_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Gold_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -742,7 +742,7 @@ data:extend({
     icon_size=32,
     name= "Gold_ingot",
     icon = "__NCP-Tech__/graphics/item/Gold_ingot.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -752,7 +752,7 @@ data:extend({
     icon_size=32,
     name= "Gold_ore",
     icon = "__NCP-Tech__/graphics/item/Gold_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -762,7 +762,7 @@ data:extend({
     icon_size=32,
     name= "Gravel",
     icon = "__NCP-Tech__/graphics/item/Gravel.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -772,7 +772,7 @@ data:extend({
     icon_size=32,
     name= "Guncotton",
     icon = "__NCP-Tech__/graphics/item/Guncotton.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -782,7 +782,7 @@ data:extend({
     icon_size=32,
     name= "Gunpowder",
     icon = "__NCP-Tech__/graphics/item/Gunpowder.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -792,7 +792,7 @@ data:extend({
     icon_size=32,
     name= "Lead_billet",
     icon = "__NCP-Tech__/graphics/item/Lead_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -802,7 +802,7 @@ data:extend({
     icon_size=32,
     name= "Lead_bullion",
     icon = "__NCP-Tech__/graphics/item/Lead_bullion.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -812,7 +812,7 @@ data:extend({
     icon_size=32,
     name= "Lead_concentrate",
     icon = "__NCP-Tech__/graphics/item/Lead_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -822,7 +822,7 @@ data:extend({
     icon_size=32,
     name= "Lead_plate",
     icon = "__NCP-Tech__/graphics/item/Lead_plate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -832,7 +832,7 @@ data:extend({
     icon_size=32,
     name= "Li-ion_battery",
     icon = "__NCP-Tech__/graphics/item/Li-ion_battery.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -842,7 +842,7 @@ data:extend({
     icon_size=32,
     name= "Lithium",
     icon = "__NCP-Tech__/graphics/item/Lithium.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -852,7 +852,7 @@ data:extend({
     icon_size=32,
     name= "Lithium_chloride",
     icon = "__NCP-Tech__/graphics/item/Lithium_chloride.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -862,7 +862,7 @@ data:extend({
     icon_size=32,
     name= "Lithium_cobalt_oxide",
     icon = "__NCP-Tech__/graphics/item/Lithium_cobalt_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -872,7 +872,7 @@ data:extend({
     icon_size=32,
     name= "Lithium_perchlorate",
     icon = "__NCP-Tech__/graphics/item/Lithium_perchlorate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -882,7 +882,7 @@ data:extend({
     icon_size=32,
     name= "Lithium_tungstate",
     icon = "__NCP-Tech__/graphics/item/Lithium_tungstate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -892,7 +892,7 @@ data:extend({
     icon_size=32,
     name= "Magnetite_concentrate",
     icon = "__NCP-Tech__/graphics/item/Magnetite_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -902,7 +902,7 @@ data:extend({
     icon_size=32,
     name= "Magnetite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Magnetite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -912,7 +912,7 @@ data:extend({
     icon_size=32,
     name= "Magnetite_ore",
     icon = "__NCP-Tech__/graphics/item/Magnetite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -922,7 +922,7 @@ data:extend({
     icon_size=32,
     name= "Nickel",
     icon = "__NCP-Tech__/graphics/item/Nickel.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -932,7 +932,7 @@ data:extend({
     icon_size=32,
     name= "Nickel_cathode",
     icon = "__NCP-Tech__/graphics/item/Nickel_cathode.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -942,7 +942,7 @@ data:extend({
     icon_size=32,
     name= "Nickel_concentrate",
     icon = "__NCP-Tech__/graphics/item/Nickel_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -952,7 +952,7 @@ data:extend({
     icon_size=32,
     name= "Nickel_dust",
     icon = "__NCP-Tech__/graphics/item/Nickel_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -962,7 +962,7 @@ data:extend({
     icon_size=32,
     name= "Nickel_plate",
     icon = "__NCP-Tech__/graphics/item/Nickel_plate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -972,7 +972,7 @@ data:extend({
     icon_size=32,
     name= "Pentlandite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Pentlandite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -982,7 +982,7 @@ data:extend({
     icon_size=32,
     name= "Pentlandite_ore",
     icon = "__NCP-Tech__/graphics/item/Pentlandite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -992,7 +992,7 @@ data:extend({
     icon_size=32,
     name= "Petroleum_jelly",
     icon = "__NCP-Tech__/graphics/item/Petroleum_jelly.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1002,7 +1002,7 @@ data:extend({
     icon_size=32,
     name= "Pig_iron",
     icon = "__NCP-Tech__/graphics/item/Pig_iron.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1012,7 +1012,7 @@ data:extend({
     icon_size=32,
     name= "Pig_iron_early",
     icon = "__NCP-Tech__/graphics/item/Pig_iron.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1022,7 +1022,7 @@ data:extend({
     icon_size=32,
     name= "Plastic_pellets",
     icon = "__NCP-Tech__/graphics/item/Plastic_pellets.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1032,7 +1032,7 @@ data:extend({
     icon_size=32,
     name= "Quarried_stone",
     icon = "__NCP-Tech__/graphics/item/Quarried_stone.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1042,7 +1042,7 @@ data:extend({
     icon_size=32,
     name= "Quartz",
     icon = "__NCP-Tech__/graphics/item/Quartz.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1052,7 +1052,7 @@ data:extend({
     icon_size=32,
     name= "Quartz_rock",
     icon = "__NCP-Tech__/graphics/item/Quartz_rock.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1062,7 +1062,7 @@ data:extend({
     icon_size=32,
     name= "Quartz_crushed",
     icon = "__NCP-Tech__/graphics/item/Quartz_crushed.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -1072,7 +1072,7 @@ data:extend({
     icon_size=32,
     name= "Resin",
     icon = "__NCP-Tech__/graphics/item/Resin.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1082,7 +1082,7 @@ data:extend({
     icon_size=32,
     name= "Rubber",
     icon = "__NCP-Tech__/graphics/item/Rubber.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1092,7 +1092,7 @@ data:extend({
     icon_size=32,
     name= "Rutile_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Rutile_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -1102,7 +1102,7 @@ data:extend({
     icon_size=32,
     name= "Rutile_ore",
     icon = "__NCP-Tech__/graphics/item/Rutile_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1112,7 +1112,7 @@ data:extend({
     icon_size=32,
     name= "Salt",
     icon = "__NCP-Tech__/graphics/item/Salt.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1122,7 +1122,7 @@ data:extend({
     icon_size=32,
     name= "Potassium_nitrate",
     icon = "__NCP-Tech__/graphics/item/Potassium_nitrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1132,7 +1132,7 @@ data:extend({
     icon_size=32,
     name= "Sand",
     icon = "__NCP-Tech__/graphics/item/Sand.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1142,7 +1142,7 @@ data:extend({
     icon_size=32,
     name= "Scheelite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Scheelite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -1152,7 +1152,7 @@ data:extend({
     icon_size=32,
     name= "Scheelite_ore",
     icon = "__NCP-Tech__/graphics/item/Scheelite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1162,7 +1162,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_boule",
     icon = "__NCP-Tech__/graphics/item/Silicon_boule.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1172,7 +1172,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_carbide",
     icon = "__NCP-Tech__/graphics/item/Silicon_carbide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1182,7 +1182,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_dioxide",
     icon = "__NCP-Tech__/graphics/item/Silicon_dioxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1192,7 +1192,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_wafer",
     icon = "__NCP-Tech__/graphics/item/Silicon_wafer.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1202,7 +1202,7 @@ data:extend({
     icon_size=32,
     name= "Silt",
     icon = "__NCP-Tech__/graphics/item/Silt.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1212,7 +1212,7 @@ data:extend({
     icon_size=32,
     name= "Silver_ingot",
     icon = "__NCP-Tech__/graphics/item/Silver_ingot.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1222,7 +1222,7 @@ data:extend({
     icon_size=32,
     name= "Silver_nitrate",
     icon = "__NCP-Tech__/graphics/item/Silver_nitrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1232,7 +1232,7 @@ data:extend({
     icon_size=32,
     name= "Silver_oxide",
     icon = "__NCP-Tech__/graphics/item/Silver_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1242,7 +1242,7 @@ data:extend({
     icon_size=32,
     name= "Silver-oxide_battery",
     icon = "__NCP-Tech__/graphics/item/Silver-oxide_battery.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1252,7 +1252,7 @@ data:extend({
     icon_size=32,
     name= "Slag",
     icon = "__NCP-Tech__/graphics/item/Slag.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1262,7 +1262,7 @@ data:extend({
     icon_size=32,
     name= "Slag_dust",
     icon = "__NCP-Tech__/graphics/item/Slag_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1272,7 +1272,7 @@ data:extend({
     icon_size=32,
     name= "Sodium_hydroxide",
     icon = "__NCP-Tech__/graphics/item/Sodium_hydroxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1282,7 +1282,7 @@ data:extend({
     icon_size=32,
     name= "Sphalerite_ore",
     icon = "__NCP-Tech__/graphics/item/Sphalerite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1292,7 +1292,7 @@ data:extend({
     icon_size=32,
     name= "Stainless_steel_billet",
     icon = "__NCP-Tech__/graphics/item/Stainless_steel_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1302,7 +1302,7 @@ data:extend({
     icon_size=32,
     name= "Steel_billet",
     icon = "__NCP-Tech__/graphics/item/Steel_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1312,7 +1312,7 @@ data:extend({
     icon_size=32,
     name= "Stone_crushed",
     icon = "__NCP-Tech__/graphics/item/Stone_crushed.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -1322,7 +1322,7 @@ data:extend({
     icon_size=32,
     name= "Styrofoam",
     icon = "__NCP-Tech__/graphics/item/Styrofoam.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1332,7 +1332,7 @@ data:extend({
     icon_size=32,
     name= "Sulfur",
     icon = "__NCP-Tech__/graphics/item/Sulfur.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1342,7 +1342,7 @@ data:extend({
     icon_size=32,
     name= "Tin_billet",
     icon = "__NCP-Tech__/graphics/item/Tin_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1352,7 +1352,7 @@ data:extend({
     icon_size=32,
     name= "Tin_concentrate",
     icon = "__NCP-Tech__/graphics/item/Tin_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1362,7 +1362,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_billet",
     icon = "__NCP-Tech__/graphics/item/Titanium_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1372,7 +1372,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_nitride_film",
     icon = "__NCP-Tech__/graphics/item/Titanium_nitride_film.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1382,7 +1382,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_dioxide",
     icon = "__NCP-Tech__/graphics/item/Titanium_dioxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1392,7 +1392,7 @@ data:extend({
     icon_size=32,
     name= "Tungsten_carbide_billet",
     icon = "__NCP-Tech__/graphics/item/Tungsten_carbide_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1402,7 +1402,7 @@ data:extend({
     icon_size=32,
     name= "Tungsten_oxide",
     icon = "__NCP-Tech__/graphics/item/Tungsten_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1412,7 +1412,7 @@ data:extend({
     icon_size=32,
     name= "Tungsten_powder",
     icon = "__NCP-Tech__/graphics/item/Tungsten_powder.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1422,7 +1422,7 @@ data:extend({
     icon_size=32,
     name= "Uraninite_ore_concentrate",
     icon = "__NCP-Tech__/graphics/item/Uraninite_ore_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1432,7 +1432,7 @@ data:extend({
     icon_size=32,
     name= "Uraninite_ore",
     icon = "__NCP-Tech__/graphics/item/Uraninite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1444,7 +1444,7 @@ data:extend({
     icon_size=32,
     name= "Wood",
     icon = "__NCP-Tech__/graphics/item/Wood.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1456,7 +1456,7 @@ data:extend({
     icon_size=32,
     name= "Wooden_board",
     icon = "__NCP-Tech__/graphics/item/Wooden_board.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1466,7 +1466,7 @@ data:extend({
     icon_size=32,
     name= "Wrought_iron_billet",
     icon = "__NCP-Tech__/graphics/item/Wrought_iron_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1476,7 +1476,7 @@ data:extend({
     icon_size=32,
     name= "Iron_billet",
     icon = "__NCP-Tech__/graphics/item/Wrought_iron_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1486,7 +1486,7 @@ data:extend({
     icon_size=32,
     name= "Yellowcake",
     icon = "__NCP-Tech__/graphics/item/Yellowcake.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1496,7 +1496,7 @@ data:extend({
     icon_size=32,
     name= "Zinc_concentrate",
     icon = "__NCP-Tech__/graphics/item/Zinc_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1506,7 +1506,7 @@ data:extend({
     icon_size=32,
     name= "Zinc_matte",
     icon = "__NCP-Tech__/graphics/item/Zinc_matte.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1516,7 +1516,7 @@ data:extend({
     icon_size=32,
     name= "Zinc_plate",
     icon = "__NCP-Tech__/graphics/item/Zinc_plate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1526,7 +1526,7 @@ data:extend({
     icon_size=32,
     name= "Zircon",
     icon = "__NCP-Tech__/graphics/item/Zircon.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1536,7 +1536,7 @@ data:extend({
     icon_size=32,
     name= "Zirconium_dust",
     icon = "__NCP-Tech__/graphics/item/Zirconium_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1546,7 +1546,7 @@ data:extend({
     icon_size=32,
     name= "Zirconium_billet",
     icon = "__NCP-Tech__/graphics/item/Zirconium_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1556,7 +1556,7 @@ data:extend({
     icon_size=32,
     name= "Zirconium_plate",
     icon = "__NCP-Tech__/graphics/item/Zirconium_plate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1566,7 +1566,7 @@ data:extend({
     icon_size=32,
     name= "Zirconium_tube",
     icon = "__NCP-Tech__/graphics/item/Zirconium_tube.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1580,7 +1580,7 @@ data:extend({
     icon_size=32,
     name= "Lead_solder_ingot",
     icon = "__NCP-Tech__/graphics/item/Lead_solder_ingot.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1590,7 +1590,7 @@ data:extend({
     icon_size=32,
     name= "Lead_solder",
     icon = "__NCP-Tech__/graphics/item/Lead_solder.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1600,7 +1600,7 @@ data:extend({
     icon_size=32,
     name= "Lead_free_solder_ingot",
     icon = "__NCP-Tech__/graphics/item/Lead_free_solder_ingot.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1610,7 +1610,7 @@ data:extend({
     icon_size=32,
     name= "Lead_free_solder",
     icon = "__NCP-Tech__/graphics/item/Lead_free_solder.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1620,7 +1620,7 @@ data:extend({
     icon_size=32,
     name= "Solder_paste",
     icon = "__NCP-Tech__/graphics/item/Solder_paste.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1630,7 +1630,7 @@ data:extend({
     icon_size=32,
     name= "Magnesium_hydroxide",
     icon = "__NCP-Tech__/graphics/item/Magnesium_hydroxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1640,7 +1640,7 @@ data:extend({
     icon_size=32,
     name= "Magnesium_oxide",
     icon = "__NCP-Tech__/graphics/item/Magnesium_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1650,7 +1650,7 @@ data:extend({
     icon_size=32,
     name= "Ferrosilicon",
     icon = "__NCP-Tech__/graphics/item/Ferrosilicon.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1660,7 +1660,7 @@ data:extend({
     icon_size=32,
     name= "Magnesium_billet",
     icon = "__NCP-Tech__/graphics/item/Magnesium_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1670,7 +1670,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_ore",
     icon = "__NCP-Tech__/graphics/item/Graphite_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1680,7 +1680,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Graphite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1690,7 +1690,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_crushed",
     icon = "__NCP-Tech__/graphics/item/Graphite_crushed.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1700,7 +1700,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_dust",
     icon = "__NCP-Tech__/graphics/item/Graphite_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1710,7 +1710,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_electrode",
     icon = "__NCP-Tech__/graphics/item/Graphite_electrode.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1720,7 +1720,7 @@ data:extend({
     icon_size=32,
     name= "Cement",
     icon = "__NCP-Tech__/graphics/item/Cement.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1730,7 +1730,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_crucible",
     icon = "__NCP-Tech__/graphics/item/Graphite_crucible.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1740,7 +1740,7 @@ data:extend({
     icon_size=32,
     name= "Graphite_rod",
     icon = "__NCP-Tech__/graphics/item/Graphite_rod.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1750,7 +1750,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_furnace",
     icon = "__NCP-Tech__/graphics/item/Silicon_furnace.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1760,7 +1760,7 @@ data:extend({
     icon_size=32,
     name= "Cement_bauxite",
     icon = "__NCP-Tech__/graphics/item/Cement_bauxite.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1770,7 +1770,7 @@ data:extend({
     icon_size=32,
     name= "Cement_slag",
     icon = "__NCP-Tech__/graphics/item/Cement_slag.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1780,7 +1780,7 @@ data:extend({
     icon_size=32,
     name= "Calcium_carbonate",
     icon = "__NCP-Tech__/graphics/item/Calcium_carbonate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1790,7 +1790,7 @@ data:extend({
     icon_size=32,
     name= "Cement_clinker",
     icon = "__NCP-Tech__/graphics/item/Cement_clinker.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1800,7 +1800,7 @@ data:extend({
     icon_size=32,
     name= "Concrete_block",
     icon = "__NCP-Tech__/graphics/item/Concrete_block.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1810,7 +1810,7 @@ data:extend({
     icon_size=32,
     name= "Concrete_pipe",
     icon = "__NCP-Tech__/graphics/item/Concrete_pipe.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "pipe",
     order= "a-b-c",
     stack_size= 50,
@@ -1820,7 +1820,7 @@ data:extend({
     icon_size=32,
     name= "Concrete_underground_pipe",
     icon = "__NCP-Tech__/graphics/item/Concrete_underground_pipe.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "underground_pipe",
     order= "a-b-c",
     stack_size= 50,
@@ -1830,7 +1830,7 @@ data:extend({
     icon_size=32,
     name= "Concrete_wall",
     icon = "__NCP-Tech__/graphics/item/Concrete_wall.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1840,7 +1840,7 @@ data:extend({
     icon_size=32,
     name= "Sodium_carbonate",
     icon = "__NCP-Tech__/graphics/item/Sodium_carbonate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1850,7 +1850,7 @@ data:extend({
     icon_size=32,
     name= "Diamond_uncut",
     icon = "__NCP-Tech__/graphics/item/Diamond_uncut.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1860,7 +1860,7 @@ data:extend({
     icon_size=32,
     name= "Aluminosilicate_glass",
     icon = "__NCP-Tech__/graphics/item/Aluminosilicate_glass.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1870,7 +1870,7 @@ data:extend({
     icon_size=32,
     name= "Fiberglass_roving",
     icon = "__NCP-Tech__/graphics/item/Fiberglass_roving.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1880,7 +1880,7 @@ data:extend({
     icon_size=32,
     name= "Fiberglass_cloth",
     icon = "__NCP-Tech__/graphics/item/Fiberglass_cloth.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1890,7 +1890,7 @@ data:extend({
     icon_size=32,
     name= "Fiberglass_laminate",
     icon = "__NCP-Tech__/graphics/item/Fiberglass_laminate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1900,7 +1900,7 @@ data:extend({
     icon_size=32,
     name= "Germanium_dioxide",
     icon = "__NCP-Tech__/graphics/item/Germanium_dioxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1910,7 +1910,7 @@ data:extend({
     icon_size=32,
     name= "Oxide_glass",
     icon = "__NCP-Tech__/graphics/item/Oxide_glass.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1920,7 +1920,7 @@ data:extend({
     icon_size=32,
     name= "Glass_tube",
     icon = "__NCP-Tech__/graphics/item/Glass_tube.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1930,7 +1930,7 @@ data:extend({
     icon_size=32,
     name= "Purified_glass_tube",
     icon = "__NCP-Tech__/graphics/item/Purified_glass_tube.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1940,7 +1940,7 @@ data:extend({
     icon_size=32,
     name= "Optical_fiber",
     icon = "__NCP-Tech__/graphics/item/Optical_fiber.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1950,7 +1950,7 @@ data:extend({
     icon_size=32,
     name= "Germanium_concentrate",
     icon = "__NCP-Tech__/graphics/item/Germanium_concentrate.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1960,7 +1960,7 @@ data:extend({
     icon_size=32,
     name= "Germanium",
     icon = "__NCP-Tech__/graphics/item/Germanium.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -1969,7 +1969,7 @@ data:extend({
     type= "tool",
     name= "Credit",
     icon = "__NCP-Tech__/graphics/item/Credit.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "aa",
     stack_size= 100,
@@ -1979,7 +1979,7 @@ data:extend({
     type= "tool",
     name= "Credit100",
     icon = "__NCP-Tech__/graphics/item/Credit100.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "ab",
     stack_size= 100,
@@ -1989,7 +1989,7 @@ data:extend({
     type= "tool",
     name= "Credit10k",
     icon = "__NCP-Tech__/graphics/item/Credit10k.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "ac",
     stack_size= 100,
@@ -1999,7 +1999,7 @@ data:extend({
     type= "tool",
     name= "Credit1M",
     icon = "__NCP-Tech__/graphics/item/Credit1M.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "ad",
     stack_size= 1000,
@@ -2009,7 +2009,7 @@ data:extend({
     type= "tool",
     name= "Credit1G",
     icon = "__NCP-Tech__/graphics/item/Credit1G.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "ae",
     stack_size= 50,
@@ -2020,7 +2020,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_metallurgical",
     icon = "__NCP-Tech__/graphics/item/Silicon_metallurgical.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2030,7 +2030,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_polycrystalline_granule",
     icon = "__NCP-Tech__/graphics/item/Silicon_polycrystalline_granule.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2040,7 +2040,7 @@ data:extend({
     icon_size=32,
     name= "Silicon_polycrystalline_rod",
     icon = "__NCP-Tech__/graphics/item/Silicon_polycrystalline_rod.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "rod",
     order= "a-b-c",
     stack_size= 50,
@@ -2050,7 +2050,7 @@ data:extend({
     icon_size=32,
     name= "Bauxite_ore_dust",
     icon = "__NCP-Tech__/graphics/item/Silicon_polycrystalline_rod.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "rod",
     order= "a-b-c",
     stack_size= 50,
@@ -2087,7 +2087,7 @@ data:extend({
     icon_size=32,
     name= "Lead_scrap",
     icon = "__NCP-Tech__/graphics/item/Lead_scrap.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2097,7 +2097,7 @@ data:extend({
     icon_size=32,
     name= "Lead_dust",
     icon = "__NCP-Tech__/graphics/item/Lead_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2107,7 +2107,7 @@ data:extend({
     icon_size=32,
     name= "Lead_oxide",
     icon = "__NCP-Tech__/graphics/item/Lead_oxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2117,7 +2117,7 @@ data:extend({
     icon_size=32,
     name= "Magnesium_chloride",
     icon = "__NCP-Tech__/graphics/item/Magnesium_chloride.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2128,7 +2128,7 @@ data:extend({
     icon_size=32,
     name= "Cotton_seed",
     icon = "__NCP-Tech__/graphics/item/Cotton_seed.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2152,7 +2152,7 @@ data:extend({
     icon_size=32,
     name= "Wood_raw",
     icon = "__NCP-Tech__/graphics/item/Wood_raw.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2162,7 +2162,7 @@ data:extend({
     icon_size=32,
     name= "Uraninite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Uraninite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -2172,7 +2172,7 @@ data:extend({
     icon_size=32,
     name= "Nickel_billet",
     icon = "__NCP-Tech__/graphics/item/Nickel_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2182,7 +2182,7 @@ data:extend({
     icon_size=32,
     name= "Sphalerite_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Sphalerite_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "Crushed",
     order= "a-b-c",
     stack_size= 50,
@@ -2192,7 +2192,7 @@ data:extend({
     icon_size=32,
     name= "Zinc_billet",
     icon = "__NCP-Tech__/graphics/item/Zinc_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2202,7 +2202,7 @@ data:extend({
     icon_size=32,
     name= "Rare_earth",
     icon = "__NCP-Tech__/graphics/item/Rare_earth.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2212,7 +2212,7 @@ data:extend({
     icon_size=32,
     name= "Coal_crushed_ore",
     icon = "__NCP-Tech__/graphics/item/Coal_crushed_ore.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2222,7 +2222,7 @@ data:extend({
     icon_size=32,
     name= "Coal_dust",
     icon = "__NCP-Tech__/graphics/item/Coal_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2235,7 +2235,7 @@ data:extend({
     icon_size=32,
     name= "Coal_ore_dust",
     icon = "__NCP-Tech__/graphics/item/Coal_ore_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2245,7 +2245,7 @@ data:extend({
     icon_size=32,
     name= "Rutile_ore_sand",
     icon = "__NCP-Tech__/graphics/item/Rutile_ore_sand.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2255,7 +2255,7 @@ data:extend({
     icon_size=32,
     name= "Rutile_sand",
     icon = "__NCP-Tech__/graphics/item/Rutile_sand.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2266,7 +2266,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_dioxide_pellet",
     icon = "__NCP-Tech__/graphics/item/Titanium_dioxide_pellet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2276,7 +2276,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_pellet",
     icon = "__NCP-Tech__/graphics/item/Titanium_pellet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2286,7 +2286,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_dust_dirty",
     icon = "__NCP-Tech__/graphics/item/Titanium_dust_dirty.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2296,7 +2296,7 @@ data:extend({
     icon_size=32,
     name= "Titanium_dust",
     icon = "__NCP-Tech__/graphics/item/Titanium_dust.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2306,7 +2306,7 @@ data:extend({
     icon_size=32,
     name= "Zirconium_sponge",
     icon = "__NCP-Tech__/graphics/item/Zirconium_sponge.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2316,7 +2316,7 @@ data:extend({
     icon_size=32,
     name= "Zirconium_tetrachloride",
     icon = "__NCP-Tech__/graphics/item/Zirconium_tetrachloride.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2326,7 +2326,7 @@ data:extend({
     icon_size=32,
     name= "Uranium_tetrafluoride",
     icon = "__NCP-Tech__/graphics/item/Uranium_tetrafluoride.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2336,7 +2336,7 @@ data:extend({
     icon_size=32,
     name= "Uranium_dioxide",
     icon = "__NCP-Tech__/graphics/item/Uranium_dioxide.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2346,7 +2346,7 @@ data:extend({
     icon_size=32,
     name= "Coal",
     icon = "__NCP-Tech__/graphics/item/Coal.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 50,
@@ -2383,7 +2383,7 @@ data:extend({
     icon_size=32,
     name= "aaaaaaCheatFuel",
     icon = "__NCP-Tech__/graphics/item/Zinc_billet.png",
-    flags= { "goes-to-main-inventory" },
+    
     subgroup = "ores",
     order= "a-b-c",
     stack_size= 500,
