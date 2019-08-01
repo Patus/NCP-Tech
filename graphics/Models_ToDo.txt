@@ -8,3 +8,17 @@ tracks
 Turrets
 AND MANY MORE!
 
+
+List for possible new Unique models (in priority)
+
+Cryogenic distillation plant
+Cracking plant
+Distillery
+Electric arc furnace
+Electrolyzer
+Ore Washer
+Diesel generator
+Extruder
+Rolling machine
+Crusher
+Grinding mill
