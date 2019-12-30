@@ -149,10 +149,10 @@ data:extend(
       -- heuristic value is multiplied by this ratio
       -- the higher the number the more is the search directed directly towards the goal
       goal_pressure_ratio = 2,
-      -- when this is exhausted no more requests are allowed
-      -- at the moment the first path to exhaust this will be finished (even if it is hundreds of steps)
-      max_steps_worked_per_tick = 100,
-
+      -- How many nodes can be expanded at most per tick.
+      max_steps_worked_per_tick = 1000,
+      -- How much work each patfinding job is allowed to do per tick.
+      max_work_done_per_tick = 8000,
       -- path cache setings
       use_path_cache = true,
       -- number of elements in the cache
@@ -193,6 +193,8 @@ data:extend(
       general_entity_collision_penalty = 10,
       -- collision penalty for successors of positions that require destroy to reach
       general_entity_subsequent_collision_penalty = 3,
+      -- Collision penalty for collisions in the extended bounding box but outside the entity's actual bounding box
+      extended_collision_penalty = 3,
       -- uptil this amount any client will be served by the path finder (no estimate on the path length)
       max_clients_to_accept_any_new_request = 10,
       -- from max_clients_to_accept_any_new_request till this one only those that have a short estimate will be served
@@ -206,7 +208,7 @@ data:extend(
       -- absolute minimum of steps that will be performed for every path find request no matter what
       min_steps_to_check_path_find_termination = 2000,
       -- if the amount of steps is higher than this times estimate of start to goal then path finding is terminated
-      start_to_goal_cost_multiplier_to_terminate_path_find = 500.0
+      start_to_goal_cost_multiplier_to_terminate_path_find = 2000.0
     },
 
     -- If a behavior fails this many times, the enemy (or enemy group)
@@ -219,7 +221,8 @@ data:extend(
     {
        recipe_difficulty = defines.difficulty_settings.recipe_difficulty.normal,
        technology_difficulty = defines.difficulty_settings.technology_difficulty.normal,
-       technology_price_multiplier = 1
+       technology_price_multiplier = 1,
+       research_queue_setting = "after-victory"
     }
   }
 })
