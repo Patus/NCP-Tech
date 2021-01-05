@@ -1,3 +1,9 @@
+local hit_effects = require ("__base__.prototypes.entity.demo-hit-effects")
+local sounds = require("__base__.prototypes.entity.demo-sounds")
+require ("__base__.prototypes.entity.assemblerpipes")
+require ("__base__.prototypes.entity.demo-pipecovers")
+
+
 function oldmakeItem(name,stack_size,subgroup,place_result,order)
 	local icon="__NCP-Tech__/graphics/item/"..name..".png"
 
@@ -1686,101 +1692,599 @@ function createOffshorePump (a)
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 
-	{
-    type = "offshore-pump",
-    name = name,
-    icon = "__base__/graphics/icons/offshore-pump.png",
-    icon_size = 32,
-    flags = {"placeable-neutral", "player-creation", "filter-directions"},
-    collision_mask = { "ground-tile", "object-layer" },
-    fluid_box_tile_collision_test = { "ground-tile" },
-    adjacent_tile_collision_test = { "water-tile" },
-    minable = minable,
-    max_health = 150,
-    corpse = "small-remnants",
-    fluid = "water",
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 70
-      },
-      {
-        type = "impact",
-        percent = 30
-      }
-    },
-    collision_box = {{-0.6, -0.45}, {0.6, 0.3}},
-    selection_box = {{-1, -1.49}, {1, 0.49}},
-    fluid_box =
-    {
-      base_area = 1,
-      base_level = 1,
-      pipe_covers = pipecoverspictures(),
-      production_type = "output",
-      pipe_connections =
-      {
-        {
-          position = {0, 1},
-          type = "output"
-        },
-      },
-    },
-    pumping_speed = 20,
-    tile_width = 1,
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-	picture =
-    {
-      north =
-      {
-        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
-        priority = "high",
-        shift = {0.90625, 0.0625},
-        width = 160,
-        height = 102
-      },
-      east =
-      {
-        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
-        priority = "high",
-        shift = {0.90625, 0.0625},
-        x = 160,
-        width = 160,
-        height = 102
-      },
-      south =
-      {
-        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
-        priority = "high",
-        shift = {0.90625, 0.65625},
-        x = 320,
-        width = 160,
-        height = 102
-      },
-      west =
-      {
-        filename = "__base__/graphics/entity/offshore-pump/offshore-pump.png",
-        priority = "high",
-        shift = {1.0, 0.0625},
-        x = 480,
-        width = 160,
-        height = 102
-      }
-    },
-    placeable_position_visualization =
-    {
-      filename = "__core__/graphics/cursor-boxes-32x32.png",
-      priority = "extra-high-no-scale",
-      width = 64,
-      height = 64,
-      scale = 0.5,
-      x = 3*64
-    },
-    circuit_wire_connection_points = circuit_connector_definitions["offshore-pump"].points,
-    circuit_connector_sprites = circuit_connector_definitions["offshore-pump"].sprites,
-    circuit_wire_max_distance = default_circuit_wire_max_distance
-
-  },
+		{
+	    type = "offshore-pump",
+	    name = name,
+	    icon = icon,
+	    icon_size = 32, icon_mipmaps = 1, --icon_size = 64, icon_mipmaps = 4,
+	    flags = {"placeable-neutral", "player-creation", "filter-directions"},
+	    collision_mask = { "object-layer", "train-layer" }, -- collide just with object-layer and train-layer which don't collide with water, this allows us to build on 1 tile wide ground
+	    center_collision_mask = { "water-tile", "object-layer", "player-layer" }, -- to test that tile directly under the pump is ground
+	    fluid_box_tile_collision_test = { "ground-tile" },
+	    adjacent_tile_collision_test = { "water-tile" },
+	    adjacent_tile_collision_mask = { "ground-tile" }, -- to prevent building on edge of map :(
+	    adjacent_tile_collision_box = { { -1, -2 }, { 1, -1 } },
+	    minable = minable,
+	    max_health = max_health,
+	    corpse = "offshore-pump-remnants",
+	    dying_explosion = "offshore-pump-explosion",
+	    fluid = fluid,
+	    resistances =
+	    {
+	      {
+	        type = "fire",
+	        percent = 70
+	      },
+	      {
+	        type = "impact",
+	        percent = 30
+	      }
+	    },
+	    collision_box = {{-0.6, -1.05}, {0.6, 0.3}},
+	    selection_box = {{-0.6, -1.49}, {0.6, 0.49}},
+	    damaged_trigger_effect = hit_effects.entity(),
+	    fluid_box =
+	    {
+	      base_area = 1,
+	      base_level = 1,
+	      pipe_covers = pipecoverspictures(),
+	      production_type = "output",
+	      filter = "water",
+	      pipe_connections =
+	      {
+	        {
+	          position = {0, 1},
+	          type = "output"
+	        }
+	      }
+	    },
+	    pumping_speed = pumping_speed,
+	    tile_width = 1,
+	    tile_height = 1,
+	    vehicle_impact_sound = sounds.generic_impact,
+	    open_sound = sounds.machine_open,
+	    close_sound = sounds.machine_close,
+	    working_sound =
+	    {
+	      sound =
+	      {
+	        {
+	          filename = "__base__/sound/offshore-pump.ogg",
+	          volume = 0.5
+	        }
+	      },
+	      match_volume_to_activity = true,
+	      audible_distance_modifier = 0.7,
+	      max_sounds_per_type = 3,
+	      fade_in_ticks = 4,
+	      fade_out_ticks = 20,
+	    },
+	    min_perceived_performance = 0.5,
+	    always_draw_fluid = true,
+	    graphics_set =
+	    {
+	      underwater_layer_offset = 30,
+	      base_render_layer = "ground-patch",
+	      animation =
+	      {
+	        north =
+	        {
+	          layers =
+	          {
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 48,
+	              height = 84,
+	              shift = util.by_pixel(-2, -16),
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_North.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 90,
+	                height = 162,
+	                shift = util.by_pixel(-1, -15),
+	                scale = 0.5
+	              }
+	            },
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-shadow.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 78,
+	              height = 70,
+	              shift = util.by_pixel(12, -8),
+	              draw_as_shadow = true,
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_North-shadow.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 150,
+	                height = 134,
+	                shift = util.by_pixel(13, -7),
+	                draw_as_shadow = true,
+	                scale = 0.5
+	              }
+	            }
+	          }
+	        },
+	        east =
+	        {
+	          layers =
+	          {
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 64,
+	              height = 52,
+	              shift = util.by_pixel(14, -2),
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_East.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 124,
+	                height = 102,
+	                shift = util.by_pixel(15, -2),
+	                scale = 0.5
+	              }
+	            },
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-shadow.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 88,
+	              height = 34,
+	              shift = util.by_pixel(28, 8),
+	              draw_as_shadow = true,
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_East-shadow.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 180,
+	                height = 66,
+	                shift = util.by_pixel(27, 8),
+	                draw_as_shadow = true,
+	                scale = 0.5
+	              }
+	            }
+	          }
+	        },
+	        south =
+	        {
+	          layers =
+	          {
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 48,
+	              height = 96,
+	              shift = util.by_pixel(-2, 0),
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_South.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 92,
+	                height = 192,
+	                shift = util.by_pixel(-1, 0),
+	                scale = 0.5
+	              }
+	            },
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-shadow.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 80,
+	              height = 66,
+	              shift = util.by_pixel(16, 22),
+	              draw_as_shadow = true,
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_South-shadow.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 164,
+	                height = 128,
+	                shift = util.by_pixel(15, 23),
+	                draw_as_shadow = true,
+	                scale = 0.5
+	              }
+	            }
+	          }
+	        },
+	        west =
+	        {
+	          layers =
+	          {
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 64,
+	              height = 52,
+	              shift = util.by_pixel(-16, -2),
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_West.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 124,
+	                height = 102,
+	                shift = util.by_pixel(-15, -2),
+	                scale = 0.5
+	              }
+	            },
+	            {
+	              filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-shadow.png",
+	              priority = "high",
+	              line_length = 8,
+	              frame_count = 32,
+	              animation_speed = 0.25,
+	              width = 88,
+	              height = 34,
+	              shift = util.by_pixel(-4, 8),
+	              draw_as_shadow = true,
+	              hr_version =
+	              {
+	                filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_West-shadow.png",
+	                priority = "high",
+	                line_length = 8,
+	                frame_count = 32,
+	                animation_speed = 0.25,
+	                width = 172,
+	                height = 66,
+	                shift = util.by_pixel(-3, 8),
+	                draw_as_shadow = true,
+	                scale = 0.5
+	              }
+	            }
+	          }
+	        }
+	      },
+	      fluid_animation =
+	      {
+	        north =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-fluid.png",
+	          apply_runtime_tint = true,
+	          line_length = 8,
+	          frame_count = 32,
+	          animation_speed = 0.25,
+	          width = 22,
+	          height = 20,
+	          shift = util.by_pixel(-2, -22),
+	          hr_version = {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_North-fluid.png",
+	            apply_runtime_tint = true,
+	            line_length = 8,
+	            frame_count = 32,
+	            animation_speed = 0.25,
+	            width = 40,
+	            height = 40,
+	            shift = util.by_pixel(-1, -22),
+	            scale = 0.5
+	          }
+	        },
+	        east =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-fluid.png",
+	          apply_runtime_tint = true,
+	          line_length = 8,
+	          frame_count = 32,
+	          animation_speed = 0.25,
+	          width = 20,
+	          height = 24,
+	          shift = util.by_pixel(6, -10),
+	          hr_version = {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_East-fluid.png",
+	            apply_runtime_tint = true,
+	            line_length = 8,
+	            frame_count = 32,
+	            animation_speed = 0.25,
+	            width = 38,
+	            height = 50,
+	            shift = util.by_pixel(6, -11),
+	            scale = 0.5
+	          }
+	        },
+	        south =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-fluid.png",
+	          apply_runtime_tint = true,
+	          line_length = 8,
+	          frame_count = 32,
+	          animation_speed = 0.25,
+	          width = 20,
+	          height = 8,
+	          shift = util.by_pixel(-2, -4),
+	          hr_version = {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_South-fluid.png",
+	            apply_runtime_tint = true,
+	            line_length = 8,
+	            frame_count = 32,
+	            animation_speed = 0.25,
+	            width = 36,
+	            height = 14,
+	            shift = util.by_pixel(-1, -4),
+	            scale = 0.5
+	          }
+	        },
+	        west =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-fluid.png",
+	          apply_runtime_tint = true,
+	          line_length = 8,
+	          frame_count = 32,
+	          animation_speed = 0.25,
+	          width = 20,
+	          height = 24,
+	          shift = util.by_pixel(-8, -10),
+	          hr_version = {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_West-fluid.png",
+	            apply_runtime_tint = true,
+	            line_length = 8,
+	            frame_count = 32,
+	            animation_speed = 0.25,
+	            width = 36,
+	            height = 50,
+	            shift = util.by_pixel(-7, -11),
+	            scale = 0.5
+	          }
+	        }
+	      },
+	      glass_pictures =
+	      {
+	        north =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-glass.png",
+	          width = 18,
+	          height = 20,
+	          shift = util.by_pixel(-2, -22),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_North-glass.png",
+	            width = 36,
+	            height = 40,
+	            shift = util.by_pixel(-2, -22),
+	            scale = 0.5
+	          }
+	        },
+	        east =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-glass.png",
+	          width = 18,
+	          height = 18,
+	          shift = util.by_pixel(4, -14),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_East-glass.png",
+	            width = 30,
+	            height = 32,
+	            shift = util.by_pixel(5, -13),
+	            scale = 0.5
+	          }
+	        },
+	        south =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-glass.png",
+	          width = 22,
+	          height = 12,
+	          shift = util.by_pixel(-2, -6),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_South-glass.png",
+	            width = 40,
+	            height = 24,
+	            shift = util.by_pixel(-1, -6),
+	            scale = 0.5
+	          }
+	        },
+	        west =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-glass.png",
+	          width = 16,
+	          height = 16,
+	          shift = util.by_pixel(-6, -14),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_West-glass.png",
+	            width = 30,
+	            height = 32,
+	            shift = util.by_pixel(-6, -14),
+	            scale = 0.5
+	          }
+	        }
+	      },
+	      base_pictures =
+	      {
+	        north =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-legs.png",
+	          width = 60,
+	          height = 52,
+	          shift = util.by_pixel(-2, -4),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_North-legs.png",
+	            width = 114,
+	            height = 106,
+	            shift = util.by_pixel(-1, -5),
+	            scale = 0.5
+	          }
+	        },
+	        east =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-legs.png",
+	          width = 54,
+	          height = 32,
+	          shift = util.by_pixel(4, 12),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_East-legs.png",
+	            width = 106,
+	            height = 60,
+	            shift = util.by_pixel(4, 13),
+	            scale = 0.5
+	          }
+	        },
+	        south =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-legs.png",
+	          width = 56,
+	          height = 54,
+	          shift = util.by_pixel(-2, 6),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_South-legs.png",
+	            width = 110,
+	            height = 108,
+	            shift = util.by_pixel(-2, 6),
+	            scale = 0.5
+	          }
+	        },
+	        west =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-legs.png",
+	          width = 54,
+	          height = 32,
+	          shift = util.by_pixel(-6, 12),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_West-legs.png",
+	            width = 108,
+	            height = 64,
+	            shift = util.by_pixel(-6, 12),
+	            scale = 0.5
+	          }
+	        }
+	      },
+	      underwater_pictures =
+	      {
+	        north =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_North-underwater.png",
+	          width = 52,
+	          height = 16,
+	          shift = util.by_pixel(-2, -34),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_North-underwater.png",
+	            width = 98,
+	            height = 36,
+	            shift = util.by_pixel(-1, -32),
+	            scale = 0.5
+	          }
+	        },
+	        east =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_East-underwater.png",
+	          width = 18,
+	          height = 38,
+	          shift = util.by_pixel(40, 16),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_East-underwater.png",
+	            width = 40,
+	            height = 72,
+	            shift = util.by_pixel(39, 17),
+	            scale = 0.5
+	          }
+	        },
+	        south =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_South-underwater.png",
+	          width = 52,
+	          height = 26,
+	          shift = util.by_pixel(-2, 48),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_South-underwater.png",
+	            width = 98,
+	            height = 48,
+	            shift = util.by_pixel(-1, 49),
+	            scale = 0.5
+	          }
+	        },
+	        west =
+	        {
+	          filename = "__base__/graphics/entity/offshore-pump/offshore-pump_West-underwater.png",
+	          width = 20,
+	          height = 34,
+	          shift = util.by_pixel(-40, 18),
+	          hr_version =
+	          {
+	            filename = "__base__/graphics/entity/offshore-pump/hr-offshore-pump_West-underwater.png",
+	            width = 40,
+	            height = 72,
+	            shift = util.by_pixel(-40, 17),
+	            scale = 0.5
+	          }
+	        }
+	      }
+	    },
+	    placeable_position_visualization =
+	    {
+	      filename = "__core__/graphics/cursor-boxes-32x32.png",
+	      priority = "extra-high-no-scale",
+	      width = 64,
+	      height = 64,
+	      scale = 0.5,
+	      x = 3*64
+	    },
+	    circuit_wire_connection_points = circuit_connector_definitions["offshore-pump"].points,
+	    circuit_connector_sprites = circuit_connector_definitions["offshore-pump"].sprites,
+	    circuit_wire_max_distance = default_circuit_wire_max_distance,
+	    water_reflection =
+	    {
+	      pictures =
+	      {
+	        filename = "__base__/graphics/entity/offshore-pump/offshore-pump-reflection.png",
+	        priority = "extra-high",
+	        width = 132,
+	        height = 156,
+	        shift = util.by_pixel(0, 19),
+	        variation_count = 4,
+	        scale = 1,
+	      },
+	      rotate = false,
+	      orientation_to_variation = true
+	    }
+	  },
 	})
 end
 function createInserter (a)
@@ -2235,7 +2739,9 @@ function createLamp (a)
   },
 	})
 end
+
 function createMiningDrill (a)
+	--local drillFuctions= require "__base__.prototypes.entity.demo-mining-drill" -- turhaaa
 	local name=a.name
 	local icon=a.icon or "__NCP-Tech__/graphics/item/"..name..".png"
 	local minable=a.minable or {hardness = 1, mining_time = 1, result = name}
@@ -2246,879 +2752,2278 @@ function createMiningDrill (a)
 	local resource_searching_radius=a.resource_searching_radius or 2.49
 
 	local aaaaaa=a.aaaaaa or aaaaaa
-	data:extend({
+
+	electric_drill_animation_speed = 0.4
+	electric_drill_animation_sequence =
 	{
-    type = "mining-drill",
-    name = name,
-    icon = icon,
-    icon_size = 32,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = minable,
-    max_health = max_health,
-    resource_categories = {"basic-solid"},
-    corpse = "big-remnants",
-    collision_box = {{ -1.4, -1.4}, {1.4, 1.4}},
-    selection_box = {{ -1.5, -1.5}, {1.5, 1.5}},
-    input_fluid_box = (not data.is_demo) and
-    {
-      production_type = "input-output",
-      pipe_picture = assembler2pipepictures(),
-      pipe_covers = pipecoverspictures(),
-      base_area = 1,
-      height = 2,
-      base_level = -1,
-      pipe_connections =
-      {
-        { position = {-2, 0} },
-        { position = {2, 0} },
-        { position = {0, 2} },
-      }
-    } or nil,
-    working_sound =
-    {
-      sound =
-      {
-        filename = "__base__/sound/electric-mining-drill.ogg",
-        volume = 0.75
-      },
-      apparent_volume = 1.5,
-    },
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    animations =
-    {
-      north =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N.png",
-        line_length = 8,
-        width = 98,
-        height = 113,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(0, -8.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N.png",
-          line_length = 8,
-          width = 196,
-          height = 226,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(0, -8),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      east =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E.png",
-        line_length = 8,
-        width = 105,
-        height = 98,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(3.5, -1),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E.png",
-          line_length = 8,
-          width = 211,
-          height = 197,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(3.75, -1.25),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      south =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S.png",
-        line_length = 8,
-        width = 98,
-        height = 109,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(0, -1.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S.png",
-          line_length = 8,
-          width = 196,
-          height = 219,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(0, -1.25),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      west =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W.png",
-        line_length = 8,
-        width = 105,
-        height = 98,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(-3.5, -1),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W.png",
-          line_length = 8,
-          width = 211,
-          height = 197,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(-3.75, -0.75),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      }
-    },
-    shadow_animations =
-    {
-      north =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-drill-shadow.png",
-        flags = { "shadow" },
-        line_length = 8,
-        width = 101,
-        height = 111,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(1.5, -7.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-drill-shadow.png",
-          flags = { "shadow" },
-          line_length = 8,
-          width = 201,
-          height = 223,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(1.25, -7.25),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      east =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-drill-shadow.png",
-        flags = { "shadow" },
-        line_length = 8,
-        width = 110,
-        height = 97,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(6, -0.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-drill-shadow.png",
-          flags = { "shadow" },
-          line_length = 8,
-          width = 221,
-          height = 195,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(6.25, -0.25),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      south =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-drill-shadow.png",
-        flags = { "shadow" },
-        line_length = 8,
-        width = 100,
-        height = 103,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(1, 2.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-drill-shadow.png",
-          flags = { "shadow" },
-          line_length = 8,
-          width = 200,
-          height = 206,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(1, 2.5),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      west =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-drill-shadow.png",
-        flags = { "shadow" },
-        line_length = 8,
-        width = 114,
-        height = 97,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(1, -0.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-drill-shadow.png",
-          flags = { "shadow" },
-          line_length = 8,
-          width = 229,
-          height = 195,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(1.25, -0.25),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      }
-    },
-    input_fluid_patch_sprites =
-    {
-      north =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-patch.png",
-        line_length = 1,
-        width = 100,
-        height = 111,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(0, -6.5),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-patch.png",
-          line_length = 1,
-          width = 200,
-          height = 222,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-0.5, -6.5),
-          scale = 0.5
-        }
-      },
-      east =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-patch.png",
-        line_length = 1,
-        width = 100,
-        height = 110,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(0, -6),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-patch.png",
-          line_length = 1,
-          width = 200,
-          height = 219,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(0, -5.75),
-          scale = 0.5
-        }
-      },
-      south =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-patch.png",
-        line_length = 1,
-        width = 100,
-        height = 113,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(0, -7.5),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-patch.png",
-          line_length = 1,
-          width = 200,
-          height = 226,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-0.5, -7.5),
-          scale = 0.5
-        }
-      },
-      west =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-patch.png",
-        line_length = 1,
-        width = 100,
-        height = 108,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(0, -5),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-patch.png",
-          line_length = 1,
-          width = 200,
-          height = 220,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-0.5, -6),
-          scale = 0.5
-        }
-      }
-    },
-    input_fluid_patch_shadow_sprites =
-    {
-      north =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-patch-shadow.png",
-        flags = { "shadow" },
-        line_length = 1,
-        width = 110,
-        height = 98,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(5, 0),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-patch-shadow.png",
-          flags = { "shadow" },
-          line_length = 1,
-          width = 220,
-          height = 197,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(5, -0.25),
-          scale = 0.5
-        }
-      },
-      east =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-patch-shadow.png",
-        flags = { "shadow" },
-        line_length = 1,
-        width = 112,
-        height = 98,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(6, 0),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-patch-shadow.png",
-          flags = { "shadow" },
-          line_length = 1,
-          width = 224,
-          height = 198,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(6, 0),
-          scale = 0.5
-        }
-      },
-      south =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-patch-shadow.png",
-        flags = { "shadow" },
-        line_length = 1,
-        width = 110,
-        height = 98,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(5, 0),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-patch-shadow.png",
-          flags = { "shadow" },
-          line_length = 1,
-          width = 220,
-          height = 197,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(5, -0.25),
-          scale = 0.5
-        }
-      },
-      west =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-patch-shadow.png",
-        flags = { "shadow" },
-        line_length = 1,
-        width = 110,
-        height = 98,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(5, 0),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-patch-shadow.png",
-          flags = { "shadow" },
-          line_length = 1,
-          width = 220,
-          height = 197,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(5, -0.25),
-          scale = 0.5
-        }
-      }
-    },
-    input_fluid_patch_shadow_animations =
-    {
-      north =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-drill-received-shadow.png",
-        tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-        line_length = 8,
-        width = 100,
-        height = 102,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(-1, -3),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-drill-received-shadow.png",
-          tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-          line_length = 8,
-          width = 204,
-          height = 206,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(-0.5, -2),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      east =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-drill-received-shadow.png",
-        tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-        line_length = 8,
-        width = 102,
-        height = 98,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(0, -2),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-drill-received-shadow.png",
-          tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-          line_length = 8,
-          width = 204,
-          height = 209,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(-0.5, -1.25),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      south =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-drill-received-shadow.png",
-        tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-        line_length = 8,
-        width = 100,
-        height = 98,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(-1, -1),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-drill-received-shadow.png",
-          tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-          line_length = 8,
-          width = 204,
-          height = 204,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(-0.5, -2.5),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      },
-      west =
-      {
-        priority = "high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-drill-received-shadow.png",
-        tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-        line_length = 8,
-        width = 96,
-        height = 99,
-        frame_count = 64,
-        animation_speed = 0.5,
-        direction_count = 1,
-        shift = util.by_pixel(0, -1.5),
-        run_mode = "forward-then-backward",
-        hr_version = {
-          priority = "high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-drill-received-shadow.png",
-          tint = { r=0.5, g=0.5, b=0.5, a=0.5 },
-          line_length = 8,
-          width = 198,
-          height = 206,
-          frame_count = 64,
-          animation_speed = 0.5,
-          direction_count = 1,
-          shift = util.by_pixel(1, -2),
-          run_mode = "forward-then-backward",
-          scale = 0.5
-        }
-      }
-    },
-    input_fluid_patch_window_sprites =
-    {
-      north =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-window-background.png",
-        line_length = 1,
-        width = 72,
-        height = 54,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(-1, 1),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-window-background.png",
-          line_length = 1,
-          width = 142,
-          height = 107,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-1, 0.75),
-          scale = 0.5
-        }
-      },
-      east =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-window-background.png",
-        line_length = 1,
-        width = 51,
-        height = 74,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(-11.5, -11),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-window-background.png",
-          line_length = 1,
-          width = 104,
-          height = 147,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-11, -11.25),
-          scale = 0.5
-        }
-      },
-      south =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-window-background.png",
-        line_length = 1,
-        width = 71,
-        height = 44,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(-1.5, -29),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-window-background.png",
-          line_length = 1,
-          width = 141,
-          height = 86,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-1.75, -29),
-          scale = 0.5
-        }
-      },
-      west =
-      {
-        priority = "extra-high",
-        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-window-background.png",
-        line_length = 1,
-        width = 41,
-        height = 69,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(11.5, -11.5),
-        hr_version = {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-window-background.png",
-          line_length = 1,
-          width = 80,
-          height = 137,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(11.5, -11.25),
-          scale = 0.5
-        }
-      }
-    },
+	  1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+	  21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+	}
 
-    input_fluid_patch_window_flow_sprites =
-    {
-      {
-        north =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-fluid-flow.png",
-          line_length = 1,
-          width = 68,
-          height = 50,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-2, -1),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-fluid-flow.png",
-            line_length = 1,
-            width = 136,
-            height = 99,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-2.5, -0.75),
-            scale = 0.5
-          }
-        },
-        east =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-fluid-flow.png",
-          line_length = 1,
-          width = 41,
-          height = 70,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-11.5, -11),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-fluid-flow.png",
-            line_length = 1,
-            width = 82,
-            height = 139,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-11.5, -11.25),
-            scale = 0.5
-          }
-        },
-        south =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-fluid-flow.png",
-          line_length = 1,
-          width = 68,
-          height = 40,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-2, -29),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-fluid-flow.png",
-            line_length = 1,
-            width = 136,
-            height = 80,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-2.5, -29.5),
-            scale = 0.5
-          }
-        },
-        west =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-fluid-flow.png",
-          line_length = 1,
-          width = 42,
-          height = 70,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(11, -11),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-fluid-flow.png",
-            line_length = 1,
-            width = 83,
-            height = 140,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(10.75, -11),
-            scale = 0.5
-          }
-        }
-      },
-    },
-    input_fluid_patch_window_base_sprites =
-    {
-      {
-        north =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-fluid-background.png",
-          line_length = 1,
-          width = 70,
-          height = 48,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-2, 0),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-fluid-background.png",
-            line_length = 1,
-            width = 138,
-            height = 94,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-2, 0),
-            scale = 0.5
-          }
-        },
-        east =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-fluid-background.png",
-          line_length = 1,
-          width = 42,
-          height = 70,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-12, -11),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-fluid-background.png",
-            line_length = 1,
-            width = 84,
-            height = 138,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-12, -11),
-            scale = 0.5
-          }
-        },
-        south =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-fluid-background.png",
-          line_length = 1,
-          width = 70,
-          height = 40,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(-2, -29),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-fluid-background.png",
-            line_length = 1,
-            width = 138,
-            height = 80,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(-2, -29),
-            scale = 0.5
-          }
-        },
-        west =
-        {
-          priority = "extra-high",
-          filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-fluid-background.png",
-          line_length = 1,
-          width = 42,
-          height = 69,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(12, -10.5),
-          hr_version = {
-            priority = "extra-high",
-            filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-fluid-background.png",
-            line_length = 1,
-            width = 83,
-            height = 137,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(11.75, -10.75),
-            scale = 0.5
-          }
-        }
-      },
-    },
+	electric_drill_animation_shadow_sequence =
+	{
+	  1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 21, 21, 21, 21, 21, 21, 21, 21, 21,
+	  21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+	}
 
-    mining_speed = 0.5,
-    energy_source =
-    {
-      type = "electric",
-      -- will produce this much * energy pollution units per tick
-      emissions = 0.15 / 1.5,
-      usage_priority = "secondary-input"
-    },
-    energy_usage = energy_usage,
-    mining_power = mining_power,
-    resource_searching_radius = resource_searching_radius,
-    vector_to_place_result = {0, -1.85},
-    module_specification =
-    {
-      module_slots = 3
-    },
-    radius_visualisation_picture =
-    {
-      filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",
-      width = 12,
-      height = 12
-    },
-    monitor_visualization_tint = {r=78, g=173, b=255},
-    fast_replaceable_group = "mining-drill",
 
-    circuit_wire_connection_points = circuit_connector_definitions["electric-mining-drill"].points,
-    circuit_connector_sprites = circuit_connector_definitions["electric-mining-drill"].sprites,
-    circuit_wire_max_distance = default_circuit_wire_max_distance
-  },
+
+	data:extend({
+		{
+	    type = "mining-drill",
+	    name = name,
+	    icon = "__base__/graphics/icons/electric-mining-drill.png",
+	    icon_size = 64, icon_mipmaps = 4,
+	    flags = {"placeable-neutral", "player-creation"},
+	    minable = minable,
+	    max_health = 300,
+	    resource_categories = {"basic-solid"},
+	    corpse = "electric-mining-drill-remnants",
+	    dying_explosion = "electric-mining-drill-explosion",
+	    collision_box = {{ -1.4, -1.4}, {1.4, 1.4}},
+	    selection_box = {{ -1.5, -1.5}, {1.5, 1.5}},
+	    damaged_trigger_effect = hit_effects.entity(),
+	    input_fluid_box = (not data.is_demo) and
+	    {
+	      production_type = "input-output",
+	      pipe_picture = assembler2pipepictures(),
+	      pipe_covers = pipecoverspictures(),
+	      base_area = 1,
+	      height = 2,
+	      base_level = -1,
+	      pipe_connections =
+	      {
+	        { position = {-2, 0} },
+	        { position = {2, 0} },
+	        { position = {0, 2} }
+	      }
+	    } or nil,
+	    working_sound =
+	    {
+	      sound =
+	      {
+	        filename = "__base__/sound/electric-mining-drill.ogg",
+	        volume = 0.5
+	      },
+	      audible_distance_modifier = 0.6,
+	      fade_in_ticks = 4,
+	      fade_out_ticks = 20,
+	    },
+	    vehicle_impact_sound = sounds.generic_impact,
+	    open_sound = sounds.machine_open,
+	    close_sound = sounds.machine_close,
+
+	    graphics_set =
+	    {
+	      drilling_vertical_movement_duration = 10 / electric_drill_animation_speed,
+	      animation_progress = 1,
+	      min_animation_progress = 0,
+	      max_animation_progress = 30,
+
+	      status_colors = electric_mining_drill_status_colors(),
+
+	      circuit_connector_layer = "object",
+	      circuit_connector_secondary_draw_order = { north = 14, east = 30, south = 30, west = 30 },
+
+	      animation =
+	      {
+	        north =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N.png",
+	              line_length = 1,
+	              width = 96,
+	              height = 104,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(0, -4),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N.png",
+	                line_length = 1,
+	                width = 190,
+	                height = 208,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -4),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-output.png",
+	              line_length = 5,
+	              width = 32,
+	              height = 34,
+	              frame_count = 5,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(-4, -44),
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-output.png",
+	                line_length = 5,
+	                width = 60,
+	                height = 66,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-3, -44),
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-shadow.png",
+	              line_length = 1,
+	              width = 106,
+	              height = 104,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(6, -4),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-shadow.png",
+	                line_length = 1,
+	                width = 212,
+	                height = 204,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(6, -3),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	        east =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E.png",
+	              line_length = 1,
+	              width = 96,
+	              height = 94,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(0, -4),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E.png",
+	                line_length = 1,
+	                width = 192,
+	                height = 188,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -4),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-output.png",
+	              line_length = 5,
+	              width = 26,
+	              height = 38,
+	              frame_count = 5,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(30, -8),
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-output.png",
+	                line_length = 5,
+	                width = 50,
+	                height = 74,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(30, -8),
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-shadow.png",
+	              line_length = 1,
+	              width = 112,
+	              height = 92,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(10, 2),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-shadow.png",
+	                line_length = 1,
+	                width = 222,
+	                height = 182,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(10, 2),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	        south =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S.png",
+	              line_length = 1,
+	              width = 92,
+	              height = 98,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(0, -2),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S.png",
+	                line_length = 1,
+	                width = 184,
+	                height = 192,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -1),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-shadow.png",
+	              line_length = 1,
+	              width = 106,
+	              height = 102,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(6, 2),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-shadow.png",
+	                line_length = 1,
+	                width = 212,
+	                height = 204,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(6, 2),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	        west =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W.png",
+	              line_length = 1,
+	              width = 96,
+	              height = 94,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(0, -4),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W.png",
+	                line_length = 1,
+	                width = 192,
+	                height = 188,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -4),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-output.png",
+	              line_length = 5,
+	              width = 24,
+	              height = 28,
+	              frame_count = 5,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(-30, -12),
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-output.png",
+	                line_length = 5,
+	                width = 50,
+	                height = 60,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-31, -13),
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-shadow.png",
+	              line_length = 1,
+	              width = 102,
+	              height = 92,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(-6, 2),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-shadow.png",
+	                line_length = 1,
+	                width = 200,
+	                height = 182,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(-5, 2),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	      },
+
+	      shift_animation_waypoints =
+	      {
+	        -- Movement should be between 0.25-0.4 distance
+	        -- Bounds -0.5 - 0.6
+	        north = { {0, 0}, {0, -0.3}, {0, 0.1}, {0, 0.5}, {0, 0.2}, {0, -0.1}, {0, -0.5}, {0, -0.15}, {0, 0.25}, {0, 0.6}, {0, 0.3} },
+	        -- Bounds -1 - 0
+	        east = { {0, 0}, {-0.4, 0}, {-0.1, 0}, {-0.5, 0}, {-0.75, 0}, {-1, 0}, {-0.65, 0}, {-0.3, 0}, {-0.9, 0}, {-0.6, 0}, {-0.3, 0} },
+	        -- Bounds -1 - 0
+	        south = { {0, 0}, {0, -0.4}, {0, -0.1}, {0, -0.5}, {0, -0.75}, {0, -1}, {0, -0.65}, {0, -0.3}, {0, -0.9}, {0, -0.6}, {0, -0.3} },
+	        -- Bounds 0 - 1
+	        west = { {0, 0}, {0.4, 0}, {0.1, 0}, {0.5, 0}, {0.75, 0}, {1, 0}, {0.65, 0}, {0.3, 0}, {0.9, 0}, {0.6, 0}, {0.3, 0} },
+	      },
+
+	      shift_animation_waypoint_stop_duration = 195 / electric_drill_animation_speed,
+	      shift_animation_transition_duration = 30 / electric_drill_animation_speed,
+
+	      working_visualisations =
+	      {
+	        -- dust animation 1
+	        {
+	          constant_speed = true,
+	          synced_fadeout = true,
+	          align_to_waypoint = true,
+	          apply_tint = "resource-color",
+	          animation = electric_mining_drill_smoke(),
+	          north_position = { 0, 0.25 },
+	          east_position = { 0, 0 },
+	          south_position = { 0, 0.25 },
+	          west_position = { 0, 0 },
+	        },
+
+	        -- dust animation directional 1
+	        {
+	          constant_speed = true,
+	          fadeout = true,
+	          apply_tint = "resource-color",
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-smoke.png",
+	                line_length = 5,
+	                width = 24,
+	                height = 30,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, -44),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-smoke.png",
+	                  line_length = 5,
+	                  width = 42,
+	                  height = 58,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-1, -44),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          east_animation = nil,
+	          south_animation = nil,
+	          west_animation = nil,
+	        },
+
+	        -- drill back animation
+	        {
+	          animated_shift = true,
+	          always_draw = true,
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_animation(),
+	              electric_mining_drill_shadow_animation()
+	            }
+	          },
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_horizontal_animation(),
+	              electric_mining_drill_horizontal_shadow_animation()
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_animation(),
+	              electric_mining_drill_shadow_animation()
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_horizontal_animation(),
+	              electric_mining_drill_horizontal_shadow_animation()
+	            }
+	          },
+	        },
+
+	        -- dust animation 2
+	        {
+	          constant_speed = true,
+	          synced_fadeout = true,
+	          align_to_waypoint = true,
+	          apply_tint = "resource-color",
+	          animation = electric_mining_drill_smoke_front(),
+	          north_position = { 0, 0.25 },
+	          east_position = { 0, 0 },
+	          south_position = { 0, 0.25 },
+	          west_position = { 0, 0 },
+	        },
+
+	        -- dust animation directional 2
+	        {
+	          constant_speed = true,
+	          fadeout = true,
+	          apply_tint = "resource-color",
+	          north_animation = nil,
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-smoke.png",
+	                line_length = 5,
+	                width = 24,
+	                height = 28,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(24, -12),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-smoke.png",
+	                  line_length = 5,
+	                  width = 46,
+	                  height = 56,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(24, -12),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-smoke.png",
+	                line_length = 5,
+	                width = 24,
+	                height = 18,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, 20),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-smoke.png",
+	                  line_length = 5,
+	                  width = 48,
+	                  height = 36,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-2, 20),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-smoke.png",
+	                line_length = 5,
+	                width = 26,
+	                height = 30,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-26, -12),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-smoke.png",
+	                  line_length = 5,
+	                  width = 46,
+	                  height = 54,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-25, -11),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          }
+	        },
+
+	        -- drill front animation
+	        {
+	          animated_shift = true,
+	          always_draw = true,
+	          --north_animation = util.empty_sprite(),
+	          east_animation = electric_mining_drill_horizontal_front_animation(),
+	          --south_animation = util.empty_sprite(),
+	          west_animation = electric_mining_drill_horizontal_front_animation(),
+	        },
+
+	        -- front frame
+	        {
+	          always_draw = true,
+	          north_animation = nil,
+	          east_animation =
+	          {
+	            priority = "high",
+	            filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-front.png",
+	            line_length = 1,
+	            width = 66,
+	            height = 74,
+	            frame_count = 1,
+	            animation_speed = electric_drill_animation_speed,
+	            direction_count = 1,
+	            shift = util.by_pixel(22, 10),
+	            hr_version =
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-front.png",
+	              line_length = 1,
+	              width = 136,
+	              height = 148,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(21, 10),
+	              scale = 0.5,
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-output.png",
+	                line_length = 5,
+	                width = 44,
+	                height = 28,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                shift = util.by_pixel(-2, 34),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-output.png",
+	                  line_length = 5,
+	                  width = 84,
+	                  height = 56,
+	                  frame_count = 5,
+	                  animation_speed = electric_drill_animation_speed,
+	                  shift = util.by_pixel(-1, 34),
+	                  scale = 0.5,
+	                }
+	              },
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-front.png",
+	                line_length = 1,
+	                width = 96,
+	                height = 54,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                repeat_count = 5,
+	                shift = util.by_pixel(0, 26),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-front.png",
+	                  line_length = 1,
+	                  width = 190,
+	                  height = 104,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  repeat_count = 5,
+	                  shift = util.by_pixel(0, 27),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            priority = "high",
+	            filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-front.png",
+	            line_length = 1,
+	            width = 68,
+	            height = 70,
+	            frame_count = 1,
+	            animation_speed = electric_drill_animation_speed,
+	            direction_count = 1,
+	            shift = util.by_pixel(-22, 12),
+	            hr_version =
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-front.png",
+	              line_length = 1,
+	              width = 134,
+	              height = 140,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(-22, 12),
+	              scale = 0.5,
+	            }
+	          }
+	        },
+
+	        -- LEDs
+	        electric_mining_drill_status_leds_working_visualisation(),
+
+	        -- light
+	        electric_mining_drill_primary_light,
+	        electric_mining_drill_secondary_light
+	      }
+	    },
+
+	    wet_mining_graphics_set =
+	    {
+	      drilling_vertical_movement_duration = 10 / electric_drill_animation_speed,
+	      animation_progress = 1,
+	      min_animation_progress = 0,
+	      max_animation_progress = 30,
+
+	      status_colors = electric_mining_drill_status_colors(),
+
+	      circuit_connector_layer = "object",
+	      circuit_connector_secondary_draw_order = { north = 14, east = 48, south = 48, west = 48 },
+
+	      animation =
+	      {
+	        north =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet.png",
+	              line_length = 1,
+	              width = 96,
+	              height = 100,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(0, -8),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-wet.png",
+	                line_length = 1,
+	                width = 190,
+	                height = 198,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -7),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-output.png",
+	              line_length = 5,
+	              width = 32,
+	              height = 34,
+	              frame_count = 5,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(-4, -44),
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-output.png",
+	                line_length = 5,
+	                width = 60,
+	                height = 66,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-3, -44),
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-shadow.png",
+	              line_length = 1,
+	              width = 124,
+	              height = 110,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(12, 2),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-wet-shadow.png",
+	                line_length = 1,
+	                width = 248,
+	                height = 222,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(12, 1),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	        west =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet.png",
+	              line_length = 1,
+	              width = 96,
+	              height = 106,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(2, -10),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet.png",
+	                line_length = 1,
+	                width = 194,
+	                height = 208,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(1, -9),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-output.png",
+	              line_length = 5,
+	              width = 24,
+	              height = 28,
+	              frame_count = 5,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(-30, -12),
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-output.png",
+	                line_length = 5,
+	                width = 50,
+	                height = 60,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-31, -13),
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-shadow.png",
+	              line_length = 1,
+	              width = 132,
+	              height = 102,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(8, 6),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-shadow.png",
+	                line_length = 1,
+	                width = 260,
+	                height = 202,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(9, 6),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	        south =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet.png",
+	              line_length = 1,
+	              width = 98,
+	              height = 106,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(0, -6),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet.png",
+	                line_length = 1,
+	                width = 192,
+	                height = 208,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(1, -5),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-shadow.png",
+	              line_length = 1,
+	              width = 124,
+	              height = 98,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(12, 4),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-shadow.png",
+	                line_length = 1,
+	                width = 248,
+	                height = 192,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(12, 5),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	        east =
+	        {
+	          layers =
+	          {
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet.png",
+	              line_length = 1,
+	              width = 98,
+	              height = 106,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(-2, -10),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet.png",
+	                line_length = 1,
+	                width = 194,
+	                height = 208,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, -9),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-output.png",
+	              line_length = 5,
+	              width = 26,
+	              height = 38,
+	              frame_count = 5,
+	              animation_speed = electric_drill_animation_speed,
+	              direction_count = 1,
+	              shift = util.by_pixel(30, -8),
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-output.png",
+	                line_length = 5,
+	                width = 50,
+	                height = 74,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(30, -8),
+	                scale = 0.5,
+	              }
+	            },
+	            {
+	              priority = "high",
+	              filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-shadow.png",
+	              line_length = 1,
+	              width = 112,
+	              height = 100,
+	              frame_count = 1,
+	              animation_speed = electric_drill_animation_speed,
+	              draw_as_shadow = true,
+	              shift = util.by_pixel(10, 6),
+	              repeat_count = 5,
+	              hr_version =
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-shadow.png",
+	                line_length = 1,
+	                width = 226,
+	                height = 202,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                draw_as_shadow = true,
+	                shift = util.by_pixel(9, 5),
+	                repeat_count = 5,
+	                scale = 0.5,
+	              }
+	            }
+	          }
+	        },
+	      },
+
+	      shift_animation_waypoints =
+	      {
+	        -- Movement should be between 0.25-0.4 distance
+	        -- Bounds -0.5 - 0.2
+	        north = { {0, 0}, {0, -0.4}, {0, -0.1}, {0, 0.2} },
+	        -- Bounds -0.3 - 0
+	        east = { {0, 0}, {-0.3, 0}, {0, 0}, {-0.25, 0} },
+	        -- Bounds -0.7 - 0
+	        south = { {0, 0}, {0, -0.4}, {0, -0.7}, {0, -0.3} },
+	        -- Bounds 0 - 0.3
+	        west = { {0, 0}, {0.3, 0}, {0, 0}, {0.25, 0} },
+	      },
+
+	      shift_animation_waypoint_stop_duration = 195 / electric_drill_animation_speed,
+	      shift_animation_transition_duration = 30 / electric_drill_animation_speed,
+
+	      working_visualisations =
+	      {
+	        -- dust animation 1
+	        {
+	          constant_speed = true,
+	          synced_fadeout = true,
+	          align_to_waypoint = true,
+	          apply_tint = "resource-color",
+	          animation = electric_mining_drill_smoke(),
+	          north_position = { 0, 0.25 },
+	          east_position = { 0, 0 },
+	          south_position = { 0, 0.25 },
+	          west_position = { 0, 0 },
+	        },
+
+	        -- dust animation directional 1
+	        {
+	          constant_speed = true,
+	          fadeout = true,
+	          apply_tint = "resource-color",
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-smoke.png",
+	                line_length = 5,
+	                width = 24,
+	                height = 30,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, -44),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-smoke.png",
+	                  line_length = 5,
+	                  width = 42,
+	                  height = 58,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-1, -44),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          east_animation = nil,
+	          south_animation = nil,
+	          west_animation = nil
+	        },
+
+	        -- drill back animation
+	        {
+	          animated_shift = true,
+	          always_draw = true,
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_animation(),
+	              electric_mining_drill_shadow_animation()
+	            }
+	          },
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_horizontal_animation(),
+	              electric_mining_drill_horizontal_shadow_animation()
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_animation(),
+	              electric_mining_drill_shadow_animation()
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              electric_mining_drill_horizontal_animation(),
+	              electric_mining_drill_horizontal_shadow_animation()
+	            }
+	          },
+	        },
+
+	        -- dust animation 2
+	        {
+	          constant_speed = true,
+	          synced_fadeout = true,
+	          align_to_waypoint = true,
+	          apply_tint = "resource-color",
+	          animation = electric_mining_drill_smoke_front(),
+	        },
+
+	        -- dust animation directional 2
+	        {
+	          constant_speed = true,
+	          fadeout = true,
+	          apply_tint = "resource-color",
+	          north_animation = nil,
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-smoke.png",
+	                line_length = 5,
+	                width = 24,
+	                height = 28,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(24, -12),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-smoke.png",
+	                  line_length = 5,
+	                  width = 46,
+	                  height = 56,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(24, -12),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-smoke.png",
+	                line_length = 5,
+	                width = 24,
+	                height = 18,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, 20),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-smoke.png",
+	                  line_length = 5,
+	                  width = 48,
+	                  height = 36,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-2, 20),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-smoke.png",
+	                line_length = 5,
+	                width = 26,
+	                height = 30,
+	                frame_count = 10,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-26, -12),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-smoke.png",
+	                  line_length = 5,
+	                  width = 46,
+	                  height = 54,
+	                  frame_count = 10,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-25, -11),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          }
+	        },
+
+	        -- fluid window background (bottom)
+	        {
+	          -- render_layer = "lower-object-above-shadow",
+	          secondary_draw_order = -49,
+	          always_draw = true,
+	          north_animation = nil,
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-window-background.png",
+	                line_length = 1,
+	                width = 12,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -52),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-window-background.png",
+	                  line_length = 1,
+	                  width = 22,
+	                  height = 14,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -52),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-window-background.png",
+	                line_length = 1,
+	                width = 16,
+	                height = 12,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, -44),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-window-background.png",
+	                  line_length = 1,
+	                  width = 30,
+	                  height = 20,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-2, -43),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-window-background.png",
+	                line_length = 1,
+	                width = 12,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -52),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-window-background.png",
+	                  line_length = 1,
+	                  width = 22,
+	                  height = 14,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -52),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- fluid base (bottom)
+	        {
+	          always_draw = true,
+	          -- render_layer = "lower-object-above-shadow",
+	          secondary_draw_order = -48,
+	          apply_tint = "input-fluid-base-color",
+	          north_animation = nil,
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-background.png",
+	                line_length = 1,
+	                width = 12,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -52),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-fluid-background.png",
+	                  line_length = 1,
+	                  width = 22,
+	                  height = 14,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -52),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-background.png",
+	                line_length = 1,
+	                width = 14,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, -42),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-fluid-background.png",
+	                  line_length = 1,
+	                  width = 28,
+	                  height = 18,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-2, -43),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-background.png",
+	                line_length = 1,
+	                width = 12,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -52),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-fluid-background.png",
+	                  line_length = 1,
+	                  width = 22,
+	                  height = 14,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -52),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- fluid flow (bottom)
+	        {
+	          --render_layer = "lower-object-above-shadow",
+	          secondary_draw_order = -47,
+	          always_draw = true,
+	          apply_tint = "input-fluid-flow-color",
+	          north_animation = nil,
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-flow.png",
+	                line_length = 1,
+	                width = 12,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -52),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-fluid-flow.png",
+	                  line_length = 1,
+	                  width = 24,
+	                  height = 14,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -52),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-flow.png",
+	                line_length = 1,
+	                width = 14,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-2, -42),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-fluid-flow.png",
+	                  line_length = 1,
+	                  width = 26,
+	                  height = 16,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-2, -42),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-flow.png",
+	                line_length = 1,
+	                width = 12,
+	                height = 8,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -52),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-fluid-flow.png",
+	                  line_length = 1,
+	                  width = 24,
+	                  height = 14,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -52),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- drill front animation
+	        {
+	          animated_shift = true,
+	          always_draw = true,
+	          --north_animation = util.empty_sprite(),
+	          east_animation = electric_mining_drill_horizontal_front_animation(),
+	          --south_animation = util.empty_sprite(),
+	          west_animation = electric_mining_drill_horizontal_front_animation(),
+	        },
+
+	        -- fluid window background (front)
+	        {
+	          always_draw = true,
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-window-background.png",
+	                line_length = 1,
+	                width = 86,
+	                height = 44,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-wet-window-background.png",
+	                  line_length = 1,
+	                  width = 172,
+	                  height = 90,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, 9),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-window-background-front.png",
+	                line_length = 1,
+	                width = 40,
+	                height = 54,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(14, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-window-background-front.png",
+	                  line_length = 1,
+	                  width = 80,
+	                  height = 106,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(14, 10),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-window-background-front.png",
+	                line_length = 1,
+	                width = 86,
+	                height = 14,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -8),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-window-background-front.png",
+	                  line_length = 1,
+	                  width = 172,
+	                  height = 22,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -7),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-window-background-front.png",
+	                line_length = 1,
+	                width = 40,
+	                height = 54,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-14, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-window-background-front.png",
+	                  line_length = 1,
+	                  width = 82,
+	                  height = 110,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-15, 9),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- fluid base (front)
+	        {
+	          always_draw = true,
+	          apply_tint = "input-fluid-base-color",
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-fluid-background.png",
+	                line_length = 1,
+	                width = 90,
+	                height = 46,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-wet-fluid-background.png",
+	                  line_length = 1,
+	                  width = 178,
+	                  height = 94,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, 9),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-background-front.png",
+	                line_length = 1,
+	                width = 40,
+	                height = 54,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(14, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-fluid-background-front.png",
+	                  line_length = 1,
+	                  width = 80,
+	                  height = 102,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(14, 11),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-background-front.png",
+	                line_length = 1,
+	                width = 90,
+	                height = 16,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -8),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-fluid-background-front.png",
+	                  line_length = 1,
+	                  width = 178,
+	                  height = 28,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -7),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-background-front.png",
+	                line_length = 1,
+	                width = 40,
+	                height = 54,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-14, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-fluid-background-front.png",
+	                  line_length = 1,
+	                  width = 82,
+	                  height = 106,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-15, 10),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- fluid flow (front)
+	        {
+	          always_draw = true,
+	          apply_tint = "input-fluid-flow-color",
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-fluid-flow.png",
+	                line_length = 1,
+	                width = 86,
+	                height = 44,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-wet-fluid-flow.png",
+	                  line_length = 1,
+	                  width = 172,
+	                  height = 88,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, 10),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-flow-front.png",
+	                line_length = 1,
+	                width = 40,
+	                height = 50,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(14, 12),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-fluid-flow-front.png",
+	                  line_length = 1,
+	                  width = 78,
+	                  height = 102,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(14, 11),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-flow-front.png",
+	                line_length = 1,
+	                width = 86,
+	                height = 12,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, -8),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-fluid-flow-front.png",
+	                  line_length = 1,
+	                  width = 172,
+	                  height = 22,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, -8),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-flow-front.png",
+	                line_length = 1,
+	                width = 40,
+	                height = 54,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-14, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-fluid-flow-front.png",
+	                  line_length = 1,
+	                  width = 78,
+	                  height = 106,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-14, 10),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- front frame (wet)
+	        {
+	          always_draw = true,
+	          north_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-front.png",
+	                line_length = 1,
+	                width = 100,
+	                height = 66,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(0, 16),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-wet-front.png",
+	                  line_length = 1,
+	                  width = 200,
+	                  height = 130,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(0, 16),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          west_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-front.png",
+	                line_length = 1,
+	                width = 104,
+	                height = 72,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(-4, 12),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-wet-front.png",
+	                  line_length = 1,
+	                  width = 208,
+	                  height = 144,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(-4, 12),
+	                  scale = 0.5,
+	                }
+	              }
+	            }
+	          },
+	          south_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-output.png",
+	                line_length = 5,
+	                width = 44,
+	                height = 28,
+	                frame_count = 5,
+	                animation_speed = electric_drill_animation_speed,
+	                shift = util.by_pixel(-2, 34),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-output.png",
+	                  line_length = 5,
+	                  width = 84,
+	                  height = 56,
+	                  frame_count = 5,
+	                  animation_speed = electric_drill_animation_speed,
+	                  shift = util.by_pixel(-1, 34),
+	                  scale = 0.5,
+	                }
+	              },
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-front.png",
+	                line_length = 1,
+	                width = 96,
+	                height = 70,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                repeat_count = 5,
+	                shift = util.by_pixel(0, 18),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-wet-front.png",
+	                  line_length = 1,
+	                  width = 192,
+	                  height = 140,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  repeat_count = 5,
+	                  shift = util.by_pixel(0, 18),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	          east_animation =
+	          {
+	            layers =
+	            {
+	              {
+	                priority = "high",
+	                filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-front.png",
+	                line_length = 1,
+	                width = 106,
+	                height = 76,
+	                frame_count = 1,
+	                animation_speed = electric_drill_animation_speed,
+	                direction_count = 1,
+	                shift = util.by_pixel(2, 10),
+	                hr_version =
+	                {
+	                  priority = "high",
+	                  filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-wet-front.png",
+	                  line_length = 1,
+	                  width = 208,
+	                  height = 148,
+	                  frame_count = 1,
+	                  animation_speed = electric_drill_animation_speed,
+	                  direction_count = 1,
+	                  shift = util.by_pixel(3, 11),
+	                  scale = 0.5,
+	                }
+	              },
+	            }
+	          },
+	        },
+
+	        -- LEDs
+	        electric_mining_drill_status_leds_working_visualisation(),
+
+	        -- light
+	        electric_mining_drill_primary_light,
+	        electric_mining_drill_secondary_light
+	      }
+	    },
+
+	    integration_patch =
+	    {
+	      north =
+	      {
+	        priority = "high",
+	        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-integration.png",
+	        line_length = 1,
+	        width = 110,
+	        height = 108,
+	        frame_count = 1,
+	        animation_speed = electric_drill_animation_speed,
+	        direction_count = 1,
+	        shift = util.by_pixel(-2, 2),
+	        repeat_count = 5,
+	        hr_version =
+	        {
+	          priority = "high",
+	          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-N-integration.png",
+	          line_length = 1,
+	          width = 216,
+	          height = 218,
+	          frame_count = 1,
+	          animation_speed = electric_drill_animation_speed,
+	          direction_count = 1,
+	          shift = util.by_pixel(-1, 1),
+	          repeat_count = 5,
+	          scale = 0.5,
+	        }
+	      },
+	      east =
+	      {
+	        priority = "high",
+	        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-integration.png",
+	        line_length = 1,
+	        width = 116,
+	        height = 108,
+	        frame_count = 1,
+	        animation_speed = electric_drill_animation_speed,
+	        direction_count = 1,
+	        shift = util.by_pixel(4, 2),
+	        repeat_count = 5,
+	        hr_version =
+	        {
+	          priority = "high",
+	          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-E-integration.png",
+	          line_length = 1,
+	          width = 236,
+	          height = 214,
+	          frame_count = 1,
+	          animation_speed = electric_drill_animation_speed,
+	          direction_count = 1,
+	          shift = util.by_pixel(3, 2),
+	          repeat_count = 5,
+	          scale = 0.5,
+	        }
+	      },
+	      south =
+	      {
+	        priority = "high",
+	        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-integration.png",
+	        line_length = 1,
+	        width = 108,
+	        height = 114,
+	        frame_count = 1,
+	        animation_speed = electric_drill_animation_speed,
+	        direction_count = 1,
+	        shift = util.by_pixel(0, 4),
+	        repeat_count = 5,
+	        hr_version =
+	        {
+	          priority = "high",
+	          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-S-integration.png",
+	          line_length = 1,
+	          width = 214,
+	          height = 230,
+	          frame_count = 1,
+	          animation_speed = electric_drill_animation_speed,
+	          direction_count = 1,
+	          shift = util.by_pixel(0, 3),
+	          repeat_count = 5,
+	          scale = 0.5,
+	        }
+	      },
+	      west =
+	      {
+	        priority = "high",
+	        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-integration.png",
+	        line_length = 1,
+	        width = 118,
+	        height = 106,
+	        frame_count = 1,
+	        animation_speed = electric_drill_animation_speed,
+	        direction_count = 1,
+	        shift = util.by_pixel(-4, 2),
+	        repeat_count = 5,
+	        hr_version =
+	        {
+	          priority = "high",
+	          filename = "__base__/graphics/entity/electric-mining-drill/hr-electric-mining-drill-W-integration.png",
+	          line_length = 1,
+	          width = 234,
+	          height = 214,
+	          frame_count = 1,
+	          animation_speed = electric_drill_animation_speed,
+	          direction_count = 1,
+	          shift = util.by_pixel(-4, 1),
+	          repeat_count = 5,
+	          scale = 0.5,
+	        }
+	      }
+	    },
+
+	    mining_speed = 0.5,
+	    energy_source =
+	    {
+	      type = "electric",
+	      emissions_per_minute = 10,
+	      usage_priority = "secondary-input"
+	    },
+	    energy_usage = "90kW",
+	    resource_searching_radius = 2.49,
+	    vector_to_place_result = {0, -1.85},
+	    module_specification =
+	    {
+	      module_slots = 3
+	    },
+	    radius_visualisation_picture =
+	    {
+	      filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",
+	      width = 10,
+	      height = 10
+	    },
+	    monitor_visualization_tint = {r=78, g=173, b=255},
+	    fast_replaceable_group = "mining-drill",
+
+	    circuit_wire_connection_points = circuit_connector_definitions["electric-mining-drill"].points,
+	    circuit_connector_sprites = circuit_connector_definitions["electric-mining-drill"].sprites,
+	    circuit_wire_max_distance = default_circuit_wire_max_distance
+	  },
 
 	})
 end
@@ -3246,118 +5151,170 @@ function createSplitter (a)
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
 		{
-	    type = "splitter",
-	    name = name,
-	    icon = icon,
-	    icon_size = 32,
-	    flags = {"placeable-neutral", "player-creation"},
-	    minable = {mining_time = 0.1, result = "fast-splitter"},
-	    max_health = 180,
-	    corpse = "fast-splitter-remnants",
-	    resistances =
-	    {
-	      {
-	        type = "fire",
-	        percent = 60
-	      }
-	    },
-	    collision_box = {{-0.9, -0.4}, {0.9, 0.4}},
-	    selection_box = {{-0.9, -0.5}, {0.9, 0.5}},
-	    animation_speed_coefficient = 32,
-	    structure_animation_speed_coefficient = 1.2,
-	    structure_animation_movement_cooldown = 10,
-	    belt_animation_set = fast_belt_animation_set,
-	    fast_replaceable_group = "transport-belt",
-	    next_upgrade = "express-splitter",
-	    speed = 0.0625,
-	    structure =
-	    {
-	      north =
-	      {
-	        filename = "__base__/graphics/entity/fast-splitter/fast-splitter-north.png",
-	        frame_count = 32,
-	        line_length = 8,
-	        priority = "extra-high",
-	        width = 82,
-	        height = 36,
-	        shift = util.by_pixel(6, 0),
-	        hr_version =
-	        {
-	          filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-north.png",
-	          frame_count = 32,
-	          line_length = 8,
-	          priority = "extra-high",
-	          width = 160,
-	          height = 70,
-	          shift = util.by_pixel(7, 0),
-	          scale = 0.5
-	        }
-	      },
-	      east =
-	      {
-	        filename = "__base__/graphics/entity/fast-splitter/fast-splitter-east.png",
-	        frame_count = 32,
-	        line_length = 8,
-	        priority = "extra-high",
-	        width = 46,
-	        height = 80,
-	        shift = util.by_pixel(4, -6),
-	        hr_version =
-	        {
-	          filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-east.png",
-	          frame_count = 32,
-	          line_length = 8,
-	          priority = "extra-high",
-	          width = 90,
-	          height = 160,
-	          shift = util.by_pixel(4, -6),
-	          scale = 0.5
-	        }
-	      },
-	      south =
-	      {
-	        filename = "__base__/graphics/entity/fast-splitter/fast-splitter-south.png",
-	        frame_count = 32,
-	        line_length = 8,
-	        priority = "extra-high",
-	        width = 82,
-	        height = 32,
-	        shift = util.by_pixel(4, 0),
-	        hr_version =
-	        {
-	          filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-south.png",
-	          frame_count = 32,
-	          line_length = 8,
-	          priority = "extra-high",
-	          width = 164,
-	          height = 64,
-	          shift = util.by_pixel(4, 0),
-	          scale = 0.5
-	        }
-	      },
-	      west =
-	      {
-	        filename = "__base__/graphics/entity/fast-splitter/fast-splitter-west.png",
-	        frame_count = 32,
-	        line_length = 8,
-	        priority = "extra-high",
-	        width = 46,
-	        height = 76,
-	        shift = util.by_pixel(6, -4),
-	        hr_version =
-	        {
-	          filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-west.png",
-	          frame_count = 32,
-	          line_length = 8,
-	          priority = "extra-high",
-	          width = 90,
-	          height = 150,
-	          shift = util.by_pixel(6, -4),
-	          scale = 0.5
-	        }
-	      }
-	    }
-	  },
+	type = "splitter",
+	name = name,
+	icon = icon,
+	icon_size = 32, icon_mipmaps = 1,
+	flags = {"placeable-neutral", "player-creation"},
+	minable = minable,
+	max_health = 180,
+	corpse = "fast-splitter-remnants",
+	dying_explosion = "fast-splitter-explosion",
+	resistances =
+	{
+		{
+			type = "fire",
+			percent = 60
+		}
+	},
+	collision_box = {{-0.9, -0.4}, {0.9, 0.4}},
+	selection_box = {{-0.9, -0.5}, {0.9, 0.5}},
+	damaged_trigger_effect = hit_effects.entity(),
+	animation_speed_coefficient = 32,
+	structure_animation_speed_coefficient = 1.2,
+	structure_animation_movement_cooldown = 10,
+	belt_animation_set = fast_belt_animation_set,
+	fast_replaceable_group = "transport-belt",
+	next_upgrade = "express-splitter",
+	speed = 0.0625,
+	working_sound = sounds.fast_splitter,
+	open_sound = sounds.machine_open,
+	close_sound = sounds.machine_close,
+	structure =
+	{
+		north =
+		{
+			filename = "__base__/graphics/entity/fast-splitter/fast-splitter-north.png",
+			frame_count = 32,
+			line_length = 8,
+			priority = "extra-high",
+			width = 82,
+			height = 36,
+			shift = util.by_pixel(6, 0),
+			hr_version =
+			{
+				filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-north.png",
+				frame_count = 32,
+				line_length = 8,
+				priority = "extra-high",
+				width = 160,
+				height = 70,
+				shift = util.by_pixel(7, 0),
+				scale = 0.5
+			}
+		},
+		east =
+		{
+			filename = "__base__/graphics/entity/fast-splitter/fast-splitter-east.png",
+			frame_count = 32,
+			line_length = 8,
+			priority = "extra-high",
+			width = 46,
+			height = 44,
+			shift = util.by_pixel(4, 12),
+			hr_version =
+			{
+				filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-east.png",
+				frame_count = 32,
+				line_length = 8,
+				priority = "extra-high",
+				width = 90,
+				height = 84,
+				shift = util.by_pixel(4, 13),
+				scale = 0.5
+			}
+		},
+		south =
+		{
+			filename = "__base__/graphics/entity/fast-splitter/fast-splitter-south.png",
+			frame_count = 32,
+			line_length = 8,
+			priority = "extra-high",
+			width = 82,
+			height = 32,
+			shift = util.by_pixel(4, 0),
+			hr_version =
+			{
+				filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-south.png",
+				frame_count = 32,
+				line_length = 8,
+				priority = "extra-high",
+				width = 164,
+				height = 64,
+				shift = util.by_pixel(4, 0),
+				scale = 0.5
+			}
+		},
+		west =
+		{
+			filename = "__base__/graphics/entity/fast-splitter/fast-splitter-west.png",
+			frame_count = 32,
+			line_length = 8,
+			priority = "extra-high",
+			width = 46,
+			height = 44,
+			shift = util.by_pixel(6, 12),
+			hr_version =
+			{
+				filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-west.png",
+				frame_count = 32,
+				line_length = 8,
+				priority = "extra-high",
+				width = 90,
+				height = 86,
+				shift = util.by_pixel(6, 12),
+				scale = 0.5
+			}
+		}
+	},
+	structure_patch =
+	{
+		north = util.empty_sprite(),
+		east =
+		{
+			filename = "__base__/graphics/entity/fast-splitter/fast-splitter-east-top_patch.png",
+			frame_count = 32,
+			line_length = 8,
+			priority = "extra-high",
+			width = 46,
+			height = 52,
+			shift = util.by_pixel(4, -20),
+			hr_version =
+			{
+				filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-east-top_patch.png",
+				frame_count = 32,
+				line_length = 8,
+				priority = "extra-high",
+				width = 90,
+				height = 104,
+				shift = util.by_pixel(4, -20),
+				scale = 0.5
+			}
+		},
+		south = util.empty_sprite(),
+		west =
+		{
+			filename = "__base__/graphics/entity/fast-splitter/fast-splitter-west-top_patch.png",
+			frame_count = 32,
+			line_length = 8,
+			priority = "extra-high",
+			width = 46,
+			height = 48,
+			shift = util.by_pixel(6, -18),
+			hr_version =
+			{
+				filename = "__base__/graphics/entity/fast-splitter/hr-fast-splitter-west-top_patch.png",
+				frame_count = 32,
+				line_length = 8,
+				priority = "extra-high",
+				width = 90,
+				height = 96,
+				shift = util.by_pixel(6, -18),
+				scale = 0.5
+			}
+		}
+	}
+},
 
 	})
 end
@@ -3411,20 +5368,20 @@ function createLocomotive (a)
 
 	local aaaaaa=a.aaaaaa or aaaaaa
 	data:extend({
-	{
-
+		{
 	    type = "locomotive",
 	    name = name,
-	    icon = "__base__/graphics/icons/diesel-locomotive.png",
-	    icon_size = 32,
+	    icon = icon,
+	    icon_size = 32, icon_mipmaps = 1, --icon_size = 64, icon_mipmaps = 4,
 	    flags = {"placeable-neutral", "player-creation", "placeable-off-grid"},
 	    minable = minable,
-	    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+	    mined_sound = {filename = "__core__/sound/deconstruct-large.ogg",volume = 0.8},
 	    max_health = 1000,
-	    corpse = "medium-remnants",
-	    dying_explosion = "medium-explosion",
+	    corpse = "locomotive-remnants",
+	    dying_explosion = "locomotive-explosion",
 	    collision_box = {{-0.6, -2.6}, {0.6, 2.6}},
 	    selection_box = {{-1, -3}, {1, 3}},
+	    damaged_trigger_effect = hit_effects.entity(),
 	    drawing_box = {{-1, -4}, {1, 3}},
 	    alert_icon_shift = util.by_pixel(0, -24),
 	    weight = 2000,
@@ -3462,7 +5419,7 @@ function createLocomotive (a)
 	      },
 	      {
 	        type = "acid",
-	        decrease = 10,
+	        decrease = 3,
 	        percent = 20
 	      }
 	    },
@@ -3532,7 +5489,7 @@ function createLocomotive (a)
 	      layers =
 	      {
 	        {
-	          slice = 4,
+	          dice = 4,
 	          priority = "very-low",
 	          width = 238,
 	          height = 230,
@@ -3555,7 +5512,7 @@ function createLocomotive (a)
 	          hr_version =
 	          {
 	            priority = "very-low",
-	            slice = 4,
+	            dice = 4,
 	            width = 474,
 	            height = 458,
 	            direction_count = 256,
@@ -3588,7 +5545,7 @@ function createLocomotive (a)
 	        {
 	          priority = "very-low",
 	          flags = { "mask" },
-	          slice = 4,
+	          dice = 4,
 	          width = 236,
 	          height = 228,
 	          direction_count = 256,
@@ -3612,7 +5569,7 @@ function createLocomotive (a)
 	            {
 	              priority = "very-low",
 	              flags = { "mask" },
-	              slice = 4,
+	              dice = 4,
 	              width = 472,
 	              height = 456,
 	              direction_count = 256,
@@ -3645,7 +5602,7 @@ function createLocomotive (a)
 	        },
 	        {
 	          priority = "very-low",
-	          slice = 4,
+	          dice = 4,
 	          flags = { "shadow" },
 	          width = 253,
 	          height = 212,
@@ -3669,8 +5626,21 @@ function createLocomotive (a)
 	        }
 	      }
 	    },
+	    minimap_representation =
+	    {
+	      filename = "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-minimap-representation.png",
+	      flags = {"icon"},
+	      size = {20, 40},
+	      scale = 0.5
+	    },
+	    selected_minimap_representation =
+	    {
+	      filename = "__base__/graphics/entity/diesel-locomotive/diesel-locomotive-selected-minimap-representation.png",
+	      flags = {"icon"},
+	      size = {20, 40},
+	      scale = 0.5
+	    },
 	    wheels = standard_train_wheels,
-	    rail_category = "regular",
 	    stop_trigger =
 	    {
 	      -- left side
@@ -3699,30 +5669,37 @@ function createLocomotive (a)
 	      },
 	      {
 	        type = "play-sound",
-	        sound =
-	        {
-	          {
-	            filename = "__base__/sound/train-breaks.ogg",
-	            volume = 0.6
-	          }
-	        }
-	      }
+	        sound = sounds.train_brakes,
+	      },
+	      {
+	        type = "play-sound",
+	        sound = sounds.train_brake_screech,
+	      },
 	    },
 	    drive_over_tie_trigger = drive_over_tie(),
 	    tie_distance = 50,
-	    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+	    vehicle_impact_sound = sounds.generic_impact,
 	    working_sound =
 	    {
 	      sound =
 	      {
 	        filename = "__base__/sound/train-engine.ogg",
-	        volume = 0.4
+	        volume = 0.35
 	      },
-	      match_speed_to_activity = true
+	      deactivate_sound =
+	      {
+	        filename = "__base__/sound/train-engine-stop.ogg",
+	        volume = 0
+	      },
+	      match_speed_to_activity = true,
+	      max_sounds_per_type = 2,
+	      -- use_doppler_shift = false
 	    },
-	    open_sound = { filename = "__base__/sound/car-door-open.ogg", volume=0.7 },
-	    close_sound = { filename = "__base__/sound/car-door-close.ogg", volume = 0.7 },
-	    sound_minimum_speed = 0.5;
+	    open_sound = { filename = "__base__/sound/train-door-open.ogg", volume=0.5 },
+	    close_sound = { filename = "__base__/sound/train-door-close.ogg", volume = 0.4 },
+	    sound_minimum_speed = 0.5,
+	    sound_scaling_ratio = 0.35,
+	    water_reflection = locomotive_reflection(),
 	  },
 
 	})
